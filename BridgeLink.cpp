@@ -1,0 +1,87 @@
+// BridgeLink.cpp : Defines the class behaviors for the application.
+//
+
+#include "stdafx.h"
+#include <initguid.h>
+
+#include "BridgeLink.h"
+#include "AboutDlg.h"
+
+#include "BridgeLinkCATID.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CBridgeLinkApp
+
+BEGIN_MESSAGE_MAP(CBridgeLinkApp, CEAFApp)
+	//{{AFX_MSG_MAP(CBridgeLinkApp)
+	ON_COMMAND(ID_APP_ABOUT, OnAppAbout)
+		// NOTE - the ClassWizard will add and remove mapping macros here.
+		//    DO NOT EDIT what you see in these blocks of generated code!
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CBridgeLinkApp construction
+
+CBridgeLinkApp::CBridgeLinkApp()
+{
+	// TODO: add construction code here,
+	// Place all significant initialization in InitInstance
+}
+
+CBridgeLinkApp::~CBridgeLinkApp()
+{
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// The one and only CBridgeLinkApp object
+
+CBridgeLinkApp theApp;
+
+/////////////////////////////////////////////////////////////////////////////
+// CBridgeLinkApp initialization
+LPCTSTR CBridgeLinkApp::GetRegistryKey()
+{
+   return _T("Washington State Department of Transportation");
+}
+
+OLECHAR* CBridgeLinkApp::GetPluginCategoryName()
+{
+   CString strName("BridgeLink Plug-in");
+   return strName.AllocSysString();
+}
+
+CATID CBridgeLinkApp::GetPluginCategoryID()
+{
+   return CATID_BridgeLink;
+}
+
+BOOL CBridgeLinkApp::InitInstance()
+{
+   return CEAFApp::InitInstance();
+}
+
+BOOL CBridgeLinkApp::OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo)
+{
+   // I'm not sure why, but this method is required in order to call the base class method
+   // (even though this is a virtual method). All CEAFApp-derived classes must implement this
+   // method
+   return CEAFApp::OnCmdMsg(nID,nCode,pExtra,pHandlerInfo);
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CBridgeLinkApp message handlers
+
+
+void CBridgeLinkApp::OnAbout(void)
+{
+   CAboutDlg dlg;
+   dlg.DoModal();
+}
