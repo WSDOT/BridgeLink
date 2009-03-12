@@ -45,6 +45,7 @@ protected:
    virtual LPCTSTR GetRegistryKey();
    virtual OLECHAR* GetPluginCategoryName();
    virtual CATID GetPluginCategoryID();
+   virtual CEAFSplashScreenInfo GetSplashScreenInfo();
 public:
    virtual void OnAbout(void);
 };

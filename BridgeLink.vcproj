@@ -352,7 +352,7 @@
 				>
 			</File>
 			<File
-				RelativePath="res\Toolbar.bmp"
+				RelativePath=".\res\splash.bmp"
 				>
 			</File>
 		</Filter>

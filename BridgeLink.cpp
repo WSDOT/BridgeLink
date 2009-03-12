@@ -62,8 +62,24 @@ CATID CBridgeLinkApp::GetPluginCategoryID()
    return CATID_BridgeLink;
 }
 
+CEAFSplashScreenInfo CBridgeLinkApp::GetSplashScreenInfo()
+{
+   CBitmap bmp;
+   CEAFSplashScreenInfo info;
+   bmp.LoadBitmap(IDB_SPLASH);
+   info.m_hBitmap = bmp;
+   info.m_TextColor = RGB(0,0,0);
+   info.m_BgColor = RGB(255,255,255);
+   info.m_Rect = CRect(5,300,515,315);
+
+   bmp.Detach();
+
+   return info;
+}
+
 BOOL CBridgeLinkApp::InitInstance()
 {
+   CEAFSplashScreen::SetTimeout(5000);
    return CEAFApp::InitInstance();
 }
 
