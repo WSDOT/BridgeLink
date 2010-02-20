@@ -51,13 +51,13 @@ LPCTSTR CBridgeLinkApp::GetRegistryKey()
    return _T("Washington State Department of Transportation");
 }
 
-OLECHAR* CBridgeLinkApp::GetPluginCategoryName()
+OLECHAR* CBridgeLinkApp::GetAppPluginCategoryName()
 {
    CString strName("BridgeLink Plug-in");
    return strName.AllocSysString();
 }
 
-CATID CBridgeLinkApp::GetPluginCategoryID()
+CATID CBridgeLinkApp::GetAppPluginCategoryID()
 {
    return CATID_BridgeLink;
 }
@@ -75,6 +75,11 @@ CEAFSplashScreenInfo CBridgeLinkApp::GetSplashScreenInfo()
    bmp.Detach();
 
    return info;
+}
+
+CATID CBridgeLinkApp::GetComponentInfoCategoryID()
+{
+   return CLSID_NULL;
 }
 
 BOOL CBridgeLinkApp::InitInstance()

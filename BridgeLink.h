@@ -20,7 +20,7 @@
 // See BridgeLink.cpp for the implementation of this class
 //
 
-class CBridgeLinkApp : public CEAFApp
+class CBridgeLinkApp : public CEAFPluginApp
 {
 public:
 	CBridgeLinkApp();
@@ -43,9 +43,10 @@ public:
 
 protected:
    virtual LPCTSTR GetRegistryKey();
-   virtual OLECHAR* GetPluginCategoryName();
-   virtual CATID GetPluginCategoryID();
+   virtual OLECHAR* GetAppPluginCategoryName();
+   virtual CATID GetAppPluginCategoryID();
    virtual CEAFSplashScreenInfo GetSplashScreenInfo();
+   virtual CATID GetComponentInfoCategoryID();
 public:
    virtual void OnAbout(void);
 };

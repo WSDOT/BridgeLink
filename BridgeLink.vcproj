@@ -18,8 +18,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
+			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="2"
@@ -31,6 +31,9 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
+				Description="Updating Reg Free WBFL"
+				CommandLine="copy \ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll \ARP\PGSuper\RegFreeCOM\$(ConfigurationName)\&#x0D;&#x0A;echo &quot;Update WBFL&quot; &gt; \ARP\PGSuper\RegFreeCOM\$(ConfigurationName)\UpdateWBFL.dep&#x0D;&#x0A;"
+				Outputs="\ARP\PGSuper\RegFreeCOM\$(ConfigurationName)\UpdateWBFL.dep"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -51,7 +54,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\WBFL\Include"
+				AdditionalIncludeDirectories="..\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(ConfigurationName)&quot;;\ARP\boost_1_37_0"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -79,11 +82,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile=".\Release/BridgeLink.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="..\Lib"
-				ProgramDatabaseFile=".\Release/BridgeLink.pdb"
+				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -115,8 +116,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
+			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="2"
@@ -128,6 +129,9 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
+				Description="Updating Reg Free WBFL"
+				CommandLine="copy \ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\&#x0D;&#x0A;echo &quot;Update WBFL&quot; &gt; \ARP\PGSuper\RegFreeCOM\$(ConfigurationName)\UpdateWBFL.dep&#x0D;&#x0A;"
+				Outputs="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\UpdateWBFL.dep"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -147,7 +151,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\WBFL\Include"
+				AdditionalIncludeDirectories="..\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(ConfigurationName)&quot;;\ARP\boost_1_37_0"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -176,12 +180,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile=".\Debug/BridgeLink.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="..\Lib"
+				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\Debug/BridgeLink.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"

@@ -8,6 +8,4 @@ class CAboutDlg :
 public:
    CAboutDlg(void);
    ~CAboutDlg(void);
-protected:
-   virtual HICON GetIconHandle();
 };
