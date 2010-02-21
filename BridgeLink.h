@@ -49,6 +49,7 @@ protected:
    virtual CATID GetComponentInfoCategoryID();
 public:
    virtual void OnAbout(void);
+   afx_msg void OnManagePlugins();
 };
 
 

@@ -17,9 +17,9 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // CBridgeLinkDoc
 
-IMPLEMENT_DYNCREATE(CBridgeLinkDoc, CDocument)
+IMPLEMENT_DYNCREATE(CBridgeLinkDoc, CEAFDocument)
 
-BEGIN_MESSAGE_MAP(CBridgeLinkDoc, CDocument)
+BEGIN_MESSAGE_MAP(CBridgeLinkDoc, CEAFDocument)
 	//{{AFX_MSG_MAP(CBridgeLinkDoc)
 	ON_COMMAND(ID_NEW_VIEW, OnNewView)
 	//}}AFX_MSG_MAP
@@ -40,7 +40,7 @@ CBridgeLinkDoc::~CBridgeLinkDoc()
 
 BOOL CBridgeLinkDoc::OnNewDocument()
 {
-	if (!CDocument::OnNewDocument())
+	if (!CEAFDocument::OnNewDocument())
 		return FALSE;
 
 	// TODO: add reinitialization code here
@@ -49,21 +49,19 @@ BOOL CBridgeLinkDoc::OnNewDocument()
 	return TRUE;
 }
 
-
-
-/////////////////////////////////////////////////////////////////////////////
-// CBridgeLinkDoc serialization
-
-void CBridgeLinkDoc::Serialize(CArchive& ar)
+HRESULT CBridgeLinkDoc::WriteTheDocument(IStructuredSave* pStrSave)
 {
-	if (ar.IsStoring())
-	{
-		// TODO: add storing code here
-	}
-	else
-	{
-		// TODO: add loading code here
-	}
+   return S_OK;
+}
+
+HRESULT CBridgeLinkDoc::LoadTheDocument(IStructuredLoad* pStrLoad)
+{
+   return S_OK;
+}
+
+CString CBridgeLinkDoc::GetToolbarSectionName()
+{
+   return "BridgeLinkTest";
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -72,12 +70,12 @@ void CBridgeLinkDoc::Serialize(CArchive& ar)
 #ifdef _DEBUG
 void CBridgeLinkDoc::AssertValid() const
 {
-	CDocument::AssertValid();
+	CEAFDocument::AssertValid();
 }
 
 void CBridgeLinkDoc::Dump(CDumpContext& dc) const
 {
-	CDocument::Dump(dc);
+	CEAFDocument::Dump(dc);
 }
 #endif //_DEBUG
 

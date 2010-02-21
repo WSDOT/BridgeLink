@@ -21,6 +21,7 @@ static char THIS_FILE[] = __FILE__;
 BEGIN_MESSAGE_MAP(CBridgeLinkApp, CEAFApp)
 	//{{AFX_MSG_MAP(CBridgeLinkApp)
 	ON_COMMAND(ID_APP_ABOUT, OnAppAbout)
+   ON_COMMAND(ID_MANAGE_PLUGINS, &CBridgeLinkApp::OnManagePlugins)
 		// NOTE - the ClassWizard will add and remove mapping macros here.
 		//    DO NOT EDIT what you see in these blocks of generated code!
 	//}}AFX_MSG_MAP
@@ -105,4 +106,9 @@ void CBridgeLinkApp::OnAbout(void)
 {
    CAboutDlg dlg;
    dlg.DoModal();
+}
+
+void CBridgeLinkApp::OnManagePlugins()
+{
+   GetAppPluginManager()->ManagePlugins();
 }

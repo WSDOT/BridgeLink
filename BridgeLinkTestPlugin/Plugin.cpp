@@ -44,6 +44,7 @@ CEAFDocTemplate* CPlugin::CreateDocTemplate()
       NULL,1);
 
    pDocTemplate->SetPlugin(this);
+   pDocTemplate->CreateDefaultItem(AfxGetApp()->LoadStandardIcon(IDI_WINLOGO));
 
    return pDocTemplate;
 }

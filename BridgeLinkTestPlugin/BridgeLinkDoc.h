@@ -9,8 +9,9 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+#include <EAF\EAFDocument.h>
 
-class CBridgeLinkDoc : public CDocument
+class CBridgeLinkDoc : public CEAFDocument
 {
 protected: // create from serialization only
 	CBridgeLinkDoc();
@@ -27,8 +28,11 @@ public:
 	//{{AFX_VIRTUAL(CBridgeLinkDoc)
 	public:
 	virtual BOOL OnNewDocument();
-	virtual void Serialize(CArchive& ar);
 	//}}AFX_VIRTUAL
+
+   virtual HRESULT WriteTheDocument(IStructuredSave* pStrSave);
+   virtual HRESULT LoadTheDocument(IStructuredLoad* pStrLoad);
+   virtual CString GetToolbarSectionName();
 
 // Implementation
 public:

@@ -95,6 +95,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL.manifest"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -194,6 +195,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL.manifest"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -364,5 +366,9 @@
 		</File>
 	</Files>
 	<Globals>
+		<Global
+			Name="RESOURCE_FILE"
+			Value="BridgeLink.rc"
+		/>
 	</Globals>
 </VisualStudioProject>
