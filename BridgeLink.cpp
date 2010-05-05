@@ -47,6 +47,11 @@ CBridgeLinkApp theApp;
 
 /////////////////////////////////////////////////////////////////////////////
 // CBridgeLinkApp initialization
+CString CBridgeLinkApp::GetProductCode()
+{
+   return "Unknown";
+}
+
 LPCTSTR CBridgeLinkApp::GetRegistryKey()
 {
    return _T("Washington State Department of Transportation");
@@ -110,5 +115,5 @@ void CBridgeLinkApp::OnAbout(void)
 
 void CBridgeLinkApp::OnManagePlugins()
 {
-   GetAppPluginManager()->ManagePlugins();
+   GetAppPluginManager()->ManagePlugins("BridgeLink App Plugins???");
 }

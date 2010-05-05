@@ -64,6 +64,18 @@ CString CBridgeLinkDoc::GetToolbarSectionName()
    return "BridgeLinkTest";
 }
 
+BOOL CBridgeLinkDoc::GetStatusBarMessageString(UINT nID,CString& rMessage) const
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   return __super::GetStatusBarMessageString(nID,rMessage);
+}
+
+BOOL CBridgeLinkDoc::GetToolTipMessageString(UINT nID, CString& rMessage) const
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   return __super::GetToolTipMessageString(nID,rMessage);
+}
+
 /////////////////////////////////////////////////////////////////////////////
 // CBridgeLinkDoc diagnostics
 

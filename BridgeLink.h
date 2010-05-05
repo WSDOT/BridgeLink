@@ -42,6 +42,7 @@ public:
 	DECLARE_MESSAGE_MAP()
 
 protected:
+   virtual CString GetProductCode();
    virtual LPCTSTR GetRegistryKey();
    virtual OLECHAR* GetAppPluginCategoryName();
    virtual CATID GetAppPluginCategoryID();

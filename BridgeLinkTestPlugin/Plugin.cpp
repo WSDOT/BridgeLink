@@ -38,6 +38,7 @@ CEAFDocTemplate* CPlugin::CreateDocTemplate()
 	CEAFDocTemplate* pDocTemplate;
 	pDocTemplate = new CEAFDocTemplate(
       IDR_BRIDGETYPE,
+      NULL,
 		RUNTIME_CLASS(CBridgeLinkDoc),
 		RUNTIME_CLASS(CChildFrame),
 		RUNTIME_CLASS(CBridgeLinkView),

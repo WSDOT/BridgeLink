@@ -49,6 +49,7 @@ BOOL CBridgeLinkTestPluginApp::InitInstance()
 
    m_pSecondaryViewTemplate = new CEAFDocTemplate(
       IDR_BRIDGETYPE,
+      NULL,
 		RUNTIME_CLASS(CBridgeLinkDoc),
 		RUNTIME_CLASS(CChildFrame2), // custom MDI child frame
 		RUNTIME_CLASS(CBridgeLinkView2),
