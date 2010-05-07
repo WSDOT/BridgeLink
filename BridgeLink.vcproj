@@ -32,8 +32,9 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Updating Reg Free WBFL"
-				CommandLine="copy \ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll \ARP\PGSuper\RegFreeCOM\$(ConfigurationName)\&#x0D;&#x0A;echo &quot;Update WBFL&quot; &gt; \ARP\PGSuper\RegFreeCOM\$(ConfigurationName)\UpdateWBFL.dep&#x0D;&#x0A;"
-				Outputs="\ARP\PGSuper\RegFreeCOM\$(ConfigurationName)\UpdateWBFL.dep"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\"
+				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll"
+				Outputs="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\WBFL*.dll"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -131,8 +132,9 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Updating Reg Free WBFL"
-				CommandLine="copy \ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\&#x0D;&#x0A;echo &quot;Update WBFL&quot; &gt; \ARP\PGSuper\RegFreeCOM\$(ConfigurationName)\UpdateWBFL.dep&#x0D;&#x0A;"
-				Outputs="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\UpdateWBFL.dep"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\"
+				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll"
+				Outputs="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\WBFL*.dll"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"

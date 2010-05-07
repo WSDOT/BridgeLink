@@ -115,5 +115,5 @@ void CBridgeLinkApp::OnAbout(void)
 
 void CBridgeLinkApp::OnManagePlugins()
 {
-   GetAppPluginManager()->ManagePlugins("BridgeLink App Plugins???");
+   GetAppPluginManager()->ManagePlugins("BridgeLink Application Plugins");
 }
