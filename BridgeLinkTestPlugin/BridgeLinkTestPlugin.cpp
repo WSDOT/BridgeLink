@@ -81,7 +81,7 @@ BOOL CBridgeLinkTestPluginApp::OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_C
 
 void CBridgeLinkTestPluginApp::OnNewView() 
 {
-   AfxMessageBox("Handling OnNewView from CBridgeLinkTestPluginApp");	
+   AfxMessageBox(_T("Handling OnNewView from CBridgeLinkTestPluginApp"));
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -112,7 +112,7 @@ STDAPI DllRegisterServer(void)
    if ( FAILED(hr) )
       return hr;
 
-   sysComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLink, true);
+   sysComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLinkAppPlugin, true);
 
    return S_OK;
 }
@@ -122,7 +122,7 @@ STDAPI DllRegisterServer(void)
 
 STDAPI DllUnregisterServer(void)
 {
-   sysComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLink, false);
+   sysComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLinkAppPlugin, false);
 
     return _Module.UnregisterServer(TRUE);
 }

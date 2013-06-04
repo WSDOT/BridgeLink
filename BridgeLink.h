@@ -26,31 +26,51 @@ public:
 	CBridgeLinkApp();
    ~CBridgeLinkApp();
 
+// CEAFPluginApp overrides
+public:
+   virtual OLECHAR* GetAppPluginCategoryName();
+   virtual CATID GetAppPluginCategoryID();
+
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CBridgeLinkApp)
 	public:
 	virtual BOOL InitInstance();
-	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo);
+	virtual int ExitInstance();
 	//}}AFX_VIRTUAL
 
 // Implementation
 	//{{AFX_MSG(CBridgeLinkApp)
-		// NOTE - the ClassWizard will add and remove member functions here.
-		//    DO NOT EDIT what you see in these blocks of generated code !
+	afx_msg void OnAppAbout();
+	afx_msg void OnHelpJoinArpList();
+	afx_msg void OnHelpInetWsdot();
+	afx_msg void OnHelpInetBridgeLink();
+   afx_msg void OnHelpInetARP();
+   afx_msg void OnScreenSize();
 	//}}AFX_MSG
+	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo);
 	DECLARE_MESSAGE_MAP()
 
 protected:
-   virtual CString GetProductCode();
-   virtual LPCTSTR GetRegistryKey();
-   virtual OLECHAR* GetAppPluginCategoryName();
-   virtual CATID GetAppPluginCategoryID();
    virtual CEAFSplashScreenInfo GetSplashScreenInfo();
+   virtual LPCTSTR GetRegistryKey();
+   virtual CMDIFrameWnd* CreateMainFrame();
    virtual CATID GetComponentInfoCategoryID();
+   virtual CString GetProductCode();
+
+
 public:
-   virtual void OnAbout(void);
-   afx_msg void OnManagePlugins();
+   CString GetVersion(bool bIncludeBuildNumber) const;
+   CString GetVersionString(bool bIncludeBuildNumber) const;
+
+   // URL's
+   CString GetWsdotUrl();
+   CString GetWsdotBridgeUrl();
+   CString GetBridgeLinkUrl();
+
+private:
+   virtual void RegistryInit(); // All registry initialization goes here
+   virtual void RegistryExit(); // All registry cleanup goes here
 };
 
 

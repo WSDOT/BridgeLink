@@ -12,19 +12,22 @@
 		<Platform
 			Name="Win32"
 		/>
+		<Platform
+			Name="x64"
+		/>
 	</Platforms>
 	<ToolFiles>
 	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
+			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="2"
+			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -32,9 +35,9 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\"
-				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll"
-				Outputs="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\WBFL*.dll"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\"
+				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -55,7 +58,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(ConfigurationName)&quot;;\ARP\boost_1_37_0"
+				AdditionalIncludeDirectories=".\;.\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(PlatformName)&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -63,7 +66,7 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile=".\Release/BridgeLink.pch"
+				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
@@ -77,6 +80,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
+				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;\ARP\WBFL\Include\"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -85,7 +89,7 @@
 				Name="VCLinkerTool"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)"
+				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -96,7 +100,6 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL.manifest"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -118,13 +121,13 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
+			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="0"
+			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -132,9 +135,9 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\"
-				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL*.dll"
-				Outputs="\ARP\BridgeLink\RegFreeCOM\$(ConfigurationName)\WBFL*.dll"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\"
+				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -154,7 +157,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(ConfigurationName)&quot;;\ARP\boost_1_37_0"
+				AdditionalIncludeDirectories=".\;.\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(PlatformName)&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -162,7 +165,7 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile=".\Debug/BridgeLink.pch"
+				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
@@ -177,6 +180,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
+				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;\ARP\WBFL\Include\"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -185,7 +189,7 @@
 				Name="VCLinkerTool"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)"
+				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -197,7 +201,207 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles="\ARP\WBFL\RegFreeCOM\$(ConfigurationName)\WBFL.manifest"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+				SuppressStartupBanner="true"
+				OutputFile=".\Debug/BridgeLink.bsc"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="2"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Updating Reg Free WBFL"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\"
+				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="3"
+				TypeLibraryName=".\Release/BridgeLink.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories=".\;.\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(PlatformName)&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
+				AssemblerListingLocation=".\Release/"
+				ObjectFile=".\Release/"
+				ProgramDataBaseFileName=".\Release/"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;\ARP\WBFL\Include\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="1"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+				SuppressStartupBanner="true"
+				OutputFile=".\Release/BridgeLink.bsc"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|x64"
+			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="2"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Updating Reg Free WBFL"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\"
+				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="3"
+				TypeLibraryName=".\Debug/BridgeLink.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories=".\;.\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(PlatformName)&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
+				AssemblerListingLocation=".\Debug/"
+				ObjectFile=".\Debug/"
+				ProgramDataBaseFileName=".\Debug/"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;\ARP\WBFL\Include\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="2"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -250,6 +454,24 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="BridgeLink.rc"
@@ -270,6 +492,30 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCResourceCompilerTool"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCResourceCompilerTool"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\MainFrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ScreenSizeDlg.cpp"
+				>
 			</File>
 			<File
 				RelativePath="StdAfx.cpp"
@@ -286,6 +532,26 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -313,6 +579,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\BridgeLinkCommandIDs.h"
+				>
+			</File>
+			<File
+				RelativePath=".\MainFrm.h"
+				>
+			</File>
+			<File
 				RelativePath="Resource.h"
 				>
 				<FileConfiguration
@@ -335,6 +609,30 @@
 						Outputs="hlp\$(TargetName).hm"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Making help include file..."
+						CommandLine="echo. &gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Commands (ID_* and IDM_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo. &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Prompts (IDP_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo. &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Resources (IDR_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo. &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Dialogs (IDD_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo. &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Frame Controls (IDW_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;"
+						Outputs="hlp\$(TargetName).hm"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Making help include file..."
+						CommandLine="echo. &gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Commands (ID_* and IDM_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo. &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Prompts (IDP_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm IDP_,HIDP_,0x30000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo. &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Resources (IDR_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm IDR_,HIDR_,0x20000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo. &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Dialogs (IDD_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm IDD_,HIDD_,0x20000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo. &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;echo // Frame Controls (IDW_*) &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;&quot;hlp\$(TargetName).hm&quot;&#x0D;&#x0A;"
+						Outputs="hlp\$(TargetName).hm"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\ScreenSizeDlg.h"
+				>
 			</File>
 			<File
 				RelativePath="StdAfx.h"

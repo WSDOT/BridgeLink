@@ -21,10 +21,43 @@
 ///////////////////////////////////////////////////////////////////////
 #pragma once
 
-// {7118F295-997E-4874-9BDC-4900265FA273}
-DEFINE_GUID(CATID_BridgeLinkAppPlugin, 
-0x7118f295, 0x997e, 0x4874, 0x9b, 0xdc, 0x49, 0x0, 0x26, 0x5f, 0xa2, 0x73);
+// ScreenSizeDlg.h : header file
+//
+#include "resource.h"
 
-// {FA0DB81D-8760-4a60-B76C-8768D34FF01D}
-DEFINE_GUID(CATID_BridgeLinkComponents, 
-0xfa0db81d, 0x8760, 0x4a60, 0xb7, 0x6c, 0x87, 0x68, 0xd3, 0x4f, 0xf0, 0x1d);
+/////////////////////////////////////////////////////////////////////////////
+// CScreenSizeDlg dialog
+
+class CScreenSizeDlg : public CDialog
+{
+// Construction
+public:
+	CScreenSizeDlg(CWnd* pParent = NULL);   // standard constructor
+
+// Dialog Data
+	//{{AFX_DATA(CScreenSizeDlg)
+	enum { IDD = IDD_SCREEN_SIZE };
+	long	m_Height;
+	long	m_Width;
+	//}}AFX_DATA
+
+
+// Overrides
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CScreenSizeDlg)
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	//}}AFX_VIRTUAL
+
+// Implementation
+protected:
+
+	// Generated message map functions
+	//{{AFX_MSG(CScreenSizeDlg)
+		// NOTE: the ClassWizard will add member functions here
+	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
+};
+
+//{{AFX_INSERT_LOCATION}}
+// Microsoft Visual C++ will insert additional declarations immediately before the previous line.

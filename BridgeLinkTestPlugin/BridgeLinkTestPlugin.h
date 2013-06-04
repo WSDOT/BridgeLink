@@ -4,10 +4,10 @@
 
 
  /* File created by MIDL compiler version 7.00.0500 */
-/* at Thu May 06 13:53:29 2010
+/* at Tue Jun 04 13:44:46 2013
  */
 /* Compiler settings for .\BridgeLinkTestPlugin.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run)
+    Oicf, W1, Zp8, env=Win64 (32b run)
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 

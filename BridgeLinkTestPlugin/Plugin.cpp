@@ -32,10 +32,13 @@ void CPlugin::IntegrateWithUI(BOOL bIntegrate)
 {
 }
 
-CEAFDocTemplate* CPlugin::CreateDocTemplate()
+std::vector<CEAFDocTemplate*> CPlugin::CreateDocTemplates()
 {
    AFX_MANAGE_STATE(AfxGetStaticModuleState());
-	CEAFDocTemplate* pDocTemplate;
+
+   std::vector<CEAFDocTemplate*> templates;
+
+   CEAFDocTemplate* pDocTemplate;
 	pDocTemplate = new CEAFDocTemplate(
       IDR_BRIDGETYPE,
       NULL,
@@ -47,7 +50,8 @@ CEAFDocTemplate* CPlugin::CreateDocTemplate()
    pDocTemplate->SetPlugin(this);
    pDocTemplate->CreateDefaultItem(AfxGetApp()->LoadStandardIcon(IDI_WINLOGO));
 
-   return pDocTemplate;
+   templates.push_back(pDocTemplate);
+   return templates;
 }
 
 HMENU CPlugin::GetSharedMenuHandle()
