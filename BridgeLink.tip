@@ -1,0 +1,68 @@
+PGSuper is an engineering tool. It should not be considered a substitute for knowledge, judgement, or experience.
+PGSuper is a comprehensive precast-prestressed girder design, analysis and load rating software used by engineers around the world.
+PGSuper supports many girder types including WSDOT, TxDOT, and AASHTO shapes. Use the Girder Library to add your own shapes.
+You can get analysis results by simply creating a report.
+PGSuper is a member of the Alternate Route Project.
+PGSuper is the only precast-prestressed girder software that optimizes designs for fabrication.
+You can move the toolbars by dragging them around the screen.  Toolbars can be docked on all four edges or they can be floating.
+PGSuper is Open Source Software. You can download source code from http://www.wsdot.wa.gov/eesc/bridge/software
+If you don't tell us about problems,  we might not know they exist.  Please help us make this software better by reporting problems to Bridge_Support@wsdot.wa.gov.
+You can find PGSuper Watch and Learn tutorials at www.PGSuper.com
+PGSuper has many reports for you to choose from. Select a report from the list in the Reporting Options dialog.
+You can search a report for keywords or phrases. Right click on the report window and select the Find option.
+Because PGSuper is Open Source, you can modify the software to fit your needs.
+You can enter your own live load distribution factors. Select Loads | Live Load Distribution Factors
+You can turn off the Automatic Calculation mode.  Select Project | Turn AutoCalc Off.
+Because PGSuper is Open Source, you can create new programs that are based on PGSuper.
+PGSuper is developed by programmers from WSDOT and BridgeSight Software (http://www.bridgesight.com).
+Stripes and plaids don't mix.
+You can model girders with flared girders and tapered deck edges.
+Ultimate moment capacities are computed using a non-linear strain compatiblity analysis.
+The Table of Contents makes it easy to navigate reports. Right click on a report window and select the Table of Contents option.
+PGSuper is the only prestressed girder design software you can adapt so it works exactly as you want it to.
+You can get detailed framing plan geometry from the Bridge Geometry Report.
+In the Girder View, you can specify the location where the cross section is cut by pressing the Section Cut Offset button.
+Comments and suggestions can be sent to Bridge_Support@wsdot.wa.gov
+You can change the length of a span by clicking on the span length in the Bridge Plan View and entering a new value.
+Equation 5.7.3.1.1-1, average stress in prestressing steel, is only applicable near the mid-point of a span (See C5.7.3.1.1).  PGSuper uses a strain compatibility analysis to determine the ultimate moment capacity at a section.
+There are no HS loads in the LRFD specification.  LRFD has a notional live load model called HL93 and its design truck (coincidentially) has the same configuration has an HS20 truck from the Standard Specification, but no HS trucks.
+PGSuper can model sidewalks and pedestrian live load on sidewalks.
+The Texas Deparment of Transportation is a PGSuper development partner. You can be too! Contact us at http://pgsuper.com for details.
+You can select which toolbars to display by selecting View | Toolbars.
+You shouldn't run with scissors.
+PGSuper does LRFR load rating analysis.
+You can create your own live load trucks. Do it in the Vehicular Live Load Library.
+PGSuper supports Box Beams, Double Tee, Triple Tee, Nebraska/CalTrans/New England girders, U-Beams, I-Beams, Deck Bulb Tees, and Precast Slabs.
+You can double click on the status indicator to open the status center window
+In the Girder View, you can select a cross section by moving the cross section selection tool.
+WSDOT and TxDOT publish their Master Library and Workgroup Templates on the Internet. Use File | Program Settings to configure PGSuper to use these resources. If they are updated, PGSuper will keep you informed.
+Eugene Freyssinet, a French engineer, is often referred to as the "father of prestressed concrete"
+You can find out what a PGSuper toolbar button does by letting your cursor rest over it for a few seconds.
+You can quickly change boundary conditions at a pier. Right clicking on the pier object and select the boundary condition you want.
+PGSuper has a flexible library system.  You can create your own girder types, concrete definitions, design critiria, and more.
+You can add new functionality to PGSuper with plug-ins and extensions.
+You can get 24x7 support by subscribing to the Alternate Route Project Peer-to-Peer support forums. Visit http://pgsuper.com as click on Support.
+If you have created a library of girders that you'd like included with PGSuper, please share them at http://pgsuper.com
+You can toggle AutoCalc mode by double clicking on the AutoCalc indicator in the status bar
+PGSuper can design draped strands.
+You can undo and redo changes to your bridge model.
+You can mix girder types within a span. This works great if you want to mix adjacent beams to get a specific bridge width.
+PGSuper can model pedestrian/bicycle only bridges.
+Use the Analysis Results View to plot moments, shears, displacements, stresses, limit states, ultimate capacities, and allowable limits.
+You can put the master library on a network drive so your entire office can share it.
+You can quickly change analysis modes by double clicking on the analysis mode indicator in the status bar.
+You can save a PGSuper project as a template.  Templates are used to create new projects.  Choose "Save As Template..." from the File menu.
+Engineers all over the world use PGSuper.
+PGSuper can model sidewalks and combination railings.
+Chocolate pudding is a poor choice for a structural material.
+QConBridge, WSDOT's Open Source Live Load Analysis Program is available from http://www.wsdot.wa.gov/eesc/bridge/software
+You can create a set of master templates and put them on a network drive so your entire office can share them.  Choose File | Program Settings to specify the location.
+You can create your own PGSuper Project Templates.
+PGSuper can design debonded strands.
+You can quickly copy prestressing, transverse reinforcement, and handling information from one girder to another. Chose Project | Copy Girder Properties.
+Use the Girder Comparison Report to compare prestressing, transverse reinforcement, and handling information from different girders in a span.
+Lifting and hauling effects are often the critical limit states for very long girders. PGSuper considers both stress effects and non-linear strength effects for lifting and hauling.
+You can select the alignment, slab and girders in the Bridge Model View. You can edit an item by double clicking on it.
+Right click on an item in the Bridge Model View to activate its context menu. The context menu is full of the most common commands.
+You can publish your own libraries and templates on the Internet. Post a message to the Alternate Route Project Peer-to-Peer mailing list and ask for details.
+This is the last tip.

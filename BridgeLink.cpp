@@ -16,11 +16,11 @@
 
 
 // This is the range of command IDs for all plug-in commands... all means all commands added
-// to the menus of the main executable, the appplugin document and view menus, and plugin supplied menus,
-// toolbars, and accelerator tables
-#define FIRST_BRIDGELINK_PLUGIN_COMMAND 0x8200
-#define LAST_BRIDGELINK_PLUGIN_COMMAND  0x8FFF
-#define BRIDGELINK_PLUGIN_COMMAND_COUNT 256 // 256 commands can be added to the main BridgeLink application
+// to the menus of the BridgeLink executable program, the AppPlugin document and view menus, 
+// and plugin supplied menus, toolbars, and accelerator tables
+#define BRIDGELINK_FIRST_PLUGIN_COMMAND 0x8200
+#define BRIDGELINK_LAST_PLUGIN_COMMAND  (BRIDGELINK_FIRST_PLUGIN_COMMAND+0x0100)
+#define BRIDGELINK_PLUGIN_COMMAND_COUNT (BRIDGELINK_LAST_PLUGIN_COMMAND-BRIDGELINK_FIRST_PLUGIN_COMMAND)
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -66,6 +66,7 @@ CBridgeLinkApp theApp;
 // CBridgeLinkApp initialization
 CString CBridgeLinkApp::GetProductCode()
 {
+#pragma Reminder("UPDATE") // see CPGSuperApp for what goes here
    return "Unknown";
 }
 
@@ -88,7 +89,10 @@ CEAFSplashScreenInfo CBridgeLinkApp::GetSplashScreenInfo()
 {
    CBitmap bmp;
    CEAFSplashScreenInfo info;
-   bmp.LoadBitmap(IDB_SPLASH);
+
+   info.m_bShow = GetCommandLineInfo().m_bShowSplash;
+
+   VERIFY(bmp.LoadBitmap(IDB_SPLASH));
    info.m_hBitmap = bmp;
    info.m_TextColor = RGB(0,0,0);
    info.m_BgColor = RGB(255,255,255);
@@ -148,17 +152,17 @@ BOOL CBridgeLinkApp::InitInstance()
 
    // Do this before InitInstance on base class
    
-   // Reserve the total range of command IDs that can be used for ALL plugins.
+   // Reserve the total range of command IDs that can be used for ALL BridgeLink App Plugins.
    // ALL means all commands added to the menus of the main executable, the 
    // EAFAppPlugin document and view menus, and plugin supplied menus,
    // toolbars, and accelerator tables
-   CEAFPluginCommandManager::ReserveTotalCommandIDRange(FIRST_BRIDGELINK_PLUGIN_COMMAND,LAST_BRIDGELINK_PLUGIN_COMMAND);
+   CEAFPluginCommandManager::ReserveTotalCommandIDRange(BRIDGELINK_FIRST_PLUGIN_COMMAND,BRIDGELINK_LAST_PLUGIN_COMMAND);
 
    // Reserve BRIDGELINK_PLUGIN_COMMAND_COUNT command IDs for commands that get added
    // to the main application
    GetPluginCommandManager()->ReserveCommandIDRange(BRIDGELINK_PLUGIN_COMMAND_COUNT);
 
-   // user can Float64 click on a file to open
+   // user can dbl-click on a file to open
    EnableShellOpen();
 
    // Help file defaults to the location of the application
@@ -408,5 +412,7 @@ void CBridgeLinkApp::OnAppAbout()
 
 BOOL CBridgeLinkApp::OnCmdMsg(UINT nID,int nCode,void* pExtra,AFX_CMDHANDLERINFO* pHandlerInfo)
 {
-   return __super::OnCmdMsg(nID,nCode,pExtra,pHandlerInfo);
+   // For some reason, this method is needed otherwise the base class version
+   // doesn't get called... even though the base class method is virtual
+   return CEAFPluginApp::OnCmdMsg(nID,nCode,pExtra,pHandlerInfo);
 }

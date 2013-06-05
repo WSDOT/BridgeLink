@@ -35,7 +35,7 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\&#x0D;&#x0A;"
 				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
 				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
 			/>
@@ -100,6 +100,108 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles="\ARP\WBFL\RegFreeCOM\WBFL.$(PlatformName).$(ConfigurationName).manifest"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+				SuppressStartupBanner="true"
+				OutputFile=".\Release/BridgeLink.bsc"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="2"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Updating Reg Free WBFL"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\&#x0D;&#x0A;"
+				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="3"
+				TypeLibraryName=".\Release/BridgeLink.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories=".\;.\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(PlatformName)&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
+				AssemblerListingLocation=".\Release/"
+				ObjectFile=".\Release/"
+				ProgramDataBaseFileName=".\Release/"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;\ARP\WBFL\Include\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="1"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+				AdditionalManifestFiles="\ARP\WBFL\RegFreeCOM\WBFL.$(PlatformName).$(ConfigurationName).manifest"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -135,7 +237,7 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\&#x0D;&#x0A;"
 				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
 				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
 			/>
@@ -201,6 +303,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles="\ARP\WBFL\RegFreeCOM\WBFL.$(PlatformName).$(ConfigurationName).manifest"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -209,106 +312,6 @@
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
 				OutputFile=".\Debug/BridgeLink.bsc"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|x64"
-			OutputDirectory="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
-			UseOfMFC="2"
-			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\"
-				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
-				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
-				TargetEnvironment="3"
-				TypeLibraryName=".\Release/BridgeLink.tlb"
-				HeaderFileName=""
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="2"
-				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories=".\;.\Include;\ARP\WBFL\Include;&quot;\ARP\WBFL\Include\$(PlatformName)&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				RuntimeTypeInfo="true"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
-				AssemblerListingLocation=".\Release/"
-				ObjectFile=".\Release/"
-				ProgramDataBaseFileName=".\Release/"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
-				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;\ARP\WBFL\Include\"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)"
-				SubSystem="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				TargetMachine="17"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-				SuppressStartupBanner="true"
-				OutputFile=".\Release/BridgeLink.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -336,7 +339,7 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\"
+				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\&#x0D;&#x0A;"
 				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
 				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
 			/>
@@ -402,6 +405,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles="\ARP\WBFL\RegFreeCOM\WBFL.$(PlatformName).$(ConfigurationName).manifest"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -446,7 +450,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|Win32"
+					Name="Release|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -455,7 +459,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|x64"
+					Name="Debug|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -485,7 +489,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|Win32"
+					Name="Release|x64"
 					>
 					<Tool
 						Name="VCResourceCompilerTool"
@@ -493,7 +497,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|x64"
+					Name="Debug|Win32"
 					>
 					<Tool
 						Name="VCResourceCompilerTool"
@@ -531,7 +535,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|Win32"
+					Name="Release|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -541,7 +545,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|x64"
+					Name="Debug|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -600,7 +604,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|Win32"
+					Name="Release|x64"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -610,7 +614,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|x64"
+					Name="Debug|Win32"
 					>
 					<Tool
 						Name="VCCustomBuildTool"
@@ -656,7 +660,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\bss.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\KDOT.ico"
+				>
+			</File>
+			<File
 				RelativePath=".\res\splash.bmp"
+				>
+			</File>
+			<File
+				RelativePath=".\res\txdot.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\Wsdot.ico"
 				>
 			</File>
 		</Filter>
