@@ -93,10 +93,10 @@ CEAFSplashScreenInfo CBridgeLinkApp::GetSplashScreenInfo()
    info.m_bShow = GetCommandLineInfo().m_bShowSplash;
 
    VERIFY(bmp.LoadBitmap(IDB_SPLASH));
+   info.m_Duration = 0; // show until closed
    info.m_hBitmap = bmp;
-   info.m_TransparencyColor = RGB(255,0,0);
-   info.m_TextColor = RGB(0,0,0); // color of the information text drawn onto the splash screen
-   info.m_BgColor = RGB(255,255,255); // text background color
+   info.m_TransparencyColor = RED;
+   info.m_TextColor = BLACK; // color of the information text drawn onto the splash screen
    info.m_Rect = CRect(5,300,515,315); // rectangle on the splash screen bitmap where text is written
 
    bmp.Detach();
