@@ -90,14 +90,11 @@ CEAFSplashScreenInfo CBridgeLinkApp::GetSplashScreenInfo()
    CBitmap bmp;
    CEAFSplashScreenInfo info;
 
-   info.m_bShow = GetCommandLineInfo().m_bShowSplash;
-
    VERIFY(bmp.LoadBitmap(IDB_SPLASH));
-   info.m_Duration = 0; // show until closed
    info.m_hBitmap = bmp;
-   info.m_TransparencyColor = RED;
-   info.m_TextColor = BLACK; // color of the information text drawn onto the splash screen
-   info.m_Rect = CRect(5,300,515,315); // rectangle on the splash screen bitmap where text is written
+   info.m_TextColor = WHITE; // color of the information text drawn onto the splash screen
+   info.m_TextFormat = DT_TOP | DT_LEFT | DT_SINGLELINE | DT_MODIFYSTRING | DT_END_ELLIPSIS | DT_WORDBREAK;
+   info.m_TextRect = CRect(120,110,515,315); // rectangle on the splash screen bitmap where text is written
 
    bmp.Detach();
 
@@ -128,6 +125,8 @@ CATID CBridgeLinkApp::GetComponentInfoCategoryID()
 
 BOOL CBridgeLinkApp::InitInstance()
 {
+   //_crtBreakAlloc = 2547; // causes program to break at a specific memory allocation
+
    // Initialize OLE libraries
 	if (!SUCCEEDED(OleInitialize(NULL)))
 	{
@@ -143,11 +142,19 @@ BOOL CBridgeLinkApp::InitInstance()
    // Tip of the Day
    CString strTipFile = GetAppLocation() + CString(_T("BridgeLink.tip"));
 #if defined _DEBUG
-   strTipFile.Replace(_T("RegFreeCOM\\Debug\\"),_T(""));
+#if defined _WIN64
+   strTipFile.Replace(_T("RegFreeCOM\\x64\\Debug\\"),_T(""));
+#else
+   strTipFile.Replace(_T("RegFreeCOM\\Win32\\Debug\\"),_T(""));
+#endif
 #else
    // in a real release, the path doesn't contain RegFreeCOM\\Release, but that's
    // ok... the replace will fail and the string wont be altered.
-   strTipFile.Replace(_T("RegFreeCOM\\Release\\"),_T(""));
+#if defined _WIN64
+   strTipFile.Replace(_T("RegFreeCOM\\x64\\Release\\"),_T(""));
+#else
+   strTipFile.Replace(_T("RegFreeCOM\\Win32\\Release\\"),_T(""));
+#endif
 #endif
    EnableTipOfTheDay(strTipFile); // must be enabled before InitInstance
 

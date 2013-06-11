@@ -63,6 +63,12 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
    if (CEAFMainFrame::OnCreate(lpCreateStruct) == -1)
       return -1;
 
+   // Need to set the icon here so that GetIcon wont fail
+   CWinApp* pApp = AfxGetApp();
+   HICON hIcon = pApp->LoadIcon(IDR_MAINFRAME);
+   SetIcon(hIcon,TRUE);
+   SetIcon(hIcon,FALSE);
+   
    return 0;
 }
 
