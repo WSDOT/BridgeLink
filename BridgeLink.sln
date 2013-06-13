@@ -41,6 +41,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeAgent", "..\PGSuper\BridgeAgent\BridgeAgent.vcproj", "{69BE1B6C-489E-4103-8E2E-82D2EF3258E5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngAgent", "..\PGSuper\EngAgent\EngAgent.vcproj", "{B8979601-544D-41D7-A6A2-20A03E2473A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphing", "..\PGSuper\Graphing\Graphing.vcproj", "{A29F3C02-AF58-4E29-A791-CAA5A1CE28B6}"
 EndProject
