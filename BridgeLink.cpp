@@ -127,12 +127,7 @@ BOOL CBridgeLinkApp::InitInstance()
 {
    //_crtBreakAlloc = 2547; // causes program to break at a specific memory allocation
 
-   // Initialize OLE libraries
-	if (!SUCCEEDED(OleInitialize(NULL)))
-	{
-		AfxMessageBox(_T("OLE initialization failed. Make sure that the OLE libraries are the correct version."));
-		return FALSE;
-	}
+   // Do this before InitInstance on base class
 
    sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponents);
    sysComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin);
@@ -140,25 +135,34 @@ BOOL CBridgeLinkApp::InitInstance()
 //   CREATE_LOGFILE("BridgeLinkApp"); 
 
    // Tip of the Day
-   CString strTipFile = GetAppLocation() + CString(_T("BridgeLink.tip"));
+   // Get the names of all the *.tip files in the application folder
+   std::vector<CString> strTipFiles;
+   CFileFind finder;
+   CString str(GetAppLocation());
 #if defined _DEBUG
 #if defined _WIN64
-   strTipFile.Replace(_T("RegFreeCOM\\x64\\Debug\\"),_T(""));
+   str.Replace(_T("RegFreeCOM\\x64\\Debug\\"),_T(""));
 #else
-   strTipFile.Replace(_T("RegFreeCOM\\Win32\\Debug\\"),_T(""));
+   str.Replace(_T("RegFreeCOM\\Win32\\Debug\\"),_T(""));
 #endif
 #else
    // in a real release, the path doesn't contain RegFreeCOM\\Release, but that's
    // ok... the replace will fail and the string wont be altered.
 #if defined _WIN64
-   strTipFile.Replace(_T("RegFreeCOM\\x64\\Release\\"),_T(""));
+   str.Replace(_T("RegFreeCOM\\x64\\Release\\"),_T(""));
 #else
-   strTipFile.Replace(_T("RegFreeCOM\\Win32\\Release\\"),_T(""));
+   str.Replace(_T("RegFreeCOM\\Win32\\Release\\"),_T(""));
 #endif
 #endif
-   EnableTipOfTheDay(strTipFile); // must be enabled before InitInstance
-
-   // Do this before InitInstance on base class
+   str += CString(_T("*.tip"));
+   BOOL bWorking = finder.FindFile(str);
+   while ( bWorking )
+   {
+      bWorking = finder.FindNextFile();
+      CString strTipFile = finder.GetFilePath();
+      strTipFiles.push_back(strTipFile);
+   }
+   EnableTipOfTheDay(strTipFiles);
    
    // Reserve the total range of command IDs that can be used for ALL BridgeLink App Plugins.
    // ALL means all commands added to the menus of the main executable, the 
@@ -205,8 +209,6 @@ BOOL CBridgeLinkApp::InitInstance()
 int CBridgeLinkApp::ExitInstance() 
 {
 //   CLOSE_LOGFILE;
-
-   ::OleUninitialize();
 
    return CEAFApp::ExitInstance();
 }
