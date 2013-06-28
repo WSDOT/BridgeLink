@@ -1,0 +1,64 @@
+[MAS SUPPORT]
+SupportMas_Prj=1
+[Target:WebHelp]
+SupportMas_Prj=1
+ResultFileName=!SSL!\WebHelp\BridgeLink.htm
+SSLayoutType=2
+CreateProjectTime=
+CreateProjectUser=
+SupportMas_MPJ=1
+[Target:WebHelp Pro]
+SupportMas_Prj=1
+ResultFileName=!SSL!\WebHelp_Pro\BridgeLink.htm
+SSLayoutType=32
+ServerProjectName=BridgeLink
+CreateProjectTime=
+CreateProjectUser=
+SupportMas_MPJ=1
+[Target:Microsoft HTML Help]
+ResultFileName=F:\ARP\BridgeLink\BridgeLink.chm
+SSLayoutType=1
+CreateProjectTime=09:31, June 28, 2013
+CreateProjectUser=BriceR
+SupportMas_MPJ=1
+ActionID For Generation=1002
+Remove Folder with prompt=1
+ViewFileName=F:\ARP\BridgeLink\BridgeLink.chm
+ResultStatus=0
+BuildTimeHi=30307356
+BuildTimeLow=-342207328
+[Target:FlashHelp]
+ResultFileName=!SSL!\FlashHelp\BridgeLink.htm
+SSLayoutType=2
+CreateProjectTime=
+CreateProjectUser=
+SupportMas_MPJ=1
+[Target:Printed Documentation]
+ResultFileName=!SSL!\Printed_Documentation\BridgeLink.doc
+SSLayoutType=7
+[Target:XML Output]
+ResultFileName=!SSL!\XML_Output\BridgeLink.xml
+SSLayoutType=8192
+[Layout Settings]
+MRULayoutCount=1
+MRULayout0=Microsoft HTML Help]None]1
+[PreSingleSource]
+Html Help Project=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.hhp
+Table Of Content=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.hhc
+Index=F:\ARP\BridgeLink\HtmlHelp\BridgeLink_merged$.hhk
+See Also Index=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.hha
+Browse Sequence=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.brs
+Topic Properties=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.trs
+Active Folders=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.trf
+Baggage Files=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.trb
+Skin List=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.trk
+OriginalHhk=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.hhk
+Active Layout Names=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.trl
+Default Topic=F:\ARP\BridgeLink\HtmlHelp\Welcome.htm
+Build Tags0=5881;Print | Online
+Build Tags=
+Build Expression=
+Language ID=1033
+Language Name=English
+Language=F:\ARP\BridgeLink\HtmlHelp\RoboHHRE.lng
+Stop List=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.stp

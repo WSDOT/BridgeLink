@@ -66,8 +66,9 @@ CBridgeLinkApp theApp;
 // CBridgeLinkApp initialization
 CString CBridgeLinkApp::GetProductCode()
 {
-#pragma Reminder("UPDATE") // see CPGSuperApp for what goes here
-   return "Unknown";
+   // Return the Product Code from InstallShield
+   // This code uniquely identifies BridgeLink so do not change it
+   return "{35B69F05-7590-4344-9771-F81D7953869E}";
 }
 
 LPCTSTR CBridgeLinkApp::GetRegistryKey()
@@ -119,7 +120,7 @@ CMDIFrameWnd* CBridgeLinkApp::CreateMainFrame()
 
 CATID CBridgeLinkApp::GetComponentInfoCategoryID()
 {
-   return CATID_BridgeLinkComponents;
+   return CATID_BridgeLinkComponentInfo;
 }
 
 
@@ -129,7 +130,7 @@ BOOL CBridgeLinkApp::InitInstance()
 
    // Do this before InitInstance on base class
 
-   sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponents);
+   sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
    sysComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin);
 
 //   CREATE_LOGFILE("BridgeLinkApp"); 

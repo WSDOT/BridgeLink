@@ -579,11 +579,11 @@
 				>
 			</File>
 			<File
-				RelativePath="BridgeLinkCATID.h"
+				RelativePath=".\Include\BridgeLinkCATID.h"
 				>
 			</File>
 			<File
-				RelativePath=".\BridgeLinkCommandIDs.h"
+				RelativePath=".\Include\BridgeLinkCommandIDs.h"
 				>
 			</File>
 			<File
@@ -682,10 +682,6 @@
 		</Filter>
 		<File
 			RelativePath=".\BridgeLink.tip"
-			>
-		</File>
-		<File
-			RelativePath="ReadMe.txt"
 			>
 		</File>
 	</Files>

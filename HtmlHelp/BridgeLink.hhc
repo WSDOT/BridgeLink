@@ -1,0 +1,23 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800002">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Welcome">
+    <param name="Local" value="Welcome.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="License Agreement">
+    <param name="Local" value="Alternate_Route_Open_Source_License.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Manage Application Components">
+    <param name="Local" value="Manage_Application_Components.htm">
+  </object>
+</ul>
+</html>
