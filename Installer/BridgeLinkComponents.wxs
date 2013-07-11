@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+   <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+
+   <Fragment>
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.BridgeLinkSourceRoot)\App\$(var.PlatformFolder)" >
+         <Component Id ="BridgeLinkComponents"
+                    Guid="{9F639678-37CE-48a2-8EDD-ED5F699EDC0D}"
+                    Win64="$(var.IsWin64)">
+            
+            <File Id="BridgeLink.exe"    Name="BridgeLink.exe" KeyPath ="yes"/>
+            
+            <!-- define component categories for the main executable
+            Categories are: BridgeLink Application Plugins (such as PGSuper, Library Editor, TOGA, BEToolbox)
+            BridgeLink Components (the little COM objects that integrated into the About dialog)-->
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\{1D069A0E-7436-4275-A129-C84ADC22DE68}"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+                           Name="800"
+                           Value="BridgeLink Application Plugin"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\{AF28A0E7-E9AD-4839-9901-5F004209498B}"
+                           Name="800"
+                           Value="BridgeLink Components"
+                           Type="string" />
+
+            <!-- NOTE: Ideally these file associations should go with the various plug-in types. However I can't figure
+            out how to make that work. So here it is.-->
+            
+            <!-- PGSuper File associations -->
+            <ProgId Id="PGSuper.Template">
+               <Extension Id="pgt" ContentType="application/pgt">
+                  <Verb Id="Open"
+                        Command="Create a new &amp;PGSuper Project using this template"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+            <ProgId Id="PGSuper.Document">
+               <Extension Id="pgs"
+                          ContentType="application/pgs">
+                  <Verb Id="Open"
+                        Command="&amp;Open with BridgeLink:PGSuper"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+
+
+            <!-- PGSplice File associations -->
+            <ProgId Id="PGSplice.Template">
+               <Extension Id="spt" ContentType="application/spt">
+                  <Verb Id="Open"
+                        Command="Create a new &amp;PGSplice Project using this template"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+            <ProgId Id="PGSplice.Document">
+               <Extension Id="spl"
+                          ContentType="application/spl">
+                  <Verb Id="Open"
+                        Command="&amp;Open with BridgeLink:PGSplice"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+
+            <!-- Library File associations -->
+            <ProgId Id="PGSuperLibrary.Document">
+               <Extension Id="lbr"
+                          ContentType="application/lbr">
+                  <Verb Id="Open"
+                        Command="&amp;Open with BridgeLink:Library Editor"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+
+            <!-- TOGA file associations -->
+            <ProgId Id="Toga.Document">
+               <Extension Id="toga" ContentType="application/toga">
+                  <Verb Id="Open"
+                        Command="&amp;Open with BridgeLink:TOGA"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+
+            <!-- BEToolbox file associations -->
+            <ProgId Id="UltCol.Document">
+               <Extension Id="UltCol" ContentType="application/UltCol">
+                  <Verb Id="Open"
+                        Command="&amp;Open with BridgeLink:BEToolbox:UltCol"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+
+            <ProgId Id="GenComp.Document">
+               <Extension Id="GenComp" ContentType="application/GenComp">
+                  <Verb Id="Open"
+                        Command="&amp;Open with BridgeLink:BEToolbox:GenComp"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+
+               <ProgId Id="GirComp.Document">
+                  <Extension Id="GirComp" ContentType="application/GirComp">
+                     <Verb Id="Open"
+                           Command="&amp;Open with BridgeLink:BEToolbox:GirComp"
+                           TargetFile="BridgeLink.exe"
+                           Argument='"%1"' />
+                  </Extension>
+               </ProgId>
+
+               <ProgId Id="BoxGdr.Document">
+                  <Extension Id="BoxGdr" ContentType="application/BoxGdr">
+                     <Verb Id="Open"
+                           Command="&amp;Open with BridgeLink:BEToolbox:BoxGdr"
+                           TargetFile="BridgeLink.exe"
+                           Argument='"%1"' />
+                  </Extension>
+               </ProgId>
+
+               <ProgId Id="Curvel.Document">
+                  <Extension Id="Curvel" ContentType="application/Curvel">
+                     <Verb Id="Open"
+                           Command="&amp;Open with BridgeLink:BEToolbox:Curvel"
+                           TargetFile="BridgeLink.exe"
+                           Argument='"%1"' />
+                  </Extension>
+               </ProgId>
+
+            </Component>
+      </DirectoryRef >
+
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.BridgeLinkSourceRoot)\App" >
+         <Component Id="BridgeLinkSupportFiles" Guid="{5A89BEFB-446F-48f9-82DE-184681A1F9AF}" Win64="$(var.IsWin64)">
+         <File Id="BridgeLink.chm"    Name="BridgeLink.chm" KeyPath="yes"/>
+         <File Id="License.txt"       Name="License.txt"/>
+      </Component>
+      </DirectoryRef >
+   </Fragment>
+</Wix>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+   <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+
+   <Fragment>
+      
+      <!-- Start menu item for help file -->
+      <DirectoryRef Id="BridgeLinkStartMenuFolder">
+         <Component Id="BEToolboxShortcuts" Guid="{6777548A-04BF-4d86-A184-51DEEB27D552}" Win64="$(var.IsWin64)">
+
+            <Shortcut Id="BEToolboxHelpShortcut"
+                      Name="BEToolbox Documentation"
+                      Description="BEToolbox Documentation"
+                      Target="[APPLICATIONFOLDER]BEToolbox.chm"
+                      WorkingDirectory="APPLICATIONFOLDER"
+                  />
+
+            <RegistryValue Root="HKCU"
+                           Key="Software\Microsoft\[ProductName]"
+                           Name="installed"
+                           Type="integer"
+                           Value="1"
+                           KeyPath="yes"/>
+
+         </Component>
+      </DirectoryRef>
+
+      <!-- BEToolbox files -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.BEToolboxSourceRoot)\$(var.PlatformFolder)" >
+         <Component Id ="BEToolboxComponents"
+                    Guid="{AD5706B4-F2CE-4153-A263-C549D0E28B2F}"
+                    Win64="$(var.IsWin64)">
+
+            <File Id="BEToolbox.dll"    Name="BEToolbox.dll" KeyPath ="yes"/>
+
+            <!-- BEToolbox file associations -->
+            <ProgId Id="UltCol.Document" Icon="BEToolbox.dll" IconIndex="4" />
+            <ProgId Id="GenComp.Document" Icon="BEToolbox.dll" IconIndex="1" />
+            <ProgId Id="GirComp.Document" Icon="BEToolbox.dll" IconIndex="3"/>
+            <ProgId Id="BoxGdr.Document" Icon="BEToolbox.dll" IconIndex="2"/>
+            <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="6"/>
+
+            <!-- BEToolbox registry entries-->
+            
+            <!-- BEToolbox Application Plugin -->
+            <?define BEToolboxCLSID={EA33DB99-86FB-4678-9442-AB1D334456E4}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BEToolboxCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxCLSID)"
+                           Value="BEToolbox"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
+                           Value=""
+                           Type="string" />
+            
+            <!-- BEToolbox Component Information Object -->
+            <?define BEToolboxComponentInfoCLSID={71B4631C-5AB5-468e-A1AD-5764A728E419}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BEToolboxComponentInfoCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxComponentInfoCLSID)"
+                           Value="BEToolbox Component Information"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxComponentInfoCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
+                           Value=""
+                           Type="string" />
+
+         </Component>
+      </DirectoryRef >
+
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.BEToolboxSourceRoot)\Images" >
+         <Component Id="BEToolboxImageFiles" Guid="{6FF7750C-7DEC-42ea-9CF1-953BEB46B9D1}" Win64="$(var.IsWin64)">
+            <File Id="BoxGdr.png"    Name="BoxGdr.png" KeyPath="yes"/>
+            <File Id="Curvel.png"    Name="Curvel.png"/>
+            <File Id="GirComp.png"   Name="GirComp.png"/>
+         </Component>
+      </DirectoryRef >
+
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.BEToolboxSourceRoot)" >
+            <Component Id="BEToolboxHelpFiles" Guid="{A3DA51B7-743C-4a6c-9D49-85F0E7981208}" Win64="$(var.IsWin64)">
+               <File Id="BEToolbox.chm"    Name="BEToolbox.chm" KeyPath="yes"/>
+            </Component>
+         </DirectoryRef >
+
+      <!-- BEToolbox Application Plugin -->
+      <Feature Id="BEToolbox"
+               Absent="allow"
+               ConfigurableDirectory="APPLICATIONFOLDER"
+               Description="WSDOT Legacy Bridge Engineering Tools"
+               Display="expand"
+               Title="BEToolbox (Optional)"
+               Level="1">
+         <ComponentRef Id="BEToolboxComponents" Primary="yes" />
+         <ComponentRef Id="BEToolboxShortcuts"/>
+         <ComponentRef Id="BEToolboxImageFiles"/>
+         <ComponentRef Id="BEToolboxHelpFiles"/>
+      </Feature>
+   </Fragment>
+</Wix>
+

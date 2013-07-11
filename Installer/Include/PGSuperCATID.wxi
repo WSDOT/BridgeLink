@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+   <?define PGSuperComponentInfoCATID={D3E6CC1B-A7BE-4329-A30C-C8118441B418}?>
+   <?define PGSuperAgentCATID={CF562502-F86E-4957-B429-28AB395A0EFC}?>
+   <?define PGSuperExtensionAgentCATID={4B5AD09A-E616-468e-8F84-4F9D68E7B6CA}?>
+   <?define PGSuperBeamFamilyCATID={EBFB7517-F1BB-43ff-9412-FA4E1BDEC6BA}?>
+   <?define PGSuperProjectImporterCATID={289D1CFF-D1A4-4b65-B673-867D7F41C7DB}?>
+   <?define PGSuperDataImporterCATID={BD3B6F1E-7826-478b-99C0-A946C12C89CF}?>
+   <?define PGSuperDataExporterCATID={369A62A2-8995-4404-9C16-15AE5A0681E2}?>
+
+</Include>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+   <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+   
+   <Product Id="*" 
+            Name="$(var.ProductName) ($(var.Platform))" 
+            Language="1033" 
+            Version="1.0.0.1" 
+            Manufacturer="WSDOT" 
+            UpgradeCode="359791cf-fb6a-4390-871a-94e6fa141fb3">
+		<Package Id="*" 
+               Compressed="yes" 
+               Comments="A member of the Alternate Route Project"
+               InstallerVersion="300"
+               Keywords="Integrated Bridge Engineering Software Environment"
+               Languages="1033"
+               Manufacturer="WSDOT"
+               Platform="$(var.Platform)"
+               InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+      <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+      <!--<Icon Id="BridgeLinkIcon" SourceFile="$(var.SolutionDir)\res\BridgeLink.ico" />-->
+      <Icon Id="BridgeLinkIcon" SourceFile="\ARP\BridgeLink\res\BridgeLink.ico" />
+
+      <!-- Define the directory structure on the target machine -->
+      <Directory Id="TARGETDIR" Name="SourceDir">
+         <Directory Id="$(var.ProgramFilesDirectory)">
+            <Directory Id="WSDOT" Name="WSDOT">
+               <Directory Id="APPLICATIONFOLDER" Name="$(var.ProductName)">
+               </Directory>
+            </Directory>
+         </Directory>
+         <Directory Id="ProgramMenuFolder">
+            <Directory Id="EngineeringApplicationsStartMenuFolder" Name="Engineering Applications">
+               <Directory Id="BridgeLinkStartMenuFolder" Name="$(var.ProductName)"/>
+            </Directory>
+         </Directory>
+      </Directory>
+
+
+      <!-- BridgeLink Application -->
+      <Feature Id="BridgeLink"
+               Absent="disallow" 
+               ConfigurableDirectory="APPLICATIONFOLDER"
+               Description="BridgeLink Application"
+               Display="expand"
+               Title="BridgeLink (Required)" 
+               Level="1">
+			<ComponentRef Id="BridgeLinkComponents" Primary="yes" />
+         <ComponentRef Id="BridgeLinkSupportFiles"/>
+         <ComponentRef Id="EngineeringApplicationsShortcuts"/>
+         <ComponentRef Id="BridgeLinkShortcuts"/>
+         <ComponentRef Id="WBFLComponents"/>
+
+         <FeatureRef Id="PGSuper" />
+         <FeatureRef Id="BEToolbox" />
+         <FeatureRef Id="Redistributables" />
+      </Feature>
+
+      <!-- Installation Requirements -->
+      <!--
+    <Condition Message="Internet Explorer 5 or greater needs to be installed for this installation to continue.">IE5FOUND</Condition>-->
+      <Condition Message="[ProductName] requires that your computer is running at least Windows Vista">
+         VersionNT = 600 OR VersionNT64 = 600 OR
+         VersionNT = 601 OR VersionNT64 = 601 OR
+         VersionNT = 602 OR VersionNT64 = 602
+      </Condition>
+
+      <!-- Add and Remove Programs Entries -->
+      <Property Id='ARPCOMMENTS'>BridgeLink is a member of the Alternate Route Project.</Property>
+      <Property Id='ARPCONTACT'>Post your questions to the suport forums at http://www.pgsuper.com</Property>
+      <Property Id='ARPHELPLINK'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
+      <Property Id='ARPURLINFOABOUT'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
+      <!--<Property Id='ARPURLUPDATINFO'>URL for product updates</Property>-->
+      <!--<Property Id='ARPHELPTELEPHONE'>???-???-????</Property>-->
+      <!--<Property Id='ARPREADME'>path to readme file</Property>-->
+      <!--<Property Id='ARPSIZE'>application size in kb (Windows reports bad size)</Property>-->
+      <!--<Property Id='ARPPRODUCTICON'>BridgeLinkIcon</Property>-->
+
+      <!-- Remove commented elements to adjust Modify/Remove/Repair buttons for installer -->
+      <!-- Remove the modify button 
+    <Property Id='ARPNOMODIFY'>1</Property>-->
+      <!-- Remove the remove button 
+    <Property Id='ARPNOREMOVE'>1</Property>-->
+      <!-- Remove the repair button 
+    <Property Id='ARPNOREPAIR'>1</Property>-->
+
+      <!-- Add default user interface -->
+      <Property Id='WixAppFolder'
+                Value='WixPerMachineFolder' />
+      <WixVariable Id='WixUISupportPerUser' Value='0'/>
+
+      <!--<UIRef Id='WixUI_Advanced'/>-->
+      <UIRef Id='WixUI_FeatureTree'/>
+      <UIRef Id='WixUI_ErrorProgressText'/>
+
+
+      <!-- Use our custom bitmaps in the UI -->
+      <WixVariable Id="WixUIDialogBmp"
+                   Value="DialogBitmap.bmp"/>
+      <WixVariable Id="WixUIBannerBmp"
+                   Value="DialogBanner.bmp"/>
+
+      <!-- Content for the license agreement -->
+      <WixVariable Id="WixUILicenseRtf"
+                   Value="License.rtf"/>
+
+      <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="Thank you for installing BridgeLink"/>
+   </Product>
+</Wix>

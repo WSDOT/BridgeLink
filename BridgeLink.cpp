@@ -68,7 +68,11 @@ CString CBridgeLinkApp::GetProductCode()
 {
    // Return the Product Code from InstallShield
    // This code uniquely identifies BridgeLink so do not change it
-   return "{35B69F05-7590-4344-9771-F81D7953869E}";
+#if defined _WIN64
+   return "{88563058-642A-455E-9001-A0BD8B71A793}";
+#else
+   return "{E95DA66F-6C17-48D1-8B16-40EAB5D2424C}";
+#endif
 }
 
 LPCTSTR CBridgeLinkApp::GetRegistryKey()

@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+   <?include Variables.wxi?>
+   <?include PGSuperCATID.wxi?>
+   <?include PGSpliceCATID.wxi?>
+
+   <?define PGSuperIBeamFactoryCATID={25763CF5-387F-4407-BB64-CD36883AA473}?>
+   <?define PGSuperUBeamFactoryCATID={428E28CF-2BAE-4904-A25D-1752C06AD2E7}?>
+   <?define PGSuperDeckBulbTeeBeamFactoryCATID={77C640C6-A98C-49df-923D-3DAD46DF18B0}?>
+   <?define PGSuperDeckedSlabBeamFactoryCATID={A8835596-778B-49b2-9BB3-4BCD13669365}?>
+   <?define PGSuperBoxBeamFactoryCATID={B8E0A063-931E-4f7e-AF90-9761374ACD67}?>
+   <?define PGSuperRibbedBeamFactoryCATID={3BBA4BA5-1032-4619-A923-556B87B3E108}?>
+   <?define PGSuperDoubleTeeBeamFactoryCATID={B4C630D6-EBAC-4fd6-8F16-F0BCBABEF2F1}?>
+   <?define PGSuperSlabBeamFactoryCATID={842A1E6A-008D-46ec-B821-4F31B9D3E8D7}?>
+
+   <?define PGSpliceIBeamFactoryCATID={D6CC8246-E105-4d51-87C6-23B79A3FF6DA}?>
+   <?define PGSpliceUBeamFactoryCATID={0708F8E7-B57F-4f9c-92AC-39C111BA3664}?>
+
+   <Fragment>
+      <!-- PGSuper Beams -->
+      <DirectoryRef Id ="APPLICATIONFOLDER"
+                    FileSource="$(var.PGSuperSourceRoot)\AutomationDLLs\$(var.PlatformFolder)">
+         <Component Id ="PGSuperBeams"
+                    Guid="{B7F5AE91-F92F-422f-B7A5-915CBEF845C7}"
+                    Win64="$(var.IsWin64)">
+            <File Id="PGSuperBeams.dll"      Name="PGSuperBeams.dll"             KeyPath="yes" />
+
+            <!-- Create Beam Factory Component Categories -->
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSuperIBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSuperIBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSuper I-Beam Factories"
+                           Type="string" />
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSuperUBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSuperUBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSuper U-Beam Factories"
+                           Type="string" />
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSuperDeckBulbTeeBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSuperDeckBulbTeeBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSuper Deck Bulb Tee Beam Factories"
+                           Type="string" />
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSuperDeckedSlabBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSuperDeckedSlabBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSuper Decked Slab Beam Factories"
+                           Type="string" />
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSuperBoxBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSuperBoxBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSuper Box Beam Factories"
+                           Type="string" />
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSuperRibbedBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSuperRibbedBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSuper Ribbed Beam Factories"
+                           Type="string" />
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSuperDoubleTeeBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSuperDoubleTeeBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSuper Double Tee Beam Factories"
+                           Type="string" />
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSuperSlabBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSuperSlabBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSuper Slab Beam Factories"
+                           Type="string" />
+
+            <!-- Register beam families -->
+            <!-- Box Beam Family -->
+            <?define PGSuperBoxBeamFamilyCLSID={69938984-AAD1-426f-89E2-6154B0A79E9A}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperBoxBeamFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperBoxBeamFamilyCLSID)"
+                           Value="Box Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperBoxBeamFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperBoxBeamFamilyCLSID)\Implemented Categories\$(var.PGSuperBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Deck Bulb Tee Family-->
+            <?define PGSuperDeckBulbTeeFamilyCLSID={F35DAB20-CD13-4529-A0AC-A65BA6D03DA0}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperDeckBulbTeeFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckBulbTeeFamilyCLSID)"
+                           Value="Deck Bulb Tee"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckBulbTeeFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckBulbTeeFamilyCLSID)\Implemented Categories\$(var.PGSuperBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Deck Slab Beam Family -->
+            <?define PGSuperDeckSlabBeamFamilyCLSID={58D7AA2D-057A-4ec0-ADF3-81F1CAD84288}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperDeckSlabBeamFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckSlabBeamFamilyCLSID)"
+                           Value="Decked Slab Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckSlabBeamFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckSlabBeamFamilyCLSID)\Implemented Categories\$(var.PGSuperBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Double Tee Family -->
+            <?define PGSuperDoubleTeeBeamFamilyCLSID={82B858CE-58B4-44ff-95A3-6D9C399C0600}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperDoubleTeeBeamFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDoubleTeeBeamFamilyCLSID)"
+                           Value="Double Tee"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDoubleTeeBeamFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDoubleTeeBeamFamilyCLSID)\Implemented Categories\$(var.PGSuperBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- I-Beam Family-->
+            <?define PGSuperIBeamFamilyCLSID={2AAD714F-6974-4fee-A573-4DE9430A742C}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperIBeamFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperIBeamFamilyCLSID)"
+                           Value="I-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperIBeamFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperIBeamFamilyCLSID)\Implemented Categories\$(var.PGSuperBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Ribbed Girder Family -->
+            <?define PGSuperRibbedGirderFamilyCLSID={ABBD3DAF-884D-4072-ACCF-6C3CE836C6F2}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperRibbedGirderFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperRibbedGirderFamilyCLSID)"
+                           Value="Ribbed Girder"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperRibbedGirderFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperRibbedGirderFamilyCLSID)\Implemented Categories\$(var.PGSuperBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- U-Beam Family -->
+            <?define PGSuperUBeamFamilyCLSID={34F855F9-08CF-45b0-B2F5-B74F84A74A43}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperUBeamFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperUBeamFamilyCLSID)"
+                           Value="U-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperUBeamFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperUBeamFamilyCLSID)\Implemented Categories\$(var.PGSuperBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Voided Slab Family -->
+            <?define PGSuperVoidedSlabFamilyCLSID={B6BA3A08-82BA-43d5-8196-A3DBC3E98689}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperVoidedSlabFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperVoidedSlabFamilyCLSID)"
+                           Value="Voided Slab"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperVoidedSlabFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperVoidedSlabFamilyCLSID)\Implemented Categories\$(var.PGSuperBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+
+            <!-- Register beam factories -->
+            <!-- Box Beam (TxDOT) Factory -->
+            <?define PGSuperTxDOTBoxBeamFactoryCLSID={B195CB90-CEB0-4495-B91D-7FC6DFBF31CF}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperTxDOTBoxBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTBoxBeamFactoryCLSID)"
+                           Value="Box Beam (TxDOT)"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTBoxBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTBoxBeamFactoryCLSID)\Implemented Categories\$(var.PGSuperBoxBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Box Beam Factory -->
+            <?define PGSuperBoxBeamFactoryCLSID={B1F474E4-15F7-4ac8-AD2D-7FBD12E3B0EB}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperBoxBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperBoxBeamFactoryCLSID)"
+                           Value="Box Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperBoxBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperBoxBeamFactoryCLSID)\Implemented Categories\$(var.PGSuperBoxBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Deck Bulb Tee Factory -->
+            <?define PGSuperDeckBulbTeeFactoryCLSID={16CC6372-256E-4828-9BDA-3185C27DC65E}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperDeckBulbTeeFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckBulbTeeFactoryCLSID)"
+                           Value="Deck Bulb Tee"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckBulbTeeFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckBulbTeeFactoryCLSID)\Implemented Categories\$(var.PGSuperDeckBulbTeeBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Deck Slab Beam Factory -->
+            <?define PGSuperDeckSlabBeamFactoryCLSID={DEFA27AD-3D22-481b-9006-627C65D2648F}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperDeckSlabBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckSlabBeamFactoryCLSID)"
+                           Value="Decked Slab Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckSlabBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDeckSlabBeamFactoryCLSID)\Implemented Categories\$(var.PGSuperDeckedSlabBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Double Tee Factory -->
+            <?define PGSuperDoubleTeeFactoryCLSID={A367FEEC-9E24-4ed6-9DD3-57F62AD752C9}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperDoubleTeeFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDoubleTeeFactoryCLSID)"
+                           Value="Double Tee"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDoubleTeeFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperDoubleTeeFactoryCLSID)\Implemented Categories\$(var.PGSuperDoubleTeeBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- I-Beam Factory -->
+            <?define PGSuperIBeamFactoryCLSID={EF144A97-4C75-4234-AF3C-71DC89B1C8F8}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperIBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperIBeamFactoryCLSID)"
+                           Value="Precast I-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperIBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperIBeamFactoryCLSID)\Implemented Categories\$(var.PGSuperIBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Double Tee Factory (WSDOT) -->
+            <?define PGSuperWSDOTDoubleTeeFactoryCLSID={D8824656-6CB6-45c0-B5F7-13CFFA890F0B}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperWSDOTDoubleTeeFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTDoubleTeeFactoryCLSID)"
+                           Value="Double Tee (WSDOT)"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTDoubleTeeFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTDoubleTeeFactoryCLSID)\Implemented Categories\$(var.PGSuperDoubleTeeBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Ribbed Girder Factory -->
+            <?define PGSuperRibbedGirderFactoryCLSID={51CB9247-8200-43e5-BFB0-E386C1E6A0D0}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperRibbedGirderFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperRibbedGirderFactoryCLSID)"
+                           Value="Ribbed Girder"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperRibbedGirderFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperRibbedGirderFactoryCLSID)\Implemented Categories\$(var.PGSuperRibbedBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- NU Girder Factory -->
+            <?define PGSuperNUGirderFactoryCLSID={DA3C413D-6413-4485-BD29-E8A419E981AF}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperNUGirderFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperNUGirderFactoryCLSID)"
+                           Value="Nebraska NU Girder"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperNUGirderFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperNUGirderFactoryCLSID)\Implemented Categories\$(var.PGSuperIBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Tapered I-Beam Factory -->
+            <?define PGSuperTaperedIBeamFactoryCLSID={9EDBDD8D-ABBB-413a-9B2D-9EB2712BE914}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperTaperedIBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTaperedIBeamFactoryCLSID)"
+                           Value="Tapered I-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTaperedIBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTaperedIBeamFactoryCLSID)\Implemented Categories\$(var.PGSuperIBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Double Tee Factory (TxDOT) -->
+            <?define PGSuperTxDOTDoubleTeeFactoryCLSID={2583C7C1-FF57-4113-B45B-702CFA6AD013}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperTxDOTDoubleTeeFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTDoubleTeeFactoryCLSID)"
+                           Value="Double Tee (TxDOT)"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTDoubleTeeFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTDoubleTeeFactoryCLSID)\Implemented Categories\$(var.PGSuperDoubleTeeBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- U-Beam Factory (TxDOT) -->
+            <?define PGSuperTxDOTUBeamFactoryCLSID={DD999E90-E181-4ec8-BB82-FDFB364B7620}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperTxDOTUBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTUBeamFactoryCLSID)"
+                           Value="Precast U-Beam (TXDOT)"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTUBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperTxDOTUBeamFactoryCLSID)\Implemented Categories\$(var.PGSuperUBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- U-Beam Factory (WSDOT) -->
+            <?define PGSuperWSDOTUBeamFactoryCLSID={F72BA192-6D82-4d66-92CA-EB13466E6BA9}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperWSDOTUBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTUBeamFactoryCLSID)"
+                           Value="Precast U-Beam (WSDOT)"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTUBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTUBeamFactoryCLSID)\Implemented Categories\$(var.PGSuperUBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Voided Slab Factory -->
+            <?define PGSuperVoidedSlabFactoryCLSID={E6F28403-A396-453b-91BE-15A68D194255}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperVoidedSlabFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperVoidedSlabFactoryCLSID)"
+                           Value="Voided Slab"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperVoidedSlabFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperVoidedSlabFactoryCLSID)\Implemented Categories\$(var.PGSuperSlabBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Voided Slab Factory (WSDOT) -->
+            <?define PGSuperWSDOTVoidedSlabFactoryCLSID={171FC948-C4CB-4920-B9FC-72D729F3E91A}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperWSDOTVoidedSlabFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTVoidedSlabFactoryCLSID)"
+                           Value="Voided Slab (WSDOT)"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTVoidedSlabFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperWSDOTVoidedSlabFactoryCLSID)\Implemented Categories\$(var.PGSuperSlabBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- Other COM classes -->
+            <!-- Strand Mover -->
+            <?define PGSuperStrandMoverCLSID={5D6AFD91-84F4-4755-9AF7-B760114A4551}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperStrandMoverCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperStrandMoverCLSID)"
+                           Value="StrandMoverImpl Class"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperStrandMoverCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+
+            <!-- PS Beam Loss Engineer -->
+            <?define PGSuperPSLossEngineerCLSID={9F22CD35-C84F-453d-8B52-6E187BADD56D}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSuperPSLossEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperPSLossEngineerCLSID)"
+                           Value="PS Beam Loss Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSuperPSLossEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+         </Component>
+
+
+         <Component Id ="PGSpliceBeams"
+                    Guid="{4B268891-25FF-4c45-AA26-B9BFF53293FB}"
+                    Win64="$(var.IsWin64)">
+
+            <!-- Create Beam Factory Component Categories -->
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSpliceIBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSpliceIBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSplice I-Beam Factories"
+                           Type="string" />
+
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="Component Categories\$(var.PGSpliceUBeamFactoryCATID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="Component Categories\$(var.PGSpliceUBeamFactoryCATID)"
+                           Name="800"
+                           Value="PGSplice U-Beam Factories"
+                           Type="string" />
+
+            <!-- Register beam families -->
+
+            <!-- I-Beam Family-->
+            <?define PGSpliceIBeamFamilyCLSID={137DE1EA-B3A8-4cfb-8CAC-762991ACBCCE}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSpliceIBeamFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceIBeamFamilyCLSID)"
+                           Value="Spliced I-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceIBeamFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceIBeamFamilyCLSID)\Implemented Categories\$(var.PGSpliceBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- U-Beam Family -->
+            <?define PGSpliceUBeamFamilyCLSID={4229DFFE-F5D7-4c16-9D11-F296ED06161C}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSpliceUBeamFamilyCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceUBeamFamilyCLSID)"
+                           Value="U-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceUBeamFamilyCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceUBeamFamilyCLSID)\Implemented Categories\$(var.PGSpliceBeamFamilyCATID)"
+                           Value=""
+                           Type="string" />
+
+
+            <!-- Register beam factories -->
+            <!-- I-Beam Factory -->
+            <?define PGSpliceIBeamFactoryCLSID={94272D8A-4914-44bb-A0D2-937A6A8BD7B0}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSpliceIBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceIBeamFactoryCLSID)"
+                           Value="Spliced I-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceIBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceIBeamFactoryCLSID)\Implemented Categories\$(var.PGSpliceIBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- U-Beam Factory -->
+            <?define PGSpliceUBeamFactoryCLSID={6A00C215-C139-4755-8DD5-929EE2DED305}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSpliceUBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceUBeamFactoryCLSID)"
+                           Value="Spliced U-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceUBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceUBeamFactoryCLSID)\Implemented Categories\$(var.PGSpliceUBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+         </Component>
+      </DirectoryRef>
+   </Fragment>
+</Wix>
