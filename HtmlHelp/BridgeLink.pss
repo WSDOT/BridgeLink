@@ -18,15 +18,16 @@ SupportMas_MPJ=1
 [Target:Microsoft HTML Help]
 ResultFileName=F:\ARP\BridgeLink\BridgeLink.chm
 SSLayoutType=1
-CreateProjectTime=09:31, June 28, 2013
+CreateProjectTime=12:15, July 11, 2013
 CreateProjectUser=BriceR
 SupportMas_MPJ=1
-ActionID For Generation=1002
+ActionID For Generation=1005
 Remove Folder with prompt=1
 ViewFileName=F:\ARP\BridgeLink\BridgeLink.chm
 ResultStatus=0
-BuildTimeHi=30307356
-BuildTimeLow=-342207328
+BuildTimeHi=30309995
+BuildTimeLow=16342891
+Enable Result Dialog=1
 [Target:FlashHelp]
 ResultFileName=!SSL!\FlashHelp\BridgeLink.htm
 SSLayoutType=2
@@ -41,7 +42,7 @@ ResultFileName=!SSL!\XML_Output\BridgeLink.xml
 SSLayoutType=8192
 [Layout Settings]
 MRULayoutCount=1
-MRULayout0=Microsoft HTML Help]None]1
+MRULayout0=Microsoft HTML Help]07/11/13]0
 [PreSingleSource]
 Html Help Project=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.hhp
 Table Of Content=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.hhc
@@ -55,7 +56,7 @@ Skin List=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.trk
 OriginalHhk=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.hhk
 Active Layout Names=F:\ARP\BridgeLink\HtmlHelp\BridgeLink.trl
 Default Topic=F:\ARP\BridgeLink\HtmlHelp\Welcome.htm
-Build Tags0=5881;Print | Online
+Build Tags0=21659;Print | Online
 Build Tags=
 Build Expression=
 Language ID=1033

@@ -9,4 +9,3 @@ copy /Y RegFreeCOM\x64\Release\BridgeLink.exe  		%BINTARGET%\App\x64\
 copy /Y BridgeLink.tip					%BINTARGET%\App\
 copy /Y License.txt					%BINTARGET%\App\
 copy /Y BridgeLink.chm					%BINTARGET%\App\
-
