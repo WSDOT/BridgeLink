@@ -11,7 +11,7 @@
                     Guid="{9F639678-37CE-48a2-8EDD-ED5F699EDC0D}"
                     Win64="$(var.IsWin64)">
             
-            <File Id="BridgeLink.exe"    Name="BridgeLink.exe" KeyPath ="yes"/>
+            <File Id="$(var.ProductName).exe"    Name="$(var.ProductName).exe" KeyPath ="yes"/>
             
             <!-- define component categories for the main executable
             Categories are: BridgeLink Application Plugins (such as PGSuper, Library Editor, TOGA, BEToolbox)
@@ -19,14 +19,14 @@
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
-                         Key ="Component Categories\{1D069A0E-7436-4275-A129-C84ADC22DE68}"/>
+                         Key ="Component Categories\$(var.BridgeLinkAppPluginCATID)"/>
             <RegistryValue Root="HKCR"
-                           Key="Component Categories\{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+                           Key="Component Categories\$(var.BridgeLinkAppPluginCATID)"
                            Name="800"
                            Value="BridgeLink Application Plugin"
                            Type="string" />
             <RegistryValue Root="HKCR"
-                           Key="Component Categories\{AF28A0E7-E9AD-4839-9901-5F004209498B}"
+                           Key="Component Categories\$(var.BridgeLinkComponentInfoCATID)"
                            Name="800"
                            Value="BridgeLink Components"
                            Type="string" />
@@ -39,7 +39,7 @@
                <Extension Id="pgt" ContentType="application/pgt">
                   <Verb Id="Open"
                         Command="Create a new &amp;PGSuper Project using this template"
-                        TargetFile="BridgeLink.exe"
+                        TargetFile="$(var.ProductName).exe"
                         Argument='"%1"' />
                </Extension>
             </ProgId>
@@ -48,7 +48,7 @@
                           ContentType="application/pgs">
                   <Verb Id="Open"
                         Command="&amp;Open with BridgeLink:PGSuper"
-                        TargetFile="BridgeLink.exe"
+                        TargetFile="$(var.ProductName).exe"
                         Argument='"%1"' />
                </Extension>
             </ProgId>
@@ -79,7 +79,7 @@
                           ContentType="application/lbr">
                   <Verb Id="Open"
                         Command="&amp;Open with BridgeLink:Library Editor"
-                        TargetFile="BridgeLink.exe"
+                        TargetFile="$(var.ProductName).exe"
                         Argument='"%1"' />
                </Extension>
             </ProgId>
@@ -89,7 +89,7 @@
                <Extension Id="toga" ContentType="application/toga">
                   <Verb Id="Open"
                         Command="&amp;Open with BridgeLink:TOGA"
-                        TargetFile="BridgeLink.exe"
+                        TargetFile="$(var.ProductName).exe"
                         Argument='"%1"' />
                </Extension>
             </ProgId>
@@ -99,7 +99,7 @@
                <Extension Id="UltCol" ContentType="application/UltCol">
                   <Verb Id="Open"
                         Command="&amp;Open with BridgeLink:BEToolbox:UltCol"
-                        TargetFile="BridgeLink.exe"
+                        TargetFile="$(var.ProductName).exe"
                         Argument='"%1"' />
                </Extension>
             </ProgId>
@@ -108,7 +108,7 @@
                <Extension Id="GenComp" ContentType="application/GenComp">
                   <Verb Id="Open"
                         Command="&amp;Open with BridgeLink:BEToolbox:GenComp"
-                        TargetFile="BridgeLink.exe"
+                        TargetFile="$(var.ProductName).exe"
                         Argument='"%1"' />
                </Extension>
             </ProgId>
@@ -117,7 +117,7 @@
                   <Extension Id="GirComp" ContentType="application/GirComp">
                      <Verb Id="Open"
                            Command="&amp;Open with BridgeLink:BEToolbox:GirComp"
-                           TargetFile="BridgeLink.exe"
+                           TargetFile="$(var.ProductName).exe"
                            Argument='"%1"' />
                   </Extension>
                </ProgId>
@@ -126,7 +126,7 @@
                   <Extension Id="BoxGdr" ContentType="application/BoxGdr">
                      <Verb Id="Open"
                            Command="&amp;Open with BridgeLink:BEToolbox:BoxGdr"
-                           TargetFile="BridgeLink.exe"
+                           TargetFile="$(var.ProductName).exe"
                            Argument='"%1"' />
                   </Extension>
                </ProgId>
@@ -135,7 +135,7 @@
                   <Extension Id="Curvel" ContentType="application/Curvel">
                      <Verb Id="Open"
                            Command="&amp;Open with BridgeLink:BEToolbox:Curvel"
-                           TargetFile="BridgeLink.exe"
+                           TargetFile="$(var.ProductName).exe"
                            Argument='"%1"' />
                   </Extension>
                </ProgId>
