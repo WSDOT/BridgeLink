@@ -132,18 +132,6 @@ BOOL CBridgeLinkApp::InitInstance()
 {
    //_crtBreakAlloc = 2547; // causes program to break at a specific memory allocation
 
-   // Do this before InitInstance on base class.
-   // Initialize OLE libraries
-	if (!SUCCEEDED(OleInitialize(NULL)))
-	{
-		AfxMessageBox(_T("OLE initialization failed. Make sure that the OLE libraries are the correct version."));
-		return FALSE;
-	}
-
-
-   sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
-   sysComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin);
-
 //   CREATE_LOGFILE("BridgeLinkApp"); 
 
    // Tip of the Day
@@ -215,13 +203,17 @@ BOOL CBridgeLinkApp::InitInstance()
    if ( !CEAFPluginApp::InitInstance() )
       return FALSE;
 
+   // Must be done after call to base class InitInstance because OLE has not been
+   // initialized yet.
+   //sysComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin); // this is done by the base class
+   sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
+
 	return TRUE;
 }
 
 int CBridgeLinkApp::ExitInstance() 
 {
 //   CLOSE_LOGFILE;
-   ::OleUninitialize();
 
    return CEAFApp::ExitInstance();
 }

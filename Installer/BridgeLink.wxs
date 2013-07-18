@@ -7,9 +7,9 @@
    <Product Id="*" 
             Name="$(var.ProductName) ($(var.Platform))" 
             Language="1033" 
-            Version="1.0.0.1" 
+            Version="$(var.BridgeLinkVersion)" 
             Manufacturer="WSDOT" 
-            UpgradeCode="359791cf-fb6a-4390-871a-94e6fa141fb3">
+            UpgradeCode="$(var.UpgradeCode)">
 		<Package Id="*" 
                Compressed="yes" 
                Comments="A member of the Alternate Route Project"
@@ -20,7 +20,14 @@
                Platform="$(var.Platform)"
                InstallScope="perMachine" />
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MajorUpgrade 
+         DowngradeErrorMessage="A newer version of [ProductName] is already installed." 
+         Schedule="afterInstallValidate"/> 
+
+      <Upgrade Id="$(var.UpgradeCode)">
+         <UpgradeVersion OnlyDetect="no" Property='PREVIOUSFOUND' Minimum="0.0.0.0" IncludeMinimum="yes" Maximum="$(var.BridgeLinkVersion)" IncludeMaximum="yes"/>
+      </Upgrade>
+
 
       <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
 

@@ -599,7 +599,7 @@
                          Key ="CLSID\$(var.PGSpliceUBeamFamilyCLSID)"/>
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceUBeamFamilyCLSID)"
-                           Value="U-Beam"
+                           Value="Spliced U-Beam"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceUBeamFamilyCLSID)\InprocServer32"
