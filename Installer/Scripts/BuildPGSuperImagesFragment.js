@@ -1,9 +1,9 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.1\\bin\\images");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.3\\bin\\images");
 var fc = new Enumerator(ImagesFolder.Files);
 
-WScript.Echo("<?xml version='1.0' encoding='windows-1252'?>");
+WScript.Echo("<?xml version='1.0'?>");
 WScript.Echo("<!-- This file genereted by BuildPGSuperImagesFragment.js script-->");
 WScript.Echo("<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>");
 

@@ -49,9 +49,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuperBeams", "..\PGSuper\
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeAgent", "..\PGSuper\BridgeAgent\BridgeAgent.vcproj", "{69BE1B6C-489E-4103-8E2E-82D2EF3258E5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4A38B3B0-7C87-40E8-BF6A-9D1B4051FF71} = {4A38B3B0-7C87-40E8-BF6A-9D1B4051FF71}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngAgent", "..\PGSuper\EngAgent\EngAgent.vcproj", "{B8979601-544D-41D7-A6A2-20A03E2473A4}"
 	ProjectSection(ProjectDependencies) = postProject

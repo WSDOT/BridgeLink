@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
    <?define BridgeLinkVersion = 1.0.0.1?>
-   <?define PGSuperVersion    = 3.0.0.2?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define PGSuperVersion    = 3.0.0.3?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
    <?define BEToolboxVersion  = 3.0.0.1?>
-   <?define WBFLVersion       = 4.0.0.1?>
+   <?define WBFLVersion       = 4.0.0.2?>
 
    <?if $(var.Platform) = "x64"?>
       <?define ProgramFilesDirectory = ProgramFiles64Folder?>
