@@ -133,6 +133,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BGSExport", "..\BGSExport\B
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BEToolbox", "..\BridgeLinkBEToolbox\BEToolbox.vcproj", "{3282AC39-1BEB-4C8E-8FA0-2E3F4CC1BB45}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3004A4E6-3542-40B1-9B15-331862819988} = {3004A4E6-3542-40B1-9B15-331862819988}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExtensionAgentExample", "..\ExtensionAgentExample\ExtensionAgentExample.vcproj", "{84AAAD2E-2039-4922-9124-18852C5616F1}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -159,6 +162,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeSightBDMViewer", "..\..\BSDev\BDMViewer\BDMViewer.vcproj", "{663EFF8C-1286-4E41-B18A-73039BD7D544}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MakePgz", "..\PGSuper\MakePgz\MakePgz.vcproj", "{E8657E0C-0DAD-4ABD-A464-7A8E8B890E6F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BEToolboxXML", "..\BEToolboxXML\BEToolboxXML.vcproj", "{3004A4E6-3542-40B1-9B15-331862819988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -518,6 +523,17 @@ Global
 		{E8657E0C-0DAD-4ABD-A464-7A8E8B890E6F}.Release|Win32.Build.0 = Release|Win32
 		{E8657E0C-0DAD-4ABD-A464-7A8E8B890E6F}.Release|x64.ActiveCfg = Release|x64
 		{E8657E0C-0DAD-4ABD-A464-7A8E8B890E6F}.Release|x64.Build.0 = Release|x64
+		{3004A4E6-3542-40B1-9B15-331862819988}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3004A4E6-3542-40B1-9B15-331862819988}.Debug|Win32.Build.0 = Debug|Win32
+		{3004A4E6-3542-40B1-9B15-331862819988}.Debug|x64.ActiveCfg = Debug|x64
+		{3004A4E6-3542-40B1-9B15-331862819988}.Debug|x64.Build.0 = Debug|x64
+		{3004A4E6-3542-40B1-9B15-331862819988}.Profile|Win32.ActiveCfg = Release|Win32
+		{3004A4E6-3542-40B1-9B15-331862819988}.Profile|Win32.Build.0 = Release|Win32
+		{3004A4E6-3542-40B1-9B15-331862819988}.Profile|x64.ActiveCfg = Release|Win32
+		{3004A4E6-3542-40B1-9B15-331862819988}.Release|Win32.ActiveCfg = Release|Win32
+		{3004A4E6-3542-40B1-9B15-331862819988}.Release|Win32.Build.0 = Release|Win32
+		{3004A4E6-3542-40B1-9B15-331862819988}.Release|x64.ActiveCfg = Release|x64
+		{3004A4E6-3542-40B1-9B15-331862819988}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
