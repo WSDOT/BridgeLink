@@ -4,8 +4,10 @@
    <?define PGSuperVersion    = 3.0.0.3?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
    <?define BEToolboxVersion  = 3.0.0.1?>
    <?define WBFLVersion       = 4.0.0.2?>
+   <?define BEToolboxXMLVersion = 1.0.0.0?>
 
-   <?if $(var.Platform) = "x64"?>
+
+    <?if $(var.Platform) = "x64"?>
       <?define ProgramFilesDirectory = ProgramFiles64Folder?>
       <?define ProductID = {88563058-642A-455e-9001-A0BD8B71A793}?>
       <?define UpgradeCode = {AE47FAA1-1DB0-48a0-9B82-C99C7120B8C4}?>
@@ -28,6 +30,19 @@
    <?define WBFLSourceRoot=\ARP_RELEASE\WBFL\$(var.WBFLVersion)\bin\?>
    <?define BEToolboxSourceRoot=\ARP_RELEASE\BEToolbox\$(var.BEToolboxVersion)\bin\?>
    <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
-   
+   <?define BEToolboxXMLSourceRoot=\ARP_RELEASE\BEToolboxXML\$(var.BEToolboxXMLVersion)\bin\?>
+ 
    <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
-</Include>
+   <?if $(var.Platform)="x64"?>
+      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC90\bin\?>
+      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC90\bin?>
+   <?else?>
+      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC90\bin\?>
+      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC90\bin?>
+   <?endif?>
+
+
+  <!-- Xerces -->
+  <DirectoryRef Id="APPLICATIONFOLDER"
+                FileSource ="$(var.XercesSourceRoot)" >
+  </Include>

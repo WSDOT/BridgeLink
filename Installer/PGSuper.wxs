@@ -754,6 +754,60 @@
                            Key="CLSID\$(var.PGSuperWSDOTExtensionAgentCLSID)\Implemented Categories\$(var.PGSuperExtensionAgentCATID)"
                            Value=""
                            Type="string" />
+
+           <!-- Curvel Exporter -->
+           <?define WSDOTCurvelDataExporterCLSID={E89CC143-53C9-43df-B1B4-E522769DE29B}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.WSDOTCurvelDataExporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)"
+                          Value="Curvel Exporter"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!-- Curvel Importer -->
+           <?define WSDOTCurvelDataImporterCLSID={E56801AC-B583-4e9e-A2D8-2AA64079BE15}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.WSDOTCurvelDataImporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)"
+                          Value="Curvel Importer"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)\Implemented Categories\$(var.PGSuperDataImporterCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!-- GenComp Exporter -->
+           <?define WSDOTGenCompDataExporterCLSID={16A21688-25B4-4118-ABF4-DD6D4983A2CD}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.WSDOTGenCompDataExporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)"
+                          Value="GenComp Exporter"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                          Value=""
+                          Type="string" />
          </Component>
       </DirectoryRef>
 
