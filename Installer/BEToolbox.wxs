@@ -116,7 +116,7 @@
      <DirectoryRef Id="APPLICATIONFOLDER"
                    FileSource ="$(var.XalanSourceRoot)" >
        <Component Id="Xalan" Guid="{919789C1-6418-4c3e-8E77-F77FFB70CFED}" Win64="$(var.IsWin64)">
-         <File Id="Xalan-C_1_11.dll"    Name="Xalan-C_1_11.dll" KeyPath="yes"/>
+         <File Id="Xalan_C_1_11.dll"    Name="Xalan-C_1_11.dll" KeyPath="yes"/>
        </Component>
      </DirectoryRef >
 
@@ -125,7 +125,7 @@
      <DirectoryRef Id="APPLICATIONFOLDER"
                    FileSource ="$(var.XercesSourceRoot)" >
        <Component Id="Xerces" Guid="{C1EBA88B-0D32-4300-B0ED-574A9568DCC8}" Win64="$(var.IsWin64)">
-         <File Id="xerces-c_3_1.dll"    Name="xerces-c_3_1.dll" KeyPath="yes"/>
+         <File Id="xerces_c_3_1.dll"    Name="xerces-c_3_1.dll" KeyPath="yes"/>
        </Component>
      </DirectoryRef >
 
