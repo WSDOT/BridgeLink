@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
-   <?define BridgeLinkVersion = 1.0.0.1?>
-   <?define PGSuperVersion    = 3.0.0.3?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define BEToolboxVersion  = 3.0.0.1?>
-   <?define WBFLVersion       = 4.0.0.2?>
-   <?define BEToolboxXMLVersion = 1.0.0.0?>
+   <?define BridgeLinkVersion = 1.0.0.2?>
+   <?define PGSuperVersion    = 3.0.0.4?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define BEToolboxVersion  = 3.0.0.2?>
+   <?define WBFLVersion       = 4.0.0.3?>
 
 
     <?if $(var.Platform) = "x64"?>
@@ -30,19 +29,17 @@
    <?define WBFLSourceRoot=\ARP_RELEASE\WBFL\$(var.WBFLVersion)\bin\?>
    <?define BEToolboxSourceRoot=\ARP_RELEASE\BEToolbox\$(var.BEToolboxVersion)\bin\?>
    <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
-   <?define BEToolboxXMLSourceRoot=\ARP_RELEASE\BEToolboxXML\$(var.BEToolboxXMLVersion)\bin\?>
  
    <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
+   
    <?if $(var.Platform)="x64"?>
       <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC90\bin\?>
       <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC90\bin?>
+   
+      <?define OpenBridgeMLSourceRoot=\OpenBridgeML\x64\Release?>
    <?else?>
       <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC90\bin\?>
       <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC90\bin?>
+
+      <?define OpenBridgeMLSourceRoot=\OpenBridgeML\Win32\Release?>
    <?endif?>
-
-
-  <!-- Xerces -->
-  <DirectoryRef Id="APPLICATIONFOLDER"
-                FileSource ="$(var.XercesSourceRoot)" >
-  </Include>

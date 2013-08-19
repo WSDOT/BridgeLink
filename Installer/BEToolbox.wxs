@@ -105,7 +105,7 @@
 
      <!-- BEToolboxXML -->
      <DirectoryRef Id="APPLICATIONFOLDER"
-                   FileSource ="$(var.BEToolboxXMLSourceRoot)" >
+                   FileSource ="$(var.BEToolboxSourceRoot)" >
        <Component Id="BEToolboxXML" Guid="{1415A11D-9B93-4aa3-AC21-39B61DCDDFBD}" Win64="$(var.IsWin64)">
          <File Id="BEToolboxXML.dll"    Name="BEToolboxXML.dll" KeyPath="yes"/>
        </Component>

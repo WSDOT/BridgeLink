@@ -63,6 +63,7 @@
          <ComponentRef Id="EngineeringApplicationsShortcuts"/>
          <ComponentRef Id="BridgeLinkShortcuts"/>
          <ComponentRef Id="WBFLComponents"/>
+         <ComponentRef Id="OpenBridgeMLComponents"/>
 
          <FeatureRef Id="PGSuper" />
          <FeatureRef Id="BEToolbox" />
