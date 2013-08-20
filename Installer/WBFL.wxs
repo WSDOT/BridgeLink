@@ -59,14 +59,5 @@
             <File Id="WBFLUnitServer.dll"              Name="WBFLUnitServer.dll"/>
          </Component>
       </DirectoryRef>
-
-      <!-- OpenBridgeML Components -->
-      <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.OpenBridgeMLSourceRoot)">
-         <Component Id="OpenBridgeMLComponents"
-                    Guid="{D50DBBC6-988C-4d00-A2DE-045AA7BC4FE7}"
-                    Win64="$(var.IsWin64)">
-            <File Id="OpenBridgeML.dll" Name="OpenBridgeML.dll" KeyPath="yes" />
-         </Component>
-      </DirectoryRef>
    </Fragment>
 </Wix>

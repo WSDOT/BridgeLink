@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+   <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+
+   <Fragment>
+      <!-- OpenBridgeML Components -->
+      <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.OpenBridgeMLSourceRoot)">
+         <Component Id="OpenBridgeML"
+                    Guid="{D50DBBC6-988C-4d00-A2DE-045AA7BC4FE7}"
+                    Win64="$(var.IsWin64)">
+            <File Id="OpenBridgeML.dll" Name="OpenBridgeML.dll" KeyPath="yes" />
+         </Component>
+      </DirectoryRef>
+   </Fragment>
+</Wix>

@@ -5,7 +5,7 @@
     <ProductVersion>3.7</ProductVersion>
     <ProjectGuid>{ea7b5405-6d7d-42ee-aa76-fbdc078d050a}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>BridgeLink_1.0.0_Beta_3_$(Platform)</OutputName>
+    <OutputName>BridgeLink_1.0.0_Beta_4_$(Platform)</OutputName>
     <OutputType>Package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
@@ -39,6 +39,9 @@
     </DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Apache.wxs">
+      <Link>Apache.wxs</Link>
+    </Compile>
     <Compile Include="BEToolbox.wxs" />
     <Compile Include="BridgeLinkComponents.wxs" />
     <Compile Include="LibraryEditor.wxs" />
@@ -49,7 +52,10 @@
     <Compile Include="PGSuperImages.wxs" />
     <Compile Include="PGSuperTemplates.wxs" />
     <Compile Include="StartMenuShortcuts.wxs" />
-    <Compile Include="WBFL.wxs" />
+    <Compile Include="OpenBridgeML.wxs" />
+    <Compile Include="WBFL.wxs">
+      <Link>WBFL.wxs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DialogBanner.bmp" />
