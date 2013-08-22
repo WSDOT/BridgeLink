@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0500 */
-/* at Fri Jun 21 07:48:43 2013
+/* at Wed Jun 12 16:16:14 2013
  */
 /* Compiler settings for .\BridgeLinkTestPlugin.idl:
     Oicf, W1, Zp8, env=Win64 (32b run)
