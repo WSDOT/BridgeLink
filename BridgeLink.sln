@@ -110,6 +110,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReportAgent", "..\PGSuper\R
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reporting", "..\PGSuper\Reporting\Reporting.vcproj", "{4A38B3B0-7C87-40E8-BF6A-9D1B4051FF71}"
+	ProjectSection(ProjectDependencies) = postProject
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpecAgent", "..\PGSuper\SpecAgent\SpecAgent.vcproj", "{E9ACC1B7-6DE0-492E-A16B-0E5075074116}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -156,6 +159,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuperExtensions", "..\..\BSDev\PGSuperExtensions\PGSuperExtensions.vcproj", "{FF666915-FC29-4B0E-9EDA-2945C9241115}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8042F343-0709-45CC-90A6-97BE1A70FC37} = {8042F343-0709-45CC-90A6-97BE1A70FC37}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuperOpis", "..\..\BSDev\PGSuperOpis\PGSuperOpis.vcproj", "{0589886A-B84A-495F-9E2A-03846784540B}"
