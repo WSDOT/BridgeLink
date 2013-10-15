@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
-   <?define BridgeLinkVersion = 1.0.0.2?>
-   <?define PGSuperVersion    = 3.0.0.4?>
+   <?define BridgeLinkVersion = 1.0.0.3?>
+   <?define PGSuperVersion    = 3.0.0.5?>
    <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define BEToolboxVersion  = 3.0.0.2?>
-   <?define WBFLVersion       = 4.0.0.3?>
+   <?define BEToolboxVersion  = 3.0.0.3?>
+   <?define WBFLVersion       = 4.0.0.4?>
 
 
    <?if $(var.Platform) = "x64"?>
