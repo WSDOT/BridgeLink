@@ -77,11 +77,18 @@
       <!-- Installation Requirements -->
       <!--
     <Condition Message="Internet Explorer 5 or greater needs to be installed for this installation to continue.">IE5FOUND</Condition>-->
-      <Condition Message="[ProductName] requires that your computer is running at least Windows Vista">
-         VersionNT = 600 OR VersionNT64 = 600 OR
-         VersionNT = 601 OR VersionNT64 = 601 OR
-         VersionNT = 602 OR VersionNT64 = 602
+
+      <!-- Restrict OS... see http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/block_install_on_os.html -->
+
+      <?if $(var.Platform) = "x64"?>
+      <Condition Message="[ProductName] requires that your computer is running Windows Vista or higher.">
+         <![CDATA[Installed OR (VersionNT64 >= 600)]]>
       </Condition>
+      <?else?>
+      <Condition Message="[ProductName] requires that your computer is running Windows Vista or higher.">
+         <![CDATA[Installed OR (Version >= 600)]]>
+      </Condition>
+      <?endif?>
 
       <!-- Add and Remove Programs Entries -->
       <Property Id='ARPCOMMENTS'>BridgeLink is a member of the Alternate Route Project.</Property>

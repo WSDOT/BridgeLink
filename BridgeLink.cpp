@@ -130,7 +130,7 @@ CATID CBridgeLinkApp::GetComponentInfoCategoryID()
 
 BOOL CBridgeLinkApp::InitInstance()
 {
-   //_crtBreakAlloc = 2547; // causes program to break at a specific memory allocation
+   //_crtBreakAlloc = 1469; // causes program to break at a specific memory allocation
 
 //   CREATE_LOGFILE("BridgeLinkApp"); 
 
