@@ -86,7 +86,7 @@
       </Condition>
       <?else?>
       <Condition Message="[ProductName] requires that your computer is running Windows Vista or higher.">
-         <![CDATA[Installed OR (Version >= 600)]]>
+         <![CDATA[Installed OR (VersionNT >= 600)]]>
       </Condition>
       <?endif?>
 
