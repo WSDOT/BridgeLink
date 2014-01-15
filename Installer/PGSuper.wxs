@@ -950,33 +950,54 @@
          <Component Id="TxDOTTogaTemplates"
                     Guid="{33EF4043-2872-4B2D-9087-E6CA254D09B0}"
                     Win64="$(var.IsWin64)">
-            <File Id="TogaTemplate.pgs"
-                  Name="TogaTemplate.pgs"
-                  KeyPath="yes"/>
-            <File Id="Tx28.togt"
-                  Name="Tx28.togt"/>
-            <File Id="Tx34.togt"
-                  Name="Tx34.togt"/>
-            <File Id="Tx40.togt"
-                  Name="Tx40.togt" />
-            <File Id="Tx46.togt"
-                  Name="Tx46.togt"/>
-            <File Id="Tx54.togt"
-                  Name="Tx54.togt" />
-            <File Id="Tx62.togt"
-                  Name="Tx62.togt"/>
-            <File Id="Tx70.togt"
-                  Name="Tx70.togt"/>
-            <File Id="TYPE_A.togt"
-                  Name="TYPE A.togt"/>
-            <File Id="TYPE_B.togt"
-                  Name="TYPE B.togt" />
-            <File Id="TYPE_C.togt"
-                  Name="TYPE C.togt" />
-            <File Id="TYPE_IV.togt"
-                  Name="TYPE IV.togt"/>
-            <File Id="Type_VI.togt"
-                  Name="Type VI.togt" />
+            <File Id="TogaTemplate.pgs" Name="TogaTemplate.pgs" KeyPath="yes"/>
+            <File Id="_1_I_Girders.ico" Name="1_I Girders.ico" />
+            <File Id="_2_Box_Beams.ico" Name="2_Box Beams.ico" />
+            <File Id="_3_X_Beams.ico" Name="3_X Beams.ico" />
+            <File Id="_4_Slab_Beams.ico" Name="4_Slab Beams.ico"/>
+            <File Id="_5_Decked_Slab_Beams.ico" Name="5_Decked Slab Beams.ico"/>
+            <File Id="_6_U_Beams.ico" Name="6_U Beams.ico" />
+            <File Id="Box_4B20.togt" Name="Box 4B20.togt"/>
+            <File Id="Box_4B28.togt" Name="Box 4B28.togt"/>
+            <File Id="Box_4B34.togt" Name="Box 4B34.togt"/>
+            <File Id="Box_4B40ch.togt" Name="Box 4B40ch.togt"/>
+            <File Id="Box_5B20.togt" Name="Box 5B20.togt"/>
+            <File Id="Box_5B28.togt" Name="Box 5B28.togt" />
+            <File Id="Box_5B34.togt" Name="Box 5B34.togt"/>
+            <File Id="Box_5B40ch.togt" Name="Box 5B40ch.togt"/>
+            <File Id="Decked_Slab_Beam_6DS20.togt" Name="Decked Slab Beam 6DS20.togt"/>
+            <File Id="Decked_Slab_Beam_6DS23.togt" Name="Decked Slab Beam 6DS23.togt"/>
+            <File Id="Decked_Slab_Beam_7DS20.togt" Name="Decked Slab Beam 7DS20.togt"/>
+            <File Id="Decked_Slab_Beam_7DS23.togt" Name="Decked Slab Beam 7DS23.togt"/>
+            <File Id="Decked_Slab_Beam_8DS20.togt" Name="Decked Slab Beam 8DS20.togt"/>
+            <File Id="Decked_Slab_Beam_8DS23.togt" Name="Decked Slab Beam 8DS23.togt"/>
+            <File Id="Slab_Beam_4SB12.togt" Name="Slab Beam 4SB12.togt"/>
+            <File Id="Slab_Beam_4SB15.togt" Name="Slab Beam 4SB15.togt"/>
+            <File Id="Slab_Beam_5SB12.togt" Name="Slab Beam 5SB12.togt"/>
+            <File Id="Slab_Beam_5SB15.togt" Name="Slab Beam 5SB15.togt"/>
+            <File Id="Tx28.togt" Name="Tx28.togt"/>
+            <File Id="Tx34.togt" Name="Tx34.togt"/>
+            <File Id="Tx40.togt" Name="Tx40.togt"/>
+            <File Id="Tx46.togt" Name="Tx46.togt"/>
+            <File Id="Tx54.togt" Name="Tx54.togt"/>
+            <File Id="Tx62.togt" Name="Tx62.togt"/>
+            <File Id="Tx70.togt" Name="Tx70.togt"/>
+            <File Id="TYPE_A.togt" Name="TYPE A.togt"/>
+            <File Id="TYPE_B.togt" Name="TYPE B.togt"/>
+            <File Id="TYPE_C.togt" Name="TYPE C.togt"/>
+            <File Id="TYPE_IV.togt" Name="TYPE IV.togt"/>
+            <File Id="Type_VI.togt" Name="Type VI.togt"/>
+            <File Id="U_Beam_U40.togt" Name="U Beam U40.togt"/>
+            <File Id="U_Beam_U54.togt" Name="U Beam U54.togt"/>
+            <File Id="X_Beam_4XB20.togt" Name="X Beam 4XB20.togt"/>
+            <File Id="X_Beam_4XB28.togt" Name="X Beam 4XB28.togt"/>
+            <File Id="X_Beam_4XB34.togt" Name="X Beam 4XB34.togt"/>
+            <File Id="X_Beam_4XB40.togt" Name="X Beam 4XB40.togt"/>
+            <File Id="X_Beam_5XB20.togt" Name="X Beam 5XB20.togt"/>
+            <File Id="X_Beam_5XB28.togt" Name="X Beam 5XB28.togt"/>
+            <File Id="X_Beam_5XB34.togt" Name="X Beam 5XB34.togt"/>
+            <File Id="X_Beam_5XB40.togt" Name="X Beam 5XB40.togt" />
+
          </Component>
       </DirectoryRef>
 
