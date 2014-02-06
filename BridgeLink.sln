@@ -154,6 +154,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibraryMgrPluginExample", "..\LibraryMgrPluginExample\LibraryMgrPluginExample.vcproj", "{7253D020-A179-45CB-B8E1-AEB359920214}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeSightBeams", "..\..\BSDev\BridgeSightBeams\BridgeSightBeams.vcproj", "{97594692-8589-4D03-AC71-3418F372AE67}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF666915-FC29-4B0E-9EDA-2945C9241115} = {FF666915-FC29-4B0E-9EDA-2945C9241115}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeSightSecurity", "..\..\BSDev\BridgeSightSecurity\BridgeSightSecurity\BridgeSightSecurity.vcproj", "{1F6A68D3-4747-4DBC-9B22-2151A5A9107B}"
 EndProject

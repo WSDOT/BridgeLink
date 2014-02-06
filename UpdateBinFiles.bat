@@ -1,5 +1,20 @@
 REM - Script to prepare for Release
 
+REM - Update WBFL Files
+cd \ARP\WBFL
+call UpdateBinFiles.bat
+
+REM - Update PGSuper/PGSplice Files
+cd \ARP\PGSuper
+call UpdateBinFiles.bat
+
+REM - Update BEToolbox Files
+cd \ARP\BridgeLinkBEToolbox
+call UpdateBinFiles.bat
+
+REM - Update Bridge Link Files
+
+cd \ARP\BridgeLink
 SET BINTARGET=bin
 
 
