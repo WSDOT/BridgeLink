@@ -152,9 +152,7 @@ CATID CBridgeLinkApp::GetComponentInfoCategoryID()
 
 BOOL CBridgeLinkApp::InitInstance()
 {
-   _crtBreakAlloc = 6058895; // causes program to break at a specific memory allocation
-
-//   CREATE_LOGFILE("BridgeLinkApp"); 
+   //_crtBreakAlloc = 6058895; // causes program to break at a specific memory allocation
 
    // Tip of the Day
    // Get the names of all the *.tip files in the application folder
@@ -237,8 +235,6 @@ BOOL CBridgeLinkApp::InitInstance()
 
 int CBridgeLinkApp::ExitInstance() 
 {
-//   CLOSE_LOGFILE;
-
    return CEAFApp::ExitInstance();
 }
 
