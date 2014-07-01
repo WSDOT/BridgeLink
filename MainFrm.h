@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-// BridgeLink
+// BridgeLink - BridgeLink Extensible Application Framework
 // Copyright © 1999-2014  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //

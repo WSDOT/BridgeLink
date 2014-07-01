@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-// BridgeLink
+// BridgeLink - BridgeLink Extensible Application Framework
 // Copyright © 1999-2014  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
@@ -19,6 +19,7 @@
 // P.O. Box  47340, Olympia, WA 98503, USA or e-mail 
 // Bridge_Support@wsdot.wa.gov
 ///////////////////////////////////////////////////////////////////////
+
 
 // MainFrm.cpp : implementation of the CMainFrame class
 //
