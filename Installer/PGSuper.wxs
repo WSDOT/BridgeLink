@@ -720,6 +720,7 @@
                   KeyPath="yes"/>
 
             <!-- WSDOT Component Information Object-->
+            <!-- PGSuper -->
             <?define PGSuperWSDOTComponentInfoCLSID={5656F52E-4DC8-4299-8AD1-23EB3AE46353}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -737,7 +738,26 @@
                            Value=""
                            Type="string" />
 
+            <!-- PGSplice -->
+            <?define PGSpliceWSDOTComponentInfoCLSID={E389A200-D722-4977-AE9F-939F9C121A1C}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSpliceWSDOTComponentInfoCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceWSDOTComponentInfoCLSID)"
+                           Value="WSDOT Component Information"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceWSDOTComponentInfoCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceWSDOTComponentInfoCLSID)\Implemented Categories\$(var.PGSpliceComponentInfoCATID)"
+                           Value=""
+                           Type="string" />
+
             <!-- WSDOT Extension Agent-->
+            <!-- PGSuper -->
             <?define PGSuperWSDOTExtensionAgentCLSID={B1A19633-8880-40bc-A3C9-DDF47F7F1844}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -755,7 +775,29 @@
                            Value=""
                            Type="string" />
 
-           <!-- Curvel Exporter -->
+            <!-- PGSplice -->
+            <!-- 
+            If the WSDOT Extension Agent extends PGSplice in the future, uncomment this block and
+            add the CLSID for the extension agent class object
+            <?define PGSpliceWSDOTExtensionAgentCLSID={INSERT CLSID HERE}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSpliceWSDOTExtensionAgentCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceWSDOTExtensionAgentCLSID)"
+                           Value="WSDOT Extensions"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceWSDOTExtensionAgentCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceWSDOTExtensionAgentCLSID)\Implemented Categories\$(var.PGSpliceExtensionAgentCATID)"
+                           Value=""
+                           Type="string" />
+             -->
+
+            <!-- Curvel Exporter -->
            <?define WSDOTCurvelDataExporterCLSID={E89CC143-53C9-43df-B1B4-E522769DE29B}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
@@ -772,8 +814,12 @@
                           Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
                           Value=""
                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
+                           Value=""
+                           Type="string" />
 
-           <!-- Curvel Importer -->
+            <!-- Curvel Importer -->
            <?define WSDOTCurvelDataImporterCLSID={E56801AC-B583-4e9e-A2D8-2AA64079BE15}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
@@ -790,8 +836,12 @@
                           Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)\Implemented Categories\$(var.PGSuperDataImporterCATID)"
                           Value=""
                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)\Implemented Categories\$(var.PGSpliceDataImporterCATID)"
+                           Value=""
+                           Type="string" />
 
-           <!-- GenComp Exporter -->
+            <!-- GenComp Exporter -->
            <?define WSDOTGenCompDataExporterCLSID={16A21688-25B4-4118-ABF4-DD6D4983A2CD}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
@@ -808,13 +858,17 @@
                           Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
                           Value=""
                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
+                           Value=""
+                           Type="string" />
          </Component>
       </DirectoryRef>
 
       <Feature Id="WSDOTExtensions"
                Absent="allow"
                ConfigurableDirectory="APPLICATIONFOLDER"
-               Description="Extend PGSuper with WSDOT specific features"
+               Description="Extend PGSuper and PGSplice with WSDOT specific features"
                Display="expand"
                Title="WSDOT Extensions (Optional)"
                Level="1">

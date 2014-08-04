@@ -7,17 +7,17 @@
 
 
    <?if $(var.Platform) = "x64"?>
-   <?define ProgramFilesDirectory = ProgramFiles64Folder?>
-   <?define ProductID = {88563058-642A-455e-9001-A0BD8B71A793}?>
-   <?define UpgradeCode = {AE47FAA1-1DB0-48a0-9B82-C99C7120B8C4}?>
-   <?define PlatformFolder=x64?>
-   <?define IsWin64=yes?>
+      <?define ProgramFilesDirectory = ProgramFiles64Folder?>
+      <?define ProductID = {88563058-642A-455e-9001-A0BD8B71A793}?>
+      <?define UpgradeCode = {AE47FAA1-1DB0-48a0-9B82-C99C7120B8C4}?>
+      <?define PlatformFolder=x64?>
+      <?define IsWin64=yes?>
    <?else?>
-   <?define ProgramFilesDirectory = ProgramFilesFolder?>
-   <?define ProductID = {E95DA66F-6C17-48d1-8B16-40EAB5D2424C}?>
-   <?define UpgradeCode = {15BB783F-BA42-45a7-A7B4-54A02C23181C}?>
-   <?define PlatformFolder=Win32?>
-   <?define IsWin64=no?>
+      <?define ProgramFilesDirectory = ProgramFilesFolder?>
+      <?define ProductID = {E95DA66F-6C17-48d1-8B16-40EAB5D2424C}?>
+      <?define UpgradeCode = {15BB783F-BA42-45a7-A7B4-54A02C23181C}?>
+      <?define PlatformFolder=Win32?>
+      <?define IsWin64=no?>
    <?endif?>
 
    <?define ProductName=BridgeLink?>
@@ -31,17 +31,15 @@
    <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
 
    <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
-
+   
    <?if $(var.Platform)="x64"?>
-   <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC90\bin\?>
-   <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC90\bin?>
-
-   <?define OpenBridgeMLSourceRoot=\OpenBridgeML\x64\Release?>
+      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC90\bin\?>
+      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC90\bin?>
+      <?define OpenBridgeMLSourceRoot=\OpenBridgeML\x64\Release?>
    <?else?>
-   <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC90\bin\?>
-   <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC90\bin?>
-
-   <?define OpenBridgeMLSourceRoot=\OpenBridgeML\Win32\Release?>
+      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC90\bin\?>
+      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC90\bin?>
+      <?define OpenBridgeMLSourceRoot=\OpenBridgeML\Win32\Release?>
    <?endif?>
 
 </Include>
