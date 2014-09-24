@@ -6,7 +6,7 @@
 
    <Fragment>
       <!-- OpenBridgeML Components -->
-      <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.OpenBridgeMLSourceRoot)">
+      <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.OpenBridgeMLSourceRoot)\$(var.PlatformFolder)">
          <Component Id="OpenBridgeML"
                     Guid="{D50DBBC6-988C-4d00-A2DE-045AA7BC4FE7}"
                     Win64="$(var.IsWin64)">
