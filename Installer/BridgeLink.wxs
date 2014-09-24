@@ -25,7 +25,7 @@
          Schedule="afterInstallValidate"/> 
 
       <Upgrade Id="$(var.UpgradeCode)">
-         <UpgradeVersion OnlyDetect="no" Property='PREVIOUSFOUND' Minimum="0.0.0.0" IncludeMinimum="yes" Maximum="$(var.BridgeLinkVersion)" IncludeMaximum="yes"/>
+         <UpgradeVersion OnlyDetect="no" Property='PREVIOUSFOUND' Minimum="0.0.0.0" IncludeMinimum="yes" Maximum="$(var.BridgeLinkVersion)" IncludeMaximum="no"/>
       </Upgrade>
 
 
