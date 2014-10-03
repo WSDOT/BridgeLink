@@ -235,7 +235,11 @@ END
 // Bitmap
 //
 
+#if defined _BETA_VERSION
+IDB_SPLASH              BITMAP                  "res\\splash_beta.bmp"
+#else
 IDB_SPLASH              BITMAP                  "res\\splash.bmp"
+#endif
 
 /////////////////////////////////////////////////////////////////////////////
 //
