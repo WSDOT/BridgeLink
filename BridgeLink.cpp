@@ -372,11 +372,7 @@ CString CBridgeLinkApp::GetWsdotBridgeUrl()
 
 CString CBridgeLinkApp::GetBridgeLinkUrl()
 {
-   // NOTE: If URL isn't found in the registry, just go to the main software page.
-//   CString url = GetProfileString(_T("Settings"), _T("BridgeLinkUrl"), _T("http://www.wsdot.wa.gov/eesc/bridge"));
-#pragma Reminder("UPDATE: make this link go to the BridgeLink page")
-   CString strDefault(_T("http://www.wsdot.wa.gov/eesc/bridge/software/index.cfm?fuseaction=software_detail&software_id=47"));
-
+   CString strDefault(_T("http://www.wsdot.wa.gov/eesc/bridge/software/index.cfm?fuseaction=software_detail&software_id=69"));
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_LOCAL_MACHINE,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
    if ( result != ERROR_SUCCESS )
