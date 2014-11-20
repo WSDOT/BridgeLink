@@ -2,8 +2,8 @@
 <Include>
    <?define BridgeLinkVersion   = 1.0.0.12?>
    <?define BEToolboxVersion    = 3.0.0.12?>
-   <?define PGSuperVersion      = 3.0.0.19?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 4.0.0.17?>
+   <?define PGSuperVersion      = 3.0.0.20?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = 4.0.0.18?>
    <?define OpenBridgeMLVersion = 0.1.0.0?>
 
 
