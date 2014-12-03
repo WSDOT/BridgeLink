@@ -197,8 +197,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,13
- PRODUCTVERSION 1,0,0,13
+ FILEVERSION 1,0,0,14
+ PRODUCTVERSION 1,0,0,14
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -215,12 +215,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Washington State Department of Transportation"
             VALUE "FileDescription", "BridgeLink"
-            VALUE "FileVersion", "1.0.0.13"
+            VALUE "FileVersion", "1.0.0.14"
             VALUE "InternalName", "BridgeLink"
             VALUE "LegalCopyright", "Copyright © 1999-2014, Washington State Department of Transportation, All Rights Reserved"
             VALUE "OriginalFilename", "BridgeLink.EXE"
             VALUE "ProductName", "BridgeLink Application"
-            VALUE "ProductVersion", "1.0.0.13"
+            VALUE "ProductVersion", "1.0.0.14"
         END
     END
     BLOCK "VarFileInfo"
@@ -235,11 +235,7 @@ END
 // Bitmap
 //
 
-#if defined _BETA_VERSION
-IDB_SPLASH              BITMAP                  "res\\splash_beta.bmp"
-#else
 IDB_SPLASH              BITMAP                  "res\\splash.bmp"
-#endif
 
 /////////////////////////////////////////////////////////////////////////////
 //
