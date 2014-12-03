@@ -31,5 +31,14 @@
          </Component>
       </DirectoryRef >
 
+
+      <!-- Xerces for CodeSynthesis -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.CodeSynthesisXercesSourceRoot)" >
+         <Component Id="CodeSynthesisXerces" Guid="{9FF19044-EA85-49f0-8E0B-3EB23EBDC2C1}" Win64="$(var.IsWin64)">
+            <File Id="xerces_c_3_1_vc90.dll"    Name="xerces-c_3_1_vc90.dll" KeyPath="yes"/>
+         </Component>
+      </DirectoryRef >
+
    </Fragment>
 </Wix>

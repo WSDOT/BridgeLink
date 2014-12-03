@@ -68,6 +68,7 @@
          <ComponentRef Id="Xalan"/>
          <ComponentRef Id="XalanMessages"/>
          <ComponentRef Id="Xerces"/>
+         <ComponentRef Id="CodeSynthesisXerces"/>
 
          <FeatureRef Id="PGSuper" />
          <FeatureRef Id="BEToolbox" />

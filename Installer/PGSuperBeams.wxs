@@ -630,6 +630,24 @@
                            Value=""
                            Type="string" />
 
+            <!-- NU-Beam Factory -->
+            <?define PGSpliceNUBeamFactoryCLSID={42D8D32D-7A4E-4d07-A5B1-220DFCB99EE6}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PGSpliceNUBeamFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceNUBeamFactoryCLSID)"
+                           Value="Spliced NU-Beam"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceNUBeamFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PGSpliceNUBeamFactoryCLSID)\Implemented Categories\$(var.PGSpliceIBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
             <!-- U-Beam Factory -->
             <?define PGSpliceUBeamFactoryCLSID={6A00C215-C139-4755-8DD5-929EE2DED305}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
