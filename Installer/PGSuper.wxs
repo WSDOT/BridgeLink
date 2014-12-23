@@ -20,6 +20,7 @@
             <!-- PGSuper File associations -->
             <ProgId Id="PGSuper.Template" Icon="PGSuperAppPlugin.dll" IconIndex="25" />
             <ProgId Id="PGSuper.Document" Icon="PGSuperAppPlugin.dll" IconIndex="0" />
+            
             <!-- PGSplice File associations -->
             <ProgId Id="PGSplice.Template" Icon="PGSuperAppPlugin.dll" IconIndex="26"/>
             <ProgId Id="PGSplice.Document" Icon="PGSuperAppPlugin.dll" IconIndex="7"/>
@@ -1101,10 +1102,7 @@
          <ComponentRef Id="ReportAgent"/>
          <ComponentRef Id="SpecAgent"/>
          <ComponentRef Id="TestAgent"/>
-
-         <ComponentRef Id="PGSpliceBeams"/>
-         <ComponentRef Id="I_Beams" />
-         <ComponentRef Id="U_Beams" />
+         
          <ComponentRef Id="PGSuperBeams"/>
          <ComponentRef Id="Deck_Bulb_Tees" />
          <ComponentRef Id="Multiweb" />
@@ -1113,6 +1111,10 @@
          <ComponentRef Id="WBTGirders" />
          <ComponentRef Id="WFGirders" />
          <ComponentRef Id="WGirders" />
+
+         <ComponentRef Id="PGSpliceBeams"/>
+         <ComponentRef Id="I_Beams" />
+         <ComponentRef Id="U_Beams" />
       </Feature>
    </Fragment>
 </Wix>

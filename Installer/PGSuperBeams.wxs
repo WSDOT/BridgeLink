@@ -548,6 +548,7 @@
          </Component>
 
 
+         <!-- PGSplice Beams -->
          <Component Id ="PGSpliceBeams"
                     Guid="{4B268891-25FF-4c45-AA26-B9BFF53293FB}"
                     Win64="$(var.IsWin64)">

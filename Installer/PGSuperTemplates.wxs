@@ -24,7 +24,7 @@
          </Directory>
       </DirectoryRef>
 
-      <!-- PGSuper\PGSplice Templates -->
+      <!-- Local Library File (PGSuper/PGSplice) -->
          <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.PGSuperSourceRoot)\Templates" >
             <Component Id="PGSuperLibraryFile"
                        Guid="{FC12DFE3-1D24-4BC4-AAFF-1B8F08151BEC}"
@@ -33,29 +33,7 @@
             </Component>
          </DirectoryRef>
 
-         <DirectoryRef Id="I_Beams"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSplice\I-Beams" >
-            <Component Id="I_Beams"
-                       Guid="{FE734160-B5CC-45ef-8860-C665AC0FF748}"
-                       Win64="$(var.IsWin64)">
-               <File Id="IBeams_1_Span.spt"    Name="1 Span.spt"             KeyPath="yes"/>
-               <File Id="IBeams_2_Span.spt"    Name="2 Span.spt"/>
-               <File Id="IBeams_3_Span.spt"    Name="3 Span.spt"/>
-               <File Id="I_Beams.ico"   Name="I-Beams.ico"/>
-            </Component>
-         </DirectoryRef>
-         <DirectoryRef Id="U_Beams"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSplice\U-Beams" >
-            <Component Id="U_Beams"
-                       Guid="{76187DED-D98D-478f-B1AD-9A6514A963FF}"
-                       Win64="$(var.IsWin64)">
-               <File Id="UBeams_1_Span.spt"    Name="1 Span.spt"             KeyPath="yes"/>
-               <File Id="UBeams_2_Span.spt"    Name="2 Spans.spt"/>
-               <File Id="UBeams_3_Span.spt"    Name="3 Spans.spt"/>
-               <File Id="U_Beams.ico"   Name="U-Beams.ico"/>
-            </Component>
-         </DirectoryRef>
-
+         <!-- PGSuper Templates -->
          <DirectoryRef Id="Deck_Bulb_Tees"
                        FileSource="$(var.PGSuperSourceRoot)\Templates\PGSuper\Deck_Bulb_Tees" >
             <Component Id="Deck_Bulb_Tees"
@@ -135,5 +113,29 @@
             </Component>
          </DirectoryRef>
 
-      </Fragment>
+      <!-- PGSplice Templates -->
+      <DirectoryRef Id="I_Beams"
+                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSplice\I-Beams" >
+         <Component Id="I_Beams"
+                    Guid="{FE734160-B5CC-45ef-8860-C665AC0FF748}"
+                    Win64="$(var.IsWin64)">
+            <File Id="IBeams_1_Span.spt"    Name="1 Span.spt"             KeyPath="yes"/>
+            <File Id="IBeams_2_Span.spt"    Name="2 Span.spt"/>
+            <File Id="IBeams_3_Span.spt"    Name="3 Span.spt"/>
+            <File Id="I_Beams.ico"   Name="I-Beams.ico"/>
+         </Component>
+      </DirectoryRef>
+      <DirectoryRef Id="U_Beams"
+                    FileSource="$(var.PGSuperSourceRoot)\Templates\PGSplice\U-Beams" >
+         <Component Id="U_Beams"
+                    Guid="{76187DED-D98D-478f-B1AD-9A6514A963FF}"
+                    Win64="$(var.IsWin64)">
+            <File Id="UBeams_1_Span.spt"    Name="1 Span.spt"             KeyPath="yes"/>
+            <File Id="UBeams_2_Span.spt"    Name="2 Spans.spt"/>
+            <File Id="UBeams_3_Span.spt"    Name="3 Spans.spt"/>
+            <File Id="U_Beams.ico"   Name="U-Beams.ico"/>
+         </Component>
+      </DirectoryRef>
+
+   </Fragment>
 </Wix>

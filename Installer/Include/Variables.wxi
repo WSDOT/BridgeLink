@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
    <?define BridgeLinkVersion   = 1.0.0.13?>
-   <?define BEToolboxVersion    = 3.0.0.13?>
-   <?define PGSuperVersion      = 3.0.0.22?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 4.0.0.20?>
+   <?define BEToolboxVersion    = 3.0.0.14?>
+   <?define PGSuperVersion      = 3.0.0.23?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = 4.0.0.21?>
    <?define OpenBridgeMLVersion = 0.1.0.1?>
 
 
@@ -37,11 +37,9 @@
    <?if $(var.Platform)="x64"?>
       <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC90\bin\?>
       <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC90\bin\?>
-      <?define CodeSynthesisXercesSourceRoot=\CodeSynthesis XSD 3.3\bin64\?>
    <?else?>
       <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC90\bin\?>
       <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC90\bin\?>
-      <?define CodeSynthesisXercesSourceRoot=\CodeSynthesis XSD 3.3\bin\?>
    <?endif?>
 
 </Include>
