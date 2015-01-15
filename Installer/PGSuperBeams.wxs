@@ -516,35 +516,6 @@
                            Key="CLSID\$(var.PGSuperWSDOTVoidedSlabFactoryCLSID)\Implemented Categories\$(var.PGSuperSlabBeamFactoryCATID)"
                            Value=""
                            Type="string" />
-
-            <!-- Other COM classes -->
-            <!-- Strand Mover -->
-            <?define PGSuperStrandMoverCLSID={5D6AFD91-84F4-4755-9AF7-B760114A4551}?>
-            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
-                         Root="HKCR"
-                         Key ="CLSID\$(var.PGSuperStrandMoverCLSID)"/>
-            <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.PGSuperStrandMoverCLSID)"
-                           Value="StrandMoverImpl Class"
-                           Type="string" />
-            <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.PGSuperStrandMoverCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
-                           Type="string" />
-
-            <!-- PS Beam Loss Engineer -->
-            <?define PGSuperPSLossEngineerCLSID={9F22CD35-C84F-453d-8B52-6E187BADD56D}?>
-            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
-                         Root="HKCR"
-                         Key ="CLSID\$(var.PGSuperPSLossEngineerCLSID)"/>
-            <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.PGSuperPSLossEngineerCLSID)"
-                           Value="PS Beam Loss Engineer"
-                           Type="string" />
-            <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.PGSuperPSLossEngineerCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
-                           Type="string" />
          </Component>
 
 
@@ -665,6 +636,55 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceUBeamFactoryCLSID)\Implemented Categories\$(var.PGSpliceUBeamFactoryCATID)"
                            Value=""
+                           Type="string" />
+         </Component>
+
+
+         <!-- Other COM classes -->
+         <Component Id ="MiscBeamsObjects"
+                    Guid="{CD4BB509-F4A9-4933-B55E-02DCBB66D8D9}"
+                    Win64="$(var.IsWin64)">
+            <!-- Strand Mover -->
+         <?define PGSuperStrandMoverCLSID={5D6AFD91-84F4-4755-9AF7-B760114A4551}?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.PGSuperStrandMoverCLSID)"/>
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperStrandMoverCLSID)"
+                        Value="StrandMoverImpl Class"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperStrandMoverCLSID)\InprocServer32"
+                        Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                        Type="string" />
+
+         <!-- PS Beam Loss Engineer -->
+         <?define PGSuperPSLossEngineerCLSID={9F22CD35-C84F-453d-8B52-6E187BADD56D}?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.PGSuperPSLossEngineerCLSID)"/>
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperPSLossEngineerCLSID)"
+                        Value="PS Beam Loss Engineer"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperPSLossEngineerCLSID)\InprocServer32"
+                        Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                        Type="string" />
+
+
+            <!-- Age Adjusted Material -->
+            <?define AgeAdjustedMaterialCLSID={6E0E1094-075A-4cad-80C1-0D423B6162BD}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.AgeAdjustedMaterialCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.AgeAdjustedMaterialCLSID)"
+                           Value="AgeAdjustedMaterial"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.AgeAdjustedMaterialCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
                            Type="string" />
          </Component>
       </DirectoryRef>

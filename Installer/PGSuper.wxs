@@ -1115,6 +1115,8 @@
          <ComponentRef Id="PGSpliceBeams"/>
          <ComponentRef Id="I_Beams" />
          <ComponentRef Id="U_Beams" />
+
+         <ComponentRef Id="MiscBeamsObjects"/>
       </Feature>
    </Fragment>
 </Wix>
