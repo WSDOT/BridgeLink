@@ -488,7 +488,7 @@
 						AdditionalIncludeDirectories="..\WBFL\Include"
 						GenerateStublessProxies="true"
 						TypeLibraryName=".\BridgeLinkTestPlugin.tlb"
-						HeaderFileName="BridgeLinkTestPlugin.h"
+						HeaderFileName="BridgeLinkTestPlugin_i.h"
 						InterfaceIdentifierFileName="BridgeLinkTestPlugin_i.c"
 					/>
 				</FileConfiguration>
@@ -500,7 +500,7 @@
 						AdditionalIncludeDirectories="..\WBFL\Include"
 						GenerateStublessProxies="true"
 						TypeLibraryName=".\BridgeLinkTestPlugin.tlb"
-						HeaderFileName="BridgeLinkTestPlugin.h"
+						HeaderFileName="BridgeLinkTestPlugin_i.h"
 						InterfaceIdentifierFileName="BridgeLinkTestPlugin_i.c"
 					/>
 				</FileConfiguration>
@@ -512,7 +512,7 @@
 						AdditionalIncludeDirectories="..\WBFL\Include"
 						GenerateStublessProxies="true"
 						TypeLibraryName=".\BridgeLinkTestPlugin.tlb"
-						HeaderFileName="BridgeLinkTestPlugin.h"
+						HeaderFileName="BridgeLinkTestPlugin_i.h"
 						InterfaceIdentifierFileName="BridgeLinkTestPlugin_i.c"
 					/>
 				</FileConfiguration>
@@ -524,7 +524,7 @@
 						AdditionalIncludeDirectories="..\WBFL\Include"
 						GenerateStublessProxies="true"
 						TypeLibraryName=".\BridgeLinkTestPlugin.tlb"
-						HeaderFileName="BridgeLinkTestPlugin.h"
+						HeaderFileName="BridgeLinkTestPlugin_i.h"
 						InterfaceIdentifierFileName="BridgeLinkTestPlugin_i.c"
 					/>
 				</FileConfiguration>
@@ -714,6 +714,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\ComponentInfo.cpp"
+				>
+			</File>
+			<File
 				RelativePath="Plugin.cpp"
 				>
 				<FileConfiguration
@@ -819,6 +823,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ComponentInfo.h"
+				>
+			</File>
+			<File
 				RelativePath="Plugin.h"
 				>
 			</File>
@@ -836,7 +844,11 @@
 			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
 			<File
-				RelativePath="bridgety.bmp"
+				RelativePath=".\res\BridgeLink.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\ComponentInfo.rgs"
 				>
 			</File>
 			<File

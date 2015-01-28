@@ -1,17 +1,17 @@
 HKCR
 {
-	BridgeLinkTestPlugin.Plugin.1 = s 'Plugin Class'
+	BridgeLinkTestPlugin.Plugin.1 = s 'BridgeLink Plugin Example'
 	{
 		CLSID = s '{EA779BA8-2CD8-4BE6-8C67-BFD91D7D2F52}'
 	}
-	BridgeLinkTestPlugin.Plugin = s 'Plugin Class'
+	BridgeLinkTestPlugin.Plugin = s 'BridgeLink Plugin Example'
 	{
 		CLSID = s '{EA779BA8-2CD8-4BE6-8C67-BFD91D7D2F52}'
 		CurVer = s 'BridgeLinkTestPlugin.Plugin.1'
 	}
 	NoRemove CLSID
 	{
-		ForceRemove {EA779BA8-2CD8-4BE6-8C67-BFD91D7D2F52} = s 'Plugin Class'
+		ForceRemove {EA779BA8-2CD8-4BE6-8C67-BFD91D7D2F52} = s 'BridgeLink Plugin Example'
 		{
 			ProgID = s 'BridgeLinkTestPlugin.Plugin.1'
 			VersionIndependentProgID = s 'BridgeLinkTestPlugin.Plugin'

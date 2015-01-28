@@ -26,4 +26,12 @@ library BRIDGELINKTESTPLUGINLib
 	{
 		[default] interface IUnknown;
 	};
+
+   [
+      uuid(758C6FD8-8AC1-44ba-BD80-5E72205244A5)
+   ]
+   coclass BridgeLinkExampleComponentInfo
+   {
+      interface IUnknown;
+   }
 };

@@ -9,13 +9,13 @@
 #include "resource.h"
 #include <initguid.h>
 #include <EAF\EAFAppPlugin.h>
-#include "BridgeLinkTestPlugin.h"
+#include "BridgeLinkTestPlugin_i.h"
 
 #include "BridgeLinkTestPlugin_i.c"
 #include "Plugin.h"
 
 
-#include "..\BridgeLinkCATID.h"
+#include "..\Include\BridgeLinkCATID.h"
 #include <System\ComCatMgr.h>
 
 #include "BridgeLinkTestPluginApp.h"
@@ -24,11 +24,13 @@
 #include "BridgeLinkDoc.h"
 #include "ChildFrame2.h"
 #include "BridgeLinkView2.h"
+#include "ComponentInfo.h"
 
 CComModule _Module;
 
 BEGIN_OBJECT_MAP(ObjectMap)
 OBJECT_ENTRY(CLSID_Plugin, CPlugin)
+OBJECT_ENTRY(CLSID_BridgeLinkExampleComponentInfo, CBridgeLinkExampleComponentInfo)
 END_OBJECT_MAP()
 
 BEGIN_MESSAGE_MAP(CBridgeLinkTestPluginApp, CWinApp)
@@ -48,7 +50,7 @@ BOOL CBridgeLinkTestPluginApp::InitInstance()
    m_hSharedMenu = NULL; /*::LoadMenu( m_hInstance, MAKEINTRESOURCE(IDR_???) );*/
 
    m_pSecondaryViewTemplate = new CEAFDocTemplate(
-      IDR_BRIDGETYPE,
+      IDR_EXAMPLE,
       NULL,
 		RUNTIME_CLASS(CBridgeLinkDoc),
 		RUNTIME_CLASS(CChildFrame2), // custom MDI child frame
@@ -114,6 +116,8 @@ STDAPI DllRegisterServer(void)
 
    sysComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLinkAppPlugin, true);
 
+   sysComCatMgr::RegWithCategory(CLSID_BridgeLinkExampleComponentInfo,CATID_BridgeLinkComponentInfo,true);
+
    return S_OK;
 }
 
@@ -124,5 +128,7 @@ STDAPI DllUnregisterServer(void)
 {
    sysComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLinkAppPlugin, false);
 
-    return _Module.UnregisterServer(TRUE);
+   sysComCatMgr::RegWithCategory(CLSID_BridgeLinkExampleComponentInfo,CATID_BridgeLinkComponentInfo,false);
+
+   return _Module.UnregisterServer(TRUE);
 }

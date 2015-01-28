@@ -40,7 +40,7 @@ std::vector<CEAFDocTemplate*> CPlugin::CreateDocTemplates()
 
    CEAFDocTemplate* pDocTemplate;
 	pDocTemplate = new CEAFDocTemplate(
-      IDR_BRIDGETYPE,
+      IDR_EXAMPLE,
       NULL,
 		RUNTIME_CLASS(CBridgeLinkDoc),
 		RUNTIME_CLASS(CChildFrame),
@@ -61,7 +61,7 @@ HMENU CPlugin::GetSharedMenuHandle()
 
 UINT CPlugin::GetDocumentResourceID()
 {
-   return IDR_BRIDGETYPE;
+   return IDR_EXAMPLE;
 }
 
 CString CPlugin::GetName()

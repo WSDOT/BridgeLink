@@ -1,4 +1,4 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -27,18 +27,18 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "1 TYPELIB ""BridgeLinkTestPlugin.tlb""\r\n"
     "\0"
@@ -47,7 +47,6 @@ END
 #endif    // APSTUDIO_INVOKED
 
 
-#ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
@@ -70,15 +69,13 @@ BEGIN
     BEGIN
         BLOCK "040904B0"
         BEGIN
-            VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "BridgeLinkTestPlugin Module\0"
-            VALUE "FileVersion", "1, 0, 0, 1\0"
-            VALUE "InternalName", "BridgeLinkTestPlugin\0"
-            VALUE "LegalCopyright", "Copyright 2009\0"
-            VALUE "OriginalFilename", "BridgeLinkTestPlugin.DLL\0"
-            VALUE "ProductName", "BridgeLinkTestPlugin Module\0"
-            VALUE "ProductVersion", "1, 0, 0, 1\0"
-            VALUE "OLESelfRegister", "\0"
+            VALUE "FileDescription", "BridgeLinkTestPlugin Module"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "BridgeLinkTestPlugin"
+            VALUE "LegalCopyright", "Copyright 2009"
+            VALUE "OriginalFilename", "BridgeLinkTestPlugin.DLL"
+            VALUE "ProductName", "BridgeLinkTestPlugin Module"
+            VALUE "ProductVersion", "1, 0, 0, 1"
         END
     END
     BLOCK "VarFileInfo"
@@ -87,22 +84,21 @@ BEGIN
     END
 END
 
-#endif    // !_MAC
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // REGISTRY
 //
 
-IDR_PLUGIN              REGISTRY DISCARDABLE    "Plugin.rgs"
+IDR_PLUGIN              REGISTRY                "Plugin.rgs"
+IDR_COMPONENTINFO       REGISTRY                "ComponentInfo.rgs"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Menu
 //
 
-IDR_BRIDGETYPE MENU DISCARDABLE 
+IDR_EXAMPLE MENU 
 BEGIN
     POPUP "&File"
     BEGIN
@@ -135,39 +131,48 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON                ICON                    "res\\BridgeLink.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
     IDS_PROJNAME            "BridgeLinkTestPlugin"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
-    IDR_BRIDGETYPE          "\nBridgeLink Test Plugin\nBridgeLink Test Plugin\nBridgeLink Test Plugin Files (*.txt)\n.txt\nBridgeLink Test Plugin.Document\nBridgeLink Test Plugin Document"
+    IDR_EXAMPLE             "\nBridgeLink Test Plugin\nBridgeLink Test Plugin\nBridgeLink Test Plugin Files (*.txt)\n.txt\nBridgeLink Test Plugin.Document\nBridgeLink Test Plugin Document"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
     ID_FILE_NEW             "Create a new document\nNew"
     ID_FILE_OPEN            "Open an existing document\nOpen"
     ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
     ID_FILE_MRU_FILE1       "Open this document"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
     ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
     ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
     ID_HELP_FINDER          "List Help topics\nHelp Topics"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
     ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
     ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
