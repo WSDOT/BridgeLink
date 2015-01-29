@@ -2,7 +2,6 @@
 //
 
 #include "stdafx.h"
-#include "bridgelinktestplugin.h"
 #include "BridgeLinkView2.h"
 
 #ifdef _DEBUG

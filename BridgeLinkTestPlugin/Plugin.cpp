@@ -1,7 +1,7 @@
 // Plugin.cpp : Implementation of CPlugin
 #include "stdafx.h"
 #include "resource.h"
-#include "BridgeLinkTestPlugin.h"
+#include "BridgeLinkTestPlugin_i.h"
 #include "Plugin.h"
 
 #include "ChildFrm.h"

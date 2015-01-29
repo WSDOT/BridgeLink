@@ -46,7 +46,7 @@
             <!-- BEToolbox registry entries-->
             
             <!-- BEToolbox Application Plugin -->
-            <?define BEToolboxCLSID={EA33DB99-86FB-4678-9442-AB1D334456E4}?>
+            <?define BEToolboxCLSID={B5E128D4-78F3-48e0-970E-812C2281EE4E}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -65,7 +65,7 @@
                            Type="string" />
             
             <!-- BEToolbox Component Information Object -->
-            <?define BEToolboxComponentInfoCLSID={71B4631C-5AB5-468e-A1AD-5764A728E419}?>
+            <?define BEToolboxComponentInfoCLSID={8BC4CCD2-35D5-4f2c-AA18-0E2D58FF5C3A}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
