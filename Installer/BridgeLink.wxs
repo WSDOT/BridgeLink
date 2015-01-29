@@ -58,20 +58,24 @@
                Display="expand"
                Title="BridgeLink (Required)" 
                Level="1">
-			<ComponentRef Id="BridgeLinkComponents" Primary="yes" />
-         <ComponentRef Id="BridgeLinkSupportFiles"/>
-         <ComponentRef Id="EngineeringApplicationsShortcuts"/>
-         <ComponentRef Id="BridgeLinkShortcuts"/>
-         <ComponentRef Id="WBFLComponents"/>
          
+         <!-- Components for the main executable program -->
+			<ComponentRef Id="BridgeLinkComponents" Primary="yes" /> <!-- This is the main BridgeLink executable -->
+         <ComponentRef Id="BridgeLinkSupportFiles"/> <!-- BridgeLink support files such as the help document -->
+         <ComponentRef Id="EngineeringApplicationsShortcuts"/> <!-- Creates the "Engineering Applications" shortcut from the Start menu -->
+         <ComponentRef Id="BridgeLinkShortcuts"/> <!-- Creates the "BridgeLink" shortcut under "Engineering Applications" -->
+         
+         <!-- Components for the required dependicies -->
+         <ComponentRef Id="WBFLComponents"/> <!-- WBFL and dependent components -->
          <ComponentRef Id="OpenBridgeML"/>
          <ComponentRef Id="Xalan"/>
          <ComponentRef Id="XalanMessages"/>
          <ComponentRef Id="Xerces"/>
-
-         <FeatureRef Id="PGSuper" />
-         <FeatureRef Id="BEToolbox" />
          <FeatureRef Id="Redistributables" />
+
+         <!-- This are the BridgeLink Plugin Applications in this installer package -->
+         <FeatureRef Id="PGSuper" /> <!-- PGSuper and PGSplice -->
+         <FeatureRef Id="BEToolbox" />
       </Feature>
 
       <!-- Installation Requirements -->

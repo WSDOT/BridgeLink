@@ -5,7 +5,7 @@
    <?include Variables.wxi?>
 
    <Fragment>
-      <!-- Start Menu Shortcut-->
+      <!-- Start Menu Shortcut for "Engineering Applications" -->
       <DirectoryRef Id="EngineeringApplicationsStartMenuFolder">
          <Component Id="EngineeringApplicationsShortcuts"
                     Guid="{5CA0743C-9A13-4b55-8697-1BEB98D64415}"
@@ -22,6 +22,8 @@
                           On="uninstall"/>
          </Component>
       </DirectoryRef>
+      
+      <!-- BridgeLink folder under Engineering Applications -->
       <DirectoryRef Id="BridgeLinkStartMenuFolder">
          <Component Id="BridgeLinkShortcuts"
                     Guid="{B51A2CA6-FC9D-42ab-A975-6651713E08A9}"

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+   
+   <!-- These are the components that make up the BridgeLink application -->
+   <!-- That is to say, the main application framework (not the plug in applications) -->
 
    <!-- Include project wide variables -->
    <?include Variables.wxi?>
