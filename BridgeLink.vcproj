@@ -34,10 +34,10 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\&#x0D;&#x0A;"
-				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
-				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Description=""
+				CommandLine=""
+				AdditionalDependencies=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -135,10 +135,10 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\&#x0D;&#x0A;"
-				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
-				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Description=""
+				CommandLine=""
+				AdditionalDependencies=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -236,10 +236,10 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\&#x0D;&#x0A;"
-				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
-				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Description=""
+				CommandLine=""
+				AdditionalDependencies=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -338,10 +338,10 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="Updating Reg Free WBFL"
-				CommandLine="xcopy /y/d \ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll \ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\&#x0D;&#x0A;"
-				AdditionalDependencies="\ARP\WBFL\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
-				Outputs="\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll"
+				Description=""
+				CommandLine=""
+				AdditionalDependencies=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
