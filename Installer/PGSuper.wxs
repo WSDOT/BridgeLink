@@ -15,34 +15,34 @@
                     Guid="{4C928CD6-FC90-4dfa-A141-F943C43CED0F}"
                     Win64="$(var.IsWin64)">
 
-            <File Id="PGSuperAppPlugin.dll"    Name="PGSuperAppPlugin.dll" KeyPath ="yes"/>
+            <File Id="PGSuper.dll"    Name="PGSuper.dll" KeyPath ="yes"/>
 
             <!-- PGSuper File associations -->
-            <ProgId Id="PGSuper.Template" Icon="PGSuperAppPlugin.dll" IconIndex="25" />
-            <ProgId Id="PGSuper.Document" Icon="PGSuperAppPlugin.dll" IconIndex="0" />
+            <ProgId Id="PGSuper.Template" Icon="PGSuper.dll" IconIndex="25" />
+            <ProgId Id="PGSuper.Document" Icon="PGSuper.dll" IconIndex="0" />
             
             <!-- PGSplice File associations -->
-            <ProgId Id="PGSplice.Template" Icon="PGSuperAppPlugin.dll" IconIndex="26"/>
-            <ProgId Id="PGSplice.Document" Icon="PGSuperAppPlugin.dll" IconIndex="7"/>
+            <ProgId Id="PGSplice.Template" Icon="PGSuper.dll" IconIndex="26"/>
+            <ProgId Id="PGSplice.Document" Icon="PGSuper.dll" IconIndex="7"/>
 
             <!-- PGSuper registry entries-->
 
             <!-- PGSuper Application Plugin -->
-            <?define PGSuperAppPluginCLSID={22F091F9-B2BE-4313-BDA3-8F46A44681E9}?>
+            <?define PGSuperCLSID={22F091F9-B2BE-4313-BDA3-8F46A44681E9}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
-                         Key ="CLSID\$(var.PGSuperAppPluginCLSID)"/>
+                         Key ="CLSID\$(var.PGSuperCLSID)"/>
             <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.PGSuperAppPluginCLSID)"
+                           Key="CLSID\$(var.PGSuperCLSID)"
                            Value="PGSuper"
                            Type="string" />
             <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.PGSuperAppPluginCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]PGSuperAppPlugin.dll"
+                           Key="CLSID\$(var.PGSuperCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuper.dll"
                            Type="string" />
             <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.PGSuperAppPluginCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
+                           Key="CLSID\$(var.PGSuperCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
                            Value=""
                            Type="string" />
 
@@ -58,7 +58,7 @@
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperComponentInfoCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]PGSuperAppPlugin.dll"
+                           Value="[APPLICATIONFOLDER]PGSuper.dll"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
@@ -77,7 +77,7 @@
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperProjectImporterCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]PGSuperAppPlugin.dll"
+                           Value="[APPLICATIONFOLDER]PGSuper.dll"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperProjectImporterCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
@@ -180,7 +180,7 @@
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceAppPluginCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]PGSuperAppPlugin.dll"
+                           Value="[APPLICATIONFOLDER]PGSuper.dll"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceAppPluginCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
@@ -199,7 +199,7 @@
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceComponentInfoCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]PGSuperAppPlugin.dll"
+                           Value="[APPLICATIONFOLDER]PGSuper.dll"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
