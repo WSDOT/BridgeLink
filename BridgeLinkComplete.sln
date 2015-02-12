@@ -61,7 +61,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuperExt", "..\PGSuper\Pg
 		{3D4395A4-6DA8-40B5-BD41-C21104290B15} = {3D4395A4-6DA8-40B5-BD41-C21104290B15}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuperAppPlugin", "..\PGSuper\PGSuperAppPlugin\PGSuperAppPlugin.vcproj", "{2055203D-02FC-4D11-BDF0-411E9F465E93}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuper", "..\PGSuper\PGSuperAppPlugin\PGSuperAppPlugin.vcproj", "{2055203D-02FC-4D11-BDF0-411E9F465E93}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B8979601-544D-41D7-A6A2-20A03E2473A4} = {B8979601-544D-41D7-A6A2-20A03E2473A4}
 		{A29F3C02-AF58-4E29-A791-CAA5A1CE28B6} = {A29F3C02-AF58-4E29-A791-CAA5A1CE28B6}
@@ -135,8 +135,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MakePgz", "..\PGSuper\MakePgz\MakePgz.vcproj", "{E8657E0C-0DAD-4ABD-A464-7A8E8B890E6F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BEToolboxXML", "..\BridgeLinkBEToolbox\BEToolboxXML\BEToolboxXML.vcproj", "{3004A4E6-3542-40B1-9B15-331862819988}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRate", "..\XBeamRate\XBeamRate.vcproj", "{DC673D35-C7CE-4E7D-9043-B38814C050D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -397,17 +395,6 @@ Global
 		{3004A4E6-3542-40B1-9B15-331862819988}.Release|Win32.Build.0 = Release|Win32
 		{3004A4E6-3542-40B1-9B15-331862819988}.Release|x64.ActiveCfg = Release|x64
 		{3004A4E6-3542-40B1-9B15-331862819988}.Release|x64.Build.0 = Release|x64
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Debug|Win32.ActiveCfg = Debug|Win32
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Debug|Win32.Build.0 = Debug|Win32
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Debug|x64.ActiveCfg = Debug|x64
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Debug|x64.Build.0 = Debug|x64
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Profile|Win32.ActiveCfg = Debug|x64
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Profile|x64.ActiveCfg = Debug|x64
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Profile|x64.Build.0 = Debug|x64
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Release|Win32.ActiveCfg = Release|Win32
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Release|Win32.Build.0 = Release|Win32
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Release|x64.ActiveCfg = Release|x64
-		{DC673D35-C7CE-4E7D-9043-B38814C050D5}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
