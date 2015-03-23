@@ -1116,6 +1116,8 @@
          <ComponentRef Id="I_Beams" />
          <ComponentRef Id="U_Beams" />
 
+         <ComponentRef Id="LLDFEngineers"/>
+
          <ComponentRef Id="MiscBeamsObjects"/>
       </Feature>
    </Fragment>

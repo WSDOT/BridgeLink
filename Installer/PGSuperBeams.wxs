@@ -638,6 +638,106 @@
                            Value=""
                            Type="string" />
          </Component>
+         
+         <!-- Live Load Distribution Factor Engineers -->
+         <Component Id ="LLDFEngineers"
+                    Guid="{3A28E1AA-5BE0-4a8f-99A0-53F6F3938A51}"
+                    Win64="$(var.IsWin64)">
+            
+            <?define IBeamDistFactorEngineerCLSID={3AC40380-8764-4087-BD7C-47A50A369AE6}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.IBeamDistFactorEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.IBeamDistFactorEngineerCLSID)"
+                           Value="IBeam Distribution Factor Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.IBeamDistFactorEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+
+
+           <?define BoxBeamDistFactorEngineerCLSID={FBD11B34-65A4-4d87-90FF-39A42EEACABA}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BoxBeamDistFactorEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BoxBeamDistFactorEngineerCLSID)"
+                           Value="Box Beam Distribution Factor Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BoxBeamDistFactorEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+
+
+            <?define BulbTeeDistFactorEngineerCLSID={49222DB8-F784-4576-811F-A831075FDDAF}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BulbTeeDistFactorEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BulbTeeDistFactorEngineerCLSID)"
+                           Value="Bulb Tee Distribution Factor Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BulbTeeDistFactorEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+
+            <?define MultiWebDistFactorEngineerCLSID={27013EA9-0AA9-4b85-80D0-0904A3D762DA}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.MultiWebDistFactorEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.MultiWebDistFactorEngineerCLSID)"
+                           Value="MultiWeb Distribution Factor Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.MultiWebDistFactorEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+
+            <?define UBeamDistFactorEngineerCLSID={62C15951-4A40-46cf-B326-D40D248F1299}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.UBeamDistFactorEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.UBeamDistFactorEngineerCLSID)"
+                           Value="U Beam Distribution Factor Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.UBeamDistFactorEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+
+            <?define VoidedSlabDistFactorEngineerCLSID={53884B6C-07D5-4e5e-9ED3-DF162DE1C27E}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.VoidedSlabDistFactorEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.VoidedSlabDistFactorEngineerCLSID)"
+                           Value="Voided Slab Distribution Factor Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.VoidedSlabDistFactorEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+
+            <?define VoidedSlab2DistFactorEngineerCLSID={43BA23FE-C697-4277-A1C0-943E6E9DFBF9}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.VoidedSlab2DistFactorEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.VoidedSlab2DistFactorEngineerCLSID)"
+                           Value="Voided Slab Distribution Factor Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.VoidedSlab2DistFactorEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+         </Component>
+
 
 
          <!-- Other COM classes -->
