@@ -197,8 +197,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,23
- PRODUCTVERSION 1,0,0,23
+ FILEVERSION 1,0,0,24
+ PRODUCTVERSION 1,0,0,24
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -216,12 +216,12 @@ BEGIN
             VALUE "Comments", "A member of the Alternate Route Project"
             VALUE "CompanyName", "Washington State Department of Transportation"
             VALUE "FileDescription", "BridgeLink"
-            VALUE "FileVersion", "1.0.0.23"
+            VALUE "FileVersion", "1.0.0.24"
             VALUE "InternalName", "BridgeLink"
             VALUE "LegalCopyright", "Copyright © 1999-2015, Washington State Department of Transportation, All Rights Reserved"
             VALUE "OriginalFilename", "BridgeLink.EXE"
             VALUE "ProductName", "BridgeLink Application"
-            VALUE "ProductVersion", "1.0.0.23"
+            VALUE "ProductVersion", "1.0.0.24"
         END
     END
     BLOCK "VarFileInfo"
