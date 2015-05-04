@@ -310,6 +310,12 @@ BEGIN
     IDS_E_ONLINERESOURCES   "Sorry, but an error occured while attempting to connect to the Internet"
 END
 
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new BridgeLink Project\nNew (Ctrl+N)"
+    ID_FILE_SAVE            "Save your project\nSave (Ctrl+S)"
+END
+
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
