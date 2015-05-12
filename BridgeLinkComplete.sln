@@ -165,27 +165,61 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRate", "..\XBeamRate\X
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRateAnalysisAgent", "..\XBeamRate\AnalysisAgent\XBeamRateAnalysisAgent.vcproj", "{960D235C-2264-4ADF-923F-745537443417}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6} = {9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRateEngAgent", "..\XBeamRate\EngAgent\XBeamRateEngAgent.vcproj", "{8982FDCE-75FB-409D-8812-512455A93FED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6} = {9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRateGraphingAgent", "..\XBeamRate\GraphingAgent\XBeamRateGraphingAgent.vcproj", "{BA0E5D9E-D013-496F-874B-3E860D21180D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6} = {9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRatePierAgent", "..\XBeamRate\PierAgent\XBeamRatePierAgent.vcproj", "{A822F431-EE4D-40CC-B036-9EA71C5BB432}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6} = {9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRateReportAgent", "..\XBeamRate\ReportAgent\XBeamRateReportAgent.vcproj", "{7971C63D-97DB-4D7A-A3B1-F60CD5F1CEE9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6} = {9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExtensionAgentExample", "..\ExtensionAgentExample\ExtensionAgentExample.vcproj", "{84AAAD2E-2039-4922-9124-18852C5616F1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4A38B3B0-7C87-40E8-BF6A-9D1B4051FF71} = {4A38B3B0-7C87-40E8-BF6A-9D1B4051FF71}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IEPluginExample", "..\IEPluginExample\IEPluginExample.vcproj", "{BCA09A79-0AFE-4990-AFB9-C33D3EB2015D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibraryMgrPluginExample", "..\LibraryMgrPluginExample\LibraryMgrPluginExample.vcproj", "{7253D020-A179-45CB-B8E1-AEB359920214}"
+	ProjectSection(ProjectDependencies) = postProject
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRateProjectAgent", "..\XBeamRate\ProjectAgent\XBeamRateProjectAgent.vcproj", "{A5BD6C08-AA35-47D2-901F-2ED427781C7A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6} = {9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRateExt", "..\XBeamRate\XBeamRateExt\XBeamRateExt.vcproj", "{9DB7EC3C-6378-4AF0-8182-A3BCABEB9EF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeSightBeams", "..\..\BSDev\BridgeSightBeams\BridgeSightBeams.vcproj", "{97594692-8589-4D03-AC71-3418F372AE67}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -201,10 +235,22 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeSightSecurity", "..\..\BSDev\BridgeSightSecurity\BridgeSightSecurity\BridgeSightSecurity.vcproj", "{1F6A68D3-4747-4DBC-9B22-2151A5A9107B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuperExtensions", "..\..\BSDev\PGSuperExtensions\PGSuperExtensions.vcproj", "{FF666915-FC29-4B0E-9EDA-2945C9241115}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4A38B3B0-7C87-40E8-BF6A-9D1B4051FF71} = {4A38B3B0-7C87-40E8-BF6A-9D1B4051FF71}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuperOpis", "..\..\BSDev\PGSuperOpis\PGSuperOpis.vcproj", "{0589886A-B84A-495F-9E2A-03846784540B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF666915-FC29-4B0E-9EDA-2945C9241115} = {FF666915-FC29-4B0E-9EDA-2945C9241115}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGSuperVBent", "..\..\BSDev\PGSuperVBent\PGSuperVBent.vcproj", "{64604DFD-731B-430C-8A07-BED5AB00112F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF666915-FC29-4B0E-9EDA-2945C9241115} = {FF666915-FC29-4B0E-9EDA-2945C9241115}
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
