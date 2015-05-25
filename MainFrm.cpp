@@ -29,6 +29,8 @@
 #include "MainFrm.h"
 #include "Resource.h"
 
+#include "BackgroundWndProvider.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -112,5 +114,43 @@ void CMainFrame::Dump(CDumpContext& dc) const
 }
 #endif //_DEBUG
 
+
+CEAFBackgroundWnd* CMainFrame::CreateBackgroundWindow()
+{
+   HKEY key;
+   LONG result = ::RegOpenKeyEx(HKEY_CURRENT_USER,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
+   if ( result != ERROR_SUCCESS )
+   {
+      return NULL;
+   }
+
+   TCHAR strCLSID[MAX_PATH];
+   DWORD size = MAX_PATH;
+   DWORD type;
+   result = ::RegQueryValueEx(key,_T("BackgroundProvider"),0,&type,(LPBYTE)&strCLSID[0],&size);
+   if ( result != ERROR_SUCCESS )
+   {
+      return NULL;
+   }
+
+   ::RegCloseKey(key);
+
+   CLSID clsid;
+   HRESULT hr = ::CLSIDFromString(strCLSID,&clsid);
+   if ( hr != NOERROR )
+   {
+      return NULL;
+   }
+
+   CComPtr<IBackgroundWndProvider> provider;
+   if ( FAILED(provider.CoCreateInstance(clsid)) )
+   {
+      return NULL;
+   }
+
+   return provider->CreateBackgroundWindow();
+}
+
 /////////////////////////////////////////////////////////////////////////////
 // CMainFrame message handlers
+ 

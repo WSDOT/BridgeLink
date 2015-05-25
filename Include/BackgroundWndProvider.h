@@ -20,55 +20,18 @@
 // Bridge_Support@wsdot.wa.gov
 ///////////////////////////////////////////////////////////////////////
 
-// MainFrm.h : interface of the CMainFrame class
+// BackgroundWndProvider.h
 //
-/////////////////////////////////////////////////////////////////////////////
 
 #pragma once
 
-#include <EAF\EAFMainFrame.h>
+#include <EAF\EAFBackgroundWnd.h>
 
-#include <boost\shared_ptr.hpp>
-
-class CMainFrame : public CEAFMainFrame
+// {271E5B9C-A3C9-486f-9E89-FD0EBD2B6E58}
+DEFINE_GUID(IID_IBackgroundWndProvider, 
+0x271e5b9c, 0xa3c9, 0x486f, 0x9e, 0x89, 0xfd, 0xe, 0xbd, 0x2b, 0x6e, 0x58);
+struct __declspec(uuid("271E5B9C-A3C9-486f-9E89-FD0EBD2B6E58")) IBackgroundWndProvider;
+interface IBackgroundWndProvider : public IUnknown
 {
-	DECLARE_DYNAMIC(CMainFrame)
-public:
-	CMainFrame();
-
-// Attributes
-public:
-
-// Operations
-public:
-
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CMainFrame)
-	//}}AFX_VIRTUAL
-   //void OnSysCommand(UINT nID, LPARAM lParam);
-
-// Implementation
-public:
-	virtual ~CMainFrame();
-#ifdef _DEBUG
-	virtual void AssertValid() const;
-	virtual void Dump(CDumpContext& dc) const;
-#endif
-
-protected:
-   virtual CEAFBackgroundWnd* CreateBackgroundWindow();
-
-// Generated message map functions
-protected:
-	//{{AFX_MSG(CMainFrame)
-	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+   virtual CEAFBackgroundWnd* CreateBackgroundWindow() = 0;
 };
-
-/////////////////////////////////////////////////////////////////////////////
-
-//{{AFX_INSERT_LOCATION}}
-// Microsoft Developer Studio will insert additional declarations immediately before the previous line.
-

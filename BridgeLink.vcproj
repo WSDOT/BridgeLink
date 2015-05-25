@@ -833,6 +833,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Include\BackgroundWndProvider.h"
+				>
+			</File>
+			<File
 				RelativePath="BridgeLink.h"
 				>
 			</File>
@@ -947,6 +951,10 @@
 			</File>
 			<File
 				RelativePath=".\res\splash.bmp"
+				>
+			</File>
+			<File
+				RelativePath=".\res\start.jpg"
 				>
 			</File>
 			<File
