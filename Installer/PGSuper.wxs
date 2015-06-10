@@ -927,7 +927,7 @@
                            Value=""
                            Type="string" />
 
-            <!-- TxDOT Extension Agent -->
+            <!-- TxDOT PGSuper Extension Agent -->
             <?define PGSuperTxDOTExtensionAgentCLSID={3700B253-8489-457c-8A6D-D174F95C457C}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -944,8 +944,12 @@
                            Key="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)\Implemented Categories\$(var.PGSuperExtensionAgentCATID)"
                            Value=""
                            Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)\Implemented Categories\$(var.TogaExtensionAgentCATID)"
+                          Value=""
+                          Type="string" />
 
-            <!-- TxDOT Component Information Object -->
+           <!-- TxDOT Component Information Object -->
             <?define PGSuperTxDOTInfoCLSID={785F2ACE-127B-4647-8062-ED49537E962C}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"

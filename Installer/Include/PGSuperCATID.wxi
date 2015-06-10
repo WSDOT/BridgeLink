@@ -9,4 +9,5 @@
    <?define PGSuperDataImporterCATID={BD3B6F1E-7826-478b-99C0-A946C12C89CF}?>
    <?define PGSuperDataExporterCATID={369A62A2-8995-4404-9C16-15AE5A0681E2}?>
 
+   <?define TogaExtensionAgentCATID={CC330C8A-90EE-4791-9F87-6875BFA1F59D}?>
 </Include>
