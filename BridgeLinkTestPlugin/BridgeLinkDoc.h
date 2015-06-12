@@ -52,6 +52,8 @@ protected:
 	afx_msg void OnNewView();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+
+   virtual HINSTANCE GetResourceInstance();
 };
 
 /////////////////////////////////////////////////////////////////////////////

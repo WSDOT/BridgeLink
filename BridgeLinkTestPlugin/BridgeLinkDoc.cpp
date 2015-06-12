@@ -105,3 +105,9 @@ void CBridgeLinkDoc::OnNewView()
    CEAFMainFrame* pMainFrame = (CEAFMainFrame*)AfxGetMainWnd();
    pMainFrame->CreateOrActivateFrame( pApp->m_pSecondaryViewTemplate );
 }
+
+HINSTANCE CBridgeLinkDoc::GetResourceInstance()
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   return AfxGetInstanceHandle();
+}
