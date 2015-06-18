@@ -143,7 +143,19 @@
                   </Extension>
                </ProgId>
 
-            </Component>
+           <!-- XBeam Rate file associations -->
+           <?ifdef _INCLUDE_XBEAMRATE?>
+           <ProgId Id="XBeamRate.Document">
+             <Extension Id="XBR" ContentType="application/XBeamRate">
+               <Verb Id="Open"
+                     Command="&amp;Open with BridgeLink:XBeamRate"
+                     TargetFile="$(var.ProductName).exe"
+                     Argument='"%1"' />
+             </Extension>
+           </ProgId>
+           <?endif ?>
+
+         </Component>
       </DirectoryRef >
 
       <DirectoryRef Id="APPLICATIONFOLDER"
