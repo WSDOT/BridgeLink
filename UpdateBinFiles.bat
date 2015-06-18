@@ -16,6 +16,11 @@ REM - Update BEToolbox Files
 cd \ARP\BridgeLinkBEToolbox
 call UpdateBinFiles.bat
 
+
+REM - Update XBeam Rate Files
+cd \ARP\XBeamRate
+call UpdateBinFiles.bat
+
 REM - Update Bridge Link Files
 
 cd \ARP\BridgeLink

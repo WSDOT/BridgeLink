@@ -22,8 +22,7 @@
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <SuppressPdbOutput>True</SuppressPdbOutput>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants>_INCLUDE_XBEAMRATE;</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <DefineConstants>Debug;</DefineConstants>
@@ -56,6 +55,7 @@
     <Compile Include="WBFL.wxs">
       <Link>WBFL.wxs</Link>
     </Compile>
+    <Compile Include="XBeamRate.wxs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DialogBanner.bmp" />

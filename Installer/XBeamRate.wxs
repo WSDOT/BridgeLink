@@ -1,0 +1,312 @@
+<?ifdef _INCLUDE_XBEAMRATE?>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+   <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+
+   <?define XBeamRateAgentCATID={6AD71676-7A06-4f31-8E3D-163BE0FF4177}?>
+
+   <Fragment>
+      
+      <!-- Start menu item for help file -->
+      <DirectoryRef Id="BridgeLinkStartMenuFolder">
+         <Component Id="XBeamRateShortcuts" Guid="{291FD6B5-D638-471e-8E3D-25077C2C13F1}" Win64="$(var.IsWin64)">
+
+            <Shortcut Id="XBeamRateHelpShortcut"
+                      Name="XBeam Rate Documentation"
+                      Description="XBeam Rate Documentation"
+                      Target="[APPLICATIONFOLDER]XBeamRate.chm"
+                      WorkingDirectory="APPLICATIONFOLDER"
+                  />
+
+            <RegistryValue Root="HKCU"
+                           Key="Software\Microsoft\[ProductName]"
+                           Name="installed"
+                           Type="integer"
+                           Value="1"
+                           KeyPath="yes"/>
+
+         </Component>
+      </DirectoryRef>
+
+      <!-- XBeamRate files -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.XBeamRateSourceRoot)\$(var.PlatformFolder)" >
+         <Component Id ="XBeamRateComponents"
+                    Guid="{491A5FF7-2562-4ba0-BD0F-42380F1D21A0}"
+                    Win64="$(var.IsWin64)">
+
+            <File Id="XBeamRate.dll"    Name="XBeamRate.dll" KeyPath ="yes"/>
+
+            <!-- XBeam Rate file associations -->
+            <ProgId Id="XBeamRate.Document" Icon="XBeamRate.dll" IconIndex="1" />
+
+            <!-- XBeam Rate registry entries-->
+            
+            <!-- XBeam Rate Application Plugin -->
+            <?define XBeamRateCLSID={B195CE70-2D27-4fa6-B0E5-99D09022D662}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRateCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateCLSID)"
+                           Value="XBeamRate"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRate.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
+                           Value=""
+                           Type="string" />
+            
+            <!-- XBeamRate Component Information Object -->
+            <?define XBeamRateComponentInfoCLSID={8CB5644D-5CC5-4fca-A86C-0A1D566D30CB}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRateComponentInfoCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateComponentInfoCLSID)"
+                           Value="XBeam Rate Component Information"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateComponentInfoCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRate.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
+                           Value=""
+                           Type="string" />
+
+         </Component>
+      </DirectoryRef >
+
+<!--
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.XBeamRateSourceRoot)\Images" >
+         <Component Id="XBeamRateImageFiles" Guid="{7D2E1954-4532-4afb-A158-E282572B9A9A}" Win64="$(var.IsWin64)">
+            <File Id="BoxGdr.png"    Name="BoxGdr.png" KeyPath="yes"/>
+            <File Id="Curvel.png"    Name="Curvel.png"/>
+            <File Id="GirComp.png"   Name="GirComp.png"/>
+         </Component>
+      </DirectoryRef >
+-->
+
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.XBeamRateSourceRoot)" >
+            <Component Id="XBeamRateHelpFiles" Guid="{9915218E-1270-47c4-AC90-5E71B6E109C0}" Win64="$(var.IsWin64)">
+               <File Id="XBeamRate.chm"    Name="XBeamRate.chm" KeyPath="yes"/>
+            </Component>
+         </DirectoryRef >
+
+
+     <!-- XBeamRate DLLs -->
+     <DirectoryRef Id="APPLICATIONFOLDER"
+                   FileSource ="$(var.XBeamRateSourceRoot)\$(var.PlatformFolder)" >
+       <Component Id="XBeamRateDLLs" Guid="{C892BB2C-048E-4ff5-A245-0C641CB4BB58}" Win64="$(var.IsWin64)">
+         <File Id="XBeamRateExt.dll"    Name="XBeamRateExt.dll" KeyPath="yes"/>
+       </Component>
+     </DirectoryRef >
+
+
+      <!-- XBeam Rate Agents -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource="$(var.XBeamRateSourceRoot)\AutomationDLLs\$(var.PlatformFolder)">
+
+         <Component Id="XBeamRateAnalysisAgent"
+                    Guid="{DA92F766-0693-43f1-A8BE-52A8545610FB}"
+                    Win64="$(var.IsWin64)">
+            <File Id="XBeamRateAnalysisAgent.dll"
+                  Name="XBeamRateAnalysisAgent.dll"
+                  KeyPath="yes"/>
+            <?define XBeamRateAnalysisAgentCLSID={7CDA2F9D-C223-41bf-AA96-BBECB655D853}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRateAnalysisAgentCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateAnalysisAgentCLSID)"
+                           Value="AnalysisAgent Class"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateAnalysisAgentCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRateAnalysisAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateAnalysisAgentCLSID)\Implemented Categories\$(var.XBeamRateAgentCATID)"
+                           Value=""
+                           Type="string" />
+         </Component>
+         <Component Id="XBeamRateEngAgent"
+                    Guid="{F75713DF-2481-42bc-AB4D-424949E60349}"
+                    Win64="$(var.IsWin64)">
+            <File Id="XBeamRateEngAgent.dll"
+                  Name="XBeamRateEngAgent.dll"
+                  KeyPath="yes"/>
+
+            <?define XBeamRateEngAgentCLSID={53A69F2C-AFD7-4cf9-B520-D64B0288F588}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRateEngAgentCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateEngAgentCLSID)"
+                           Value="EngAgent Class"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateEngAgentCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRateEngAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateEngAgentCLSID)\Implemented Categories\$(var.XBeamRateAgentCATID)"
+                           Value=""
+                           Type="string" />
+         </Component>
+         <Component Id="XBeamRateGraphingAgent"
+                    Guid="{3493EAFB-0493-4ec2-8CB7-85D7DDD576BE}"
+                    Win64="$(var.IsWin64)">
+            <File Id="XBeamRateGraphingAgent.dll"
+                  Name="XBeamRateGraphingAgent.dll"
+                  KeyPath="yes"/>
+
+            <?define XBeamRateGraphingAgentCLSID={946F73B1-E6EC-447d-B8AD-82DAE4C1DEB1}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRateGraphingAgentCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateGraphingAgentCLSID)"
+                           Value="XBeam Rate Graphing Agent Class"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateGraphingAgentCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRateGraphingAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateGraphingAgentCLSID)\Implemented Categories\$(var.XBeamRateAgentCATID)"
+                           Value=""
+                           Type="string" />
+
+         <Component Id="XBeamRatePierAgent"
+                    Guid="{23C61D38-85DE-4714-84B4-4F34B864A97E}"
+                    Win64="$(var.IsWin64)">
+            <File Id="XBeamRatePierAgent.dll"
+                  Name="XBeamRatePierAgent.dll"
+                  KeyPath="yes"/>
+            <?define XBeamRatePierAgentCLSID={F5F56C70-715B-4a8c-B81F-65CB93FF2DD5}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRatePierAgentCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRatePierAgentCLSID)"
+                           Value="XBeam Rate Pier Agent Class"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRatePierAgentCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRatePierAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRatePierAgentCLSID)\Implemented Categories\$(var.XBeamRateAgentCATID)"
+                           Value=""
+                           Type="string" />
+         </Component>
+
+         <Component Id="XBeamRateProjectAgent"
+                    Guid="{ABE02B1A-52BC-4e46-9A34-FB9761E8FF86}"
+                    Win64="$(var.IsWin64)">
+            <File Id="XBeamRateProjectAgent.dll"
+                  Name="XBeamRateProjectAgent.dll"
+                  KeyPath="yes"/>
+            <?define XBeamRateProjectAgentCLSID={A224F1D2-E6B5-441d-87D8-1B22C887409C}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRateProjectAgentCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateProjectAgentCLSID)"
+                           Value="XBeam Rate ProjectAgent Class"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateProjectAgentCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRateProjectAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateProjectAgentCLSID)\Implemented Categories\$(var.XBeamRateAgentCATID)"
+                           Value=""
+                           Type="string" />
+         </Component>
+         <Component Id="XBeamRateReportAgent"
+                    Guid="{8F3D9CBD-A4DC-4537-8955-49988E3B26E5}"
+                    Win64="$(var.IsWin64)">
+            <File Id="XBeamRateReportAgent.dll"
+                  Name="XBeamRateReportAgent.dll"
+                  KeyPath="yes"/>
+
+            <?define XBeamRateReportAgentCLSID={0AC6A8BA-EED1-4d82-BED9-FA38617D255A}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRateReportAgentCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateReportAgentCLSID)"
+                           Value="XBeam Rate Report Agent Class"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateReportAgentCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRateReportAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateReportAgentCLSID)\Implemented Categories\$(var.XBeamRateAgentCATID)"
+                           Value=""
+                           Type="string" />
+
+         <!-- XBeamRate Agent is a PGSuper/PGSplice Extension Agent -->
+         <Component Id="XBeamRateAgent"
+                    Guid="{B7463B83-E452-4e59-AFA9-23103D14074E}"
+                    Win64="$(var.IsWin64)">
+            <File Id="XBeamRate.dll"
+                  Name="XBeamRate.dll"
+                  KeyPath="yes"/>
+            <?define XBeamRateAgentCLSID={60BF2930-673C-4d29-B654-8A2E0879DE2B}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.XBeamRateAgentCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateAgentCLSID)"
+                           Value="XBeamRateAgent Class"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]XBeamRateAgent.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateAgentCLSID)\Implemented Categories\$(var.PGSuperExtensionAgentCATID)"
+                           Value=""
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.XBeamRateAgentCLSID)\Implemented Categories\$(var.PGSpliceExtensionAgentCATID)"
+                           Value=""
+                           Type="string" />
+         </Component>
+      </DirectoryRef>
+
+
+     <!-- XBeam Rate Application Plugin -->
+      <Feature Id="XBeamRate"
+               Absent="allow"
+               ConfigurableDirectory="APPLICATIONFOLDER"
+               Description="Cross Beam Load Rating"
+               Display="expand"
+               Title="XBeam Rate (Optional)"
+               Level="1">
+         <ComponentRef Id="XBeamRateComponents" Primary="yes" />
+         <ComponentRef Id="XBeamRateShortcuts"/>
+         <ComponentRef Id="XBeamRateImageFiles"/>
+         <ComponentRef Id="XBeamRateHelpFiles"/>
+         <ComponentRef Id="XBeamRateDLLs"/>
+      </Feature>
+   </Fragment>
+</Wix>
+
+
+<?endif ?>
