@@ -36,11 +36,11 @@
    <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
    <?define OpenBridgeMLSourceRoot=\ARP_RELEASE\OpenBridgeML\$(var.OpenBridgeMLVersion)\bin?>
 
-  <?ifdef _INCLUDE_XBEAMRATE?>
+<!-- <?ifdef _INCLUDE_XBEAMRATE?> -->
   <?define XBeamRateSourceRoot=\ARP_RELEASE\XBeamRate\$(var.XBeamRateVersion)\bin\?>
-  <?endif ?>
+  <!-- <?endif ?>-->
 
-  <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
+<?define GridSourceRoot=\ARP_RELEASE\Grid\?>
    
    <?if $(var.Platform)="x64"?>
       <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC90\bin\?>

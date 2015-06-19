@@ -1073,7 +1073,48 @@
          <ComponentRef Id="TxDOTTogaTemplates"/>
       </Feature>
 
-      <Feature Id="PGSuper"
+     <!-- <?ifdef _INCLUDE_XBEAMRATE ?>-->
+     <DirectoryRef Id="APPLICATIONFOLDER"
+                   FileSource="$(var.XBeamRateSourceRoot)\$(var.PlatformFolder)">
+       <!-- XBeamRate Agent is a PGSuper/PGSplice Extension Agent -->
+       <Component Id="XBeamRate_PGSuper_PGSplice_Extension"
+                   Guid="{EDB0FF06-ECC5-4d03-A635-BD1258E20BD7}"
+                   Win64="$(var.IsWin64)">
+         <?define XBeamRateAgentCLSID={60BF2930-673C-4d29-B654-8A2E0879DE2B}?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.XBeamRateAgentCLSID)"/>
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.XBeamRateAgentCLSID)"
+                        Value="XBeamRateAgent Class"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.XBeamRateAgentCLSID)\InprocServer32"
+                        Value="[APPLICATIONFOLDER]XBeamRate.dll"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.XBeamRateAgentCLSID)\Implemented Categories\$(var.PGSuperExtensionAgentCATID)"
+                        Value=""
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.XBeamRateAgentCLSID)\Implemented Categories\$(var.PGSpliceExtensionAgentCATID)"
+                        Value=""
+                        Type="string" />
+       </Component>
+     </DirectoryRef>
+
+     <Feature Id="XBeamRateExtensions"
+              Absent="allow"
+              ConfigurableDirectory="APPLICATIONFOLDER"
+              Description="Extend PGSuper and PGSplice with Cross Beam Load Rating Features"
+              Display="expand"
+              Title="XBeam Rate Extensions (Optional)"
+              Level="1">
+       <ComponentRef Id="XBeamRate_PGSuper_PGSplice_Extension"/>
+     </Feature>
+     <!-- <?endif ?>-->
+
+       <Feature Id="PGSuper"
                Absent="allow"
                ConfigurableDirectory="APPLICATIONFOLDER"
                Description="Design, Analysis, and Load Rating of Precast Concrete Girder Bridges"
@@ -1083,6 +1124,9 @@
 
          <FeatureRef Id="WSDOTExtensions"/>
          <FeatureRef Id="TxDOTExtensions"/>
+         <!-- <?ifdef _INCLUDE_XBEAMRATE ?>-->
+         <FeatureRef Id="XBeamRateExtensions"/>
+         <!-- <?endif ?>-->
 
          <ComponentRef Id="PGSuperComponents" Primary="yes" />
          <ComponentRef Id="PGSuperComponents2" />
