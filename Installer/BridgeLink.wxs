@@ -77,9 +77,9 @@
          <FeatureRef Id="PGSuper" /> <!-- PGSuper and PGSplice -->
          <FeatureRef Id="BEToolbox" />
         
-        <!-- <?ifdef _INCLUDE_XBEAMRATE?>-->
+        <?ifdef _INCLUDE_XBEAMRATE?>
         <FeatureRef Id="XBeamRate" />
-        <!-- <?endif ?>-->
+        <?endif ?>
 
       </Feature>
 

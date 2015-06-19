@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-  <!-- <?ifdef _INCLUDE_XBEAMRATE?> -->
+  <?ifdef _INCLUDE_XBEAMRATE?>
 
   <!-- Include project wide variables -->
   <?include Variables.wxi?>
@@ -43,7 +43,7 @@
             <File Id="XBeamRate.dll"    Name="XBeamRate.dll" KeyPath ="yes"/>
 
             <!-- XBeam Rate file associations -->
-            <ProgId Id="XBeamRate.Document" Icon="XBeamRate.dll" IconIndex="1" />
+            <ProgId Id="XBeamRate.Document" Icon="XBeamRate.dll" IconIndex="0" />
 
             <!-- XBeam Rate registry entries-->
             
@@ -85,6 +85,28 @@
                            Value=""
                            Type="string" />
 
+
+
+               <?define XBeamRateAgentCLSID={60BF2930-673C-4d29-B654-8A2E0879DE2B}?>
+               <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                            Root="HKCR"
+                            Key ="CLSID\$(var.XBeamRateAgentCLSID)"/>
+               <RegistryValue Root="HKCR"
+                              Key="CLSID\$(var.XBeamRateAgentCLSID)"
+                              Value="XBeamRateAgent Class"
+                              Type="string" />
+               <RegistryValue Root="HKCR"
+                              Key="CLSID\$(var.XBeamRateAgentCLSID)\InprocServer32"
+                              Value="[APPLICATIONFOLDER]XBeamRate.dll"
+                              Type="string" />
+               <RegistryValue Root="HKCR"
+                              Key="CLSID\$(var.XBeamRateAgentCLSID)\Implemented Categories\$(var.PGSuperExtensionAgentCATID)"
+                              Value=""
+                              Type="string" />
+               <RegistryValue Root="HKCR"
+                              Key="CLSID\$(var.XBeamRateAgentCLSID)\Implemented Categories\$(var.PGSpliceExtensionAgentCATID)"
+                              Value=""
+                              Type="string" />
          </Component>
       </DirectoryRef >
 
@@ -278,7 +300,6 @@
          <!--<ComponentRef Id="XBeamRateImageFiles"/>-->
          <ComponentRef Id="XBeamRateHelpFiles"/>
          <ComponentRef Id="XBeamRateDLLs"/>
-        <ComponentRef Id="XBeamRate_PGSuper_PGSplice_Extension"/>
         <ComponentRef Id="XBeamRatePierAgent"/>
         <ComponentRef Id="XBeamRateAnalysisAgent"/>
         <ComponentRef Id="XBeamRateGraphingAgent"/>
@@ -288,7 +309,7 @@
       </Feature>
    </Fragment>
 
-<!--   <?endif ?> -->
+   <?endif ?>
 
 </Wix>
 

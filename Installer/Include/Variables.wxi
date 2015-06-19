@@ -36,9 +36,9 @@
    <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
    <?define OpenBridgeMLSourceRoot=\ARP_RELEASE\OpenBridgeML\$(var.OpenBridgeMLVersion)\bin?>
 
-<!-- <?ifdef _INCLUDE_XBEAMRATE?> -->
+<?ifdef _INCLUDE_XBEAMRATE?>
   <?define XBeamRateSourceRoot=\ARP_RELEASE\XBeamRate\$(var.XBeamRateVersion)\bin\?>
-  <!-- <?endif ?>-->
+<?endif ?>
 
 <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
    
