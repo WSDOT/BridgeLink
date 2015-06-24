@@ -7,7 +7,7 @@
    <?define WBFLVersion         = 4.0.0.34?>
    <?define OpenBridgeMLVersion = 0.1.0.9?>
   <?ifdef _INCLUDE_XBEAMRATE?>
-  <?define XBeamRateVersion = 1.0.0.2?>
+  <?define XBeamRateVersion = 1.0.0.1?>
   <?endif ?>
 
 
