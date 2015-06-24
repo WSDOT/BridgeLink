@@ -916,7 +916,7 @@
                          Key ="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)"/>
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)"
-                           Value="TxDOT Optional Girder Analysis Component"
+                           Value="TxDOT Optional Girder Analysis (TOGA)"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)\InprocServer32"

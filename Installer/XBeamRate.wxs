@@ -85,15 +85,51 @@
                            Value=""
                            Type="string" />
 
+           <!-- WSDOT Component Information Object-->
+           <!-- PGSuper -->
+           <?define PGSuperXBeamRateComponentInfoCLSID={DA6D93DF-1907-4e12-A649-30E2078FFC8A}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)"
+                          Value="XBeam Rate Component Information"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)\Implemented Categories\$(var.PGSuperComponentInfoCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!-- PGSplice -->
+           <?define PGSpliceXBeamRateComponentInfoCLSID={D9B7C5C6-0233-48cb-89F5-C85AD9A82E2D}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)"
+                          Value="XBeam Rate Component Information"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)\Implemented Categories\$(var.PGSpliceComponentInfoCATID)"
+                          Value=""
+                          Type="string" />
 
 
-               <?define XBeamRateAgentCLSID={60BF2930-673C-4d29-B654-8A2E0879DE2B}?>
+           <?define XBeamRateAgentCLSID={60BF2930-673C-4d29-B654-8A2E0879DE2B}?>
                <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                             Root="HKCR"
                             Key ="CLSID\$(var.XBeamRateAgentCLSID)"/>
                <RegistryValue Root="HKCR"
                               Key="CLSID\$(var.XBeamRateAgentCLSID)"
-                              Value="XBeamRateAgent Class"
+                              Value="XBeam Rate Extension"
                               Type="string" />
                <RegistryValue Root="HKCR"
                               Key="CLSID\$(var.XBeamRateAgentCLSID)\InprocServer32"
