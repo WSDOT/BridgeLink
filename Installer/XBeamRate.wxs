@@ -97,7 +97,7 @@
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)\InprocServer32"
-                          Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                          Value="[APPLICATIONFOLDER]XBeamRate.dll"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)\Implemented Categories\$(var.PGSuperComponentInfoCATID)"
@@ -115,7 +115,7 @@
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)\InprocServer32"
-                          Value="[APPLICATIONFOLDER]WSDOTAgent.dll"
+                          Value="[APPLICATIONFOLDER]XBeamRate.dll"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)\Implemented Categories\$(var.PGSpliceComponentInfoCATID)"
