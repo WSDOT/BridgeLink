@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="BEToolbox.wxs" />
     <Compile Include="BridgeLinkComponents.wxs" />
+    <Compile Include="KDOTExtensions.wxs" />
     <Compile Include="LibraryEditor.wxs" />
     <Compile Include="MergeModules.wxs" />
     <Compile Include="BridgeLink.wxs" />
@@ -64,6 +65,8 @@
     <Compile Include="WBFL.wxs">
       <Link>WBFL.wxs</Link>
     </Compile>
+    <Compile Include="TxDOTExtensions.wxs" />
+    <Compile Include="WSDOTExtensions.wxs" />
     <Compile Include="XBeamRate.wxs" />
   </ItemGroup>
   <ItemGroup>
