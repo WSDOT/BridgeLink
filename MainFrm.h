@@ -57,7 +57,7 @@ public:
 #endif
 
 protected:
-   virtual CEAFBackgroundWnd* CreateBackgroundWindow();
+   virtual CEAFStartPageWnd* CreateStartPage();
 
 // Generated message map functions
 protected:

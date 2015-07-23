@@ -20,18 +20,18 @@
 // Bridge_Support@wsdot.wa.gov
 ///////////////////////////////////////////////////////////////////////
 
-// BackgroundWndProvider.h
+// StartPageWndProvider.h
 //
 
 #pragma once
 
-#include <EAF\EAFBackgroundWnd.h>
+#include <EAF\EAFStartPageWnd.h>
 
 // {271E5B9C-A3C9-486f-9E89-FD0EBD2B6E58}
-DEFINE_GUID(IID_IBackgroundWndProvider, 
+DEFINE_GUID(IID_IStartPageWndProvider, 
 0x271e5b9c, 0xa3c9, 0x486f, 0x9e, 0x89, 0xfd, 0xe, 0xbd, 0x2b, 0x6e, 0x58);
-struct __declspec(uuid("271E5B9C-A3C9-486f-9E89-FD0EBD2B6E58")) IBackgroundWndProvider;
-interface IBackgroundWndProvider : public IUnknown
+struct __declspec(uuid("271E5B9C-A3C9-486f-9E89-FD0EBD2B6E58")) IStartPageWndProvider;
+interface IStartPageWndProvider : public IUnknown
 {
-   virtual CEAFBackgroundWnd* CreateBackgroundWindow() = 0;
+   virtual CEAFStartPageWnd* CreateStartPage() = 0;
 };

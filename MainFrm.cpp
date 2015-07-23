@@ -29,7 +29,7 @@
 #include "MainFrm.h"
 #include "Resource.h"
 
-#include "BackgroundWndProvider.h"
+#include "StartPageWndProvider.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -115,7 +115,7 @@ void CMainFrame::Dump(CDumpContext& dc) const
 #endif //_DEBUG
 
 
-CEAFBackgroundWnd* CMainFrame::CreateBackgroundWindow()
+CEAFStartPageWnd* CMainFrame::CreateStartPage()
 {
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_CURRENT_USER,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
@@ -127,7 +127,7 @@ CEAFBackgroundWnd* CMainFrame::CreateBackgroundWindow()
    TCHAR strCLSID[MAX_PATH];
    DWORD size = MAX_PATH;
    DWORD type;
-   result = ::RegQueryValueEx(key,_T("BackgroundProvider"),0,&type,(LPBYTE)&strCLSID[0],&size);
+   result = ::RegQueryValueEx(key,_T("StartPageProvider"),0,&type,(LPBYTE)&strCLSID[0],&size);
    if ( result != ERROR_SUCCESS )
    {
       return NULL;
@@ -142,13 +142,13 @@ CEAFBackgroundWnd* CMainFrame::CreateBackgroundWindow()
       return NULL;
    }
 
-   CComPtr<IBackgroundWndProvider> provider;
+   CComPtr<IStartPageWndProvider> provider;
    if ( FAILED(provider.CoCreateInstance(clsid)) )
    {
       return NULL;
    }
 
-   return provider->CreateBackgroundWindow();
+   return provider->CreateStartPage();
 }
 
 /////////////////////////////////////////////////////////////////////////////
