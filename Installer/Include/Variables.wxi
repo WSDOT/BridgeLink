@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
-   <?define BridgeLinkReleaseVersion = 1.0.0.37?> <!-- This defines the version number of the product release -->
+   <?define BridgeLinkReleaseVersion = 1.0.0.38?> <!-- This defines the version number of the product release -->
    <?define BridgeLinkVersion   = 1.0.0.26?> <!-- This defines the version number of the executable application (probably won't change much)-->
    <?define BEToolboxVersion    = 3.0.0.24?>
    <?define PGSuperVersion      = 3.0.0.38?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
