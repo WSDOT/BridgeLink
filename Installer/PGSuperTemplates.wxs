@@ -7,12 +7,12 @@
    <Fragment>
       <!-- Define directory structure on target machine -->
       <DirectoryRef Id="APPLICATIONFOLDER">
-         <Directory Id="Templates" Name="Templates">
-            <Directory Id="PGSpliceTemplates">
+         <Directory Id="Configurations" Name="Configurations">
+            <Directory Id="PGSpliceConfigurations">
                <Directory Id="I_Beams" Name="I-Beams" />
                <Directory Id="U_Beams" Name="U-Beams" />
             </Directory>
-            <Directory Id="PGSuperTemplates">
+            <Directory Id="PGSuperConfigurations">
                <Directory Id="Deck_Bulb_Tees" Name="Deck_Bulb_Tees" />
                <Directory Id="Multiweb" Name="Multiweb" />
                <Directory Id="Slabs" Name="Slabs" />
@@ -25,7 +25,7 @@
       </DirectoryRef>
 
       <!-- Local Library File (PGSuper/PGSplice) -->
-         <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.PGSuperSourceRoot)\Templates" >
+         <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.PGSuperSourceRoot)\Configurations" >
             <Component Id="PGSuperLibraryFile"
                        Guid="{FC12DFE3-1D24-4BC4-AAFF-1B8F08151BEC}"
                        Win64="$(var.IsWin64)">
@@ -33,9 +33,9 @@
             </Component>
          </DirectoryRef>
 
-         <!-- PGSuper Templates -->
+         <!-- PGSuper Configurations -->
          <DirectoryRef Id="Deck_Bulb_Tees"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSuper\Deck_Bulb_Tees" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Deck_Bulb_Tees" >
             <Component Id="Deck_Bulb_Tees"
                        Guid="{347D3F44-E81A-461a-91E1-E7D2EE47652E}"
                        Win64="$(var.IsWin64)">
@@ -46,7 +46,7 @@
             </Component>
          </DirectoryRef>
          <DirectoryRef Id="Multiweb"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSuper\Multiweb" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Multiweb" >
             <Component Id="Multiweb"
                        Guid="{3F084D09-7FF9-4fca-AB41-FA662B4D5B41}"
                        Win64="$(var.IsWin64)">
@@ -54,7 +54,7 @@
             </Component>
          </DirectoryRef>
          <DirectoryRef Id="Slabs"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSuper\Slabs" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Slabs" >
             <Component Id="Slabs"
                        Guid="{47B2E980-30CF-47c1-AC5F-423EB1F7FF36}"
                        Win64="$(var.IsWin64)">
@@ -66,7 +66,7 @@
             </Component>
          </DirectoryRef>
          <DirectoryRef Id="UGirders"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSuper\U-Girders" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\U-Girders" >
             <Component Id="UGirders"
                        Guid="{971AD810-96A5-486b-8EA4-2ADD97B54857}"
                        Win64="$(var.IsWin64)">
@@ -76,7 +76,7 @@
             </Component>
          </DirectoryRef>
          <DirectoryRef Id="WBTGirders"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSuper\WBT-Girders" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\WBT-Girders" >
             <Component Id="WBTGirders"
                        Guid="{CF510295-A099-43a7-B70A-16D1AA36FE1E}"
                        Win64="$(var.IsWin64)">
@@ -86,7 +86,7 @@
             </Component>
          </DirectoryRef>
          <DirectoryRef Id="WFGirders"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSuper\WF-Girders" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\WF-Girders" >
             <Component Id="WFGirders"
                        Guid="{BD0780EB-07AE-455c-B907-C84B7EF44732}"
                        Win64="$(var.IsWin64)">
@@ -102,7 +102,7 @@
             </Component>
          </DirectoryRef>
          <DirectoryRef Id="WGirders"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSuper\W-Girders" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\W-Girders" >
             <Component Id="WGirders"
                        Guid="{B151B186-77DD-4286-AFF0-A575A19F7623}"
                        Win64="$(var.IsWin64)">
@@ -113,9 +113,9 @@
             </Component>
          </DirectoryRef>
 
-      <!-- PGSplice Templates -->
+      <!-- PGSplice Configurations -->
       <DirectoryRef Id="I_Beams"
-                       FileSource="$(var.PGSuperSourceRoot)\Templates\PGSplice\I-Beams" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSplice\I-Beams" >
          <Component Id="I_Beams"
                     Guid="{FE734160-B5CC-45ef-8860-C665AC0FF748}"
                     Win64="$(var.IsWin64)">
@@ -126,7 +126,7 @@
          </Component>
       </DirectoryRef>
       <DirectoryRef Id="U_Beams"
-                    FileSource="$(var.PGSuperSourceRoot)\Templates\PGSplice\U-Beams" >
+                    FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSplice\U-Beams" >
          <Component Id="U_Beams"
                     Guid="{76187DED-D98D-478f-B1AD-9A6514A963FF}"
                     Win64="$(var.IsWin64)">

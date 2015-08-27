@@ -11,7 +11,7 @@
      <!-- TxDOT PGSuper Extensions -->
      <DirectoryRef Id="APPLICATIONFOLDER"
                    FileSource="$(var.PGSuperSourceRoot)\Extensions\TxDOT\$(var.PlatformFolder)">
-       <Directory Id="TogaTemplates" Name="TogaTemplates" />
+       <Directory Id="TogaConfigurations" Name="TogaConfigurations" />
        <Component Id="TxDOTAgent"
                   Guid="{D0E840E4-9139-4FD3-A162-AAEBAF31686E}"
                   Win64="$(var.IsWin64)">
