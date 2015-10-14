@@ -13,10 +13,10 @@
                     Win64="$(var.IsWin64)">
 
             <File Id="WBFLEAF.dll"              Name="WBFLEAF.dll"              KeyPath ="yes"/>
-            <File Id="WBFLBridgeAnalysis.dll"   Name="WBFLBridgeAnalysis.dll"/>
+            <!-- <File Id="WBFLBridgeAnalysis.dll"   Name="WBFLBridgeAnalysis.dll"/>-->
             <File Id="WBFLBridgeGeometry.dll"     Name="WBFLBridgeGeometry.dll"/>
-        <!-- <File Id="WBFLBridgeGeometryAgent.dll"    Name="WBFLBridgeGeometryAgent.dll"/> -->
-            <File Id="WBFLBridgeModeling.dll"   Name="WBFLBridgeModeling.dll"/>
+            <!-- <File Id="WBFLBridgeGeometryAgent.dll"    Name="WBFLBridgeGeometryAgent.dll"/> -->
+            <!-- <File Id="WBFLBridgeModeling.dll"   Name="WBFLBridgeModeling.dll"/> -->
             <File Id="WBFLCogo.dll"             Name="WBFLCogo.dll"/>
             <File Id="WBFLCore.dll"             Name="WBFLCore.dll"/>
             <File Id="WBFLDManip.dll"           Name="WBFLDManip.dll"/>
