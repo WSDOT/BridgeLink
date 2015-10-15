@@ -66,7 +66,7 @@
                            Value=""
                            Type="string" />
             
-            <!-- XBeamRate Component Information Object -->
+            <!-- XBeamRate Component Information Object (for BridgeLink About dialog) -->
             <?define XBeamRateComponentInfoCLSID={8CB5644D-5CC5-4FCA-A86C-0A1D566D30CB}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
@@ -85,8 +85,8 @@
                            Value=""
                            Type="string" />
 
-           <!-- WSDOT Component Information Object-->
-           <!-- PGSuper -->
+           <!-- PGS Component Information Object-->
+           <!-- PGSuper (for PGSuper About dialog) -->
            <?define PGSuperXBeamRateComponentInfoCLSID={DA6D93DF-1907-4e12-A649-30E2078FFC8A}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -104,7 +104,7 @@
                           Value=""
                           Type="string" />
 
-           <!-- PGSplice -->
+           <!-- PGSplice (for PGSplice About dlg) -->
            <?define PGSpliceXBeamRateComponentInfoCLSID={D9B7C5C6-0233-48cb-89F5-C85AD9A82E2D}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -122,7 +122,7 @@
                           Value=""
                           Type="string" />
 
-
+           <!-- Registers as a PGSuper/PGSplice extension agent -->
            <?define XBeamRateAgentCLSID={60BF2930-673C-4d29-B654-8A2E0879DE2B}?>
                <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                             Root="HKCR"
@@ -143,6 +143,24 @@
                               Key="CLSID\$(var.XBeamRateAgentCLSID)\Implemented Categories\$(var.PGSpliceExtensionAgentCATID)"
                               Value=""
                               Type="string" />
+
+           <!-- PGSuper/PGSplice Data Exporter -->
+           <?define PGSDataExporterCLSID={B3773B17-08A0-4f2b-99E8-C8077C3D2166}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.PGSDataExporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSDataExporterCLSID)"
+                          Value="XBeam Rate Pier Exporter"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSDataExporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]XBeamRate.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                          Value=""
+                          Type="string" />
          </Component>
       </DirectoryRef >
 
