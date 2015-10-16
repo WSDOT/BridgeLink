@@ -32,6 +32,8 @@ CBridgeLinkDoc::CBridgeLinkDoc()
 {
 	// TODO: add one-time construction code here
 
+   UIHints(FALSE); // not using UIHints feature
+
 }
 
 CBridgeLinkDoc::~CBridgeLinkDoc()
@@ -74,6 +76,18 @@ BOOL CBridgeLinkDoc::GetToolTipMessageString(UINT nID, CString& rMessage) const
 {
    AFX_MANAGE_STATE(AfxGetStaticModuleState());
    return __super::GetToolTipMessageString(nID,rMessage);
+}
+
+void CBridgeLinkDoc::LoadDocumentSettings()
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   __super::LoadDocumentSettings();
+}
+
+void CBridgeLinkDoc::SaveDocumentSettings()
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   __super::SaveDocumentSettings();
 }
 
 /////////////////////////////////////////////////////////////////////////////

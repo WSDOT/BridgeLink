@@ -36,6 +36,9 @@ public:
    virtual BOOL GetStatusBarMessageString(UINT nID,CString& rMessage) const;
    virtual BOOL GetToolTipMessageString(UINT nID, CString& rMessage) const;
 
+   virtual void LoadDocumentSettings();
+   virtual void SaveDocumentSettings();
+
 // Implementation
 public:
 	virtual ~CBridgeLinkDoc();
