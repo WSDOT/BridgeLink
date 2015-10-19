@@ -68,6 +68,7 @@
     <Compile Include="TxDOTExtensions.wxs" />
     <Compile Include="WSDOTExtensions.wxs" />
     <Compile Include="XBeamRate.wxs" />
+    <Compile Include="XBeamRateImages.wxs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DialogBanner.bmp" />
@@ -77,6 +78,7 @@
     <Content Include="Include\Variables.wxi" />
     <Content Include="License.rtf" />
     <Content Include="Scripts\BuildPGSuperImagesFragment.js" />
+    <Content Include="Scripts\BuildXBeamRateImagesFragment.js" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUIExtension">
@@ -98,6 +100,7 @@
 	</Target>
 	-->
   <PropertyGroup>
-    <PreBuildEvent>cscript  $(ProjectDir)\Scripts\BuildPGSuperImagesFragment.js //NoLogo &gt; $(ProjectDir)PGSuperImages.wxs</PreBuildEvent>
+    <PreBuildEvent>cscript  $(ProjectDir)\Scripts\BuildPGSuperImagesFragment.js //NoLogo &gt; $(ProjectDir)PGSuperImages.wxs
+cscript  $(ProjectDir)\Scripts\BuildXBeamRateImagesFragment.js //NoLogo &gt; $(ProjectDir)XBeamRateImages.wxs</PreBuildEvent>
   </PropertyGroup>
 </Project>

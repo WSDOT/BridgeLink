@@ -351,8 +351,8 @@
                Level="1">
          <ComponentRef Id="XBeamRateComponents" Primary="yes" />
          <ComponentRef Id="XBeamRateShortcuts"/>
-         <!--<ComponentRef Id="XBeamRateImageFiles"/>-->
-         <ComponentRef Id="XBeamRateHelpFiles"/>
+         <ComponentRef Id="XBRImages"/>
+        <ComponentRef Id="XBeamRateHelpFiles"/>
          <ComponentRef Id="XBeamRateDLLs"/>
         <ComponentRef Id="XBeamRatePierAgent"/>
         <ComponentRef Id="XBeamRateAnalysisAgent"/>
