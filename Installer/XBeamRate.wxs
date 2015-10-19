@@ -18,7 +18,7 @@
 
             <Shortcut Id="XBeamRateHelpShortcut"
                       Name="XBeam Rate Documentation"
-                      Description="XBeam Rate Documentation"
+                      Description="XBRate Documentation"
                       Target="[APPLICATIONFOLDER]XBeamRate.chm"
                       WorkingDirectory="APPLICATIONFOLDER"
                   />
@@ -55,7 +55,7 @@
                          Key ="CLSID\$(var.XBeamRateCLSID)"/>
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.XBeamRateCLSID)"
-                           Value="XBeamRate"
+                           Value="XBRate"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.XBeamRateCLSID)\InprocServer32"
@@ -74,7 +74,7 @@
                          Key ="CLSID\$(var.XBeamRateComponentInfoCLSID)"/>
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.XBeamRateComponentInfoCLSID)"
-                           Value="XBeam Rate Component Information"
+                           Value="XBRate Component Information"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.XBeamRateComponentInfoCLSID)\InprocServer32"
@@ -93,7 +93,7 @@
                         Key ="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)"
-                          Value="XBeam Rate Component Information"
+                          Value="XBRate Component Information"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSuperXBeamRateComponentInfoCLSID)\InprocServer32"
@@ -111,7 +111,7 @@
                         Key ="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)"
-                          Value="XBeam Rate Component Information"
+                          Value="XBRate Component Information"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceXBeamRateComponentInfoCLSID)\InprocServer32"
@@ -129,7 +129,7 @@
                             Key ="CLSID\$(var.XBeamRateAgentCLSID)"/>
                <RegistryValue Root="HKCR"
                               Key="CLSID\$(var.XBeamRateAgentCLSID)"
-                              Value="XBeam Rate Extension"
+                              Value="XBRate Extension"
                               Type="string" />
                <RegistryValue Root="HKCR"
                               Key="CLSID\$(var.XBeamRateAgentCLSID)\InprocServer32"
@@ -151,7 +151,7 @@
                       Key ="CLSID\$(var.PGSDataExporterCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSDataExporterCLSID)"
-                          Value="XBeam Rate Pier Exporter"
+                          Value="XBRate Pier Exporter"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSDataExporterCLSID)\InprocServer32"
@@ -347,7 +347,7 @@
                ConfigurableDirectory="APPLICATIONFOLDER"
                Description="Cross Beam Load Rating"
                Display="expand"
-               Title="XBeam Rate (Optional)"
+               Title="XBRate (Optional)"
                Level="1">
          <ComponentRef Id="XBeamRateComponents" Primary="yes" />
          <ComponentRef Id="XBeamRateShortcuts"/>
