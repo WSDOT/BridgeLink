@@ -272,7 +272,7 @@
             <File Id="XBeamRatePierAgent.dll"
                   Name="XBeamRatePierAgent.dll"
                   KeyPath="yes"/>
-            <?define XBeamRatePierAgentCLSID={F5F56C70-715B-4a8c-B81F-65CB93FF2DD5}?>
+            <?define XBeamRatePierAgentCLSID={23184501-3882-4e40-BF05-DD96D84F991B}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.XBeamRatePierAgentCLSID)"/>

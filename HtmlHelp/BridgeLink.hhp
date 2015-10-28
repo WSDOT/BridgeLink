@@ -19,9 +19,11 @@ Flat=No
 NewWindow="BridgeLink","BridgeLink.hhc","BridgeLink.hhk","","",,,,,0x420,0,0x200e,[0,0,1000,750],0x0,0x0,,0,0,0
 
 [FILES]
+UserGuide\Installed_Components.htm
+UserGuide\Introduction.htm
 Welcome.htm
 Alternate_Route_Open_Source_License.htm
-Manage_Application_Components.htm
+UserGuide\Manage_Application_Components.htm
 eHelp.xml
 RoboHHRE.lng
 
