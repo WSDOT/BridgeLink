@@ -31,9 +31,6 @@
 
       <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
 
-      <!--<Icon Id="BridgeLinkIcon" SourceFile="$(var.SolutionDir)\res\BridgeLink.ico" />-->
-      <Icon Id="BridgeLinkIcon" SourceFile="\ARP\BridgeLink\res\BridgeLink.ico" />
-
       <!-- Define the directory structure on the target machine -->
       <Directory Id="TARGETDIR" Name="SourceDir">
          <Directory Id="$(var.ProgramFilesDirectory)">
