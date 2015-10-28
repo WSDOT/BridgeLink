@@ -108,7 +108,9 @@
       <!--<Property Id='ARPHELPTELEPHONE'>???-???-????</Property>-->
       <!--<Property Id='ARPREADME'>path to readme file</Property>-->
       <!--<Property Id='ARPSIZE'>application size in kb (Windows reports bad size)</Property>-->
-      <!--<Property Id='ARPPRODUCTICON'>BridgeLinkIcon</Property>-->
+
+     <Icon Id='BridgeLinkIcon' SourceFile='$(var.BridgeLinkSourceRoot)\App\BridgeLink.ico'/>
+     <Property Id='ARPPRODUCTICON'>BridgeLinkIcon</Property>
 
       <!-- Remove commented elements to adjust Modify/Remove/Repair buttons for installer -->
       <!-- Remove the modify button 

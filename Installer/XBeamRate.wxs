@@ -17,7 +17,7 @@
          <Component Id="XBeamRateShortcuts" Guid="{291FD6B5-D638-471e-8E3D-25077C2C13F1}" Win64="$(var.IsWin64)">
 
             <Shortcut Id="XBeamRateHelpShortcut"
-                      Name="XBeam Rate Documentation"
+                      Name="XBRate Documentation"
                       Description="XBRate Documentation"
                       Target="[APPLICATIONFOLDER]XBeamRate.chm"
                       WorkingDirectory="APPLICATIONFOLDER"

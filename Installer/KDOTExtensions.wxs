@@ -39,9 +39,7 @@
 
 
         <!-- KDOT Component Information Object -->
-        <!-- If KDOT wants a component info object to integrated into the About dialog
-        the registration goes here... just add the class id
-        <?define PGSuperKDOTInfoCLSID={PUT CLSID HERE}?>
+        <?define PGSuperKDOTInfoCLSID={75AAA5FD-16D5-415d-B2AD-8FF123C27B45}?>
         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                      Root="HKCR"
                      Key ="CLSID\$(var.PGSuperKDOTInfoCLSID)"/>
@@ -57,7 +55,6 @@
                        Key="CLSID\$(var.PGSuperKDOTInfoCLSID)\Implemented Categories\$(var.PGSuperComponentInfoCATID)"
                        Value=""
                        Type="string" />
-                       -->
 
       </Component>
     </DirectoryRef>
