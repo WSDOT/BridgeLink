@@ -40,9 +40,10 @@
 // This is the range of command IDs for all plug-in commands... all means all commands added
 // to the menus of the BridgeLink executable program, the AppPlugin document and view menus, 
 // and plugin supplied menus, toolbars, and accelerator tables
-#define BRIDGELINK_FIRST_PLUGIN_COMMAND 0x8200
-#define BRIDGELINK_LAST_PLUGIN_COMMAND  (BRIDGELINK_FIRST_PLUGIN_COMMAND+0x0100)
-#define BRIDGELINK_PLUGIN_COMMAND_COUNT (BRIDGELINK_LAST_PLUGIN_COMMAND-BRIDGELINK_FIRST_PLUGIN_COMMAND)
+#define BRIDGELINK_FIRST_PLUGIN_COMMAND 0xD5FF // the first plugin command will map to this command ID
+#define BRIDGELINK_LAST_PLUGIN_COMMAND  0xDFFF // this is the end of the command range that MFC lets us use
+#define BRIDGELINK_TOTAL_PLUGIN_COMMAND_COUNT (BRIDGELINK_LAST_PLUGIN_COMMAND-BRIDGELINK_FIRST_PLUGIN_COMMAND) // this is the total number of plug in commands that we get
+#define BRIDGELINK_PLUGIN_COMMAND_COUNT 0x0100 // we'll reserve 256 command IDs for direct BridgeLink plug-in commands
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -192,7 +193,8 @@ BOOL CBridgeLinkApp::InitInstance()
 
    // Reserve BRIDGELINK_PLUGIN_COMMAND_COUNT command IDs for commands that get added
    // to the main application
-   GetPluginCommandManager()->ReserveCommandIDRange(BRIDGELINK_PLUGIN_COMMAND_COUNT);
+   UINT nCommands = GetPluginCommandManager()->ReserveCommandIDRange(BRIDGELINK_PLUGIN_COMMAND_COUNT);
+   ATLASSERT(nCommands == BRIDGELINK_PLUGIN_COMMAND_COUNT);
 
    // user can dbl-click on a file to open
    EnableShellOpen();
