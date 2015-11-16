@@ -19,7 +19,7 @@
             <Shortcut Id="XBeamRateHelpShortcut"
                       Name="XBRate Documentation"
                       Description="XBRate Documentation"
-                      Target="[APPLICATIONFOLDER]XBeamRate.chm"
+                      Target="[APPLICATIONFOLDER]XBRate.chm"
                       WorkingDirectory="APPLICATIONFOLDER"
                   />
 
@@ -176,7 +176,8 @@
       <DirectoryRef Id="APPLICATIONFOLDER"
                     FileSource ="$(var.XBeamRateSourceRoot)" >
             <Component Id="XBeamRateHelpFiles" Guid="{9915218E-1270-47c4-AC90-5E71B6E109C0}" Win64="$(var.IsWin64)">
-               <File Id="XBeamRate.chm"    Name="XBeamRate.chm" KeyPath="yes"/>
+               <File Id="XBRate.chm"    Name="XBRate.chm" KeyPath="yes"/>
+              <File Id="XBRate.tip"  Name="XBRate.tip"/>
             </Component>
          </DirectoryRef >
 
