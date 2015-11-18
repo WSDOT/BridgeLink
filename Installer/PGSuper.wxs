@@ -206,7 +206,26 @@
                            Value=""
                            Type="string" />
 
-            <!-- PGSplice Component Categories -->
+           <!-- PGSplice Project Importer Object -->
+           <?define PGSpliceProjectImporterCLSID={398F7443-AA27-442f-ADA4-866E38BE596D}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.PGSpliceProjectImporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSpliceProjectImporterCLSID)"
+                          Value="PGSPlice Project Importer"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSpliceProjectImporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]PGSuper.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGSpliceProjectImporterCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!-- PGSplice Component Categories -->
 
             <!-- Component categories for the PGSplice Application plugin
            The following items can be added into PGSplice:
