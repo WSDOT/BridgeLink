@@ -236,6 +236,12 @@ BOOL CBridgeLinkApp::InitInstance()
    //sysComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin); // this is done by the base class
    sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
 
+   // Need to let drag and drop messages through
+   // See http://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/
+   ::ChangeWindowMessageFilter(WM_DROPFILES,MSGFLT_ADD);
+   ::ChangeWindowMessageFilter(WM_COPYDATA, MSGFLT_ADD);
+   ::ChangeWindowMessageFilter(0x0049,      MSGFLT_ADD);
+
 	return TRUE;
 }
 
