@@ -18,12 +18,12 @@
             <File Id="PGSuper.dll"    Name="PGSuper.dll" KeyPath ="yes"/>
 
             <!-- PGSuper File associations -->
-            <ProgId Id="PGSuper.Template" Icon="PGSuper.dll" IconIndex="25" />
+            <ProgId Id="PGSuper.Template" Icon="PGSuper.dll" IconIndex="30" />
             <ProgId Id="PGSuper.Document" Icon="PGSuper.dll" IconIndex="0" />
             
             <!-- PGSplice File associations -->
-            <ProgId Id="PGSplice.Template" Icon="PGSuper.dll" IconIndex="26"/>
-            <ProgId Id="PGSplice.Document" Icon="PGSuper.dll" IconIndex="7"/>
+            <ProgId Id="PGSplice.Template" Icon="PGSuper.dll" IconIndex="31"/>
+            <ProgId Id="PGSplice.Document" Icon="PGSuper.dll" IconIndex="8"/>
 
             <!-- PGSuper registry entries-->
 
