@@ -4,10 +4,10 @@
    <?define BridgeLinkVersion   = 1.0.0.31?> <!-- This defines the version number of the executable application (probably won't change much)-->
    <?define BEToolboxVersion    = 3.0.0.30?>
    <?define PGSuperVersion      = 3.0.0.44?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 4.0.0.40?>
+   <?define WBFLVersion         = 4.0.0.41?>
    <?define OpenBridgeMLVersion = 0.1.0.14?>
   <?ifdef _INCLUDE_XBEAMRATE?>
-  <?define XBeamRateVersion = 1.0.0.2?>
+  <?define XBeamRateVersion = 1.0.0.3?>
   <!-- also change this version number in the BuildXBeamRateImagesFragment.js file -->
   <?endif ?>
 
