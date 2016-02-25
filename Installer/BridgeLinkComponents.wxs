@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-   
-   <!-- These are the components that make up the BridgeLink application -->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" 
+     xmlns:fire="http://schemas.microsoft.com/wix/FirewallExtension">
+
+<!-- These are the components that make up the BridgeLink application -->
    <!-- That is to say, the main application framework (not the plug in applications) -->
 
    <!-- Include project wide variables -->
@@ -13,8 +14,10 @@
          <Component Id ="BridgeLinkComponents"
                     Guid="{9F639678-37CE-48a2-8EDD-ED5F699EDC0D}"
                     Win64="$(var.IsWin64)">
-            
-            <File Id="$(var.ProductName).exe"    Name="$(var.ProductName).exe" KeyPath ="yes"/>
+
+           <File Id="$(var.ProductName).exe"    Name="$(var.ProductName).exe" KeyPath ="yes">
+             <fire:FirewallException Id="FWX1" Name="BridgeLink" Scope="any"/>
+           </File>
             
             <!-- define component categories for the main executable
             Categories are: BridgeLink Application Plugins (such as PGSuper, Library Editor, TOGA, BEToolbox)
