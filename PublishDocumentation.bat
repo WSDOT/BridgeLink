@@ -15,10 +15,8 @@ SET PGSLIBRARY_VERISON=%PGSUPER_VERSION%
 SET XBRATE_VERSION=1.0
 
 REM - Build the documentation sets
-call \ARP\BridgeLink\Documentation\BuildDocumentation.bat
-call \ARP\BridgeLinkBEToolbox\Documentation\BuildDocumentation.bat
-call \ARP\PGSuper\Documentation\BuildDocumentation.bat
-call \ARP\XBeamRate\Documentation\BuildDocumentation.bat
+call BuildDocumentation.bat
+cd \ARP\BridgeLink
 
 REM - Copy the documentation sets to the WSDOT server
 xcopy /y/d \ARP\BridgeLink\Documentation\BridgeLink.dm %DOC_TARGET%\BridgeLink\%BRIDGELINK_VERSION%\BridgeLink.dm.html
