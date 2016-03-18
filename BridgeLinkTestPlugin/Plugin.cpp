@@ -21,6 +21,8 @@ void CPlugin::FinalRelease()
 
 BOOL CPlugin::Init(CEAFApp* pParent)
 {
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   m_DocumentationImpl.Init(GetName());
    return TRUE;
 }
 
@@ -67,4 +69,33 @@ UINT CPlugin::GetDocumentResourceID()
 CString CPlugin::GetName()
 {
    return CString("BridgeLink Test Plugin");
+}
+
+CString CPlugin::GetDocumentationSetName()
+{
+   return GetName();
+}
+
+CString CPlugin::GetDocumentationURL()
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   return m_DocumentationImpl.GetDocumentationURL();
+}
+
+CString CPlugin::GetDocumentationMapFile()
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   return m_DocumentationImpl.GetDocumentationMapFile();
+}
+
+void CPlugin::LoadDocumentationMap()
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   return m_DocumentationImpl.LoadDocumentationMap();
+}
+
+eafTypes::HelpResult CPlugin::GetDocumentLocation(LPCTSTR lpszDocSetName,UINT nID,CString& strURL)
+{
+   AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   return m_DocumentationImpl.GetDocumentLocation(lpszDocSetName,nID,strURL);
 }

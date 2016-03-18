@@ -30,10 +30,6 @@
 #define IDC_BRIDGESIGHT                 1670
 #define IDS_COMPANY                     1699
 #define IDC_APPLIST                     3333
-#define EAF_RESERVED_COMMAND_BASE       0x8000
-#define EAFID_APP_LEGAL                 32771
-#define EAFID_TIPOFTHEDAY               32775
-#define EAFID_MANAGE_APP_PLUGINS        32776
 #define ID_HELP_JOINARPLIST             33024
 #define ID_HELP_INET_ARP                33025
 #define ID_HELP_INET_WSDOT              33026

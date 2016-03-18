@@ -77,7 +77,6 @@ END_MESSAGE_MAP()
 
 CBridgeLinkApp::CBridgeLinkApp()
 {
-   SetHelpMode(afxHTMLHelp);
 }
 
 CBridgeLinkApp::~CBridgeLinkApp()
@@ -100,6 +99,48 @@ CString CBridgeLinkApp::GetProductCode()
 #else
    return "{E95DA66F-6C17-48D1-8B16-40EAB5D2424C}";
 #endif
+}
+
+CString CBridgeLinkApp::GetDocumentationRootLocation()
+{
+   if ( UseOnlineDocumentation() )
+   {
+      // NOTE: The following approach allows third party distributers to use their own server for documentation.
+      // Their installer should write the documentation root location to HKLM\Settings\DocumentationRoot.
+      // This value will be the default when the documenation root setting is read for a specific user from HKCU\Settings\DocumentationRoot
+      // If the HKCU value isn't found, the default from HKLM is used.
+
+      // Get the default location for the documentation root from the local machine registry hive
+      // If not present, use the WSDOT location
+      CString strDefaultDocumentationRootLocation = GetLocalMachineString(_T("Settings"),_T("DocumentationRoot"), _T("http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/"));
+
+      // Get the user's setting, using the local machine setting as the default if not present
+      CString strDocumentationRootLocation = GetProfileString(_T("Settings"),_T("DocumentationRoot"),strDefaultDocumentationRootLocation);
+      return strDocumentationRootLocation;
+   }
+   else
+   {
+      CString str(GetAppLocation());
+#if defined _DEBUG
+#if defined _WIN64
+   str.Replace(_T("RegFreeCOM\\x64\\Debug\\"),_T(""));
+#else
+   str.Replace(_T("RegFreeCOM\\Win32\\Debug\\"),_T(""));
+#endif
+#else
+   // in a real release, the path doesn't contain RegFreeCOM\\Release, but that's
+   // ok... the replace will fail and the string wont be altered.
+#if defined _WIN64
+   str.Replace(_T("RegFreeCOM\\x64\\Release\\"),_T(""));
+#else
+   str.Replace(_T("RegFreeCOM\\Win32\\Release\\"),_T(""));
+#endif
+#endif
+
+      CString strLocation;
+      strLocation.Format(_T("%sDocs\\"),str);
+      return strLocation;
+   }
 }
 
 LPCTSTR CBridgeLinkApp::GetRegistryKey()
@@ -202,29 +243,6 @@ BOOL CBridgeLinkApp::InitInstance()
 
    // user can dbl-click on a file to open
    EnableShellOpen();
-
-   // Help file defaults to the location of the application
-   // In our development environment, it is in the \ARP\BridgeLink folder
-   //
-   // Change help file name
-   CString strHelpFile(m_pszHelpFilePath);
-#if defined _DEBUG
-#if defined _WIN64
-   strHelpFile.Replace(_T("RegFreeCOM\\x64\\Debug\\"),_T(""));
-#else
-   strHelpFile.Replace(_T("RegFreeCOM\\Win32\\Debug\\"),_T(""));
-#endif
-#else
-   // in a real release, the path doesn't contain RegFreeCOM\\Release, but that's
-   // ok... the replace will fail and the string wont be altered.
-#if defined _WIN64
-   strHelpFile.Replace(_T("RegFreeCOM\\x64\\Release\\"),_T(""));
-#else
-   strHelpFile.Replace(_T("RegFreeCOM\\Win32\\Release\\"),_T(""));
-#endif
-#endif
-   free((void*)m_pszHelpFilePath);
-   m_pszHelpFilePath = _tcsdup(strHelpFile);
 
    if ( !CEAFPluginApp::InitInstance() )
    {

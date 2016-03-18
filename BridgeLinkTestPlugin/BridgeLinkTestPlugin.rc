@@ -1,6 +1,7 @@
 // Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
+#include <EAF\EAFResources.h>
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -122,6 +123,7 @@ BEGIN
     END
     POPUP "&Help"
     BEGIN
+        MENUITEM "Help Source", EAFID_HELP_SOURCE
         MENUITEM "&Help Topics",                ID_HELP_FINDER
         MENUITEM SEPARATOR
         MENUITEM "&About...",                   ID_APP_ABOUT

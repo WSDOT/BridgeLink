@@ -90,6 +90,12 @@ void CBridgeLinkDoc::SaveDocumentSettings()
    __super::SaveDocumentSettings();
 }
 
+CString CBridgeLinkDoc::GetDocumentationRootLocation()
+{
+   CEAFApp* pApp = EAFGetApp();
+   return pApp->GetDocumentationRootLocation();
+}
+
 /////////////////////////////////////////////////////////////////////////////
 // CBridgeLinkDoc diagnostics
 

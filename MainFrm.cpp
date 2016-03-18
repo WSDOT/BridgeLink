@@ -28,6 +28,7 @@
 #include "BridgeLink.h"
 #include "MainFrm.h"
 #include "Resource.h"
+#include "BridgeLink.hh"
 
 #include "StartPageWndProvider.h"
 
@@ -47,6 +48,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CEAFMainFrame)
    ON_WM_CREATE()
    //ON_WM_SYSCOMMAND()
 	//}}AFX_MSG_MAP
+   ON_COMMAND(ID_HELP_FINDER,OnHelpFinder)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -153,4 +155,8 @@ CEAFStartPageWnd* CMainFrame::CreateStartPage()
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainFrame message handlers
- 
+
+void CMainFrame::OnHelpFinder()
+{
+   EAFHelp(AfxGetAppName(), IDH_BRIDGELINK);
+} 

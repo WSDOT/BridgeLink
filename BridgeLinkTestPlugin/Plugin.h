@@ -5,6 +5,7 @@
 
 #include "resource.h"       // main symbols
 #include <EAF\EAFAppPlugIn.h>
+#include <EAF\EAFAppPluginDocumentationImpl.h>
 
 /////////////////////////////////////////////////////////////////////////////
 // CPlugin
@@ -38,6 +39,15 @@ public:
    virtual HMENU GetSharedMenuHandle();
    virtual UINT GetDocumentResourceID();
    virtual CString GetName();
+   virtual CString GetDocumentationSetName();
+   virtual CString GetDocumentationURL();
+   virtual CString GetDocumentationMapFile();
+   virtual void LoadDocumentationMap();
+   virtual eafTypes::HelpResult GetDocumentLocation(LPCTSTR lpszDocSetName,UINT nID,CString& strURL);
+
+private:
+
+   CEAFAppPluginDocumentationImpl m_DocumentationImpl;
 };
 
 #endif //__PLUGIN_H_

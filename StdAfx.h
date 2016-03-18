@@ -47,6 +47,7 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 #include <EAF\EAF.h>
+#include <EAF\EAFHelp.h>
 #include <MFCtools\MFCtools.h>
 
 //{{AFX_INSERT_LOCATION}}

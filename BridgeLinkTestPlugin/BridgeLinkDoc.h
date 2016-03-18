@@ -39,6 +39,8 @@ public:
    virtual void LoadDocumentSettings();
    virtual void SaveDocumentSettings();
 
+   virtual CString GetDocumentationRootLocation();
+
 // Implementation
 public:
 	virtual ~CBridgeLinkDoc();

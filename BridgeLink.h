@@ -79,7 +79,7 @@ protected:
    virtual CMDIFrameWnd* CreateMainFrame();
    virtual CATID GetComponentInfoCategoryID();
    virtual CString GetProductCode();
-
+   virtual CString GetDocumentationRootLocation();
 
 public:
    CString GetVersion(bool bIncludeBuildNumber) const;
