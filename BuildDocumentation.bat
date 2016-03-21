@@ -4,6 +4,8 @@ REM - Build the documentation sets
 call \ARP\BridgeLink\Documentation\BuildDocumentation.bat
 call \ARP\BridgeLinkBEToolbox\Documentation\BuildDocumentation.bat
 call \ARP\PGSuper\Documentation\BuildDocumentation.bat
+call \ARP\PGSuper\TxDOTAgent\Documentation\BuildDocumentation.bat
+call \ARP\PGSuper\KDOTExport\Documentation\BuildDocumentation.bat
 call \ARP\XBeamRate\Documentation\BuildDocumentation.bat
 
 cd \ARP\BridgeLink
