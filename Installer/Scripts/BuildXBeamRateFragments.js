@@ -47,7 +47,7 @@ WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.XBeamRateSo
 WScript.Echo("<Directory Id=\"XBRateDocs\" Name=\"XBRate\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
-WScript.Echo("<DirectoryRef Id='XBRateDocs' FileSource=\"$(var.XBeamRateSourceRoot)App\\Docs\">");
+WScript.Echo("<DirectoryRef Id='XBRateDocs' FileSource=\"$(var.XBeamRateSourceRoot)Docs\">");
 WScript.Echo("<Component Id='XBRateDocs' Guid='{2B06B8FF-CB08-4726-8481-C109725C9691}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(XBRateDocsFolder.Files);
 var i = 0;

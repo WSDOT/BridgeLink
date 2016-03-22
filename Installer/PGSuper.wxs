@@ -750,6 +750,8 @@
 
          <ComponentRef Id="Images"/>
          <ComponentRef Id="PGSuperDocs"/>
+         <ComponentRef Id="PGSpliceDocs"/>
+         <ComponentRef Id="PGSLibraryDocs"/>
 
          <ComponentRef Id="AnalysisAgent"/>
          <ComponentRef Id="BridgeAgent"/>

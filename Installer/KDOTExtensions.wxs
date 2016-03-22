@@ -58,7 +58,9 @@
 
       </Component>
 
+    </DirectoryRef>
 
+    <DirectoryRef Id="BridgeLinkStartMenuFolder">
 
       <!-- Start menu item for help file -->
         <Component Id="KDOTShortcuts" Guid="{FE82ABA0-4244-4c07-97DB-346AEE1B3CAF}" Win64="$(var.IsWin64)">
