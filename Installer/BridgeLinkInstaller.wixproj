@@ -51,14 +51,16 @@
       <Link>Apache.wxs</Link>
     </Compile>
     <Compile Include="BEToolbox.wxs" />
+    <Compile Include="BEToolboxFragments.wxs" />
     <Compile Include="BridgeLinkComponents.wxs" />
+    <Compile Include="BridgeLinkFragments.wxs" />
     <Compile Include="KDOTExtensions.wxs" />
     <Compile Include="LibraryEditor.wxs" />
     <Compile Include="MergeModules.wxs" />
     <Compile Include="BridgeLink.wxs" />
     <Compile Include="PGSuper.wxs" />
     <Compile Include="PGSuperBeams.wxs" />
-    <Compile Include="PGSuperImages.wxs" />
+    <Compile Include="PGSuperFragments.wxs" />
     <Compile Include="PGSuperTemplates.wxs" />
     <Compile Include="StartMenuShortcuts.wxs" />
     <Compile Include="OpenBridgeML.wxs" />
@@ -68,7 +70,7 @@
     <Compile Include="TxDOTExtensions.wxs" />
     <Compile Include="WSDOTExtensions.wxs" />
     <Compile Include="XBeamRate.wxs" />
-    <Compile Include="XBeamRateImages.wxs" />
+    <Compile Include="XBeamRateFragments.wxs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DialogBanner.bmp" />
@@ -77,10 +79,16 @@
     <Content Include="Include\PGSuperCATID.wxi" />
     <Content Include="Include\Variables.wxi" />
     <Content Include="License.rtf" />
-    <Content Include="Scripts\BuildPGSuperImagesFragment.js" />
-    <Content Include="Scripts\BuildXBeamRateImagesFragment.js" />
+    <Content Include="Scripts\BuildBEToolboxFragments.js" />
+    <Content Include="Scripts\BuildPGSuperFragments.js" />
+    <Content Include="Scripts\BuildBridgeLinkFragments.js" />
+    <Content Include="Scripts\BuildXBeamRateFragments.js" />
   </ItemGroup>
   <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
     <WixExtension Include="WixFirewallExtension">
       <HintPath>$(WixExtDir)\WixFirewallExtension.dll</HintPath>
       <Name>WixFirewallExtension</Name>
@@ -104,7 +112,9 @@
 	</Target>
 	-->
   <PropertyGroup>
-    <PreBuildEvent>cscript  $(ProjectDir)\Scripts\BuildPGSuperImagesFragment.js //NoLogo &gt; $(ProjectDir)PGSuperImages.wxs
-cscript  $(ProjectDir)\Scripts\BuildXBeamRateImagesFragment.js //NoLogo &gt; $(ProjectDir)XBeamRateImages.wxs</PreBuildEvent>
+    <PreBuildEvent>cscript  $(ProjectDir)\Scripts\BuildBridgeLinkFragments.js //NoLogo &gt; $(ProjectDir)BridgeLinkFragments.wxs
+cscript  $(ProjectDir)\Scripts\BuildBEToolboxFragments.js //NoLogo &gt; $(ProjectDir)BEToolboxFragments.wxs
+cscript  $(ProjectDir)\Scripts\BuildPGSuperFragments.js //NoLogo &gt; $(ProjectDir)PGSuperFragments.wxs
+cscript  $(ProjectDir)\Scripts\BuildXBeamRateFragments.js //NoLogo &gt; $(ProjectDir)XBeamRateFragments.wxs</PreBuildEvent>
   </PropertyGroup>
 </Project>

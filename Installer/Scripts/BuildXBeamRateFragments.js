@@ -1,6 +1,7 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
 var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\1.0.0.4\\bin\\images");
+var XBRateDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\1.0.0.4\\bin\\Docs");
 var fc = new Enumerator(ImagesFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
@@ -40,6 +41,33 @@ WScript.Echo("</Component>");
 WScript.Echo("</DirectoryRef>");
 WScript.Echo("</Fragment>");
 
+WScript.Echo("<Fragment Id='XBRateDocs'>");
+
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.XBeamRateSourceRoot)Docs\">");
+WScript.Echo("<Directory Id=\"XBRateDocs\" Name=\"XBRate\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</DirectoryRef>");
+
+WScript.Echo("<DirectoryRef Id='XBRateDocs' FileSource=\"$(var.XBeamRateSourceRoot)App\\Docs\">");
+WScript.Echo("<Component Id='XBRateDocs' Guid='{2B06B8FF-CB08-4726-8481-C109725C9691}' Win64='$(var.IsWin64)'>");
+var fcDocs = new Enumerator(XBRateDocsFolder.Files);
+var i = 0;
+for (; !fcDocs.atEnd(); fcDocs.moveNext()) {
+    var s = new String(fcDocs.item());
+    var lastIdx = s.lastIndexOf("\\");
+    var fileName = new String;
+    fileName = s.substring(lastIdx + 1);
+
+    var fileTag = new String;
+    if (fileName == "index.html")
+        fileTag = "<File Id='XBRateDocs" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
+    else
+        fileTag = "<File Id='XBRateDocs" + (i++) + "' Name='" + fileName + "' />";
+
+    WScript.Echo(fileTag);
+}
+WScript.Echo("</Component>");
+WScript.Echo("</DirectoryRef>");
+WScript.Echo("</Fragment>");
 
 WScript.Echo("<?endif ?>")
 

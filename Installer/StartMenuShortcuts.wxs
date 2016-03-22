@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
-   <!-- Include project wide variables -->
+  <!-- Include project wide variables -->
    <?include Variables.wxi?>
 
    <Fragment>
@@ -38,14 +38,9 @@
                       IconIndex="0"
                   />
 
-            <Shortcut Id="BridgeLinkHelpShortcut"
-                      Name="BridgeLink Documentation"
-                      Description="BridgeLink Documentation"
-                      Target="[APPLICATIONFOLDER]BridgeLink.chm"
-                      WorkingDirectory="APPLICATIONFOLDER"
-                  />
+           <util:InternetShortcut Id="BridgeLinkDocShortcut" Name="BridgeLink Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BridgeLink/1.0"/>
 
-            <RemoveFolder Id="BridgeLinkStartMenuFolder"
+           <RemoveFolder Id="BridgeLinkStartMenuFolder"
                           On="uninstall"/>
 
             <RegistryValue Root="HKCU"

@@ -34,3 +34,4 @@ xcopy /Y /d BridgeLink.tip				%BINTARGET%\App\
 xcopy /Y /d License.txt					%BINTARGET%\App\
 xcopy /Y /d res\BridgeLink.ico                          %BINTARGET%\App\
 xcopy /Y /d Documentation\doc\html\*                    %BINTARGET%\App\Docs
+xcopy /Y /d Documentation\BridgeLink.dm			%BINTARGET%\App\Docs

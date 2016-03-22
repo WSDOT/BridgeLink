@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
-   <!-- Include project wide variables -->
+  <!-- Include project wide variables -->
    <?include Variables.wxi?>
    <?include PGSuperCATID.wxi?>
    <?include PGSpliceCATID.wxi?>
@@ -316,17 +316,14 @@
 
       <DirectoryRef Id="BridgeLinkStartMenuFolder"
                     FileSource ="$(var.PGSuperSourceRoot)\AutomationDlls\$(var.PlatformFolder)" >
-         <Component Id ="PGSuperHelpFiles"
+         <Component Id ="PGSuperShortcuts"
                     Guid="{0FB577A0-EA95-41be-9685-23C26D335514}"
                     Win64="$(var.IsWin64)">
 
             <!-- Start Menu Shortcuts -->
-            <Shortcut Id="PGSuperHelpShortcut"
-                      Name="PGSuper Documentation"
-                      Description="PGSuper/PGSplice Documentation"
-                      Target="[APPLICATIONFOLDER]PGSuper.chm"
-                      WorkingDirectory="APPLICATIONFOLDER"
-                  />
+           <util:InternetShortcut Id="PGSuperDocShortcut" Name="PGSuper Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSuper/3.0"/>
+           <util:InternetShortcut Id="PGSpliceDocShortcut" Name="PGSplice Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSplice/3.0"/>
+           <util:InternetShortcut Id="PGSLibraryDocShortcut" Name="PGSLibrary Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSLibrary/3.0"/>
 
             <RegistryValue Root="HKCU"
                            Key="Software\Microsoft\[ProductName]"
@@ -373,7 +370,6 @@
          <Component Id="PGSuperComponents3"
                     Guid="{C14B00D3-560F-4959-9540-6413E7CC7796}"
                     Win64="$(var.IsWin64)">
-            <File Id="pgsuper.chm"  Name="PGSuper.chm" KeyPath="yes"/>
             <File Id="trucks.pgs"   Name="Trucks.pgs"/>
             <File Id="pgsuper.tip"  Name="PGSuper.tip"/>
          </Component>
@@ -743,7 +739,7 @@
          <ComponentRef Id="PGSuperComponents" Primary="yes" />
          <ComponentRef Id="PGSuperComponents2" />
          <ComponentRef Id="PGSuperComponents3" />
-         <ComponentRef Id="PGSuperHelpFiles"/>
+         <ComponentRef Id="PGSuperShortcuts"/>
          <ComponentRef Id="MD5Deep" />
          <ComponentRef Id="MakePgz" />
          <ComponentRef Id="PGSuperLibraryFile" />

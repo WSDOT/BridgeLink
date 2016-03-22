@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
-   <!-- Include project wide variables -->
+  <!-- Include project wide variables -->
    <?include Variables.wxi?>
    <?include PGSuperCATID.wxi?>
    <?include PGSpliceCATID.wxi?>
@@ -102,29 +102,14 @@
        </Component>
      </DirectoryRef>
 
-     <DirectoryRef Id="APPLICATIONFOLDER"
-                   FileSource="$(var.PGSuperSourceRoot)\Extensions\TxDOT">
-       <Component Id="TxDOTAgentHelp"
-                  Guid="{271F65A9-BD21-408d-B5F5-2CD134975B62}"
-                  Win64="$(var.IsWin64)">
-         <File Id="TOGA.chm"
-               Name="TOGA.chm"
-               KeyPath ="yes"/>
-       </Component>
-     </DirectoryRef>
-
      <!-- TOGA Start Menu Shortcut-->
      <DirectoryRef Id="BridgeLinkStartMenuFolder">
-       <Component Id="TogaApplicationShortcut"
+       <Component Id="TOGAShortcuts"
                   Guid="{9116E392-14A9-4051-91C0-809BF001A4F1}"
                   Win64="$(var.IsWin64)">
 
-         <Shortcut Id="TogaHelpShortcut"
-                   Name="TOGA Documentation"
-                   Description="Texas Optional Girder Analysis (TOGA) Documentation"
-                   Target="[APPLICATIONFOLDER]TOGA.chm"
-                   WorkingDirectory="APPLICATIONFOLDER"
-                  />
+         <util:InternetShortcut Id="TOGADocShortcut" Name="TOGA Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/TOGA/3.0"/>
+
          <RegistryValue Root="HKCU"
                         Key="Software\Microsoft\[ProductName]"
                         Name="installed"
@@ -200,8 +185,8 @@
               Title="TxDOT Extensions (Optional)"
               Level="1">
        <ComponentRef Id="TxDOTAgent"/>
-       <ComponentRef Id="TxDOTAgentHelp"/>
-       <ComponentRef Id="TogaApplicationShortcut"/>
+       <ComponentRef Id="TOGADocs"/>
+       <ComponentRef Id="TOGAShortcuts"/>
        <ComponentRef Id="TxDOTTogaTemplates"/>
      </Feature>
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
   <!-- Include project wide variables -->
   <?include Variables.wxi?>
@@ -57,6 +57,23 @@
                        Type="string" />
 
       </Component>
+
+
+
+      <!-- Start menu item for help file -->
+        <Component Id="KDOTShortcuts" Guid="{FE82ABA0-4244-4c07-97DB-346AEE1B3CAF}" Win64="$(var.IsWin64)">
+
+          <util:InternetShortcut Id="KDOTDocShortcut" Name="KDOT Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/KDOT/3.0"/>
+
+          <RegistryValue Root="HKCU"
+                         Key="Software\Microsoft\[ProductName]"
+                         Name="installed"
+                         Type="integer"
+                         Value="1"
+                         KeyPath="yes"/>
+
+        </Component>
+
     </DirectoryRef>
 
     <Feature Id="KDOTExtensions"
@@ -67,6 +84,8 @@
              Title="KDOT Extensions (Optional)"
              Level="1">
       <ComponentRef Id="KDOTExport"/>
+      <ComponentRef Id="KDOTDocs"/>
+      <ComponentRef Id="KDOTShortcuts"/>
     </Feature>
 
   </Fragment>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
    <!-- Include project wide variables -->
    <?include Variables.wxi?>
@@ -10,14 +10,9 @@
       <DirectoryRef Id="BridgeLinkStartMenuFolder">
          <Component Id="BEToolboxShortcuts" Guid="{6777548A-04BF-4d86-A184-51DEEB27D552}" Win64="$(var.IsWin64)">
 
-            <Shortcut Id="BEToolboxHelpShortcut"
-                      Name="BEToolbox Documentation"
-                      Description="BEToolbox Documentation"
-                      Target="[APPLICATIONFOLDER]BEToolbox.chm"
-                      WorkingDirectory="APPLICATIONFOLDER"
-                  />
+           <util:InternetShortcut Id="BEToolboxDocShortcut" Name="BEToobox Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BEToolbox/3.0"/>
 
-            <RegistryValue Root="HKCU"
+           <RegistryValue Root="HKCU"
                            Key="Software\Microsoft\[ProductName]"
                            Name="installed"
                            Type="integer"
@@ -95,14 +90,6 @@
          </Component>
       </DirectoryRef >
 
-      <DirectoryRef Id="APPLICATIONFOLDER"
-                    FileSource ="$(var.BEToolboxSourceRoot)" >
-            <Component Id="BEToolboxHelpFiles" Guid="{A3DA51B7-743C-4a6c-9D49-85F0E7981208}" Win64="$(var.IsWin64)">
-               <File Id="BEToolbox.chm"    Name="BEToolbox.chm" KeyPath="yes"/>
-            </Component>
-         </DirectoryRef >
-
-
      <!-- BEToolboxXML -->
      <DirectoryRef Id="APPLICATIONFOLDER"
                    FileSource ="$(var.BEToolboxSourceRoot)\$(var.PlatformFolder)" >
@@ -124,7 +111,7 @@
          <ComponentRef Id="BEToolboxComponents" Primary="yes" />
          <ComponentRef Id="BEToolboxShortcuts"/>
          <ComponentRef Id="BEToolboxImageFiles"/>
-         <ComponentRef Id="BEToolboxHelpFiles"/>
+         <ComponentRef Id="BEToolboxDocs"/>
         <ComponentRef Id="BEToolboxXML"/>
       </Feature>
    </Fragment>

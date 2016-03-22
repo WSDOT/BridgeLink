@@ -164,7 +164,6 @@
       <DirectoryRef Id="APPLICATIONFOLDER"
                     FileSource ="$(var.BridgeLinkSourceRoot)\App" >
          <Component Id="BridgeLinkSupportFiles" Guid="{5A89BEFB-446F-48f9-82DE-184681A1F9AF}" Win64="$(var.IsWin64)">
-         <File Id="BridgeLink.chm"    Name="BridgeLink.chm" KeyPath="yes"/>
          <File Id="License.txt"       Name="License.txt"/>
       </Component>
       </DirectoryRef >
