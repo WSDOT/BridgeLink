@@ -267,10 +267,16 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeLinkTestPlugin", "BridgeLinkTestPlugin\BridgeLinkTestPlugin.vcproj", "{36182FB2-2336-4465-8616-F30023DC958C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenBridgePlugin", "..\OpenBridgePlugin\OpenBridgePlugin.vcproj", "{C7FC0FD4-DD87-4523-AE7E-20FA363D4202}"
+	ProjectSection(ProjectDependencies) = postProject
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenBridgeViewer", "..\OpenBridgeViewer\OpenBridgeViewer.vcproj", "{C390A9A9-E03A-454C-90D7-90A10219732F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KDOTExport", "..\PGSuper\KDOTExport\KDOTExport.vcproj", "{C6F6E6A6-916E-491D-A1DF-DC1E8814C3FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XBeamRateTestAgent", "..\XBeamRate\TestAgent\XBeamRateTestAgent.vcproj", "{ECAA64D6-B74D-43CB-948D-FCF10CBF68DD}"
 EndProject

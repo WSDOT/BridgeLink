@@ -38,6 +38,33 @@ WScript.Echo("</Component>");
 WScript.Echo("</DirectoryRef>");
 WScript.Echo("</Fragment>");
 
+// Documentation Files
+WScript.Echo("<Fragment Id='PGSuperDocs'>");
+
+WScript.Echo("<DirectoryRef Id=\"APPLICATIONFOLDER\" FileSource =\"$(var.PGSuperSourceRoot)\Apps\Docs>");
+WScript.Echo("<Directory Id=\"PGSuperDocs\" Name=\"Docs\PGSuper\" /> <!-- Create the documentation directory -->");
+WScript.Echo("</DirectoryRef>");
+
+WScript.Echo("<DirectoryRef Id='PGSuperDocs' FileSource='$(var.PGSuperSourceRoot)\Apps\Docs'>");
+WScript.Echo("<Component Id='PGSuperDocs' Guid='{CF5F4A84-93E9-47e7-B405-B8DE747B98A9}' Win64='$(var.IsWin64)'>");
+var i = 0;
+for (; !fc.atEnd(); fc.moveNext()) {
+    var s = new String(fc.item());
+    var lastIdx = s.lastIndexOf("\\");
+    var fileName = new String;
+    fileName = s.substring(lastIdx + 1);
+
+    var fileTag = new String;
+    if (fileName = "index.html")
+        fileTag = "<File Id='PGSuperDocs" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
+    else
+        fileTag = "<File Id='PGSuperDocs" + (i++) + "' Name='" + fileName + "' />";
+
+    WScript.Echo(fileTag);
+}
+WScript.Echo("</Component>");
+WScript.Echo("</DirectoryRef>");
+WScript.Echo("</Fragment>");
 
 WScript.Echo("</Wix>");
 

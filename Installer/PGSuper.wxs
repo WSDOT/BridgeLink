@@ -753,6 +753,7 @@
          <ComponentRef Id="LibraryEditor"/>
 
          <ComponentRef Id="Images"/>
+         <ComponentRef Id="PGSuperDocs"/>
 
          <ComponentRef Id="AnalysisAgent"/>
          <ComponentRef Id="BridgeAgent"/>

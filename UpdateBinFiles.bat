@@ -33,4 +33,4 @@ xcopy /Y /d RegFreeCOM\x64\Release\BridgeLink.exe 	%BINTARGET%\App\x64\
 xcopy /Y /d BridgeLink.tip				%BINTARGET%\App\
 xcopy /Y /d License.txt					%BINTARGET%\App\
 xcopy /Y /d res\BridgeLink.ico                          %BINTARGET%\App\
-xcopy /Y /d BridgeLink.chm				%BINTARGET%\App\
+xcopy /Y /d Documentation\doc\html\*                    %BINTARGET%\App\Docs
