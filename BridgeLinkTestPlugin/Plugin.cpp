@@ -22,7 +22,7 @@ void CPlugin::FinalRelease()
 BOOL CPlugin::Init(CEAFApp* pParent)
 {
    AFX_MANAGE_STATE(AfxGetStaticModuleState());
-   m_DocumentationImpl.Init(GetName());
+   m_DocumentationImpl.Init(this);
    return TRUE;
 }
 
