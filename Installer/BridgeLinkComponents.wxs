@@ -16,7 +16,7 @@
                     Win64="$(var.IsWin64)">
 
            <File Id="$(var.ProductName).exe"    Name="$(var.ProductName).exe" KeyPath ="yes">
-             <fire:FirewallException Id="FWX1" Name="BridgeLink" Scope="any"/>
+             <fire:FirewallException Id="FWX1" Name="BridgeLink" Scope="any" IgnoreFailure="yes"/>
            </File>
             
             <!-- define component categories for the main executable
