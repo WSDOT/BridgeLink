@@ -333,6 +333,31 @@
                          Type="string" />
         </Component>
 
+        <Component Id="XBeamRatTestAgent"
+                   Guid="{D902923D-7A32-4ede-9442-0F04125A3F65}"
+                   Win64="$(var.IsWin64)">
+          <File Id="XBeamRateTestAgent.dll"
+                Name="XBeamRateTestAgent.dll"
+                KeyPath="yes"/>
+
+          <?define XBeamRateTestAgentCLSID={0444F3A6-7ED3-4e60-B8EC-D4BFCB1CC2EF}?>
+          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                       Root="HKCR"
+                       Key ="CLSID\$(var.XBeamRateTestAgentCLSID)"/>
+          <RegistryValue Root="HKCR"
+                         Key="CLSID\$(var.XBeamRateTestAgentCLSID)"
+                         Value="XBeam Rate Test Agent Class"
+                         Type="string" />
+          <RegistryValue Root="HKCR"
+                         Key="CLSID\$(var.XBeamRateTestAgentCLSID)\InprocServer32"
+                         Value="[APPLICATIONFOLDER]XBeamRateTestAgent.dll"
+                         Type="string" />
+          <RegistryValue Root="HKCR"
+                         Key="CLSID\$(var.XBeamRateTestAgentCLSID)\Implemented Categories\$(var.XBeamRateAgentCATID)"
+                         Value=""
+                         Type="string" />
+        </Component>
+
       </DirectoryRef>
 
 
@@ -356,6 +381,7 @@
         <ComponentRef Id="XBeamRateReportAgent"/>
         <ComponentRef Id="XBeamRateEngAgent"/>
         <ComponentRef Id="XBeamRateProjectAgent"/>
+        <ComponentRef Id="XBeamRatTestAgent"/>
       </Feature>
    </Fragment>
 
