@@ -5,7 +5,7 @@
    <?define BEToolboxVersion    = 3.0.0.32?>
    <?define PGSuperVersion      = 3.0.0.47?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
    <?define WBFLVersion         = 4.0.0.43?>
-   <?define OpenBridgeMLVersion = 0.1.0.16?>
+   <?define OpenBridgeMLVersion = 0.1.0.15?>
   <?ifdef _INCLUDE_XBEAMRATE?>
   <?define XBeamRateVersion = 1.0.0.5?>
   <!-- also change this version number in the BuildXBeamRateImagesFragment.js file -->
