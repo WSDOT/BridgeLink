@@ -1,11 +1,11 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.46\\bin\\images");
-var PGSuperDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.46\\bin\\App\\Docs\\PGSuper");
-var PGSpliceDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.46\\bin\\App\\Docs\\PGSplice");
-var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.46\\bin\\App\\Docs\\PGSLibrary");
-var TOGADocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.46\\bin\\Extensions\\TxDOT\\Docs");
-var KDOTDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.46\\bin\\Extensions\\KDOT\\Docs");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\images");
+var PGSuperDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\App\\Docs\\PGSuper");
+var PGSpliceDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\App\\Docs\\PGSplice");
+var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\App\\Docs\\PGSLibrary");
+var TOGADocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\Extensions\\TxDOT\\Docs");
+var KDOTDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\Extensions\\KDOT\\Docs");
 
 var fc = new Enumerator(ImagesFolder.Files);
 

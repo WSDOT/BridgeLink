@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BEToolboxDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\3.0.0.31\\bin\\Docs");
+var BEToolboxDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\3.0.0.33\\bin\\Docs");
 var fc = new Enumerator(BEToolboxDocsFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
