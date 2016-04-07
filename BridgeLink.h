@@ -69,6 +69,7 @@ public:
 	afx_msg void OnHelpInetBridgeLink();
    afx_msg void OnHelpInetARP();
    afx_msg void OnScreenSize();
+   afx_msg void OnHelp();
 	//}}AFX_MSG
 	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo);
 	DECLARE_MESSAGE_MAP()

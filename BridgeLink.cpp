@@ -66,6 +66,7 @@ BEGIN_MESSAGE_MAP(CBridgeLinkApp, CEAFPluginApp)
 	ON_COMMAND(ID_HELP_INET_BRIDGELINK, OnHelpInetBridgeLink)
    ON_COMMAND(ID_HELP_INET_ARP, OnHelpInetARP)
    ON_COMMAND(ID_SCREEN_SIZE,OnScreenSize)
+   ON_COMMAND(ID_HELP,OnHelp)
 	//}}AFX_MSG_MAP
 	// Standard file based document commands
 	// Standard print setup command
@@ -344,6 +345,11 @@ void CBridgeLinkApp::OnScreenSize()
       int cy = dlg.m_Height;
       pFrame->SetWindowPos(NULL,0,0,cx,cy,SWP_NOMOVE | SWP_NOZORDER);
    }
+}
+
+void CBridgeLinkApp::OnHelp()
+{
+   // do nothing... just need this so MFC doesn't hide help buttons
 }
 
 CString CBridgeLinkApp::GetWsdotUrl()
