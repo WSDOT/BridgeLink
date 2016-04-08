@@ -28,8 +28,8 @@ You will be referred to the support options described below when WSDOT cannot pr
 Professional support can be purchased from third party vendors. The extent of the support services are between you and the service provider. Support options typically include annual support agreements and per-incident support services.
 
 Known third party support vendors are:
-* BridgeSight Inc.
-    http://www.bridgesight.com
+* BridgeSight Inc.<br>
+    http://www.bridgesight.com <br>
     877-441-0346
 
 > Please let WSDOT know about other third party support vendors

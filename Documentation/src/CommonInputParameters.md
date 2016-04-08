@@ -1,6 +1,6 @@
 Common Input Parameters {#common_input_parameters}
 =======================
-Station, offset, bearing, and angle are common input parameters used in many of the BridgeLink appliccations. These parameters can be input with simple decimal values or in common engineering format.
+Station, offset, bearing, and angle are common input parameters used in many of the BridgeLink applications. These parameters can be input with simple decimal values or in common engineering format.
 
 Notation
 --------
@@ -9,7 +9,7 @@ The following notation is used to describe the common engineering format.
 <table>
 <tr><th>Symbol</th><th>Description</th><th>Example</th></tr>
 <tr><td>|</td><td>Choose between pipe separated items</td><td>L|R<br>Choose "L" or "R"</td></tr>
-<tr><td>[]</td><td>Items withing square brackets are optional</td><td>[+|-]<br>Use "+" or "-" or omit</td></tr>
+<tr><td>[]</td><td>Items within square brackets are optional</td><td>[+|-]<br>Use "+" or "-" or omit</td></tr>
 <tr><td>x</td><td>Lowercase letters are digits 0-9</td><td>dd mm ss.ss<br>Angular measure as degree-minute-decimal seconds<br>45 22 34.22
 </td></tr>
 </table>

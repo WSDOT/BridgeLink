@@ -26,7 +26,7 @@ BridgeLink command line options are described in the table below
 Option | Description
 -------|---------------
 (blank), no options given | BridgeLink starts in interactive mode when no command line options are given. In interactive mode, you use the graphical user interface to operate the program
-\<_filename_\> | BrideLink starts in interactive mode and opens the supplied file with its assocated BridgeLink application.
+\<_filename_\> | BrideLink starts in interactive mode and opens the supplied file with its associated BridgeLink application.
 \<options\> | BridgeLink starts in command mode when options are given. In command mode, BridgeLink starts, executes the command options, and terminates.
 /? | Displays the command line options window
 /Help | Same as /?
