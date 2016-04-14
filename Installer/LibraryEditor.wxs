@@ -26,7 +26,7 @@
             <RegistryValue Root="HKCR"
                            Key="Component Categories\$(var.LibraryEditorPluginCATID)"
                            Name="800"
-                           Value="PGSuper\PGSplice Library Editor"
+                           Value="PGS Library Editor"
                            Type="string" />
 
             <!-- Register the library editor as a plug-in into the BridgeLink Application-->
@@ -36,7 +36,7 @@
                          Key ="CLSID\$(var.LibraryEditorBridgeLinkPluginCLSID)"/>
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.LibraryEditorBridgeLinkPluginCLSID)"
-                           Value="PGSuper\PGSplice Library Editor"
+                           Value="PGS Library Editor"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.LibraryEditorBridgeLinkPluginCLSID)\InprocServer32"

@@ -84,7 +84,7 @@
                <Extension Id="lbr"
                           ContentType="application/lbr">
                   <Verb Id="Open"
-                        Command="&amp;Open with BridgeLink:Library Editor"
+                        Command="&amp;Open with BridgeLink:PGS Library Editor"
                         TargetFile="$(var.ProductName).exe"
                         Argument='"%1"' />
                </Extension>
