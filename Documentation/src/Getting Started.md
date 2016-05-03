@@ -8,3 +8,5 @@ Getting Started
 @subpage installed_applications
 
 @subpage common_input_parameters
+
+@subpage command_line_options
