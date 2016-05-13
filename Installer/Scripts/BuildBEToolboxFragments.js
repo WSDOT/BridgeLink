@@ -14,7 +14,9 @@ WScript.Echo("<!-- Documentation Files -->");
 WScript.Echo("<Fragment Id='BEToolboxDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BEToolboxDocumentationSourceRoot)\">");
-WScript.Echo("<Directory Id=\"BEToolboxDocs\" Name=\"BEToolbox\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BEToolboxDocsRoot\" Name=\"$(var.BEToolboxDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BEToolboxDocs\" Name=\"$(var.BEToolboxDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 WScript.Echo("<DirectoryRef Id='BEToolboxDocs' FileSource=\"$(var.BEToolboxDocumentationSourceRoot)\">");

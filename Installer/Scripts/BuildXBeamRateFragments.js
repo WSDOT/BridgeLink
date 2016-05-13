@@ -45,7 +45,9 @@ WScript.Echo("</Fragment>");
 WScript.Echo("<Fragment Id='XBRateDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.XBRateDocumentationSourceRoot)\">");
-WScript.Echo("<Directory Id=\"XBRateDocs\" Name=\"XBRate\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"XBRateDocsRoot\" Name=\"$(var.XBRateDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"XBRateDocs\" Name=\"$(var.XBRateDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 WScript.Echo("<DirectoryRef Id='XBRateDocs' FileSource=\"$(var.XBRateDocumentationSourceRoot)\">");

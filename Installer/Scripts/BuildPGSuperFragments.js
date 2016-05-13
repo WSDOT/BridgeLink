@@ -51,7 +51,9 @@ WScript.Echo("</Fragment>");
 WScript.Echo("<Fragment Id='PGSuperDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSuperDocumentationSourceRoot)\">");
-WScript.Echo("<Directory Id=\"PGSuperDocs\" Name=\"PGSuper\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"PGSuperDocsRoot\" Name=\"$(var.PGSuperDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"PGSuperDocs\" Name=\"$(var.PGSuperDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 WScript.Echo("<DirectoryRef Id='PGSuperDocs' FileSource=\"$(var.PGSuperDocumentationSourceRoot)\">");
@@ -83,7 +85,9 @@ WScript.Echo("</Fragment>");
 WScript.Echo("<Fragment Id='PGSpliceDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSpliceDocumentationSourceRoot)\">");
-WScript.Echo("<Directory Id=\"PGSpliceDocs\" Name=\"PGSplice\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"PGSpliceDocsRoot\" Name=\"$(var.PGSpliceDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"PGSpliceDocs\" Name=\"$(var.PGSpliceDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 WScript.Echo("<DirectoryRef Id='PGSpliceDocs' FileSource=\"$(var.PGSpliceDocumentationSourceRoot)\">");
@@ -116,7 +120,9 @@ WScript.Echo("</Fragment>");
 WScript.Echo("<Fragment Id='PGSLibraryDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSLibraryDocumentationSourceRoot)\">");
-WScript.Echo("<Directory Id=\"PGSLibraryDocs\" Name=\"PGSLibrary\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"PGSLibraryDocsRoot\" Name=\"$(var.PGSLibraryDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"PGSLibraryDocs\" Name=\"$(var.PGSLibraryDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 WScript.Echo("<DirectoryRef Id='PGSLibraryDocs' FileSource=\"$(var.PGSLibraryDocumentationSourceRoot)\">");
@@ -149,7 +155,9 @@ WScript.Echo("</Fragment>");
 WScript.Echo("<Fragment Id='TOGADocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.TOGADocumentationSourceRoot)\">");
-WScript.Echo("<Directory Id=\"TOGADocs\" Name=\"TOGA\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"TOGADocsRoot\" Name=\"$(var.TOGADocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"TOGADocs\" Name=\"$(var.TOGADocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 WScript.Echo("<DirectoryRef Id='TOGADocs' FileSource=\"$(var.TOGADocumentationSourceRoot)\">");
@@ -179,7 +187,9 @@ WScript.Echo("</Fragment>");
 WScript.Echo("<Fragment Id='KDOTDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.KDOTDocumentationSourceRoot)\">");
-WScript.Echo("<Directory Id=\"KDOTDocs\" Name=\"KDOT\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"KDOTDocsRoot\" Name=\"$(var.KDOTDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"KDOTDocs\" Name=\"$(var.KDOTDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 WScript.Echo("<DirectoryRef Id='KDOTDocs' FileSource=\"$(var.KDOTDocumentationSourceRoot)\">");

@@ -14,7 +14,9 @@ WScript.Echo("<!-- Documentation Files -->");
 WScript.Echo("<Fragment Id='BridgeLinkDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BridgeLinkDocumentationSourceRoot)\">");
-WScript.Echo("<Directory Id=\"BridgeLinkDocs\" Name=\"BridgeLink\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BridgeLinkDocsRoot\" Name=\"$(var.BridgeLinkDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BridgeLinkDocs\" Name=\"$(var.BridgeLinkDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 

@@ -107,7 +107,7 @@
                Description="WSDOT Legacy Bridge Engineering Tools"
                Display="expand"
                Title="BEToolbox (Optional)"
-               Level="1">
+               Level="$(var.BEToolboxFeatureLevel)">
          <ComponentRef Id="BEToolboxComponents" Primary="yes" />
          <ComponentRef Id="BEToolboxShortcuts"/>
          <ComponentRef Id="BEToolboxImageFiles"/>

@@ -366,7 +366,7 @@
                Description="Cross Beam Load Rating"
                Display="expand"
                Title="XBRate (Optional)"
-               Level="1">
+               Level="$(var.XBRateFeatureLevel)">
          <ComponentRef Id="XBeamRateComponents" Primary="yes" />
          <ComponentRef Id="XBeamRateShortcuts"/>
          <ComponentRef Id="XBRImages"/>

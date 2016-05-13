@@ -730,7 +730,7 @@
                Description="Design, Analysis, and Load Rating of Precast Concrete Girder Bridges"
                Display="expand"
                Title="PGSuper\PGSplice (Optional)"
-               Level="1">
+               Level="$(var.PGSuperFeatureLevel)">
 
          <FeatureRef Id="WSDOTExtensions"/>
          <FeatureRef Id="TxDOTExtensions"/>
