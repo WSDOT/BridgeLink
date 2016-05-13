@@ -26,23 +26,23 @@
     <DefineConstants>
     </DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'XBeamRate|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|x86' ">
     <SuppressPdbOutput>True</SuppressPdbOutput>
-    <DefineConstants>_INCLUDE_XBEAMRATE;</DefineConstants>
+    <DefineConstants>_TXDOT;</DefineConstants>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'XBeamRate|x64' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|x64' ">
     <SuppressPdbOutput>True</SuppressPdbOutput>
-    <DefineConstants>_INCLUDE_XBEAMRATE;</DefineConstants>
+    <DefineConstants>_TXDOT;</DefineConstants>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'XBeamRate|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|AnyCPU' ">
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'XBeamRate|Any CPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|Any CPU' ">
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>

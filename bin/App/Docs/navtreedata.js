@@ -13,7 +13,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"common_input_parameters.html"
+"command_line_options.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

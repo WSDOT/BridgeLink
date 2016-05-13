@@ -84,7 +84,7 @@
              Description="Extend PGSuper with KDOT specific features"
              Display="expand"
              Title="KDOT Extensions (Optional)"
-             Level="1">
+             Level="$(var.KDOTFeatureLevel)">
       <ComponentRef Id="KDOTExport"/>
       <ComponentRef Id="KDOTDocs"/>
       <ComponentRef Id="KDOTShortcuts"/>

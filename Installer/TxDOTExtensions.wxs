@@ -9,6 +9,35 @@
    <Fragment>
 
      <!-- TxDOT PGSuper Extensions -->
+     <?ifdef _TXDOT?>
+     <Icon Id="UrlIcon" SourceFile="$(env.windir)\System32\url.dll"/>
+     <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.ProjectDir)">
+       <Component Id="TxDOTCustomization" Guid="{FDDCC561-7C5B-4457-B78D-5358C55C415B}" Win64="$(var.IsWin64)">
+         <File Id="design_guidelines.url"
+               Name="design_guidelines.url" KeyPath="yes"/>
+         <File Id="support_information.url"
+               Name="support_information.url"/>
+
+         <!-- Registry keys to tweak defaults for TxDOT -->
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Settings"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Settings" Name="CacheUpdateFrequency" Value="2" Type="integer"/>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="Publisher" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="CatalogServer" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="CompanyName" Value="TxDOT" Type="string"/>
+         <?if $(var.Platform) = "x86"?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Settings"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Settings" Name="CacheUpdateFrequency" Value="2" Type="integer"/>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="Publisher" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="CatalogServer" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="CompanyName" Value="TxDOT" Type="string"/>
+         <?endif?>
+
+       </Component>
+     </DirectoryRef>
+     <?endif?>
+
      <DirectoryRef Id="APPLICATIONFOLDER"
                    FileSource="$(var.PGSuperSourceRoot)\Extensions\TxDOT\$(var.PlatformFolder)">
        <Directory Id="TogaTemplates" Name="TogaTemplates" />
@@ -183,11 +212,14 @@
               Description="Extend PGSuper with TxDOT specific features"
               Display="expand"
               Title="TxDOT Extensions (Optional)"
-              Level="1">
+              Level="$(var.TxDOTFeatureLevel)">
        <ComponentRef Id="TxDOTAgent"/>
        <ComponentRef Id="TOGADocs"/>
        <ComponentRef Id="TOGAShortcuts"/>
        <ComponentRef Id="TxDOTTogaTemplates"/>
+       <?ifdef _TXDOT?>
+          <ComponentRef Id="TxDOTCustomization"/>
+       <?endif?>
      </Feature>
 
    </Fragment>

@@ -6,10 +6,7 @@
    <?define PGSuperVersion      = 3.0.0.48?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
    <?define WBFLVersion         = 4.0.0.44?>
    <?define OpenBridgeMLVersion = 0.1.0.16?>
-  <?ifdef _INCLUDE_XBEAMRATE?>
-  <?define XBeamRateVersion = 1.0.0.6?>
-  <!-- also change this version number in the BuildXBeamRateImagesFragment.js file -->
-  <?endif ?>
+   <?define XBeamRateVersion = 1.0.0.6?>
 
 
    <?if $(var.Platform) = "x64"?>
@@ -28,7 +25,19 @@
 
    <?define ProductName=BridgeLink?>
 
-   <?define BridgeLinkAppPluginCATID={1D069A0E-7436-4275-A129-C84ADC22DE68}?>
+  <?ifdef _TXDOT?>
+    <?define StartMenuFolderName=Texas Department of Transportation?>
+    <?define WSDOTFeatureLevel=101?>
+    <?define TxDOTFeatureLevel=1?>
+    <?define KDOTFeatureLevel=101?>
+  <?else?>
+    <?define StartMenuFolderName=Engineering Applications?>
+    <?define WSDOTFeatureLevel=1?>
+    <?define TxDOTFeatureLevel=1?>
+    <?define KDOTFeatureLevel=1?>
+  <?endif?>
+
+  <?define BridgeLinkAppPluginCATID={1D069A0E-7436-4275-A129-C84ADC22DE68}?>
    <?define BridgeLinkComponentInfoCATID={AF28A0E7-E9AD-4839-9901-5F004209498B}?>
 
    <?define BridgeLinkSourceRoot=\ARP_RELEASE\BridgeLink\$(var.BridgeLinkVersion)\bin\?>
@@ -36,10 +45,7 @@
    <?define BEToolboxSourceRoot=\ARP_RELEASE\BEToolbox\$(var.BEToolboxVersion)\bin\?>
    <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
    <?define OpenBridgeMLSourceRoot=\ARP_RELEASE\OpenBridgeML\$(var.OpenBridgeMLVersion)\bin?>
-
-<?ifdef _INCLUDE_XBEAMRATE?>
   <?define XBeamRateSourceRoot=\ARP_RELEASE\XBeamRate\$(var.XBeamRateVersion)\bin\?>
-<?endif ?>
 
 <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
    

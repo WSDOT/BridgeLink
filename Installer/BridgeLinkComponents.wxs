@@ -147,7 +147,6 @@
                </ProgId>
 
            <!-- XBeam Rate file associations -->
-           <?ifdef _INCLUDE_XBEAMRATE?>
            <ProgId Id="XBeamRate.Document">
              <Extension Id="XBR" ContentType="application/XBeamRate">
                <Verb Id="Open"
@@ -156,7 +155,6 @@
                      Argument='"%1"' />
              </Extension>
            </ProgId>
-           <?endif ?>
 
          </Component>
       </DirectoryRef >

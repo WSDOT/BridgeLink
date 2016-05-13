@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
-  <?ifdef _INCLUDE_XBEAMRATE?>
-
   <!-- Include project wide variables -->
   <?include Variables.wxi?>
   <?include PGSuperCATID.wxi?>
@@ -384,8 +382,6 @@
         <ComponentRef Id="XBeamRatTestAgent"/>
       </Feature>
    </Fragment>
-
-   <?endif ?>
 
 </Wix>
 

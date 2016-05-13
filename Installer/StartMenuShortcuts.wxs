@@ -40,6 +40,12 @@
 
            <util:InternetShortcut Id="BridgeLinkDocShortcut" Name="BridgeLink Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BridgeLink/1.0"/>
 
+           <?ifdef _TXDOT?>
+           <Shortcut Id="TxDOTDesktopShortcut" Directory="DesktopFolder" Name="$(var.ProductName)" WorkingDirectory="INSTALLDIR" Target="[APPLICATIONFOLDER]$(var.ProductName).exe"/>
+           <Shortcut Id="TxDOTDesignGuide" Name="Design Guidelines" Target="[APPLICATIONFOLDER]design_guidelines.url" Icon="UrlIcon"/>
+           <Shortcut Id="TxDOTSupport" Name="Support Information" Target="[APPLICATIONFOLDER]support_information.url" Icon="UrlIcon"/>
+           <?endif?>
+
            <RemoveFolder Id="BridgeLinkStartMenuFolder"
                           On="uninstall"/>
 

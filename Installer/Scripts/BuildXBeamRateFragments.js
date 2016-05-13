@@ -8,8 +8,6 @@ WScript.Echo("<?xml version='1.0'?>");
 WScript.Echo("<!-- This file genereted by BuildXBeamRateImagesFragment.js script-->");
 WScript.Echo("<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>");
 
-WScript.Echo("<?ifdef _INCLUDE_XBEAMRATE?>")
-
 WScript.Echo("<!-- Include project wide variables -->");
 WScript.Echo("<?include Variables.wxi?>");
 
@@ -68,8 +66,6 @@ for (; !fcDocs.atEnd(); fcDocs.moveNext()) {
 WScript.Echo("</Component>");
 WScript.Echo("</DirectoryRef>");
 WScript.Echo("</Fragment>");
-
-WScript.Echo("<?endif ?>")
 
 WScript.Echo("</Wix>");
 

@@ -170,7 +170,7 @@
                Description="Extend PGSuper and PGSplice with WSDOT specific features"
                Display="expand"
                Title="WSDOT Extensions (Optional)"
-               Level="1">
+               Level="$(var.WSDOTFeatureLevel)">
          <ComponentRef Id="WSDOTAgent"/>
       </Feature>
 
