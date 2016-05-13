@@ -22,15 +22,15 @@
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Settings"/>
          <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Settings" Name="CacheUpdateFrequency" Value="2" Type="integer"/>
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options"/>
-         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="Publisher" Value="TxDOT" Type="string"/>
-         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="CatalogServer" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="Publisher2" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="CatalogServer2" Value="TxDOT" Type="string"/>
          <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="CompanyName" Value="TxDOT" Type="string"/>
          <?if $(var.Platform) = "x86"?>
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Settings"/>
          <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Settings" Name="CacheUpdateFrequency" Value="2" Type="integer"/>
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options"/>
-         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="Publisher" Value="TxDOT" Type="string"/>
-         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="CatalogServer" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="Publisher2" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="CatalogServer2" Value="TxDOT" Type="string"/>
          <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="CompanyName" Value="TxDOT" Type="string"/>
          <?endif?>
 

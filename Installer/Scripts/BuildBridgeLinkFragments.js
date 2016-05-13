@@ -28,8 +28,11 @@ for (; !fcDocs.atEnd(); fcDocs.moveNext()) {
     var fileName = new String;
     fileName = s.substring(lastIdx + 1);
 
+    var fileExt = new String;
+    fileExt = fileName.substring(fileName.lastIndexOf("."));
+
     var fileTag = new String;
-    if (fileName == "index.html")
+    if (fileExt == ".dm")
         fileTag = "<File Id='BridgeLinkDocs" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
     else
         fileTag = "<File Id='BridgeLinkDocs" + (i++) + "' Name='" + fileName + "' />";

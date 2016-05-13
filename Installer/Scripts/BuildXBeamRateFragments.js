@@ -27,9 +27,12 @@ for (; !fc.atEnd(); fc.moveNext()) {
    var fileName = new String;
    fileName = s.substring(lastIdx + 1);
 
+   var fileExt = new String;
+   fileExt = fileName.substring(fileName.lastIndexOf("."));
+
    var fileTag = new String;
-   if (i == 0)
-      fileTag = "<File Id='XBRImage" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
+   if (fileExt == ".dm")
+       fileTag = "<File Id='XBRImage" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
    else
       fileTag = "<File Id='XBRImage" + (i++) + "' Name='" + fileName + "' />";
 

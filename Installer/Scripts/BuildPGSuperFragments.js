@@ -32,9 +32,12 @@ for (; !fc.atEnd(); fc.moveNext()) {
    var fileName = new String;
    fileName = s.substring(lastIdx + 1);
 
+   var fileExt = new String;
+   fileExt = fileName.substring(fileName.lastIndexOf("."));
+
    var fileTag = new String;
-   if (i == 0)
-      fileTag = "<File Id='Image" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
+   if (fileExt == ".dm")
+       fileTag = "<File Id='Image" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
    else
       fileTag = "<File Id='Image" + (i++) + "' Name='" + fileName + "' />";
 
@@ -61,8 +64,11 @@ for (; !fcDocs.atEnd(); fcDocs.moveNext()) {
     var fileName = new String;
     fileName = s.substring(lastIdx + 1);
 
+    var fileExt = new String;
+    fileExt = fileName.substring(fileName.lastIndexOf("."));
+
     var fileTag = new String;
-    if (fileName == "index.html")
+    if (fileExt == ".dm")
         fileTag = "<File Id='PGSuperDocs" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
     else
         fileTag = "<File Id='PGSuperDocs" + (i++) + "' Name='" + fileName + "' />";
@@ -90,8 +96,11 @@ for (; !fcDocs.atEnd(); fcDocs.moveNext()) {
     var fileName = new String;
     fileName = s.substring(lastIdx + 1);
 
+    var fileExt = new String;
+    fileExt = fileName.substring(fileName.lastIndexOf("."));
+
     var fileTag = new String;
-    if (fileName == "index.html")
+    if (fileExt == ".dm")
         fileTag = "<File Id='PGSpliceDocs" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
     else
         fileTag = "<File Id='PGSpliceDocs" + (i++) + "' Name='" + fileName + "' />";
@@ -120,8 +129,11 @@ for (; !fcDocs.atEnd(); fcDocs.moveNext()) {
     var fileName = new String;
     fileName = s.substring(lastIdx + 1);
 
+    var fileExt = new String;
+    fileExt = fileName.substring(fileName.lastIndexOf("."));
+
     var fileTag = new String;
-    if (fileName == "index.html")
+    if (fileExt == ".dm")
         fileTag = "<File Id='PGSLibraryDocs" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
     else
         fileTag = "<File Id='PGSLibraryDocs" + (i++) + "' Name='" + fileName + "' />";
