@@ -1,7 +1,7 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
 var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\1.0.0.6\\bin\\images");
-var XBRateDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\1.0.0.6\\bin\\Docs");
+var XBRateDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\XBRate\\1.0");
 var fc = new Enumerator(ImagesFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
@@ -41,11 +41,11 @@ WScript.Echo("</Fragment>");
 
 WScript.Echo("<Fragment Id='XBRateDocs'>");
 
-WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.XBeamRateSourceRoot)Docs\">");
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.XBRateDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"XBRateDocs\" Name=\"XBRate\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
-WScript.Echo("<DirectoryRef Id='XBRateDocs' FileSource=\"$(var.XBeamRateSourceRoot)Docs\">");
+WScript.Echo("<DirectoryRef Id='XBRateDocs' FileSource=\"$(var.XBRateDocumentationSourceRoot)\">");
 WScript.Echo("<Component Id='XBRateDocs' Guid='{2B06B8FF-CB08-4726-8481-C109725C9691}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(XBRateDocsFolder.Files);
 var i = 0;

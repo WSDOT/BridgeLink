@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BEToolboxDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\3.0.0.33\\bin\\Docs");
+var BEToolboxDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BEToolbox\\3.0");
 var fc = new Enumerator(BEToolboxDocsFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
@@ -13,11 +13,11 @@ WScript.Echo("<?include Variables.wxi?>");
 WScript.Echo("<!-- Documentation Files -->");
 WScript.Echo("<Fragment Id='BEToolboxDocs'>");
 
-WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BEToolboxSourceRoot)\Docs\">");
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BEToolboxDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"BEToolboxDocs\" Name=\"BEToolbox\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
-WScript.Echo("<DirectoryRef Id='BEToolboxDocs' FileSource=\"$(var.BEToolboxSourceRoot)Docs\">");
+WScript.Echo("<DirectoryRef Id='BEToolboxDocs' FileSource=\"$(var.BEToolboxDocumentationSourceRoot)\">");
 WScript.Echo("<Component Id='BEToolboxDocs' Guid='{F975C9D5-A6E5-4c37-80EE-6E915A4BEDF3}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(BEToolboxDocsFolder.Files);
 var i = 0;

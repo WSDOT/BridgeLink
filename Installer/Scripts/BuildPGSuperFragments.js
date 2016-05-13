@@ -1,11 +1,11 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
 var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\images");
-var PGSuperDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\App\\Docs\\PGSuper");
-var PGSpliceDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\App\\Docs\\PGSplice");
-var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\App\\Docs\\PGSLibrary");
-var TOGADocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\Extensions\\TxDOT\\Docs");
-var KDOTDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\3.0.0.48\\bin\\Extensions\\KDOT\\Docs");
+var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\3.0");
+var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\3.0");
+var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\3.0");
+var TOGADocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\3.0");
+var KDOTDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\3.0");
 
 var fc = new Enumerator(ImagesFolder.Files);
 
@@ -47,11 +47,11 @@ WScript.Echo("</Fragment>");
 // Documentation Files
 WScript.Echo("<Fragment Id='PGSuperDocs'>");
 
-WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSuperSourceRoot)App\\Docs\\PGSuper\">");
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSuperDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"PGSuperDocs\" Name=\"PGSuper\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
-WScript.Echo("<DirectoryRef Id='PGSuperDocs' FileSource=\"$(var.PGSuperSourceRoot)App\\Docs\\PGSuper\">");
+WScript.Echo("<DirectoryRef Id='PGSuperDocs' FileSource=\"$(var.PGSuperDocumentationSourceRoot)\">");
 WScript.Echo("<Component Id='PGSuperDocs' Guid='{CF5F4A84-93E9-47e7-B405-B8DE747B98A9}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(PGSuperDocsFolder.Files);
 var i = 0;
@@ -76,11 +76,11 @@ WScript.Echo("</Fragment>");
 /////////////////////////////////////////////////////
 WScript.Echo("<Fragment Id='PGSpliceDocs'>");
 
-WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSuperSourceRoot)App\\Docs\\PGSplice\">");
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSpliceDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"PGSpliceDocs\" Name=\"PGSplice\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
-WScript.Echo("<DirectoryRef Id='PGSpliceDocs' FileSource=\"$(var.PGSuperSourceRoot)App\\Docs\\PGSplice\">");
+WScript.Echo("<DirectoryRef Id='PGSpliceDocs' FileSource=\"$(var.PGSpliceDocumentationSourceRoot)\">");
 WScript.Echo("<Component Id='PGSpliceDocs' Guid='{AA5CB22A-488A-44ee-885F-6AA269F9663A}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(PGSpliceDocsFolder.Files);
 var i = 0;
@@ -106,11 +106,11 @@ WScript.Echo("</Fragment>");
 /////////////////////////////////////////////////////
 WScript.Echo("<Fragment Id='PGSLibraryDocs'>");
 
-WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSuperSourceRoot)App\\Docs\\PGSLibrary\">");
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSLibraryDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"PGSLibraryDocs\" Name=\"PGSLibrary\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
-WScript.Echo("<DirectoryRef Id='PGSLibraryDocs' FileSource=\"$(var.PGSuperSourceRoot)App\\Docs\\PGSLibrary\">");
+WScript.Echo("<DirectoryRef Id='PGSLibraryDocs' FileSource=\"$(var.PGSLibraryDocumentationSourceRoot)\">");
 WScript.Echo("<Component Id='PGSLibraryDocs' Guid='{6665BED1-FF38-4358-B980-5CCBBCD49C8B}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(PGSLibraryDocsFolder.Files);
 var i = 0;
@@ -136,11 +136,11 @@ WScript.Echo("</Fragment>");
 /////////////////////////////////////////////////////
 WScript.Echo("<Fragment Id='TOGADocs'>");
 
-WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSuperSourceRoot)Extensions\\TxDOT\\Docs\">");
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.TOGADocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"TOGADocs\" Name=\"TOGA\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
-WScript.Echo("<DirectoryRef Id='TOGADocs' FileSource=\"$(var.PGSuperSourceRoot)Extensions\\TxDOT\\Docs\">");
+WScript.Echo("<DirectoryRef Id='TOGADocs' FileSource=\"$(var.TOGADocumentationSourceRoot)\">");
 WScript.Echo("<Component Id='TOGADocs' Guid='{AC181102-FE63-4fa0-8BB2-CC5F9695E4B3}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(TOGADocsFolder.Files);
 var i = 0;
@@ -166,11 +166,11 @@ WScript.Echo("</Fragment>");
 /////////////////////////////////////////////////////
 WScript.Echo("<Fragment Id='KDOTDocs'>");
 
-WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.PGSuperSourceRoot)Extensions\\KDOT\\Docs\">");
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.KDOTDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"KDOTDocs\" Name=\"KDOT\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
-WScript.Echo("<DirectoryRef Id='KDOTDocs' FileSource=\"$(var.PGSuperSourceRoot)Extensions\\KDOT\\Docs\">");
+WScript.Echo("<DirectoryRef Id='KDOTDocs' FileSource=\"$(var.KDOTDocumentationSourceRoot)\">");
 WScript.Echo("<Component Id='KDOTDocs' Guid='{38CE2D02-E0CF-4bc1-B194-7EFAED0A10D0}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(KDOTDocsFolder.Files);
 var i = 0;

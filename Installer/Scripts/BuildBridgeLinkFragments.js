@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BridgeLinkDocsFolder = FSO.GetFolder("\\ARP_RELEASE\\BridgeLink\\1.0.0.34\\bin\\App\\Docs");
+var BridgeLinkDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BridgeLink\\1.0");
 var fc = new Enumerator(BridgeLinkDocsFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
@@ -13,12 +13,12 @@ WScript.Echo("<?include Variables.wxi?>");
 WScript.Echo("<!-- Documentation Files -->");
 WScript.Echo("<Fragment Id='BridgeLinkDocs'>");
 
-WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BridgeLinkSourceRoot)App\\Docs\">");
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BridgeLinkDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"BridgeLinkDocs\" Name=\"BridgeLink\"/> <!-- Create the documentation directory -->");
 WScript.Echo("</DirectoryRef>");
 
 
-WScript.Echo("<DirectoryRef Id='BridgeLinkDocs' FileSource=\"$(var.BridgeLinkSourceRoot)App\\Docs\">");
+WScript.Echo("<DirectoryRef Id='BridgeLinkDocs' FileSource=\"$(var.BridgeLinkDocumentationSourceRoot)\">");
 WScript.Echo("<Component Id='BridgeLinkDocs' Guid='{EA697C8B-8863-420d-BCB7-411C653DC2EE}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(BridgeLinkDocsFolder.Files);
 var i = 0;

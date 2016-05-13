@@ -8,8 +8,17 @@
    <?define OpenBridgeMLVersion = 0.1.0.16?>
    <?define XBeamRateVersion = 1.0.0.6?>
 
+  <?define DocumentationSourceRoot=\ARP\BridgeLink\Docs\?>
+  <?define BridgeLinkDocumentationSourceRoot=$(var.DocumentationSourceRoot)\BridgeLink\1.0\?>
+  <?define BEToolboxDocumentationSourceRoot=$(var.DocumentationSourceRoot)\BEToolbox\3.0\?>
+  <?define PGSuperDocumentationSourceRoot=$(var.DocumentationSourceRoot)\PGSuper\3.0\?>
+  <?define PGSpliceDocumentationSourceRoot=$(var.DocumentationSourceRoot)\PGSplice\3.0\?>
+  <?define PGSLibraryDocumentationSourceRoot=$(var.DocumentationSourceRoot)\PGSLibrary\3.0\?>
+  <?define TOGADocumentationSourceRoot=$(var.DocumentationSourceRoot)\TOGA\3.0\?>
+  <?define KDOTDocumentationSourceRoot=$(var.DocumentationSourceRoot)\KDOT\3.0\?>
+  <?define XBRateDocumentationSourceRoot=$(var.DocumentationSourceRoot)\XBRate\1.0\?>
 
-   <?if $(var.Platform) = "x64"?>
+  <?if $(var.Platform) = "x64"?>
       <?define ProgramFilesDirectory = ProgramFiles64Folder?>
       <?define ProductID = {88563058-642A-455e-9001-A0BD8B71A793}?>
       <?define UpgradeCode = {AE47FAA1-1DB0-48a0-9B82-C99C7120B8C4}?>
@@ -44,8 +53,9 @@
    <?define WBFLSourceRoot=\ARP_RELEASE\WBFL\$(var.WBFLVersion)\bin\?>
    <?define BEToolboxSourceRoot=\ARP_RELEASE\BEToolbox\$(var.BEToolboxVersion)\bin\?>
    <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
-   <?define OpenBridgeMLSourceRoot=\ARP_RELEASE\OpenBridgeML\$(var.OpenBridgeMLVersion)\bin?>
+   <?define OpenBridgeMLSourceRoot=\ARP_RELEASE\OpenBridgeML\$(var.OpenBridgeMLVersion)\bin\?>
   <?define XBeamRateSourceRoot=\ARP_RELEASE\XBeamRate\$(var.XBeamRateVersion)\bin\?>
+  
 
 <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
    
