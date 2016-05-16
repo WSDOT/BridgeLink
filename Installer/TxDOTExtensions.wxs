@@ -137,7 +137,7 @@
                   Guid="{9116E392-14A9-4051-91C0-809BF001A4F1}"
                   Win64="$(var.IsWin64)">
 
-         <util:InternetShortcut Id="TOGADocShortcut" Name="TOGA Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/TOGA/3.0"/>
+         <util:InternetShortcut Id="TOGADocShortcut" Name="TOGA Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/TOGA/$(var.TOGADocumentationVersion)" Type="url"/>
 
          <RegistryValue Root="HKCU"
                         Key="Software\Microsoft\[ProductName]"

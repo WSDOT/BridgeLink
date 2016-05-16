@@ -10,7 +10,7 @@
       <DirectoryRef Id="BridgeLinkStartMenuFolder">
          <Component Id="BEToolboxShortcuts" Guid="{6777548A-04BF-4d86-A184-51DEEB27D552}" Win64="$(var.IsWin64)">
 
-           <util:InternetShortcut Id="BEToolboxDocShortcut" Name="BEToobox Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BEToolbox/3.0"/>
+           <util:InternetShortcut Id="BEToolboxDocShortcut" Name="BEToobox Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BEToolbox/$(var.BEToolboxDocumentationVersion)" Type="url"/>
 
            <RegistryValue Root="HKCU"
                            Key="Software\Microsoft\[ProductName]"

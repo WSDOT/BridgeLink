@@ -321,9 +321,9 @@
                     Win64="$(var.IsWin64)">
 
             <!-- Start Menu Shortcuts -->
-           <util:InternetShortcut Id="PGSuperDocShortcut" Name="PGSuper Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSuper/3.0"/>
-           <util:InternetShortcut Id="PGSpliceDocShortcut" Name="PGSplice Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSplice/3.0"/>
-           <util:InternetShortcut Id="PGSLibraryDocShortcut" Name="PGSLibrary Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSLibrary/3.0"/>
+           <util:InternetShortcut Id="PGSuperDocShortcut" Name="PGSuper Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSuper/$(var.PGSuperDocumentationVersion)" Type="url"/>
+           <util:InternetShortcut Id="PGSpliceDocShortcut" Name="PGSplice Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSplice/$(var.PGSpliceDocumentationVersion)" Type="url"/>
+           <util:InternetShortcut Id="PGSLibraryDocShortcut" Name="PGSLibrary Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/PGSLibrary/$(var.PGSLibraryDocumentationVersion)" Type="url"/>
 
             <RegistryValue Root="HKCU"
                            Key="Software\Microsoft\[ProductName]"
