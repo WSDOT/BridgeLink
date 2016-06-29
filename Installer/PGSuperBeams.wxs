@@ -644,7 +644,7 @@
                     Guid="{3A28E1AA-5BE0-4a8f-99A0-53F6F3938A51}"
                     Win64="$(var.IsWin64)">
             
-            <?define IBeamDistFactorEngineerCLSID={3AC40380-8764-4087-BD7C-47A50A369AE6}?>
+            <?define IBeamDistFactorEngineerCLSID={DFC0191F-F606-46aa-AC82-13B44878AA3B}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.IBeamDistFactorEngineerCLSID)"/>
@@ -724,7 +724,7 @@
                            Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
                            Type="string" />
 
-            <?define VoidedSlab2DistFactorEngineerCLSID={43BA23FE-C697-4277-A1C0-943E6E9DFBF9}?>
+            <?define VoidedSlab2DistFactorEngineerCLSID={7B95DAC5-4E68-4e16-8504-22D21A0E6}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.VoidedSlab2DistFactorEngineerCLSID)"/>
