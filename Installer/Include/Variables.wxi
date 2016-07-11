@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
-   <?define BridgeLinkReleaseVersion = 1.0.52?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
-   <?define BridgeLinkVersion   = 1.0.0.37?> <!-- This defines the version number of the executable application (probably won't change much)-->
-   <?define BEToolboxVersion    = 3.0.0.36?>
-   <?define PGSuperVersion      = 3.0.0.52?>  <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 4.0.0.47?>
-   <?define OpenBridgeMLVersion = 0.1.0.19?>
-   <?define XBeamRateVersion = 1.0.0.9?>
+   <?define BridgeLinkReleaseVersion = 1.0.53?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
+   <?define BridgeLinkVersion   = 1.0.0.38?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BEToolboxVersion    = 3.0.0.37?>
+   <?define OpenBridgeMLVersion = 0.1.0.20?>
+   <?define PGSuperVersion      = 3.0.0.53?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = 4.0.0.48?>
+   <?define XBeamRateVersion    = 1.0.0.10?>
 
   <?define BridgeLinkDocumentationVersion=1.0?>
   <?define BEToolboxDocumentationVersion=3.0?>
