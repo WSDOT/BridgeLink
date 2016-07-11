@@ -7,7 +7,7 @@
    <?include PGSpliceCATID.wxi?>
 
    <Fragment>
-      <!-- PGSuper files -->
+     <!-- PGSuper files -->
       <DirectoryRef Id="APPLICATIONFOLDER"
                     FileSource ="$(var.PGSuperSourceRoot)\AutomationDlls\$(var.PlatformFolder)" >
          
@@ -187,7 +187,7 @@
                            Value=""
                            Type="string" />
 
-            <!-- PGSplice Component Information Object -->
+           <!-- PGSplice Component Information Object -->
             <?define PGSpliceComponentInfoCLSID={52160B92-F03C-495c-A149-CDF1068E99E3}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
@@ -300,12 +300,11 @@
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="Component Categories\$(var.PGSpliceDataExporterCATID)"/>
-            <RegistryValue Root="HKCR"
-                           Key="Component Categories\$(var.PGSpliceDataExporterCATID)"
-                           Name="800"
-                           Value="PGSplice Data Exporter Plugin"
-                           Type="string" />
-
+           <RegistryValue Root="HKCR"
+                          Key="Component Categories\$(var.PGSpliceDataExporterCATID)"
+                          Name="800"
+                          Value="PGSplice Data Exporter Plugin"
+                          Type="string" />
 
             <!-- PGSuper/PGSplice creates a log file, remove it on uninstall -->
             <RemoveFile Id="RemovePGSuperLog"  Name="PGSuper.log"  On="uninstall"/>
