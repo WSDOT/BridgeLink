@@ -137,14 +137,23 @@
                   </Extension>
                </ProgId>
 
-               <ProgId Id="Curvel.Document">
-                  <Extension Id="Curvel" ContentType="application/Curvel">
-                     <Verb Id="Open"
-                           Command="&amp;Open with BridgeLink:BEToolbox:Curvel"
-                           TargetFile="$(var.ProductName).exe"
-                           Argument='"%1"' />
-                  </Extension>
-               </ProgId>
+           <ProgId Id="Curvel.Document">
+             <Extension Id="Curvel" ContentType="application/Curvel">
+               <Verb Id="Open"
+                     Command="&amp;Open with BridgeLink:BEToolbox:Curvel"
+                     TargetFile="$(var.ProductName).exe"
+                     Argument='"%1"' />
+             </Extension>
+           </ProgId>
+
+           <ProgId Id="PGStable.Document">
+             <Extension Id="PGStable" ContentType="application/PGStable">
+               <Verb Id="Open"
+                     Command="&amp;Open with BridgeLink:BEToolbox:PGStable"
+                     TargetFile="$(var.ProductName).exe"
+                     Argument='"%1"' />
+             </Extension>
+           </ProgId>
 
            <!-- XBeam Rate file associations -->
            <ProgId Id="XBeamRate.Document">
