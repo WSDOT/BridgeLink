@@ -57,8 +57,7 @@
             <File Id="WBFLUnitMgt.dll"              Name="WBFLUnitMgt.dll"/>
             <File Id="WBFLUnits.dll"              Name="WBFLUnits.dll"/>
             <File Id="WBFLUnitServer.dll"              Name="WBFLUnitServer.dll"/>
-           <!-- PGStable -->
-            <!-- <File Id="WBFLStability.dll" Name="WBFLStability.dll"/> -->
+            <File Id="WBFLStability.dll" Name="WBFLStability.dll"/>
          </Component>
       </DirectoryRef>
    </Fragment>
