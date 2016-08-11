@@ -3,8 +3,10 @@
 
    <!-- Include project wide variables -->
    <?include Variables.wxi?>
+   <?include PGSuperCATID.wxi?>
+   <?include PGSpliceCATID.wxi?>
 
-   <Fragment>
+  <Fragment>
       
       <!-- Start menu item for help file -->
       <DirectoryRef Id="BridgeLinkStartMenuFolder">
