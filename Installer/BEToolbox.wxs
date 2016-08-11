@@ -37,7 +37,7 @@
             <ProgId Id="GirComp.Document" Icon="BEToolbox.dll" IconIndex="3"/>
             <ProgId Id="BoxGdr.Document" Icon="BEToolbox.dll" IconIndex="2"/>
            <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="6"/>
-           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="9"/>
+<!--           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="9"/> -->
 
            <!-- BEToolbox registry entries-->
             
@@ -149,6 +149,7 @@
                           Type="string" />
 
            <!-- PGStable Exporter -->
+           <!--
            <?define WSDOTPGStableDataExporterCLSID={FF96408C-27B3-4288-8A44-6F80652BE187}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
@@ -169,6 +170,7 @@
                           Key="CLSID\$(var.WSDOTPGStableDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
                           Value=""
                           Type="string" />
+            -->
 
          </Component>
       </DirectoryRef >
