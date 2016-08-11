@@ -146,7 +146,6 @@
              </Extension>
            </ProgId>
 
-           <!--
            <ProgId Id="PGStable.Document">
              <Extension Id="PGStable" ContentType="application/PGStable">
                <Verb Id="Open"
@@ -155,7 +154,6 @@
                      Argument='"%1"' />
              </Extension>
            </ProgId>
-           -->
 
            <!-- XBeam Rate file associations -->
            <ProgId Id="XBeamRate.Document">
