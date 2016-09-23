@@ -65,7 +65,7 @@ public:
    virtual bool UnregisterCallback(IDType ID);
 
    virtual void OnFirstRun();
-   void Configure(bool bFirstRun=false);
+   void Configure();
 
 // CEAFPluginApp overrides
 public:

@@ -24,7 +24,7 @@ CConfigureBridgeLinkDlg::~CConfigureBridgeLinkDlg()
 INT_PTR CConfigureBridgeLinkDlg::DoModal()
 {
    INT_PTR result = CPropertySheet::DoModal();
-   if ( result == IDOK )
+   if ( result == ID_WIZFINISH )
    {
       NotifyExtensionPages();
    }
@@ -34,10 +34,15 @@ INT_PTR CConfigureBridgeLinkDlg::DoModal()
 
 void CConfigureBridgeLinkDlg::Init(std::map<IDType,IBridgeLinkConfigurationCallback*>& configurationPageCallbacks)
 {
-   m_psh.dwFlags |= PSH_HASHELP | PSH_NOAPPLYNOW;
+   //AFX_MANAGE_STATE(AfxGetStaticModuleState());
+   m_psh.dwFlags |= PSH_HASHELP | PSH_NOAPPLYNOW | PSH_WIZARD97 /*| PSH_HEADER*/ | PSH_WATERMARK;
+   m_psh.pszbmWatermark = MAKEINTRESOURCE(IDB_CONFIGURATION_WATERMARK);
+   //m_psh.pszbmHeader = MAKEINTRESOURCE(IDB_CONFIGURATION_HEADER);
+   m_psh.hInstance = AfxGetInstanceHandle(); 
+   SetWizardMode();
 
-   m_BridgeLinkPage.m_psp.dwFlags  |= PSP_HASHELP;
    AddPage( &m_BridgeLinkPage );
+   m_Pages.push_back((LRESULT)m_BridgeLinkPage.m_psp.pszTemplate);
 
    std::map<IDType,IBridgeLinkConfigurationCallback*>::iterator iter(configurationPageCallbacks.begin());
    std::map<IDType,IBridgeLinkConfigurationCallback*>::iterator end(configurationPageCallbacks.end());
@@ -49,8 +54,10 @@ void CConfigureBridgeLinkDlg::Init(std::map<IDType,IBridgeLinkConfigurationCallb
       if ( pPage )
       {
          AddPage(pPage);
+         m_Pages.push_back((LRESULT)pPage->m_psp.pszTemplate);
       }
    }
+   m_CurrentPage = m_Pages.begin();
 }
 
 
@@ -86,6 +93,65 @@ BEGIN_MESSAGE_MAP(CConfigureBridgeLinkDlg, CPropertySheet)
 	ON_MESSAGE(WM_KICKIDLE,OnKickIdle)
 END_MESSAGE_MAP()
 
+BOOL CConfigureBridgeLinkDlg::OnInitDialog()
+{
+   BOOL bResult = CPropertySheet::OnInitDialog();
+
+   SetTitle(_T("Configure BridgeLink"));
+
+   if ( m_Pages.size() == 0 )
+   {
+      SetWizardButtons(PSWIZB_FINISH);
+   }
+   else
+   {
+      SetWizardButtons(PSWIZB_NEXT);
+   }
+
+   return bResult;
+}
+
+LRESULT CConfigureBridgeLinkDlg::GetNextPage()
+{
+   m_CurrentPage++;
+
+   if ( IsLastPage() )
+   {
+      SetWizardButtons(PSWIZB_BACK | PSWIZB_FINISH);
+   }
+   else
+   {
+      SetWizardButtons(PSWIZB_BACK | PSWIZB_NEXT);
+   }
+
+   return *m_CurrentPage;
+}
+
+LRESULT CConfigureBridgeLinkDlg::GetBackPage()
+{
+   m_CurrentPage--;
+
+   if ( IsFirstPage() )
+   {
+      SetWizardButtons(PSWIZB_NEXT);
+   }
+   else
+   {
+      SetWizardButtons(PSWIZB_BACK | PSWIZB_NEXT);
+   }
+   
+   return *m_CurrentPage;
+}
+
+bool CConfigureBridgeLinkDlg::IsLastPage()
+{
+   return (m_CurrentPage == m_Pages.end()-1 ? true : false );
+}
+
+bool CConfigureBridgeLinkDlg::IsFirstPage()
+{
+   return (m_CurrentPage == m_Pages.begin() ? true : false);
+}
 
 // CConfigureBridgeLinkDlg message handlers
 LRESULT CConfigureBridgeLinkDlg::OnKickIdle(WPARAM wp, LPARAM lp)

@@ -26,7 +26,8 @@
 
 // CConfigureBridgeLinkDlg
 
-class CConfigureBridgeLinkDlg : public CPropertySheet
+
+class CConfigureBridgeLinkDlg : public CPropertySheet, public IBridgeLinkConfigurationParent
 {
 	DECLARE_DYNAMIC(CConfigureBridgeLinkDlg)
 
@@ -37,11 +38,21 @@ public:
    CConfigureBridgeLinkPage m_BridgeLinkPage;
 
    virtual INT_PTR DoModal();
+   virtual BOOL OnInitDialog();
+
+   // IBridgeLinkConfigurationParent
+   virtual LRESULT GetBackPage();
+   virtual LRESULT GetNextPage();
 
 protected:
-	DECLARE_MESSAGE_MAP()
+   std::vector<LRESULT> m_Pages;
+   std::vector<LRESULT>::iterator m_CurrentPage;
+
+   DECLARE_MESSAGE_MAP()
 	afx_msg LRESULT OnKickIdle(WPARAM, LPARAM);
 
+   bool IsLastPage();
+   bool IsFirstPage();
    void Init(std::map<IDType,IBridgeLinkConfigurationCallback*>& configurationPageCallbacks);
    void DestroyExtensionPages();
    void NotifyExtensionPages();

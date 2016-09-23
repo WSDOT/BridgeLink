@@ -22,6 +22,12 @@
 
 #pragma once
 
+interface IBridgeLinkConfigurationParent
+{
+   virtual LRESULT GetBackPage() = 0;
+   virtual LRESULT GetNextPage() = 0;
+};
+
 interface IBridgeLinkConfigurationCallback
 {
    virtual CPropertyPage* CreatePropertyPage() = 0;

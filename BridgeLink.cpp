@@ -124,14 +124,12 @@ bool CBridgeLinkApp::UnregisterCallback(IDType ID)
 
 void CBridgeLinkApp::OnFirstRun()
 {
-   Configure(true);
+   Configure();
 }
 
-void CBridgeLinkApp::Configure(bool bFirstRun)
+void CBridgeLinkApp::Configure()
 {
    CConfigureBridgeLinkDlg dlg(m_ConfigurationCallbacks);
-   //if ( bFirstRun )
-      //dlg.SetWizardMode();
 
    GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
 
@@ -556,6 +554,5 @@ BOOL CBridgeLinkApp::OnCmdMsg(UINT nID,int nCode,void* pExtra,AFX_CMDHANDLERINFO
 
 void CBridgeLinkApp::OnConfigure()
 {
-   // TODO: Add your command handler code here
    Configure();
 }

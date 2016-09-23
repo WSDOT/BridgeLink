@@ -976,6 +976,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\ConfigurationHeader.bmp"
+				>
+			</File>
+			<File
+				RelativePath=".\res\ConfigurationWatermark.bmp"
+				>
+			</File>
+			<File
 				RelativePath=".\res\KDOT.ico"
 				>
 			</File>

@@ -14,9 +14,10 @@
 #define EAF_GRAPH_MENU_COUNT            50
 #define IDR_MAINFRAME                   128
 #define IDB_SPLASH                      130
+#define IDB_CONFIGURATION_HEADER        131
+#define IDB_CONFIGURATION_WATERMARK     132
 #define IDB_BITMAP1                     134
-#define IDD_DIALOG1                     135
-#define IDD_CONFIGURE_BRIDGELINK        135
+#define IDD_CONFIGURE_BRIDGELINK        200
 #define IDI_WSDOT                       190
 #define IDI_BSS                         191
 #define IDI_TXDOT                       239
@@ -55,7 +56,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        136
+#define _APS_NEXT_RESOURCE_VALUE        201
 #define _APS_NEXT_COMMAND_VALUE         33030
 #define _APS_NEXT_CONTROL_VALUE         1002
 #define _APS_NEXT_SYMED_VALUE           101

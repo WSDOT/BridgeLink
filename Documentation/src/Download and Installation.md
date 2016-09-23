@@ -28,4 +28,6 @@ BridgeLink is started like all other Windows programs. Select *Start > All Progr
 
 When BridgeLink starts you will be presented with the license agreement and disclaimer. It is a requirement of the Alternate Route Open Source License that these documents be presented every time you start the program.
 
-> NOTE: The first time you run BridgeLink you will be prompted to configure PGSuper and PGSplice. The configuration procedure is the same for both applications. Enter your name and company in the User Information section. Press the [Update Configuration Now] button to download the default (WSDOT) configuration.
+The first time you run BridgeLink you will be presented with the BridgeLink Configuration wizard. This wizard will guide you through the configuration process. Configuration steps will be presented for each BridgeLink application that needs to be configured (e.g. PGSuper, PGSplice and TOGA). Enter your name in the Engineer field and your company name in the Company field. This information is used to personalize reports, graphs, and out output from BridgeLink applications. 
+
+Press [Next >] to advanced to the next step in the BridgeLink Configuration wizard. The remaining steps are for configuring BridgeLink Applications. Refer to the documentation for those applications for configuration details.

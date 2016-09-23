@@ -117,15 +117,18 @@ BEGIN
     LTEXT           "pixels",IDC_STATIC,77,56,18,8
 END
 
-IDD_CONFIGURE_BRIDGELINK DIALOGEX 0, 0, 316, 182
+IDD_CONFIGURE_BRIDGELINK DIALOGEX 0, 0, 345, 208
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "BridgeLink"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    LTEXT           "Engineer",IDC_STATIC,7,7,29,8
-    EDITTEXT        IDC_ENGINEER,45,7,96,14,ES_AUTOHSCROLL
-    LTEXT           "Company",IDC_STATIC,7,35,31,8
-    EDITTEXT        IDC_COMPANY,45,28,96,14,ES_AUTOHSCROLL
+    LTEXT           "Engineer",IDC_STATIC,120,105,29,8
+    EDITTEXT        IDC_ENGINEER,158,103,96,14,ES_AUTOHSCROLL
+    LTEXT           "Company",IDC_STATIC,120,121,31,8
+    EDITTEXT        IDC_COMPANY,158,119,96,14,ES_AUTOHSCROLL
+    LTEXT           "The information below is used to personalize reports, graphs, and other output from the various BridgeLink application.",IDC_STATIC,120,81,218,17
+    LTEXT           "Welcome to BridgeLink.\nThis wizard will guide you through the configuration process",IDC_STATIC,120,7,218,22
+    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,173,218,28
 END
 
 
@@ -249,6 +252,8 @@ END
 //
 
 IDB_SPLASH              BITMAP                  "res\\splash.bmp"
+IDB_CONFIGURATION_HEADER BITMAP                  "res\\ConfigurationHeader.bmp"
+IDB_CONFIGURATION_WATERMARK BITMAP                  "res\\ConfigurationWatermark.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -277,9 +282,10 @@ BEGIN
     IDD_CONFIGURE_BRIDGELINK, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 309
+        RIGHTMARGIN, 338
+        VERTGUIDE, 120
         TOPMARGIN, 7
-        BOTTOMMARGIN, 175
+        BOTTOMMARGIN, 201
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -318,6 +324,7 @@ BEGIN
     ID_HELP_INET_ARP        "Visit the Alternate Route Project Home Page"
     ID_HELP_INET_WSDOT      "Open the WSDOT Home Page at www.wsdot.wa.gov"
     ID_HELP_INET_BRIDGELINK "Open the BridgeLink Home Page\nBridgeLink Online Resources"
+    IDM_CONFIGURE_BRIDGELINK "Configure BridgeLink and it's applications"
 END
 
 STRINGTABLE 
@@ -334,11 +341,6 @@ STRINGTABLE
 BEGIN
     ID_FILE_NEW             "Create a new BridgeLink Project\nNew (Ctrl+N)"
     ID_FILE_SAVE            "Save your project\nSave (Ctrl+S)"
-END
-
-STRINGTABLE 
-BEGIN
-    IDM_CONFIGURE_BRIDGELINK           "Configure BridgeLink and it's applications"
 END
 
 #endif    // English (U.S.) resources

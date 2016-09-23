@@ -26,6 +26,8 @@
 #include "stdafx.h"
 #include "BridgeLink.h"
 #include "ConfigureBridgeLinkPage.h"
+#include "ConfigureBridgeLinkDlg.h"
+#include "BridgeLink.hh"
 
 
 // CConfigureBridgeLinkPage dialog
@@ -35,7 +37,8 @@ IMPLEMENT_DYNAMIC(CConfigureBridgeLinkPage, CPropertyPage)
 CConfigureBridgeLinkPage::CConfigureBridgeLinkPage()
 	: CPropertyPage(CConfigureBridgeLinkPage::IDD)
 {
-
+   m_psp.dwFlags |= PSP_USETITLE | PSP_DEFAULT | PSP_HASHELP | PSP_HIDEHEADER;
+   m_psp.pszTitle = _T("Configure BridgeLink");
 }
 
 CConfigureBridgeLinkPage::~CConfigureBridgeLinkPage()
@@ -51,7 +54,32 @@ void CConfigureBridgeLinkPage::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CConfigureBridgeLinkPage, CPropertyPage)
+   ON_COMMAND(ID_HELP,OnHelp)
 END_MESSAGE_MAP()
 
 
 // CConfigureBridgeLinkPage message handlers
+
+void CConfigureBridgeLinkPage::OnHelp()
+{
+   CEAFApp* pApp = EAFGetApp();
+   EAFHelp( pApp->m_pszAppName, IDH_CONFIGURE_BRIDGELINK );
+}
+
+LRESULT CConfigureBridgeLinkPage::OnWizardNext()
+{
+   if ( !UpdateData() )
+      return -1;
+
+   CConfigureBridgeLinkDlg* pParent = (CConfigureBridgeLinkDlg*)GetParent();
+   return pParent->GetNextPage();
+   //return CPropertyPage::OnWizardNext();
+}
+
+LRESULT CConfigureBridgeLinkPage::OnWizardBack()
+{
+   CConfigureBridgeLinkDlg* pParent = (CConfigureBridgeLinkDlg*)GetParent();
+   return pParent->GetBackPage();
+
+//   return CPropertyPage::OnWizardBack();
+}
