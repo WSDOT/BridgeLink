@@ -758,6 +758,14 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\ConfigureBridgeLinkDlg.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ConfigureBridgeLinkPage.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\MainFrm.cpp"
 				>
 			</File>
@@ -852,6 +860,18 @@
 			</File>
 			<File
 				RelativePath=".\Include\BridgeLinkCommandIDs.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Include\BridgeLinkConfiguration.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ConfigureBridgeLinkDlg.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ConfigureBridgeLinkPage.h"
 				>
 			</File>
 			<File

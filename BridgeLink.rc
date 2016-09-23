@@ -1,7 +1,6 @@
 // Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
-#include <EAF\EAFResources.h>
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -118,6 +117,17 @@ BEGIN
     LTEXT           "pixels",IDC_STATIC,77,56,18,8
 END
 
+IDD_CONFIGURE_BRIDGELINK DIALOGEX 0, 0, 316, 182
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BridgeLink"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Engineer",IDC_STATIC,7,7,29,8
+    EDITTEXT        IDC_ENGINEER,45,7,96,14,ES_AUTOHSCROLL
+    LTEXT           "Company",IDC_STATIC,7,35,31,8
+    EDITTEXT        IDC_COMPANY,45,28,96,14,ES_AUTOHSCROLL
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -135,6 +145,7 @@ BEGIN
         BEGIN
             MENUITEM "Manage Application Components...", EAFID_MANAGE_APP_PLUGINS
         END
+        MENUITEM "Configure BridgeLink...",     IDM_CONFIGURE_BRIDGELINK
         MENUITEM SEPARATOR
         MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
         MENUITEM SEPARATOR
@@ -262,6 +273,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 83
     END
+
+    IDD_CONFIGURE_BRIDGELINK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -315,6 +334,11 @@ STRINGTABLE
 BEGIN
     ID_FILE_NEW             "Create a new BridgeLink Project\nNew (Ctrl+N)"
     ID_FILE_SAVE            "Save your project\nSave (Ctrl+S)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDM_CONFIGURE_BRIDGELINK           "Configure BridgeLink and it's applications"
 END
 
 #endif    // English (U.S.) resources

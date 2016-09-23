@@ -42,11 +42,30 @@
 // See BridgeLink.cpp for the implementation of this class
 //
 
-class CBridgeLinkApp : public CEAFPluginApp
+#include <BridgeLinkConfiguration.h>
+
+interface IBridgeLink
+{
+   virtual void GetUserInfo(CString* pstrEngineer,CString* pstrCompany) = 0;
+   virtual void SetUserInfo(const CString& strEngineer,const CString& strCompany) = 0;
+   virtual IDType Register(IBridgeLinkConfigurationCallback* pCallback) = 0;
+   virtual bool UnregisterCallback(IDType ID) = 0;
+};
+
+class CBridgeLinkApp : public CEAFPluginApp, public IBridgeLink
 {
 public:
 	CBridgeLinkApp();
    ~CBridgeLinkApp();
+
+// IBridgeLink
+   virtual void GetUserInfo(CString* pstrEngineer,CString* pstrCompany);
+   virtual void SetUserInfo(const CString& strEngineer,const CString& strCompany);
+   virtual IDType Register(IBridgeLinkConfigurationCallback* pCallback);
+   virtual bool UnregisterCallback(IDType ID);
+
+   virtual void OnFirstRun();
+   void Configure(bool bFirstRun=false);
 
 // CEAFPluginApp overrides
 public:
@@ -69,6 +88,7 @@ public:
 	afx_msg void OnHelpInetBridgeLink();
    afx_msg void OnHelpInetARP();
    afx_msg void OnScreenSize();
+   afx_msg void OnConfigure();
    afx_msg void OnHelp();
 	//}}AFX_MSG
 	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo);
@@ -94,6 +114,9 @@ public:
 private:
    virtual void RegistryInit(); // All registry initialization goes here
    virtual void RegistryExit(); // All registry cleanup goes here
+
+   IDType m_CallbackID;
+   std::map<IDType,IBridgeLinkConfigurationCallback*> m_ConfigurationCallbacks;
 };
 
 

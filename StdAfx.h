@@ -45,10 +45,12 @@
 #ifndef _AFX_NO_AFXCMN_SUPPORT
 #include <afxcmn.h>			// MFC support for Windows Common Controls
 #endif // _AFX_NO_AFXCMN_SUPPORT
+#include <afxpriv.h>        // Private MFC extensions
 
 #include <EAF\EAF.h>
 #include <EAF\EAFHelp.h>
 #include <MFCtools\MFCtools.h>
+#include <afxdlgs.h>
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.

@@ -36,6 +36,8 @@
 #include "ScreenSizeDlg.h"
 #include "MainFrm.h"
 
+#include "ConfigureBridgeLinkDlg.h"
+
 
 // This is the range of command IDs for all plug-in commands... all means all commands added
 // to the menus of the BridgeLink executable program, the AppPlugin document and view menus, 
@@ -71,6 +73,7 @@ BEGIN_MESSAGE_MAP(CBridgeLinkApp, CEAFPluginApp)
 	// Standard file based document commands
 	// Standard print setup command
 	ON_COMMAND(ID_FILE_PRINT_SETUP, CWinApp::OnFilePrintSetup)
+   ON_COMMAND(IDM_CONFIGURE_BRIDGELINK, &CBridgeLinkApp::OnConfigure)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -78,10 +81,65 @@ END_MESSAGE_MAP()
 
 CBridgeLinkApp::CBridgeLinkApp()
 {
+   m_CallbackID = 0;
 }
 
 CBridgeLinkApp::~CBridgeLinkApp()
 {
+}
+
+void CBridgeLinkApp::GetUserInfo(CString* pstrEngineer,CString* pstrCompany)
+{
+   CString strDefaultCompany  = GetLocalMachineString(_T("Options"),_T("CompanyName"), _T("Your Company"));
+   CString strDefaultEngineer = GetLocalMachineString(_T("Options"),_T("EngineerName"),_T("Your Name"));
+   *pstrEngineer = GetProfileString(_T("Options"),_T("EngineerName"), strDefaultEngineer);
+   *pstrCompany  = GetProfileString(_T("Options"),_T("CompanyName"), strDefaultCompany);
+}
+
+void CBridgeLinkApp::SetUserInfo(const CString& strEngineer,const CString& strCompany)
+{
+   VERIFY(WriteProfileString(_T("Options"), _T("EngineerName"), strEngineer));
+   VERIFY(WriteProfileString(_T("Options"), _T("CompanyName"),  strCompany));
+}
+
+IDType CBridgeLinkApp::Register(IBridgeLinkConfigurationCallback* pCallback)
+{
+   IDType key = m_CallbackID++;
+   m_ConfigurationCallbacks.insert(std::make_pair(key,pCallback));
+   return key;
+}
+
+bool CBridgeLinkApp::UnregisterCallback(IDType ID)
+{
+   std::map<IDType,IBridgeLinkConfigurationCallback*>::iterator found = m_ConfigurationCallbacks.find(ID);
+   if ( found == m_ConfigurationCallbacks.end() )
+   {
+      return false;
+   }
+
+   m_ConfigurationCallbacks.erase(found);
+
+   return true;
+}
+
+void CBridgeLinkApp::OnFirstRun()
+{
+   Configure(true);
+}
+
+void CBridgeLinkApp::Configure(bool bFirstRun)
+{
+   CConfigureBridgeLinkDlg dlg(m_ConfigurationCallbacks);
+   //if ( bFirstRun )
+      //dlg.SetWizardMode();
+
+   GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
+
+   INT_PTR results = dlg.DoModal();
+   if ( results == IDOK )
+   {
+      SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
+   }
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -494,4 +552,10 @@ BOOL CBridgeLinkApp::OnCmdMsg(UINT nID,int nCode,void* pExtra,AFX_CMDHANDLERINFO
    // For some reason, this method is needed otherwise the base class version
    // doesn't get called... even though the base class method is virtual
    return CEAFPluginApp::OnCmdMsg(nID,nCode,pExtra,pHandlerInfo);
+}
+
+void CBridgeLinkApp::OnConfigure()
+{
+   // TODO: Add your command handler code here
+   Configure();
 }
