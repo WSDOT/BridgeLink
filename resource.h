@@ -40,7 +40,7 @@
 #define IDC_APPLIST                     3333
 #define EAF_RESERVED_COMMAND_BASE       0x8000
 #define EAFID_APP_LEGAL                 32771
-#define IDM_CONFIGURE_BRIDGELINK        32773
+#define IDM_CONFIGURE_BRIDGELINK        33029
 #define EAFID_TIPOFTHEDAY               32775
 #define EAFID_MANAGE_APP_PLUGINS        32776
 #define EAFID_HELP_SOURCE               32782
@@ -56,7 +56,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        136
-#define _APS_NEXT_COMMAND_VALUE         32774
+#define _APS_NEXT_COMMAND_VALUE         33030
 #define _APS_NEXT_CONTROL_VALUE         1002
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
