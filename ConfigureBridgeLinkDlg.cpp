@@ -39,6 +39,7 @@ void CConfigureBridgeLinkDlg::Init(std::map<IDType,IBridgeLinkConfigurationCallb
    m_psh.pszbmWatermark = MAKEINTRESOURCE(IDB_CONFIGURATION_WATERMARK);
    //m_psh.pszbmHeader = MAKEINTRESOURCE(IDB_CONFIGURATION_HEADER);
    m_psh.hInstance = AfxGetInstanceHandle(); 
+   
    SetWizardMode();
 
    AddPage( &m_BridgeLinkPage );

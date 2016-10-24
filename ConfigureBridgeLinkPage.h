@@ -47,4 +47,6 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
    afx_msg void OnHelp();
+public:
+   virtual BOOL OnInitDialog();
 };

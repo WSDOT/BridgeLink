@@ -17,9 +17,9 @@
 #define IDB_CONFIGURATION_HEADER        131
 #define IDB_CONFIGURATION_WATERMARK     132
 #define IDB_BITMAP1                     134
-#define IDD_CONFIGURE_BRIDGELINK        200
 #define IDI_WSDOT                       190
 #define IDI_BSS                         191
+#define IDD_CONFIGURE_BRIDGELINK        200
 #define IDI_TXDOT                       239
 #define IDD_SCREEN_SIZE                 280
 #define IDI_KDOT                        310
@@ -27,6 +27,8 @@
 #define IDC_ENGINEER                    1000
 #define IDC_COMPANY                     1001
 #define IDC_VERSION                     1002
+#define IDC_LIST1                       1002
+#define IDC_LIST                        1002
 #define IDC_COPYRIGHT                   1003
 #define IDC_APPICON                     1005
 #define IDC_DESCRIPTION                 1009
@@ -41,7 +43,6 @@
 #define IDC_APPLIST                     3333
 #define EAF_RESERVED_COMMAND_BASE       0x8000
 #define EAFID_APP_LEGAL                 32771
-#define IDM_CONFIGURE_BRIDGELINK        33029
 #define EAFID_TIPOFTHEDAY               32775
 #define EAFID_MANAGE_APP_PLUGINS        32776
 #define EAFID_HELP_SOURCE               32782
@@ -50,6 +51,7 @@
 #define ID_HELP_INET_WSDOT              33026
 #define ID_HELP_INET_BRIDGELINK         33027
 #define ID_SCREEN_SIZE                  33028
+#define IDM_CONFIGURE_BRIDGELINK        33029
 
 // Next default values for new objects
 // 
@@ -58,7 +60,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        201
 #define _APS_NEXT_COMMAND_VALUE         33030
-#define _APS_NEXT_CONTROL_VALUE         1002
+#define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

@@ -122,13 +122,13 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSM
 CAPTION "BridgeLink"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    LTEXT           "Engineer",IDC_STATIC,120,105,29,8
-    EDITTEXT        IDC_ENGINEER,158,103,96,14,ES_AUTOHSCROLL
-    LTEXT           "Company",IDC_STATIC,120,121,31,8
-    EDITTEXT        IDC_COMPANY,158,119,96,14,ES_AUTOHSCROLL
-    LTEXT           "The information below is used to personalize reports, graphs, and other output from the various BridgeLink application.",IDC_STATIC,120,81,218,17
+    LTEXT           "Engineer",IDC_STATIC,120,73,29,8
+    EDITTEXT        IDC_ENGINEER,158,71,96,14,ES_AUTOHSCROLL
+    LTEXT           "Company",IDC_STATIC,120,89,31,8
+    EDITTEXT        IDC_COMPANY,158,87,96,14,ES_AUTOHSCROLL
+    LTEXT           "The information below is used to personalize reports, graphs, and other output from the various BridgeLink application.",IDC_STATIC,120,49,218,17
     LTEXT           "Welcome to BridgeLink.\nThis wizard will guide you through the configuration process",IDC_STATIC,120,7,218,22
-    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,173,218,28
+    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,119,218,28
 END
 
 
