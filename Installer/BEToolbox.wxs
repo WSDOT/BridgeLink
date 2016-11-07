@@ -39,7 +39,7 @@
             <ProgId Id="GirComp.Document" Icon="BEToolbox.dll" IconIndex="3"/>
             <ProgId Id="BoxGdr.Document" Icon="BEToolbox.dll" IconIndex="2"/>
            <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="6"/>
--           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="9"/> 
+           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="7"/> 
 
            <!-- BEToolbox registry entries-->
             
