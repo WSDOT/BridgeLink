@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "resource.h"
 #include "BridgeLink.h"
 #include "ConfigureBridgeLinkDlg.h"
 

@@ -24,6 +24,7 @@
 //
 
 #include "stdafx.h"
+#include "resource.h"
 #include "BridgeLink.h"
 #include "ConfigureBridgeLinkPage.h"
 #include "ConfigureBridgeLinkDlg.h"
