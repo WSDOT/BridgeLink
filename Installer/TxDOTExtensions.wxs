@@ -156,6 +156,7 @@
                   Guid="{33EF4043-2872-4B2D-9087-E6CA254D09B0}"
                   Win64="$(var.IsWin64)">
          <File Id="TogaTemplate.pgs" Name="TogaTemplate.pgs" KeyPath="yes"/>
+         <File Id="TxDOT.lbr" Name="TxDOT.lbr"/>
          <File Id="_1_I_Girders.ico" Name="1_I Girders.ico" />
          <File Id="_2_Box_Beams.ico" Name="2_Box Beams.ico" />
          <File Id="_3_X_Beams.ico" Name="3_X Beams.ico" />

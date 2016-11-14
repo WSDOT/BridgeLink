@@ -8,11 +8,11 @@
       <!-- Define directory structure on target machine -->
       <DirectoryRef Id="APPLICATIONFOLDER">
          <Directory Id="Configurations" Name="Configurations">
-            <Directory Id="PGSpliceConfigurations">
+            <Directory Id="PGSpliceConfigurations" Name="PGSplice">
                <Directory Id="I_Beams" Name="I-Beams" />
                <Directory Id="U_Beams" Name="U-Beams" />
             </Directory>
-            <Directory Id="PGSuperConfigurations">
+            <Directory Id="PGSuperConfigurations" Name="PGSuper">
                <Directory Id="Deck_Bulb_Tees" Name="Deck_Bulb_Tees" />
                <Directory Id="Multiweb" Name="Multiweb" />
                <Directory Id="Slabs" Name="Slabs" />
@@ -25,7 +25,7 @@
       </DirectoryRef>
 
       <!-- Local Library File (PGSuper/PGSplice) -->
-         <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.PGSuperSourceRoot)\Configurations" >
+         <DirectoryRef Id="Configurations" FileSource="$(var.PGSuperSourceRoot)\Configurations" >
             <Component Id="PGSuperLibraryFile"
                        Guid="{FC12DFE3-1D24-4BC4-AAFF-1B8F08151BEC}"
                        Win64="$(var.IsWin64)">
@@ -122,7 +122,6 @@
             <File Id="IBeams_1_Span.spt"    Name="1 Span.spt"             KeyPath="yes"/>
             <File Id="IBeams_2_Span.spt"    Name="2 Span.spt"/>
             <File Id="IBeams_3_Span.spt"    Name="3 Span.spt"/>
-            <File Id="I_Beams.ico"   Name="I-Beams.ico"/>
          </Component>
       </DirectoryRef>
       <DirectoryRef Id="U_Beams"
@@ -133,7 +132,6 @@
             <File Id="UBeams_1_Span.spt"    Name="1 Span.spt"             KeyPath="yes"/>
             <File Id="UBeams_2_Span.spt"    Name="2 Spans.spt"/>
             <File Id="UBeams_3_Span.spt"    Name="3 Spans.spt"/>
-            <File Id="U_Beams.ico"   Name="U-Beams.ico"/>
          </Component>
       </DirectoryRef>
 
