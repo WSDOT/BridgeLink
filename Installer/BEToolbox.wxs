@@ -39,7 +39,8 @@
             <ProgId Id="GirComp.Document" Icon="BEToolbox.dll" IconIndex="3"/>
             <ProgId Id="BoxGdr.Document" Icon="BEToolbox.dll" IconIndex="2"/>
            <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="6"/>
-           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="7"/> 
+           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="7"/>
+           <ProgId Id="Spectra.Document" Icon="BEToolbox.dll" IconIndex="8"/>
 
            <!-- BEToolbox registry entries-->
             
@@ -184,7 +185,14 @@
          </Component>
       </DirectoryRef >
 
-     <!-- BEToolboxXML -->
+    <DirectoryRef Id="APPLICATIONFOLDER"
+                  FileSource ="$(var.BEToolboxSourceRoot)\USGS\2014" >
+      <Component Id="BEToolboxSpectraFiles" Guid="{BB480BFC-68C7-4a3c-A810-2CE55BF54199}" Win64="$(var.IsWin64)">
+        <File Id="us_hazard_7pc75.2014.bin"    Name="us_hazard_7pc75.2014.bin" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef >
+
+    <!-- BEToolboxXML -->
      <DirectoryRef Id="APPLICATIONFOLDER"
                    FileSource ="$(var.BEToolboxSourceRoot)\$(var.PlatformFolder)" >
        <Component Id="BEToolboxXML" Guid="{1415A11D-9B93-4aa3-AC21-39B61DCDDFBD}" Win64="$(var.IsWin64)">
@@ -204,8 +212,9 @@
                Level="$(var.BEToolboxFeatureLevel)">
          <ComponentRef Id="BEToolboxComponents" Primary="yes" />
          <ComponentRef Id="BEToolboxShortcuts"/>
-         <ComponentRef Id="BEToolboxImageFiles"/>
-         <ComponentRef Id="BEToolboxDocs"/>
+        <ComponentRef Id="BEToolboxImageFiles"/>
+        <ComponentRef Id="BEToolboxSpectraFiles"/>
+        <ComponentRef Id="BEToolboxDocs"/>
         <ComponentRef Id="BEToolboxXML"/>
       </Feature>
    </Fragment>
