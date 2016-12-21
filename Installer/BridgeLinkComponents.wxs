@@ -39,8 +39,11 @@
 
             <!-- NOTE: Ideally these file associations should go with the various plug-in types. However I can't figure
             out how to make that work. So here it is.-->
-            
-            <!-- PGSuper File associations -->
+
+           <!-- NOTE: Also need to add add ProgId for the associated icons... search for <ProgId for examples -->
+
+
+           <!-- PGSuper File associations -->
             <ProgId Id="PGSuper.Template">
                <Extension Id="pgt" ContentType="application/pgt">
                   <Verb Id="Open"
@@ -150,6 +153,15 @@
              <Extension Id="PGStable" ContentType="application/PGStable">
                <Verb Id="Open"
                      Command="&amp;Open with BridgeLink:BEToolbox:PGStable"
+                     TargetFile="$(var.ProductName).exe"
+                     Argument='"%1"' />
+             </Extension>
+           </ProgId>
+
+           <ProgId Id="Spectra.Document">
+             <Extension Id="Spectra" ContentType="application/Spectra">
+               <Verb Id="Open"
+                     Command="&amp;Open with BridgeLink:BEToolbox:Spectra"
                      TargetFile="$(var.ProductName).exe"
                      Argument='"%1"' />
              </Extension>

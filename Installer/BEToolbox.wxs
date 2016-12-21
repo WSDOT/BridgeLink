@@ -34,13 +34,14 @@
             <File Id="BEToolbox.dll"    Name="BEToolbox.dll" KeyPath ="yes"/>
 
             <!-- BEToolbox file associations -->
+           <!-- NOTE: Also need to add an entry in BridgeLinkComponents.wxs -->
             <ProgId Id="UltCol.Document" Icon="BEToolbox.dll" IconIndex="4" />
             <ProgId Id="GenComp.Document" Icon="BEToolbox.dll" IconIndex="1" />
             <ProgId Id="GirComp.Document" Icon="BEToolbox.dll" IconIndex="3"/>
             <ProgId Id="BoxGdr.Document" Icon="BEToolbox.dll" IconIndex="2"/>
-           <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="6"/>
-           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="7"/>
-           <ProgId Id="Spectra.Document" Icon="BEToolbox.dll" IconIndex="8"/>
+           <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="7"/>
+           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="8"/>
+           <ProgId Id="Spectra.Document" Icon="BEToolbox.dll" IconIndex="5"/>
 
            <!-- BEToolbox registry entries-->
             
@@ -186,7 +187,7 @@
       </DirectoryRef >
 
     <DirectoryRef Id="APPLICATIONFOLDER"
-                  FileSource ="$(var.BEToolboxSourceRoot)\USGS\2014" >
+                  FileSource ="$(var.BEToolboxSourceRoot)" >
       <Component Id="BEToolboxSpectraFiles" Guid="{BB480BFC-68C7-4a3c-A810-2CE55BF54199}" Win64="$(var.IsWin64)">
         <File Id="us_hazard_7pc75.2014.bin"    Name="us_hazard_7pc75.2014.bin" KeyPath="yes"/>
       </Component>
