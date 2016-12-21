@@ -28,6 +28,7 @@ INT_PTR CConfigureBridgeLinkDlg::DoModal()
    if ( result == ID_WIZFINISH )
    {
       NotifyExtensionPages();
+      result = IDOK;
    }
 
    return result;
