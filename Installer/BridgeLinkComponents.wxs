@@ -83,11 +83,11 @@
             </ProgId>
 
             <!-- Library File associations -->
-            <ProgId Id="PGSuperLibrary.Document">
+            <ProgId Id="PGSLibrary.Document">
                <Extension Id="lbr"
                           ContentType="application/lbr">
                   <Verb Id="Open"
-                        Command="&amp;Open with BridgeLink:PGS Library Editor"
+                        Command="&amp;Open with BridgeLink:PGSLibrary"
                         TargetFile="$(var.ProductName).exe"
                         Argument='"%1"' />
                </Extension>

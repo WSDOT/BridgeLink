@@ -16,7 +16,7 @@
             <File Id="PGSuperLibrary.dll"    Name="PGSuperLibrary.dll" KeyPath="yes"/>
 
             <!-- Library File associations -->
-            <ProgId Id="PGSuperLibrary.Document" Icon="PGSuperLibrary.dll" IconIndex="0"/>
+            <ProgId Id="PGSLibrary.Document" Icon="PGSuperLibrary.dll" IconIndex="0"/>
 
             <!-- Create component categories for things that can plug into the library editor-->
             <?define LibraryEditorPluginCATID={01FF3D4E-ED8C-4a71-B68A-2B2FDD25AFB4}?>
