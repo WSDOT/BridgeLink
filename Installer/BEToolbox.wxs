@@ -177,15 +177,6 @@
          </Component>
       </DirectoryRef >
 
-      <DirectoryRef Id="APPLICATIONFOLDER"
-                    FileSource ="$(var.BEToolboxSourceRoot)\Images" >
-         <Component Id="BEToolboxImageFiles" Guid="{6FF7750C-7DEC-42ea-9CF1-953BEB46B9D1}" Win64="$(var.IsWin64)">
-            <File Id="BoxGdr.png"    Name="BoxGdr.png" KeyPath="yes"/>
-            <File Id="Curvel.png"    Name="Curvel.png"/>
-            <File Id="GirComp.png"   Name="GirComp.png"/>
-         </Component>
-      </DirectoryRef >
-
     <DirectoryRef Id="APPLICATIONFOLDER"
                   FileSource ="$(var.BEToolboxSourceRoot)" >
       <Component Id="BEToolboxSpectraFiles" Guid="{BB480BFC-68C7-4a3c-A810-2CE55BF54199}" Win64="$(var.IsWin64)">
@@ -213,7 +204,7 @@
                Level="$(var.BEToolboxFeatureLevel)">
          <ComponentRef Id="BEToolboxComponents" Primary="yes" />
          <ComponentRef Id="BEToolboxShortcuts"/>
-        <ComponentRef Id="BEToolboxImageFiles"/>
+        <ComponentRef Id="BEToolboxImages"/>
         <ComponentRef Id="BEToolboxSpectraFiles"/>
         <ComponentRef Id="BEToolboxDocs"/>
         <ComponentRef Id="BEToolboxXML"/>

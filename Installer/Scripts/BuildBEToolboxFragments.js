@@ -2,7 +2,7 @@
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
 var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\3.0.0.41\\bin\\images");
 var BEToolboxDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BEToolbox\\3.0");
-var fc = new Enumerator(BEToolboxDocsFolder.Files);
+var fc = new Enumerator(ImagesFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
 WScript.Echo("<!-- This file genereted by BuildBEToolboxFragments.js script-->");
@@ -20,7 +20,7 @@ WScript.Echo("<Directory Id=\"BETImages\" Name=\"Images\" /> <!-- Create the Ima
 WScript.Echo("</DirectoryRef>");
 
 WScript.Echo("<DirectoryRef Id='BETImages' FileSource='$(var.BEToolboxSourceRoot)\Images'>");
-WScript.Echo("<Component Id='BETImages' Guid='{857D64B5-DF3B-4b40-84C6-253EF430077E}' Win64='$(var.IsWin64)'>");
+WScript.Echo("<Component Id='BEToolboxImages' Guid='{857D64B5-DF3B-4b40-84C6-253EF430077E}' Win64='$(var.IsWin64)'>");
 var i = 0;
 for (; !fc.atEnd(); fc.moveNext()) {
     var s = new String(fc.item());
