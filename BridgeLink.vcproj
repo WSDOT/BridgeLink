@@ -867,6 +867,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Include\BridgeLinkVersion.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ConfigureBridgeLinkDlg.h"
 				>
 			</File>
