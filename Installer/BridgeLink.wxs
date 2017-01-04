@@ -121,7 +121,7 @@
 
       <!-- Add and Remove Programs Entries -->
       <Property Id='ARPCOMMENTS'>BridgeLink is a member of the Alternate Route Project.</Property>
-      <Property Id='ARPCONTACT'>Post your questions to the suport forums at http://www.pgsuper.com</Property>
+      <Property Id='ARPCONTACT'>Post your questions to the support forums at http://www.pgsuper.com</Property>
       <?ifdef _TXDOT?>
         <Property Id='ARPHELPLINK'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
         <Property Id='ARPURLINFOABOUT'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
