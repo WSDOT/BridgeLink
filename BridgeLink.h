@@ -70,6 +70,8 @@ public:
 public:
    virtual OLECHAR* GetAppPluginCategoryName();
    virtual CATID GetAppPluginCategoryID();
+   virtual OLECHAR* GetPluginCategoryName();
+   virtual CATID GetPluginCategoryID();
 
 // Overrides
 	// ClassWizard generated virtual function overrides

@@ -215,6 +215,16 @@ CATID CBridgeLinkApp::GetAppPluginCategoryID()
    return CATID_BridgeLinkAppPlugin;
 }
 
+OLECHAR* CBridgeLinkApp::GetPluginCategoryName()
+{
+   return _T("BridgeLink Plugin");
+}
+
+CATID CBridgeLinkApp::GetPluginCategoryID()
+{
+   return CATID_BridgeLinkPlugin;
+}
+
 CEAFSplashScreenInfo CBridgeLinkApp::GetSplashScreenInfo()
 {
    CBitmap bmp;

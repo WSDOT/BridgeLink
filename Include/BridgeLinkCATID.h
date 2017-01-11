@@ -22,6 +22,12 @@
 
 #pragma once
 
+// CATID for plug-ins that extend BridgeLink itself
+// {885F1426-44D9-4df3-A53D-CCF557DD2227}
+DEFINE_GUID(CATID_BridgeLinkPlugin, 
+0x885f1426, 0x44d9, 0x4df3, 0xa5, 0x3d, 0xcc, 0xf5, 0x57, 0xdd, 0x22, 0x27);
+
+// CATID for plug-ins that provide BridgeLink applications
 // {1D069A0E-7436-4275-A129-C84ADC22DE68}
 DEFINE_GUID(CATID_BridgeLinkAppPlugin, 
 0x1d069a0e, 0x7436, 0x4275, 0xa1, 0x29, 0xc8, 0x4a, 0xdc, 0x22, 0xde, 0x68);
