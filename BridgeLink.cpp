@@ -503,7 +503,7 @@ void CBridgeLinkApp::OnHelpInetWsdot()
                                         GetWsdotUrl(),
                                          0,0,SW_SHOWDEFAULT);
 
-   if ( (INT)hInstance < 32 )
+   if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR )
    {
       AfxMessageBox(IDS_E_ONLINERESOURCES);
    }
@@ -516,7 +516,7 @@ void CBridgeLinkApp::OnHelpJoinArpList()
 										_T("http://www.pgsuper.com/drupal/forum"),
                                          0,0,SW_SHOWDEFAULT);
 
-   if ( (INT)hInstance < 32 )
+   if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR)
    {
       AfxMessageBox(IDS_E_ONLINERESOURCES);
    }
@@ -529,7 +529,7 @@ void CBridgeLinkApp::OnHelpInetARP()
                                         _T("http://wsdot.wa.gov/eesc/bridge/alternateroute"),
                                          0,0,SW_SHOWDEFAULT);
 
-   if ( (INT)hInstance < 32 )
+   if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR )
    {
       AfxMessageBox(IDS_E_ONLINERESOURCES);
    }
@@ -542,7 +542,7 @@ void CBridgeLinkApp::OnHelpInetBridgeLink()
                                         GetBridgeLinkUrl(),
                                         0,0,SW_SHOWDEFAULT);
 
-   if ( (INT)hInstance < 32 )
+   if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR )
    {
       AfxMessageBox(IDS_E_ONLINERESOURCES);
    }
