@@ -50,13 +50,13 @@ END_CONNECTION_POINT_MAP()
 
 // IEAFComponentInfo
 public:
-   virtual BOOL Init(CEAFApp* pApp);
-   virtual void Terminate();
-   virtual CString GetName();
-   virtual CString GetDescription();
-   virtual HICON GetIcon();
-   virtual bool HasMoreInfo();
-   virtual void OnMoreInfo();
+   virtual BOOL Init(CEAFApp* pApp) override;
+   virtual void Terminate() override;
+   virtual CString GetName() override;
+   virtual CString GetDescription() override;
+   virtual HICON GetIcon() override;
+   virtual bool HasMoreInfo() override;
+   virtual void OnMoreInfo() override;
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(BridgeLinkExampleComponentInfo), CBridgeLinkExampleComponentInfo)

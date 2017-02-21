@@ -38,7 +38,7 @@ static char THIS_FILE[] = __FILE__;
 // CScreenSizeDlg dialog
 
 
-CScreenSizeDlg::CScreenSizeDlg(CWnd* pParent /*=NULL*/)
+CScreenSizeDlg::CScreenSizeDlg(CWnd* pParent /*=nullptr*/)
 	: CDialog(CScreenSizeDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CScreenSizeDlg)

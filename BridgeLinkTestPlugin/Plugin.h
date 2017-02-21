@@ -32,18 +32,17 @@ END_COM_MAP()
 
 // IEAFAppPlugin
 public:
-   virtual BOOL Init(CEAFApp* pParent);
-   virtual void Terminate();
-   virtual void IntegrateWithUI(BOOL bIntegrate);
-   virtual std::vector<CEAFDocTemplate*> CreateDocTemplates();
-   virtual HMENU GetSharedMenuHandle();
-   virtual UINT GetDocumentResourceID();
-   virtual CString GetName();
-   virtual CString GetDocumentationSetName();
-   virtual CString GetDocumentationURL();
-   virtual CString GetDocumentationMapFile();
-   virtual void LoadDocumentationMap();
-   virtual eafTypes::HelpResult GetDocumentLocation(LPCTSTR lpszDocSetName,UINT nID,CString& strURL);
+   virtual BOOL Init(CEAFApp* pParent) override;
+   virtual void Terminate() override;
+   virtual void IntegrateWithUI(BOOL bIntegrate) override;
+   virtual std::vector<CEAFDocTemplate*> CreateDocTemplates() override;
+   virtual HMENU GetSharedMenuHandle() override;
+   virtual CString GetName() override;
+   virtual CString GetDocumentationSetName() override;
+   virtual CString GetDocumentationURL() override;
+   virtual CString GetDocumentationMapFile() override;
+   virtual void LoadDocumentationMap() override;
+   virtual eafTypes::HelpResult GetDocumentLocation(LPCTSTR lpszDocSetName,UINT nID,CString& strURL) override;
 
 private:
 

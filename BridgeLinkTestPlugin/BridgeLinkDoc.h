@@ -27,26 +27,26 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CBridgeLinkDoc)
 	public:
-	virtual BOOL OnNewDocument();
+	virtual BOOL OnNewDocument() override;
 	//}}AFX_VIRTUAL
 
-   virtual HRESULT WriteTheDocument(IStructuredSave* pStrSave);
-   virtual HRESULT LoadTheDocument(IStructuredLoad* pStrLoad);
-   virtual CString GetToolbarSectionName();
-   virtual BOOL GetStatusBarMessageString(UINT nID,CString& rMessage) const;
-   virtual BOOL GetToolTipMessageString(UINT nID, CString& rMessage) const;
+   virtual HRESULT WriteTheDocument(IStructuredSave* pStrSave) override;
+   virtual HRESULT LoadTheDocument(IStructuredLoad* pStrLoad) override;
+   virtual CString GetToolbarSectionName() override;
+   virtual BOOL GetStatusBarMessageString(UINT nID,CString& rMessage) const override;
+   virtual BOOL GetToolTipMessageString(UINT nID, CString& rMessage) const override;
 
-   virtual void LoadDocumentSettings();
-   virtual void SaveDocumentSettings();
+   virtual void LoadDocumentSettings() override;
+   virtual void SaveDocumentSettings() override;
 
-   virtual CString GetDocumentationRootLocation();
+   virtual CString GetDocumentationRootLocation() override;
 
 // Implementation
 public:
 	virtual ~CBridgeLinkDoc();
 #ifdef _DEBUG
-	virtual void AssertValid() const;
-	virtual void Dump(CDumpContext& dc) const;
+	virtual void AssertValid() const override;
+	virtual void Dump(CDumpContext& dc) const override;
 #endif
 
 protected:
@@ -58,7 +58,7 @@ protected:
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 
-   virtual HINSTANCE GetResourceInstance();
+   virtual HINSTANCE GetResourceInstance() override;
 };
 
 /////////////////////////////////////////////////////////////////////////////

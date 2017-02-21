@@ -248,7 +248,7 @@ CMDIFrameWnd* CBridgeLinkApp::CreateMainFrame()
 	if (!pMainFrame->LoadFrame(IDR_MAINFRAME))
    {
       delete pMainFrame;
-		return NULL;
+		return nullptr;
    }
 
    // files can be opened with drag and drop
@@ -409,7 +409,7 @@ void CBridgeLinkApp::OnScreenSize()
    {
       int cx = dlg.m_Width;
       int cy = dlg.m_Height;
-      pFrame->SetWindowPos(NULL,0,0,cx,cy,SWP_NOMOVE | SWP_NOZORDER);
+      pFrame->SetWindowPos(nullptr,0,0,cx,cy,SWP_NOMOVE | SWP_NOZORDER);
    }
 }
 

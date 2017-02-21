@@ -43,11 +43,11 @@ std::vector<CEAFDocTemplate*> CPlugin::CreateDocTemplates()
    CEAFDocTemplate* pDocTemplate;
 	pDocTemplate = new CEAFDocTemplate(
       IDR_EXAMPLE,
-      NULL,
+      nullptr,
 		RUNTIME_CLASS(CBridgeLinkDoc),
 		RUNTIME_CLASS(CChildFrame),
 		RUNTIME_CLASS(CBridgeLinkView),
-      NULL,1);
+      nullptr,1);
 
    pDocTemplate->SetPlugin(this);
    pDocTemplate->CreateDefaultItem(AfxGetApp()->LoadStandardIcon(IDI_WINLOGO));
@@ -58,12 +58,7 @@ std::vector<CEAFDocTemplate*> CPlugin::CreateDocTemplates()
 
 HMENU CPlugin::GetSharedMenuHandle()
 {
-   return NULL;
-}
-
-UINT CPlugin::GetDocumentResourceID()
-{
-   return IDR_EXAMPLE;
+   return nullptr;
 }
 
 CString CPlugin::GetName()

@@ -10,9 +10,9 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CBridgeLinkTestPluginApp)
 	public:
-    virtual BOOL InitInstance();
-    virtual int ExitInstance();
- 	 virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo);
+    virtual BOOL InitInstance() override;
+    virtual int ExitInstance() override;
+ 	 virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo) override;
 
 	//}}AFX_VIRTUAL
 

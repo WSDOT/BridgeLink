@@ -33,7 +33,7 @@ class CScreenSizeDlg : public CDialog
 {
 // Construction
 public:
-	CScreenSizeDlg(CWnd* pParent = NULL);   // standard constructor
+	CScreenSizeDlg(CWnd* pParent = nullptr);   // standard constructor
 
 // Dialog Data
 	//{{AFX_DATA(CScreenSizeDlg)
@@ -47,7 +47,7 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CScreenSizeDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation

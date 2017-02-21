@@ -27,20 +27,20 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CBridgeLinkView)
 	public:
-	virtual void OnDraw(CDC* pDC);  // overridden to draw this view
-	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+	virtual void OnDraw(CDC* pDC) override;  // overridden to draw this view
+	virtual BOOL PreCreateWindow(CREATESTRUCT& cs) override;
 	protected:
-	virtual BOOL OnPreparePrinting(CPrintInfo* pInfo);
-	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo);
-	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
+	virtual BOOL OnPreparePrinting(CPrintInfo* pInfo) override;
+	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo) override;
+	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo) override;
 	//}}AFX_VIRTUAL
 
 // Implementation
 public:
 	virtual ~CBridgeLinkView();
 #ifdef _DEBUG
-	virtual void AssertValid() const;
-	virtual void Dump(CDumpContext& dc) const;
+	virtual void AssertValid() const override;
+	virtual void Dump(CDumpContext& dc) const override;
 #endif
 
 protected:

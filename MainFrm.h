@@ -28,7 +28,7 @@
 
 #include <EAF\EAFMainFrame.h>
 
-#include <boost\shared_ptr.hpp>
+#include <memory>
 
 class CMainFrame : public CEAFMainFrame
 {
@@ -52,12 +52,12 @@ public:
 public:
 	virtual ~CMainFrame();
 #ifdef _DEBUG
-	virtual void AssertValid() const;
-	virtual void Dump(CDumpContext& dc) const;
+	virtual void AssertValid() const override;
+	virtual void Dump(CDumpContext& dc) const override;
 #endif
 
 protected:
-   virtual CEAFStartPageWnd* CreateStartPage();
+   virtual CEAFStartPageWnd* CreateStartPage() override;
 
 // Generated message map functions
 protected:

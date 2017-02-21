@@ -47,11 +47,11 @@ BOOL CBridgeLinkTestPluginApp::InitInstance()
 
    // Using a shared menu
    // See MSKB Article ID: Q118435, "Sharing Menus Between MDI Child Windows"
-   m_hSharedMenu = NULL; /*::LoadMenu( m_hInstance, MAKEINTRESOURCE(IDR_???) );*/
+   m_hSharedMenu = nullptr; /*::LoadMenu( m_hInstance, MAKEINTRESOURCE(IDR_???) );*/
 
    m_pSecondaryViewTemplate = new CEAFDocTemplate(
       IDR_EXAMPLE,
-      NULL,
+      nullptr,
 		RUNTIME_CLASS(CBridgeLinkDoc),
 		RUNTIME_CLASS(CChildFrame2), // custom MDI child frame
 		RUNTIME_CLASS(CBridgeLinkView2),

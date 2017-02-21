@@ -84,7 +84,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 //       // Prompt user if he really wants to quit, but only if document is not dirty.
 //       // Otherwise, MFC will give it's version of  "do you want to save?"
 //       CDocument* pdocument = (CDocument*)GetDocument();
-//       if (pdocument!=NULL)
+//       if (pdocument!=nullptr)
 //       {
 //          if (FALSE==pdocument->IsModified())
 //          {
@@ -123,7 +123,7 @@ CEAFStartPageWnd* CMainFrame::CreateStartPage()
    LONG result = ::RegOpenKeyEx(HKEY_CURRENT_USER,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
    if ( result != ERROR_SUCCESS )
    {
-      return NULL;
+      return nullptr;
    }
 
    TCHAR strCLSID[MAX_PATH];
@@ -132,7 +132,7 @@ CEAFStartPageWnd* CMainFrame::CreateStartPage()
    result = ::RegQueryValueEx(key,_T("StartPageProvider"),0,&type,(LPBYTE)&strCLSID[0],&size);
    if ( result != ERROR_SUCCESS )
    {
-      return NULL;
+      return nullptr;
    }
 
    ::RegCloseKey(key);
@@ -141,13 +141,13 @@ CEAFStartPageWnd* CMainFrame::CreateStartPage()
    HRESULT hr = ::CLSIDFromString(strCLSID,&clsid);
    if ( hr != NOERROR )
    {
-      return NULL;
+      return nullptr;
    }
 
    CComPtr<IStartPageWndProvider> provider;
    if ( FAILED(provider.CoCreateInstance(clsid)) )
    {
-      return NULL;
+      return nullptr;
    }
 
    return provider->CreateStartPage();

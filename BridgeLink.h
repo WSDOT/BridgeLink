@@ -58,27 +58,27 @@ public:
    ~CBridgeLinkApp();
 
 // IBridgeLink
-   virtual void GetUserInfo(CString* pstrEngineer,CString* pstrCompany);
-   virtual void SetUserInfo(const CString& strEngineer,const CString& strCompany);
-   virtual IDType Register(IBridgeLinkConfigurationCallback* pCallback);
-   virtual bool UnregisterCallback(IDType ID);
+   virtual void GetUserInfo(CString* pstrEngineer,CString* pstrCompany) override;
+   virtual void SetUserInfo(const CString& strEngineer,const CString& strCompany) override;
+   virtual IDType Register(IBridgeLinkConfigurationCallback* pCallback) override;
+   virtual bool UnregisterCallback(IDType ID) override;
 
-   virtual void OnFirstRun();
+   virtual void OnFirstRun() override;
    void Configure();
 
 // CEAFPluginApp overrides
 public:
-   virtual OLECHAR* GetAppPluginCategoryName();
-   virtual CATID GetAppPluginCategoryID();
-   virtual OLECHAR* GetPluginCategoryName();
-   virtual CATID GetPluginCategoryID();
+   virtual OLECHAR* GetAppPluginCategoryName() override;
+   virtual CATID GetAppPluginCategoryID() override;
+   virtual OLECHAR* GetPluginCategoryName() override;
+   virtual CATID GetPluginCategoryID() override;
 
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CBridgeLinkApp)
 	public:
-	virtual BOOL InitInstance();
-	virtual int ExitInstance();
+	virtual BOOL InitInstance() override;
+	virtual int ExitInstance() override;
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -92,16 +92,16 @@ public:
    afx_msg void OnConfigure();
    afx_msg void OnHelp();
 	//}}AFX_MSG
-	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo);
+	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo) override;
 	DECLARE_MESSAGE_MAP()
 
 protected:
-   virtual CEAFSplashScreenInfo GetSplashScreenInfo();
-   virtual LPCTSTR GetRegistryKey();
-   virtual CMDIFrameWnd* CreateMainFrame();
-   virtual CATID GetComponentInfoCategoryID();
-   virtual CString GetProductCode();
-   virtual CString GetDocumentationRootLocation();
+   virtual CEAFSplashScreenInfo GetSplashScreenInfo() override;
+   virtual LPCTSTR GetRegistryKey() override;
+   virtual CMDIFrameWnd* CreateMainFrame() override;
+   virtual CATID GetComponentInfoCategoryID() override;
+   virtual CString GetProductCode() override;
+   virtual CString GetDocumentationRootLocation() override;
 
 public:
    CString GetVersion(bool bIncludeBuildNumber) const;
@@ -113,8 +113,8 @@ public:
    CString GetBridgeLinkUrl();
 
 private:
-   virtual void RegistryInit(); // All registry initialization goes here
-   virtual void RegistryExit(); // All registry cleanup goes here
+   virtual void RegistryInit() override; // All registry initialization goes here
+   virtual void RegistryExit() override; // All registry cleanup goes here
 
    IDType m_CallbackID;
    std::map<IDType,IBridgeLinkConfigurationCallback*> m_ConfigurationCallbacks;

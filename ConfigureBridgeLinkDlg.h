@@ -32,17 +32,17 @@ class CConfigureBridgeLinkDlg : public CPropertySheet, public IBridgeLinkConfigu
 	DECLARE_DYNAMIC(CConfigureBridgeLinkDlg)
 
 public:
-	CConfigureBridgeLinkDlg(std::map<IDType,IBridgeLinkConfigurationCallback*>& configurationPageCallbacks, CWnd* pParentWnd = NULL, UINT iSelectPage = 0);
+	CConfigureBridgeLinkDlg(std::map<IDType,IBridgeLinkConfigurationCallback*>& configurationPageCallbacks, CWnd* pParentWnd = nullptr, UINT iSelectPage = 0);
 	virtual ~CConfigureBridgeLinkDlg();
 
    CConfigureBridgeLinkPage m_BridgeLinkPage;
 
-   virtual INT_PTR DoModal();
-   virtual BOOL OnInitDialog();
+   virtual INT_PTR DoModal() override;
+   virtual BOOL OnInitDialog() override;
 
    // IBridgeLinkConfigurationParent
-   virtual LRESULT GetBackPage();
-   virtual LRESULT GetNextPage();
+   virtual LRESULT GetBackPage() override;
+   virtual LRESULT GetNextPage() override;
 
 protected:
    std::vector<LRESULT> m_Pages;
