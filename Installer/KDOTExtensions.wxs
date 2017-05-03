@@ -67,12 +67,12 @@
 
           <util:InternetShortcut Id="KDOTDocShortcut" Name="KDOT Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/KDOT/$(var.KDOTDocumentationVersion)" Type="url"/>
 
-          <RegistryValue Root="HKCU"
-                         Key="Software\Microsoft\[ProductName]"
-                         Name="installed"
-                         Type="integer"
-                         Value="1"
-                         KeyPath="yes"/>
+          <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+            <RegistryValue Name="installed"
+                           Type="integer"
+                           Value="1"
+                           KeyPath="yes"/>
+          </RegistryKey>
 
         </Component>
 

@@ -84,11 +84,11 @@
 <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
    
    <?if $(var.Platform)="x64"?>
-      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC90\bin\?>
-      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC90\bin\?>
+      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC100\bin\?>
+      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC100\bin\?>
    <?else?>
-      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC90\bin\?>
-      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC90\bin\?>
+      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC100\bin\?>
+      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC100\bin\?>
    <?endif?>
 
 </Include>

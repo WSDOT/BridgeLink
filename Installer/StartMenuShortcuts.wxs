@@ -11,15 +11,14 @@
                     Guid="{5CA0743C-9A13-4b55-8697-1BEB98D64415}"
                     Win64="$(var.IsWin64)">
 
-            <RegistryValue Root="HKCU"
-                           Key="Software\Microsoft\[ProductName]"
-                           Name="installed"
-                           Type="integer"
-                           Value="1"
-                           KeyPath="yes"/>
+           <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+             <RegistryValue Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes"/>
+           </RegistryKey>
 
-            <RemoveFolder Id="EngineeringApplicationsStartMenuFolder"
-                          On="uninstall"/>
+           <RemoveFolder Id="EngineeringApplicationsStartMenuFolder"  On="uninstall"/>
          </Component>
       </DirectoryRef>
       
@@ -38,25 +37,37 @@
                       IconIndex="0"
                   />
 
-           <util:InternetShortcut Id="BridgeLinkDocShortcut" Name="BridgeLink Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BridgeLink/$(var.BridgeLinkDocumentationVersion)" Type="url"/>
-
            <?ifdef _TXDOT?>
            <Shortcut Id="TxDOTDesktopShortcut" Directory="DesktopFolder" Name="$(var.ProductName) ($(var.Platform))" WorkingDirectory="INSTALLDIR" Target="[APPLICATIONFOLDER]$(var.ProductName).exe"/>
            <Shortcut Id="TxDOTDesignGuide" Name="Design Guidelines" Target="[APPLICATIONFOLDER]design_guidelines.url" Icon="UrlIcon"/>
            <Shortcut Id="TxDOTSupport" Name="Support Information" Target="[APPLICATIONFOLDER]support_information.url" Icon="UrlIcon"/>
            <?endif?>
 
-           <RemoveFolder Id="BridgeLinkStartMenuFolder"
-                          On="uninstall"/>
+           <RemoveFolder Id="BridgeLinkStartMenuFolder"  On="uninstall"/>
 
-            <RegistryValue Root="HKCU"
-                           Key="Software\Microsoft\[ProductName]"
-                           Name="installed"
-                           Type="integer"
-                           Value="1"
-                           KeyPath="yes"/>
+             <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.ProductName)" Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes"/>
          </Component>
       </DirectoryRef>
+
+     <!-- BridgeLink documentation shortcut -->
+     <DirectoryRef Id="BridgeLinkStartMenuFolder">
+       <Component Id="BridgeLinkDocumentationShortcuts"
+                  Guid="{2B6BF7EC-0141-4676-9231-42EBCFE9CBF1}"
+                  Win64="$(var.IsWin64)">
+
+         <util:InternetShortcut Id="BridgeLinkDocShortcut" Name="BridgeLink Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BridgeLink/$(var.BridgeLinkDocumentationVersion)" Type="url"/>
+
+         <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]" ForceDeleteOnUninstall="yes">
+         <RegistryValue Name="installed"
+                        Type="integer"
+                        Value="1"
+                        KeyPath="yes"/>
+         </RegistryKey>
+       </Component>
+     </DirectoryRef>
 
    </Fragment>
 </Wix>

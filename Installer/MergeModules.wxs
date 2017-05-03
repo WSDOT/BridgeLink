@@ -8,41 +8,36 @@
              SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_CRT_x64.msm"
              DiskId="1"
              Language="0"/>
-     <!-- 
-      <Merge Id="VCRedist_Policy"
-             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC90_CRT_x86_x64.msm"
-             DiskId="1"
-             Language="0"/>
--->
      <Merge Id="MFCRedist"
              SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_MFC_x64.msm"
              DiskId="1"
              Language="0"/>
+     <Merge Id="MFCLocRedist"
+            SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_MFCLOC_x64.msm"
+            DiskId="1"
+            Language="0"/>
+
+     <!--<Merge Id="VCRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_CRT_x86_x64.msm"
+             DiskId="1"
+             Language="0"/>
      
-     <!-- 
       <Merge Id="MFCRedist_Policy"
-             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC90_MFC_x86_x64.msm"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_MFC_x86_x64.msm"
              DiskId="1"
              Language="0"/>
--->             
-      <Merge Id="MFCLocRedist"
-             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_MFCLOC_x64.msm"
-             DiskId="1"
-             Language="0"/>
-     <!-- 
       <Merge Id="MFCLocRedist_Policy"
-             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC90_MFCLOC_x86_x64.msm"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_MFCLOC_x86_x64.msm"
              DiskId="1"
              Language="0"/>
       <Merge Id="ATLRedist"
-             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC90_ATL_x86_x64.msm"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_ATL_x86_x64.msm"
              DiskId="1"
              Language="0"/>
       <Merge Id="ATLRedist_Policy"
-             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC90_ATL_x86_x64.msm"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_ATL_x86_x64.msm"
              DiskId="1"
-             Language="0"/>
-        -->
+             Language="0"/>-->
 
      <!--
       <Merge Id="ComCatRedist"
@@ -74,7 +69,7 @@
              DiskId="1"
              Language="0"/>
       <!--<Merge Id="VCRedist_Policy"
-             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC90_CRT_x86.msm"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_CRT_x86.msm"
              DiskId="1"
              Language="0"/>-->
       <Merge Id="MFCRedist"
@@ -133,13 +128,13 @@
             Absent="disallow"
             Level="1">
       <MergeRef Id="VCRedist"/>
-      <MergeRef Id="VCRedist_Policy"/>
-      <MergeRef Id="MFCRedist"/>
-      <MergeRef Id="MFCRedist_Policy"/>
-      <MergeRef Id="MFCLocRedist"/>
+     <MergeRef Id="MFCRedist"/>
+     <MergeRef Id="MFCLocRedist"/>
+     <!--<MergeRef Id="VCRedist_Policy"/>
+     <MergeRef Id="MFCRedist_Policy"/>
       <MergeRef Id="MFCLocRedist_Policy"/>
       <MergeRef Id="ATLRedist"/>
-      <MergeRef Id="ATLRedist_Policy"/>
+      <MergeRef Id="ATLRedist_Policy"/>-->
       <!--
       <MergeRef Id="OLERedist"/>
       <MergeRef Id="MSComCtrl"/>

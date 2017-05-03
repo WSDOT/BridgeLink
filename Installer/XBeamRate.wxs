@@ -16,12 +16,12 @@
 
            <util:InternetShortcut Id="XBRateDocShortcut" Name="XBRate Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/XBRate/$(var.XBRateDocumentationVersion)" Type="url"/>
 
-            <RegistryValue Root="HKCU"
-                           Key="Software\Microsoft\[ProductName]"
-                           Name="installed"
-                           Type="integer"
-                           Value="1"
-                           KeyPath="yes"/>
+           <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+             <RegistryValue Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes"/>
+           </RegistryKey>
 
          </Component>
       </DirectoryRef>

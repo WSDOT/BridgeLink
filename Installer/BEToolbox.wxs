@@ -14,12 +14,12 @@
 
            <util:InternetShortcut Id="BEToolboxDocShortcut" Name="BEToobox Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BEToolbox/$(var.BEToolboxDocumentationVersion)" Type="url"/>
 
-           <RegistryValue Root="HKCU"
-                           Key="Software\Microsoft\[ProductName]"
-                           Name="installed"
-                           Type="integer"
-                           Value="1"
-                           KeyPath="yes"/>
+           <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+             <RegistryValue Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes"/>
+           </RegistryKey>
 
          </Component>
       </DirectoryRef>

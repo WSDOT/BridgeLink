@@ -13,7 +13,7 @@
 		<Package Id="*" 
                Compressed="yes" 
                Comments="A member of the Alternate Route Project"
-               InstallerVersion="300"
+               InstallerVersion="301"
                Keywords="Integrated Bridge Engineering Software Environment"
                Languages="1033"
                Manufacturer="WSDOT"
@@ -63,9 +63,10 @@
          <!-- Components for the main executable program -->
 			<ComponentRef Id="BridgeLinkComponents" Primary="yes" /> <!-- This is the main BridgeLink executable -->
          <ComponentRef Id="BridgeLinkSupportFiles"/> <!-- BridgeLink support files such as the help document -->
-         <ComponentRef Id="EngineeringApplicationsShortcuts"/> <!-- Creates the "Engineering Applications" shortcut from the Start menu -->
+         <ComponentRef Id="EngineeringApplicationsShortcuts"/><!-- Creates the "Engineering Applications" shortcut from the Start menu -->
          <ComponentRef Id="BridgeLinkShortcuts"/> <!-- Creates the "BridgeLink" shortcut under "Engineering Applications" -->
         <ComponentRef Id="BridgeLinkDocs"/> <!-- Locally installed end user documentation -->
+        <ComponentRef Id="BridgeLinkDocumentationShortcuts"/>
          
          <!-- Components for the required dependicies -->
          <ComponentRef Id="WBFLComponents"/> <!-- WBFL and dependent components -->
