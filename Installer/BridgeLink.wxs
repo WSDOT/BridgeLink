@@ -83,8 +83,25 @@
 
       </Feature>
 
+     <?if $(var.Platform) = "x64"?>
+     <PropertyRef Id='BRIDGELINK32FOUND'/>
+     <?else?>
+     <PropertyRef Id='BRIDGELINK64FOUND'/>
+     <?endif?>
+     
+     <?if $(var.CustomInstallationCondition1) = "yes"?>
+     <PropertyRef Id='INSTALLCONDITION1'/>
+     <?endif?>
+     <?if $(var.CustomInstallationCondition2) = "yes"?>
+     <PropertyRef Id='INSTALLCONDITION2'/>
+     <?endif?>
+     <?if $(var.CustomInstallationCondition3) = "yes"?>
+     <PropertyRef Id='INSTALLCONDITION3'/>
+     <?endif?>
+
+
      <!-- Add and Remove Program Information (referenced in from AddRemovePrograms.wxs)-->
-     <?if $(var.OmitAddAndRemovePrograms) = "no"?>
+     <?if $(var.CustomizeAddAndRemovePrograms) = "no"?>
        <PropertyRef Id='ARPCOMMENTS'/>
        <PropertyRef Id='ARPCONTACT'/>
 
@@ -96,7 +113,7 @@
          <PropertyRef Id='ARPURLINFOABOUT'/>
        <?endif?>
 
-     <PropertyRef Id='ARPPRODUCTICON'/>
+       <PropertyRef Id='ARPPRODUCTICON'/>
      <?else?>
        <PropertyRef Id='ARPCOMMENTS'/>
        <PropertyRef Id='ARPCONTACT'/>

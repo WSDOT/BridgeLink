@@ -3,6 +3,7 @@
   <!-- Include project wide variables -->
   <?include Variables.wxi?>
 
+  <?if $(var.CustomizeAddAndRemovePrograms) = "no"?>
   <Fragment>
     <Icon Id="$(var.BridgeLinkIcon)" SourceFile='$(var.BridgeLinkSourceRoot)\App\BridgeLink.ico'/>
 
@@ -11,11 +12,11 @@
     <Property Id='ARPCONTACT'>Post your questions to the support forums at http://www.pgsuper.com</Property>
 
     <?ifdef _TXDOT?>
-      <Property Id='ARPHELPLINK'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
-      <Property Id='ARPURLINFOABOUT'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
+    <Property Id='ARPHELPLINK'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
+    <Property Id='ARPURLINFOABOUT'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
     <?else?>
-      <Property Id='ARPHELPLINK'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
-      <Property Id='ARPURLINFOABOUT'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
+    <Property Id='ARPHELPLINK'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
+    <Property Id='ARPURLINFOABOUT'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
     <?endif?>
 
     <!--<Property Id='ARPURLUPDATINFO'>URL for product updates</Property>-->
@@ -31,6 +32,6 @@
     <Property Id='ARPNOREMOVE'>1</Property>-->
     <!-- Remove the repair button 
     <Property Id='ARPNOREPAIR'>1</Property>-->
-
   </Fragment>
+  <?endif?>
 </Wix>
