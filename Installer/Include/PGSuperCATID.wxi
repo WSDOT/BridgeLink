@@ -8,6 +8,7 @@
    <?define PGSuperProjectImporterCATID={289D1CFF-D1A4-4b65-B673-867D7F41C7DB}?>
    <?define PGSuperDataImporterCATID={BD3B6F1E-7826-478b-99C0-A946C12C89CF}?>
    <?define PGSuperDataExporterCATID={369A62A2-8995-4404-9C16-15AE5A0681E2}?>
+  <?define PGSuperBeamFactoryCLSIDTranslatorCATID={8317D6CA-D247-4661-B8AA-34A9AB5BFF7D}?>
 
-   <?define TogaExtensionAgentCATID={CC330C8A-90EE-4791-9F87-6875BFA1F59D}?>
+  <?define TogaExtensionAgentCATID={CC330C8A-90EE-4791-9F87-6875BFA1F59D}?>
 </Include>

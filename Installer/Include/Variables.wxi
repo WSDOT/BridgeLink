@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
+  <?include CustomizationVariables.wxi?>
+  
    <?define BridgeLinkReleaseVersion = 1.1.0?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
    <?define BridgeLinkVersion   = 1.1.0.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
    <?define BEToolboxVersion    = 3.1.0.0?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
@@ -16,6 +18,8 @@
   <?define TOGADocumentationVersion=3.1?>
   <?define KDOTDocumentationVersion=3.1?>
   <?define XBRateDocumentationVersion=1.1?>
+
+  <?define ExeName=BridgeLink?>
 
   <?define DocumentationSourceRoot=\ARP\BridgeLink\Docs?>
   <?define BridgeLinkDocumentationTarget=BridgeLink?>
@@ -50,24 +54,26 @@
       <?define IsWin64=no?>
    <?endif?>
 
-   <?define ProductName=BridgeLink?>
-
   <?ifdef _TXDOT?>
-    <?define StartMenuFolderName=Texas Department of Transportation?>
-    <?define PGSuperFeatureLevel=1?>
-    <?define WSDOTFeatureLevel=101?>
-    <?define TxDOTFeatureLevel=1?>
-    <?define KDOTFeatureLevel=101?>
-    <?define BEToolboxFeatureLevel=1?>
-    <?define XBRateFeatureLevel=1?>
+  <?ifndef StartMenuFolderName?>
+  <?define StartMenuFolderName=Texas Department of Transportation?>
+  <?endif?>
+  <?define PGSuperFeatureLevel=1?>
+  <?define WSDOTFeatureLevel=101?>
+  <?define TxDOTFeatureLevel=1?>
+  <?define KDOTFeatureLevel=101?>
+  <?define BEToolboxFeatureLevel=1?>
+  <?define XBRateFeatureLevel=1?>
   <?else?>
-    <?define StartMenuFolderName=Engineering Applications?>
-    <?define PGSuperFeatureLevel=1?>
-    <?define WSDOTFeatureLevel=1?>
-    <?define TxDOTFeatureLevel=1?>
-    <?define KDOTFeatureLevel=1?>
-    <?define BEToolboxFeatureLevel=1?>
-    <?define XBRateFeatureLevel=1?>
+  <?ifndef StartMenuFolderName?>
+  <?define StartMenuFolderName=Engineering Applications?>
+  <?endif?>
+  <?define PGSuperFeatureLevel=1?>
+  <?define WSDOTFeatureLevel=1?>
+  <?define TxDOTFeatureLevel=1?>
+  <?define KDOTFeatureLevel=1?>
+  <?define BEToolboxFeatureLevel=1?>
+  <?define XBRateFeatureLevel=1?>
   <?endif?>
 
   <?define BridgeLinkAppPluginCATID={1D069A0E-7436-4275-A129-C84ADC22DE68}?>

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
@@ -47,6 +48,7 @@
     <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AddRemovePrograms.wxs" />
     <Compile Include="Apache.wxs">
       <Link>Apache.wxs</Link>
     </Compile>
@@ -54,6 +56,7 @@
     <Compile Include="BEToolboxFragments.wxs" />
     <Compile Include="BridgeLinkComponents.wxs" />
     <Compile Include="BridgeLinkFragments.wxs" />
+    <Compile Include="InstallationConditions.wxs" />
     <Compile Include="KDOTExtensions.wxs" />
     <Compile Include="LibraryEditor.wxs" />
     <Compile Include="MergeModules.wxs" />
@@ -75,6 +78,7 @@
   <ItemGroup>
     <Content Include="DialogBanner.bmp" />
     <Content Include="DialogBitmap.bmp" />
+    <Content Include="Include\CustomizationVariables.wxi" />
     <Content Include="Include\PGSpliceCATID.wxi" />
     <Content Include="Include\PGSuperCATID.wxi" />
     <Content Include="Include\Variables.wxi" />

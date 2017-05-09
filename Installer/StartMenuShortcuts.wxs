@@ -31,9 +31,9 @@
             <Shortcut Id="BridgeLinkShortcut"
                       Name="$(var.ProductName) ($(var.Platform))"
                       Description="$(var.ProductName)"
-                      Target="[APPLICATIONFOLDER]$(var.ProductName).exe"
+                      Target="[APPLICATIONFOLDER]$(var.ExeName).exe"
                       WorkingDirectory="APPLICATIONFOLDER"
-                      Icon='BridgeLinkIcon'
+                      Icon="$(var.BridgeLinkIcon)"
                       IconIndex="0"
                   />
 

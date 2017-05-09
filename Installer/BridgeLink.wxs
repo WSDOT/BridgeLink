@@ -8,15 +8,15 @@
             Name="$(var.ProductName) ($(var.Platform))" 
             Language="1033" 
             Version="$(var.BridgeLinkReleaseVersion)" 
-            Manufacturer="WSDOT" 
+            Manufacturer="$(var.Manufacturer)" 
             UpgradeCode="$(var.UpgradeCode)">
 		<Package Id="*" 
                Compressed="yes" 
-               Comments="A member of the Alternate Route Project"
+               Comments="$(var.PackageComment)"
                InstallerVersion="301"
                Keywords="Integrated Bridge Engineering Software Environment"
                Languages="1033"
-               Manufacturer="WSDOT"
+               Manufacturer="$(var.Manufacturer)"
                Platform="$(var.Platform)"
                InstallScope="perMachine" />
 
@@ -34,7 +34,7 @@
       <!-- Define the directory structure on the target machine -->
       <Directory Id="TARGETDIR" Name="SourceDir">
          <Directory Id="$(var.ProgramFilesDirectory)">
-            <Directory Id="WSDOT" Name="WSDOT">
+            <Directory Id="$(var.InstallationFolder)" Name="$(var.InstallationFolder)">
                <Directory Id="APPLICATIONFOLDER" Name="$(var.ProductName)">
                  <Directory Id="Documentation" Name="Docs"></Directory>
                </Directory>
@@ -52,7 +52,7 @@
 
 
       <!-- BridgeLink Application -->
-      <Feature Id="BridgeLink"
+     <Feature Id="BridgeLink"
                Absent="disallow" 
                ConfigurableDirectory="APPLICATIONFOLDER"
                Description="BridgeLink Application"
@@ -83,70 +83,31 @@
 
       </Feature>
 
-     <!-- Installation Requirements -->
+     <!-- Add and Remove Program Information (referenced in from AddRemovePrograms.wxs)-->
+     <?if $(var.OmitAddAndRemovePrograms) = "no"?>
+       <PropertyRef Id='ARPCOMMENTS'/>
+       <PropertyRef Id='ARPCONTACT'/>
 
-     <!-- Search for a ARP/WSDOT/TXDOT BridgeLink Install -->
-     <?if $(var.Platform) = "x64"?>
-     <Property Id="BRIDGELINKFOUND">
-       <!-- search for x86 version-->
-       <DirectorySearch Id="FindBridgeLink"
-                        Path="[ProgramFilesFolder]WSDOT"
-                        Depth="999">
-         <FileSearch Id="FindBridgeLink" Name="BridgeLink.exe" />
-       </DirectorySearch>
-     </Property>
-     <Condition Message="The 32-bit version of [ProductName] was found in [BRIDGELINKFOUND]. Please uninstall that version before installing the 64-bit version [ProductName]"><![CDATA[not BRIDGELINKFOUND]]></Condition>
+       <?ifdef _TXDOT?>
+         <PropertyRef Id='ARPHELPLINK'/>
+         <PropertyRef Id='ARPURLINFOABOUT'/>
+       <?else?>
+         <PropertyRef Id='ARPHELPLINK'/>
+         <PropertyRef Id='ARPURLINFOABOUT'/>
+       <?endif?>
+
+     <PropertyRef Id='ARPPRODUCTICON'/>
      <?else?>
-     <Property Id="BRIDGELINKFOUND">
-       <!-- search for x64 version-->
-       <DirectorySearch Id="FindBridgeLink"
-                        Path="[ProgramFiles64Folder]WSDOT"
-                        Depth="999">
-         <FileSearch Id="FindBridgeLink" Name="BridgeLink.exe" />
-       </DirectorySearch>
-     </Property>
-     <Condition Message="The 64-bit version of [ProductName] was found in [BRIDGELINKFOUND]. Please uninstall that version before installing the 32-bit version [ProductName]"><![CDATA[not BRIDGELINKFOUND]]></Condition>
+       <PropertyRef Id='ARPCOMMENTS'/>
+       <PropertyRef Id='ARPCONTACT'/>
+       <PropertyRef Id='ARPHELPLINK'/>
+       <PropertyRef Id='ARPURLINFOABOUT'/>
+       <PropertyRef Id='ARPPRODUCTICON'/>
+       <PropertyRef Id='ARPHELPTELEPHONE'/>
      <?endif?>
 
-     <!-- Restrict OS... see http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/block_install_on_os.html -->
 
-      <?if $(var.Platform) = "x64"?>
-      <Condition Message="[ProductName] requires that your computer is running Windows Vista or higher.">
-         <![CDATA[Installed OR (VersionNT64 >= 600)]]>
-      </Condition>
-      <?else?>
-      <Condition Message="[ProductName] requires that your computer is running Windows Vista or higher.">
-         <![CDATA[Installed OR (VersionNT >= 600)]]>
-      </Condition>
-      <?endif?>
-
-      <!-- Add and Remove Programs Entries -->
-      <Property Id='ARPCOMMENTS'>BridgeLink is a member of the Alternate Route Project.</Property>
-      <Property Id='ARPCONTACT'>Post your questions to the support forums at http://www.pgsuper.com</Property>
-      <?ifdef _TXDOT?>
-        <Property Id='ARPHELPLINK'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
-        <Property Id='ARPURLINFOABOUT'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
-      <?else?>
-        <Property Id='ARPHELPLINK'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
-        <Property Id='ARPURLINFOABOUT'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
-      <?endif?>
-     <!--<Property Id='ARPURLUPDATINFO'>URL for product updates</Property>-->
-      <!--<Property Id='ARPHELPTELEPHONE'>???-???-????</Property>-->
-      <!--<Property Id='ARPREADME'>path to readme file</Property>-->
-      <!--<Property Id='ARPSIZE'>application size in kb (Windows reports bad size)</Property>-->
-
-     <Icon Id='BridgeLinkIcon' SourceFile='$(var.BridgeLinkSourceRoot)\App\BridgeLink.ico'/>
-     <Property Id='ARPPRODUCTICON'>BridgeLinkIcon</Property>
-
-      <!-- Remove commented elements to adjust Modify/Remove/Repair buttons for installer -->
-      <!-- Remove the modify button 
-    <Property Id='ARPNOMODIFY'>1</Property>-->
-      <!-- Remove the remove button 
-    <Property Id='ARPNOREMOVE'>1</Property>-->
-      <!-- Remove the repair button 
-    <Property Id='ARPNOREPAIR'>1</Property>-->
-
-      <!-- Add default user interface -->
+     <!-- Add default user interface -->
       <Property Id='WixAppFolder'
                 Value='WixPerMachineFolder' />
       <WixVariable Id='WixUISupportPerUser' Value='0'/>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include Variables.wxi?>
+	<Fragment>
+    <!-- Search for a ARP/WSDOT/TXDOT BridgeLink Install -->
+    <?if $(var.Platform) = "x64"?>
+    <Property Id="BRIDGELINKFOUND">
+      <!-- search for x86 version-->
+      <DirectorySearch Id="FindBridgeLink"
+                       Path="[ProgramFilesFolder]$(var.InstallationFolder)"
+                       Depth="999">
+        <FileSearch Id="FindBridgeLink" Name="BridgeLink.exe" />
+      </DirectorySearch>
+    </Property>
+    <Condition Message="The 32-bit version of [ProductName] was found in [BRIDGELINKFOUND]. Please uninstall that version before installing the 64-bit version [ProductName]"><![CDATA[not BRIDGELINKFOUND]]></Condition>
+    <?else?>
+    <Property Id="BRIDGELINKFOUND">
+      <!-- search for x64 version-->
+      <DirectorySearch Id="FindBridgeLink"
+                       Path="[ProgramFiles64Folder]$(var.InstallationFolder)"
+                       Depth="999">
+        <FileSearch Id="FindBridgeLink" Name="BridgeLink.exe" />
+      </DirectorySearch>
+    </Property>
+    <Condition Message="The 64-bit version of [ProductName] was found in [BRIDGELINKFOUND]. Please uninstall that version before installing the 32-bit version [ProductName]"><![CDATA[not BRIDGELINKFOUND]]></Condition>
+    <?endif?>
+
+    <!-- Restrict OS... see http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/block_install_on_os.html -->
+
+    <?if $(var.Platform) = "x64"?>
+    <Condition Message="[ProductName] requires that your computer is running Windows Vista or higher.">
+      <![CDATA[Installed OR (VersionNT64 >= 600)]]>
+    </Condition>
+    <?else?>
+    <Condition Message="[ProductName] requires that your computer is running Windows Vista or higher.">
+      <![CDATA[Installed OR (VersionNT >= 600)]]>
+    </Condition>
+    <?endif?>
+  </Fragment>
+</Wix>
