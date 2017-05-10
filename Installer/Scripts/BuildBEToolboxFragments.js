@@ -1,7 +1,7 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\3.1.0.0\\bin\\images");
-var BEToolboxDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BEToolbox\\3.1");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\3.2.0.0\\bin\\images");
+var BEToolboxDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BEToolbox\\3.2");
 var fc = new Enumerator(ImagesFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");

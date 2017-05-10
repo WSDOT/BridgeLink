@@ -7,12 +7,12 @@ REM - this assumes documentation for version 1.1.0 is the same as for version 1.
 REM - which will generally be true. This way we don't have to publish new documentation
 REM - for every bug-fix release. Just use 1.1 for the version number
 
-SET BRIDGELINK_VERSION=1.1
-SET BETOOLBOX_VERSION=3.1
-SET PGSUPER_VERSION=3.1
+SET BRIDGELINK_VERSION=1.2
+SET BETOOLBOX_VERSION=3.2
+SET PGSUPER_VERSION=3.2
 SET PGSPLICE_VERSION=%PGSUPER_VERSION%
 SET PGSLIBRARY_VERISON=%PGSUPER_VERSION%
-SET XBRATE_VERSION=1.1
+SET XBRATE_VERSION=1.2
 
 REM - Build the documentation sets
 call \ARP\BridgeLink\Documentation\BuildDocumentation.bat          %BRIDGELINK_VERSION%
