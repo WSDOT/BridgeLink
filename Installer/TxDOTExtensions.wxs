@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+   <?include PGSuperCATID.wxi?>
+   <?include PGSpliceCATID.wxi?>
+
+   <Fragment>
+
+     <!-- TxDOT PGSuper Extensions -->
+     <?ifdef _TXDOT?>
+     <Icon Id="UrlIcon" SourceFile="$(env.windir)\System32\url.dll"/>
+     <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.ProjectDir)">
+       <Component Id="TxDOTCustomization" Guid="{FDDCC561-7C5B-4457-B78D-5358C55C415B}" Win64="$(var.IsWin64)">
+         <File Id="design_guidelines.url"
+               Name="design_guidelines.url" KeyPath="yes"/>
+         <File Id="support_information.url"
+               Name="support_information.url"/>
+
+         <!-- Registry keys to tweak defaults for TxDOT -->
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Settings"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Settings" Name="CacheUpdateFrequency" Value="2" Type="integer"/>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="Publisher2" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="CatalogServer2" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Washington State Department of Transportation\PGSuper\Options" Name="CompanyName" Value="TxDOT" Type="string"/>
+         <?if $(var.Platform) = "x86"?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Settings"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Settings" Name="CacheUpdateFrequency" Value="2" Type="integer"/>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="Publisher2" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="CatalogServer2" Value="TxDOT" Type="string"/>
+         <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Washington State Department of Transportation\PGSuper\Options" Name="CompanyName" Value="TxDOT" Type="string"/>
+         <?endif?>
+
+       </Component>
+     </DirectoryRef>
+     <?endif?>
+
+     <DirectoryRef Id="APPLICATIONFOLDER"
+                   FileSource="$(var.PGSuperSourceRoot)\Extensions\TxDOT\$(var.PlatformFolder)">
+       <Directory Id="TogaTemplates" Name="TogaTemplates" />
+       <Component Id="TxDOTAgent"
+                  Guid="{D0E840E4-9139-4FD3-A162-AAEBAF31686E}"
+                  Win64="$(var.IsWin64)">
+         <File Id="TxDOTAgent.dll"
+               Name="TxDOTAgent.dll"
+               KeyPath="yes" />
+
+         <!-- TOGA file associations -->
+         <ProgId Id="Toga.Document" Icon="TxDOTAgent.dll" IconIndex="0"/>
+
+
+         <!-- CAD Data Exporter -->
+         <?define TxDOTCADDataExporterCLSID={9274354C-D0B7-437c-A5B3-3FFBFB17ADE3}?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                    Root="HKCR"
+                    Key ="CLSID\$(var.TxDOTCADDataExporterCLSID)"/>
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TxDOTCADDataExporterCLSID)"
+                        Value="TxDOT CAD Data Exporter"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TxDOTCADDataExporterCLSID)\InprocServer32"
+                        Value="[APPLICATIONFOLDER]TxDOTAgent.dll"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TxDOTCADDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                        Value=""
+                        Type="string" />
+
+         <!-- TOGA Component-->
+         <?define TOGABridgeLinkAppPluginCLSID={F4629B75-7EF8-4159-A09A-9F4F30B60501}?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)"/>
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)"
+                        Value="TxDOT Optional Girder Analysis (TOGA)"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)\InprocServer32"
+                        Value="[APPLICATIONFOLDER]TxDOTAgent.dll"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
+                        Value=""
+                        Type="string" />
+
+         <!-- TxDOT PGSuper Extension Agent -->
+         <?define PGSuperTxDOTExtensionAgentCLSID={3700B253-8489-457c-8A6D-D174F95C457C}?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)"/>
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)"
+                        Value="TxDOT Extensions"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)\InprocServer32"
+                        Value="[APPLICATIONFOLDER]TxDOTAgent.dll"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)\Implemented Categories\$(var.PGSuperExtensionAgentCATID)"
+                        Value=""
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)\Implemented Categories\$(var.TogaExtensionAgentCATID)"
+                        Value=""
+                        Type="string" />
+
+         <!-- TxDOT Component Information Object -->
+         <?define PGSuperTxDOTInfoCLSID={785F2ACE-127B-4647-8062-ED49537E962C}?>
+         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.PGSuperTxDOTInfoCLSID)"/>
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperTxDOTInfoCLSID)"
+                        Value="TxDOT Component Information"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperTxDOTInfoCLSID)\InprocServer32"
+                        Value="[APPLICATIONFOLDER]TxDOTAgent.dll"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.PGSuperTxDOTInfoCLSID)\Implemented Categories\$(var.PGSuperComponentInfoCATID)"
+                        Value=""
+                        Type="string" />
+
+       </Component>
+     </DirectoryRef>
+
+     <!-- TOGA Start Menu Shortcut-->
+     <DirectoryRef Id="BridgeLinkStartMenuFolder">
+       <Component Id="TOGAShortcuts"
+                  Guid="{9116E392-14A9-4051-91C0-809BF001A4F1}"
+                  Win64="$(var.IsWin64)">
+
+         <util:InternetShortcut Id="TOGADocShortcut" Name="TOGA Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/TOGA/$(var.TOGADocumentationVersion)" Type="url"/>
+
+         <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+           <RegistryValue Name="installed"
+                          Type="integer"
+                          Value="1"
+                          KeyPath="yes"/>
+         </RegistryKey>
+       </Component>
+     </DirectoryRef>
+
+     <!-- TxDOT Toga Templates -->
+     <DirectoryRef Id="TogaTemplates"
+                   FileSource ="$(var.PGSuperSourceRoot)\Extensions\TxDOT\TogaTemplates">
+
+       <Component Id="TxDOTTogaTemplates"
+                  Guid="{33EF4043-2872-4B2D-9087-E6CA254D09B0}"
+                  Win64="$(var.IsWin64)">
+         <File Id="TogaTemplate.pgs" Name="TogaTemplate.pgs" KeyPath="yes"/>
+         <File Id="TxDOT.lbr" Name="TxDOT.lbr"/>
+         <File Id="_1_I_Girders.ico" Name="1_I Girders.ico" />
+         <File Id="_2_Box_Beams.ico" Name="2_Box Beams.ico" />
+         <File Id="_3_X_Beams.ico" Name="3_X Beams.ico" />
+         <File Id="_4_Slab_Beams.ico" Name="4_Slab Beams.ico"/>
+         <File Id="_5_Decked_Slab_Beams.ico" Name="5_Decked Slab Beams.ico"/>
+         <File Id="_6_U_Beams.ico" Name="6_U Beams.ico" />
+         <File Id="Box_4B20.togt" Name="Box 4B20.togt"/>
+         <File Id="Box_4B28.togt" Name="Box 4B28.togt"/>
+         <File Id="Box_4B34.togt" Name="Box 4B34.togt"/>
+         <File Id="Box_4B40ch.togt" Name="Box 4B40ch.togt"/>
+         <File Id="Box_5B20.togt" Name="Box 5B20.togt"/>
+         <File Id="Box_5B28.togt" Name="Box 5B28.togt" />
+         <File Id="Box_5B34.togt" Name="Box 5B34.togt"/>
+         <File Id="Box_5B40ch.togt" Name="Box 5B40ch.togt"/>
+         <File Id="Decked_Slab_Beam_6DS20.togt" Name="Decked Slab Beam 6DS20.togt"/>
+         <File Id="Decked_Slab_Beam_6DS23.togt" Name="Decked Slab Beam 6DS23.togt"/>
+         <File Id="Decked_Slab_Beam_7DS20.togt" Name="Decked Slab Beam 7DS20.togt"/>
+         <File Id="Decked_Slab_Beam_7DS23.togt" Name="Decked Slab Beam 7DS23.togt"/>
+         <File Id="Decked_Slab_Beam_8DS20.togt" Name="Decked Slab Beam 8DS20.togt"/>
+         <File Id="Decked_Slab_Beam_8DS23.togt" Name="Decked Slab Beam 8DS23.togt"/>
+         <File Id="Slab_Beam_4SB12.togt" Name="Slab Beam 4SB12.togt"/>
+         <File Id="Slab_Beam_4SB15.togt" Name="Slab Beam 4SB15.togt"/>
+         <File Id="Slab_Beam_5SB12.togt" Name="Slab Beam 5SB12.togt"/>
+         <File Id="Slab_Beam_5SB15.togt" Name="Slab Beam 5SB15.togt"/>
+         <File Id="Tx28.togt" Name="Tx28.togt"/>
+         <File Id="Tx34.togt" Name="Tx34.togt"/>
+         <File Id="Tx40.togt" Name="Tx40.togt"/>
+         <File Id="Tx46.togt" Name="Tx46.togt"/>
+         <File Id="Tx54.togt" Name="Tx54.togt"/>
+         <File Id="Tx62.togt" Name="Tx62.togt"/>
+         <File Id="Tx70.togt" Name="Tx70.togt"/>
+         <File Id="TYPE_A.togt" Name="TYPE A.togt"/>
+         <File Id="TYPE_B.togt" Name="TYPE B.togt"/>
+         <File Id="TYPE_C.togt" Name="TYPE C.togt"/>
+         <File Id="TYPE_IV.togt" Name="TYPE IV.togt"/>
+         <File Id="Type_VI.togt" Name="Type VI.togt"/>
+         <File Id="U_Beam_U40.togt" Name="U Beam U40.togt"/>
+         <File Id="U_Beam_U54.togt" Name="U Beam U54.togt"/>
+         <File Id="X_Beam_4XB20.togt" Name="X Beam 4XB20.togt"/>
+         <File Id="X_Beam_4XB28.togt" Name="X Beam 4XB28.togt"/>
+         <File Id="X_Beam_4XB34.togt" Name="X Beam 4XB34.togt"/>
+         <File Id="X_Beam_4XB40.togt" Name="X Beam 4XB40.togt"/>
+         <File Id="X_Beam_5XB20.togt" Name="X Beam 5XB20.togt"/>
+         <File Id="X_Beam_5XB28.togt" Name="X Beam 5XB28.togt"/>
+         <File Id="X_Beam_5XB34.togt" Name="X Beam 5XB34.togt"/>
+         <File Id="X_Beam_5XB40.togt" Name="X Beam 5XB40.togt" />
+
+       </Component>
+     </DirectoryRef>
+
+     <Feature Id="TxDOTExtensions"
+              Absent="allow"
+              ConfigurableDirectory="APPLICATIONFOLDER"
+              Description="Extend PGSuper with TxDOT specific features"
+              Display="expand"
+              Title="TxDOT Extensions (Optional)"
+              Level="$(var.TxDOTFeatureLevel)">
+       <ComponentRef Id="TxDOTAgent"/>
+       <ComponentRef Id="TOGADocs"/>
+       <ComponentRef Id="TOGAShortcuts"/>
+       <ComponentRef Id="TxDOTTogaTemplates"/>
+       <?ifdef _TXDOT?>
+          <ComponentRef Id="TxDOTCustomization"/>
+       <?endif?>
+     </Feature>
+
+   </Fragment>
+</Wix>

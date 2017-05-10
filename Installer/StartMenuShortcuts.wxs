@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+
+   <Fragment>
+      <!-- Start Menu Shortcut for "Engineering Applications" -->
+      <DirectoryRef Id="EngineeringApplicationsStartMenuFolder">
+         <Component Id="EngineeringApplicationsShortcuts"
+                    Guid="{5CA0743C-9A13-4b55-8697-1BEB98D64415}"
+                    Win64="$(var.IsWin64)">
+
+           <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+             <RegistryValue Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes"/>
+           </RegistryKey>
+
+           <RemoveFolder Id="EngineeringApplicationsStartMenuFolder"  On="uninstall"/>
+         </Component>
+      </DirectoryRef>
+      
+      <!-- BridgeLink folder under Engineering Applications -->
+      <DirectoryRef Id="BridgeLinkStartMenuFolder">
+         <Component Id="BridgeLinkShortcuts"
+                    Guid="{B51A2CA6-FC9D-42ab-A975-6651713E08A9}"
+                    Win64="$(var.IsWin64)">
+
+            <Shortcut Id="BridgeLinkShortcut"
+                      Name="$(var.ProductName) ($(var.Platform))"
+                      Description="$(var.ProductName)"
+                      Target="[APPLICATIONFOLDER]$(var.ExeName).exe"
+                      WorkingDirectory="APPLICATIONFOLDER"
+                      Icon="$(var.BridgeLinkIcon)"
+                      IconIndex="0"
+                  />
+
+           <?ifdef _TXDOT?>
+           <Shortcut Id="TxDOTDesktopShortcut" Directory="DesktopFolder" Name="$(var.ProductName) ($(var.Platform))" WorkingDirectory="INSTALLDIR" Target="[APPLICATIONFOLDER]$(var.ProductName).exe"/>
+           <Shortcut Id="TxDOTDesignGuide" Name="Design Guidelines" Target="[APPLICATIONFOLDER]design_guidelines.url" Icon="UrlIcon"/>
+           <Shortcut Id="TxDOTSupport" Name="Support Information" Target="[APPLICATIONFOLDER]support_information.url" Icon="UrlIcon"/>
+           <?endif?>
+
+           <RemoveFolder Id="BridgeLinkStartMenuFolder"  On="uninstall"/>
+
+             <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.ProductName)" Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes"/>
+         </Component>
+      </DirectoryRef>
+
+     <!-- BridgeLink documentation shortcut -->
+     <DirectoryRef Id="BridgeLinkStartMenuFolder">
+       <Component Id="BridgeLinkDocumentationShortcuts"
+                  Guid="{2B6BF7EC-0141-4676-9231-42EBCFE9CBF1}"
+                  Win64="$(var.IsWin64)">
+
+         <util:InternetShortcut Id="BridgeLinkDocShortcut" Name="BridgeLink Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BridgeLink/$(var.BridgeLinkDocumentationVersion)" Type="url"/>
+
+         <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]" ForceDeleteOnUninstall="yes">
+         <RegistryValue Name="installed"
+                        Type="integer"
+                        Value="1"
+                        KeyPath="yes"/>
+         </RegistryKey>
+       </Component>
+     </DirectoryRef>
+
+   </Fragment>
+</Wix>

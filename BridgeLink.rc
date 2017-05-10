@@ -1,0 +1,373 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+    "EAF\\EAFResources.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BridgeLink.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\BridgeLink.ico"
+IDI_BSS                 ICON                    "res\\bss.ico"
+IDI_WSDOT               ICON                    "res\\Wsdot.ico"
+IDI_TXDOT               ICON                    "res\\txdot.ico"
+IDI_KDOT                ICON                    "res\\KDOT.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 443, 270
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About BridgeLink"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_APPICON,7,7,20,20
+    LTEXT           "BridgeLink Version 1.0",IDC_VERSION,36,7,371,8,SS_NOPREFIX
+    LTEXT           "Copyright ©",IDC_COPYRIGHT,36,19,353,8
+    DEFPUSHBUTTON   "OK",IDOK,386,249,50,14,WS_GROUP
+    LTEXT           "Richard Brice, PE - WSDOT\n\tSoftware Architect and Lead Programmer",IDC_STATIC,214,46,171,17
+    ICON            IDI_WSDOT,IDC_STATIC,11,46,20,20
+    PUSHBUTTON      "Washington State Department of Transportation",IDC_WSDOT,34,49,164,14,BS_LEFT
+    LTEXT           "BridgeLink Applications",IDC_STATIC,7,80,74,8
+    LISTBOX         IDC_APPLIST,7,91,359,65,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP,WS_EX_CLIENTEDGE
+    LTEXT           "Application Description",IDC_STATIC,7,161,73,8
+    LTEXT           "Static",IDC_DESCRIPTION,7,172,358,63,WS_BORDER
+    LTEXT           "This software is licenced under the terms and conditions of the Alternate Route Open Source License. Individual components may be licensed under different terms and conditions. Click on the components listed above for more information.",IDC_STATIC,7,238,358,25
+    PUSHBUTTON      "More Information",IDC_MOREINFO,374,172,58,14
+    GROUPBOX        "Developed by",IDC_STATIC,7,32,191,44
+    GROUPBOX        "Credits",IDC_STATIC,209,32,227,44
+END
+
+IDD_SCREEN_SIZE DIALOG  0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Screen Size"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "Enter a new screen size",IDC_STATIC,7,7,76,8
+    LTEXT           "Width",IDC_STATIC,7,39,20,8
+    EDITTEXT        IDC_WIDTH,31,36,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Height",IDC_STATIC,7,57,22,8
+    EDITTEXT        IDC_HEIGHT,31,55,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "pixels",IDC_STATIC,77,41,18,8
+    LTEXT           "pixels",IDC_STATIC,77,56,18,8
+END
+
+IDD_CONFIGURE_BRIDGELINK DIALOGEX 0, 0, 345, 208
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BridgeLink"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Engineer",IDC_STATIC,120,73,29,8
+    EDITTEXT        IDC_ENGINEER,158,71,96,14,ES_AUTOHSCROLL
+    LTEXT           "Company",IDC_STATIC,120,89,31,8
+    EDITTEXT        IDC_COMPANY,158,87,96,14,ES_AUTOHSCROLL
+    LTEXT           "The information below is used to personalize reports, graphs, and other output from the various BridgeLink application.",IDC_STATIC,120,49,218,17
+    LTEXT           "Welcome to BridgeLink.\nThis wizard will guide you through the configuration process",IDC_STATIC,120,7,218,22
+    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,119,218,28
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        POPUP "Manage"
+        BEGIN
+            MENUITEM "Manage Application Components...", EAFID_MANAGE_APP_PLUGINS
+        END
+        MENUITEM "Configure BridgeLink...",     IDM_CONFIGURE_BRIDGELINK
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbars...",                ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM "Help Source",                 EAFID_HELP_SOURCE
+        MENUITEM SEPARATOR
+        POPUP "&Online Resources"
+        BEGIN
+            MENUITEM "&Visit WSDOT on the Web",     ID_HELP_INET_WSDOT
+            MENUITEM "&BridgeLink Home Page",       ID_HELP_INET_BRIDGELINK
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Tip of the Day...",          EAFID_TIPOFTHEDAY
+        MENUITEM "&Legal Notices...",           EAFID_APP_LEGAL
+        MENUITEM "&About BridgeLink...",        ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "S",            ID_SCREEN_SIZE,         VIRTKEY, CONTROL, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,1,0
+ PRODUCTVERSION 1,1,1,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "A member of the Alternate Route Project"
+            VALUE "CompanyName", "Washington State Department of Transportation"
+            VALUE "FileDescription", "BridgeLink"
+            VALUE "FileVersion", "1.1.1.0"
+            VALUE "InternalName", "BridgeLink"
+            VALUE "LegalCopyright", "Copyright © 1999-2017, Washington State Department of Transportation, All Rights Reserved"
+            VALUE "OriginalFilename", "BridgeLink.EXE"
+            VALUE "ProductName", "BridgeLink Application"
+            VALUE "ProductVersion", "1.1.1.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SPLASH              BITMAP                  "res\\splash.bmp"
+IDB_CONFIGURATION_HEADER BITMAP                  "res\\ConfigurationHeader.bmp"
+IDB_CONFIGURATION_WATERMARK BITMAP                  "res\\ConfigurationWatermark.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 436
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 263
+    END
+
+    IDD_SCREEN_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_CONFIGURE_BRIDGELINK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 338
+        VERTGUIDE, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 201
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "BridgeLink"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "BridgeLink"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save the project\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_HELP_INET_ARP        "Visit the Alternate Route Project Home Page"
+    ID_HELP_INET_WSDOT      "Open the WSDOT Home Page at www.wsdot.wa.gov"
+    ID_HELP_INET_BRIDGELINK "Open the BridgeLink Home Page\nBridgeLink Online Resources"
+    IDM_CONFIGURE_BRIDGELINK "Configure BridgeLink and it's applications"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COMPANY             "Washington State Department of Transportation"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_E_ONLINERESOURCES   "Sorry, but an error occured while attempting to connect to the Internet"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new BridgeLink Project\nNew (Ctrl+N)"
+    ID_FILE_SAVE            "Save your project\nSave (Ctrl+S)"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\BridgeLink.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

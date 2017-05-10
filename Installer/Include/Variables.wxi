@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?include CustomizationVariables.wxi?>
+  
+   <?define BridgeLinkReleaseVersion = 1.1.0?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
+   <?define BridgeLinkVersion   = 1.1.0.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BEToolboxVersion    = 3.1.0.0?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
+   <?define OpenBridgeMLVersion = 0.2.0.0?>
+   <?define PGSuperVersion      = 3.1.0.0?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = 4.1.0.0?>
+   <?define XBeamRateVersion    = 1.1.0.0?> <!-- also change this version number in the BuildXBRateFragments.js file -->
+
+  <?define BridgeLinkDocumentationVersion=1.1?>
+  <?define BEToolboxDocumentationVersion=3.1?>
+  <?define PGSuperDocumentationVersion=3.1?>
+  <?define PGSpliceDocumentationVersion=3.1?>
+  <?define PGSLibraryDocumentationVersion=3.1?>
+  <?define TOGADocumentationVersion=3.1?>
+  <?define KDOTDocumentationVersion=3.1?>
+  <?define XBRateDocumentationVersion=1.1?>
+
+  <?define ExeName=BridgeLink?>
+
+  <?define DocumentationSourceRoot=\ARP\BridgeLink\Docs?>
+  <?define BridgeLinkDocumentationTarget=BridgeLink?>
+  <?define BEToolboxDocumentationTarget=BEToolbox?>
+  <?define PGSuperDocumentationTarget=PGSuper?>
+  <?define PGSpliceDocumentationTarget=PGSplice?>
+  <?define PGSLibraryDocumentationTarget=PGSLibrary?>
+  <?define TOGADocumentationTarget=TOGA?>
+  <?define KDOTDocumentationTarget=KDOT?>
+  <?define XBRateDocumentationTarget=XBRate?>
+
+  <?define BridgeLinkDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.BridgeLinkDocumentationTarget)\$(var.BridgeLinkDocumentationVersion)?>
+  <?define BEToolboxDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.BEToolboxDocumentationTarget)\$(var.BEToolboxDocumentationVersion)?>
+  <?define PGSuperDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.PGSuperDocumentationTarget)\$(var.PGSuperDocumentationVersion)?>
+  <?define PGSpliceDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.PGSpliceDocumentationTarget)\$(var.PGSpliceDocumentationVersion)?>
+  <?define PGSLibraryDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.PGSLibraryDocumentationTarget)\$(var.PGSLibraryDocumentationVersion)?>
+  <?define TOGADocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.TOGADocumentationTarget)\$(var.TOGADocumentationVersion)?>
+  <?define KDOTDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.KDOTDocumentationTarget)\$(var.KDOTDocumentationVersion)?>
+  <?define XBRateDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.XBRateDocumentationTarget)\$(var.XBRateDocumentationVersion)?>
+
+  <?if $(var.Platform) = "x64"?>
+      <?define ProgramFilesDirectory = ProgramFiles64Folder?>
+      <?define ProductID = {88563058-642A-455e-9001-A0BD8B71A793}?>
+      <?define UpgradeCode = {AE47FAA1-1DB0-48a0-9B82-C99C7120B8C4}?>
+      <?define PlatformFolder=x64?>
+      <?define IsWin64=yes?>
+   <?else?>
+      <?define ProgramFilesDirectory = ProgramFilesFolder?>
+      <?define ProductID = {E95DA66F-6C17-48d1-8B16-40EAB5D2424C}?>
+      <?define UpgradeCode = {15BB783F-BA42-45a7-A7B4-54A02C23181C}?>
+      <?define PlatformFolder=Win32?>
+      <?define IsWin64=no?>
+   <?endif?>
+
+  <?ifdef _TXDOT?>
+  <?ifndef StartMenuFolderName?>
+  <?define StartMenuFolderName=Texas Department of Transportation?>
+  <?endif?>
+  <?define PGSuperFeatureLevel=1?>
+  <?define WSDOTFeatureLevel=101?>
+  <?define TxDOTFeatureLevel=1?>
+  <?define KDOTFeatureLevel=101?>
+  <?define BEToolboxFeatureLevel=1?>
+  <?define XBRateFeatureLevel=1?>
+  <?else?>
+  <?ifndef StartMenuFolderName?>
+  <?define StartMenuFolderName=Engineering Applications?>
+  <?endif?>
+  <?define PGSuperFeatureLevel=1?>
+  <?define WSDOTFeatureLevel=1?>
+  <?define TxDOTFeatureLevel=1?>
+  <?define KDOTFeatureLevel=1?>
+  <?define BEToolboxFeatureLevel=1?>
+  <?define XBRateFeatureLevel=1?>
+  <?endif?>
+
+  <?define BridgeLinkAppPluginCATID={1D069A0E-7436-4275-A129-C84ADC22DE68}?>
+   <?define BridgeLinkComponentInfoCATID={AF28A0E7-E9AD-4839-9901-5F004209498B}?>
+
+   <?define BridgeLinkSourceRoot=\ARP_RELEASE\BridgeLink\$(var.BridgeLinkVersion)\bin\?>
+   <?define WBFLSourceRoot=\ARP_RELEASE\WBFL\$(var.WBFLVersion)\bin\?>
+   <?define BEToolboxSourceRoot=\ARP_RELEASE\BEToolbox\$(var.BEToolboxVersion)\bin\?>
+   <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
+   <?define OpenBridgeMLSourceRoot=\ARP_RELEASE\OpenBridgeML\$(var.OpenBridgeMLVersion)\bin\?>
+  <?define XBeamRateSourceRoot=\ARP_RELEASE\XBeamRate\$(var.XBeamRateVersion)\bin\?>
+  
+
+<?define GridSourceRoot=\ARP_RELEASE\Grid\?>
+   
+   <?if $(var.Platform)="x64"?>
+      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC100\bin\?>
+      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC100\bin\?>
+   <?else?>
+      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC100\bin\?>
+      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC100\bin\?>
+   <?endif?>
+
+</Include>

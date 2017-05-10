@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define ProductName=BridgeLink?>
+  <?define Manufacturer = WSDOT?>
+  <?define PackageComment = A member of the Alternate Route Project?>
+  <?define InstallationFolder = WSDOT?>
+  <?define BridgeLinkIcon = BridgeLinkIcon?>
+
+  <?define CustomizeAddAndRemovePrograms = no?>
+  <!-- Set this to "yes" if you want to replace the default Add and Remove programs information-->
+  
+  <?define CustomInstallationCondition1 = no?> <!-- define as yes to add a custom installation condition. Use INSTALLCONDITION1 as the Property Id-->
+  <?define CustomInstallationCondition2 = no?>
+  <?define CustomInstallationCondition3 = no?>
+</Include>

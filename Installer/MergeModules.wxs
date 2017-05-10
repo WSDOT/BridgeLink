@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+   <Fragment Id="MergeModules">
+   <!-- Merge Modules -->
+   <?if $(var.Platform) = "x64"?>
+   <DirectoryRef Id="TARGETDIR">
+      <Merge Id="VCRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_CRT_x64.msm"
+             DiskId="1"
+             Language="0"/>
+     <Merge Id="MFCRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_MFC_x64.msm"
+             DiskId="1"
+             Language="0"/>
+     <Merge Id="MFCLocRedist"
+            SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_MFCLOC_x64.msm"
+            DiskId="1"
+            Language="0"/>
+
+     <!--<Merge Id="VCRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_CRT_x86_x64.msm"
+             DiskId="1"
+             Language="0"/>
+     
+      <Merge Id="MFCRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_MFC_x86_x64.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="MFCLocRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_MFCLOC_x86_x64.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="ATLRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_ATL_x86_x64.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="ATLRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_ATL_x86_x64.msm"
+             DiskId="1"
+             Language="0"/>-->
+
+     <!--
+      <Merge Id="ComCatRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\COMCAT.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="OLERedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\OLEAUT32.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="MSComCtrl"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\MSCOMCTL.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="MSComCtrl2"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\MSCOMCT2.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="MSComCtrl3"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\COMCT332.msm"
+             DiskId="1"
+             Language="0"/>
+             -->
+   </DirectoryRef>
+   <?else?>
+   <DirectoryRef Id="TARGETDIR">
+      <Merge Id="VCRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_CRT_x86.msm"
+             DiskId="1"
+             Language="0"/>
+      <!--<Merge Id="VCRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC140_CRT_x86.msm"
+             DiskId="1"
+             Language="0"/>-->
+      <Merge Id="MFCRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_MFC_x86.msm"
+             DiskId="1"
+             Language="0"/>
+      <!--<Merge Id="MFCRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC90_MFC_x86.msm"
+             DiskId="1"
+             Language="0"/>-->
+      <Merge Id="MFCLocRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC140_MFCLOC_x86.msm"
+             DiskId="1"
+             Language="0"/>
+      <!--<Merge Id="MFCLocRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC90_MFCLOC_x86.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="ATLRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\Microsoft_VC90_ATL_x86.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="ATLRedist_Policy"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\policy_9_0_Microsoft_VC90_ATL_x86.msm"
+             DiskId="1"
+             Language="0"/>-->
+      <!--
+      <Merge Id="ComCatRedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\COMCAT.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="OLERedist"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\OLEAUT32.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="MSComCtrl"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\MSCOMCTL.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="MSComCtrl2"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\MSCOMCT2.msm"
+             DiskId="1"
+             Language="0"/>
+      <Merge Id="MSComCtrl3"
+             SourceFile="C:\Program Files (x86)\Common Files\Merge Modules\COMCT332.msm"
+             DiskId="1"
+             Language="0"/>
+             -->
+   </DirectoryRef>
+   <?endif ?>
+
+   <Feature Id="Redistributables"
+            Title="CTR, MFC, ATL, etc"
+            AllowAdvertise="no"
+            Display="hidden"
+            Absent="disallow"
+            Level="1">
+      <MergeRef Id="VCRedist"/>
+     <MergeRef Id="MFCRedist"/>
+     <MergeRef Id="MFCLocRedist"/>
+     <!--<MergeRef Id="VCRedist_Policy"/>
+     <MergeRef Id="MFCRedist_Policy"/>
+      <MergeRef Id="MFCLocRedist_Policy"/>
+      <MergeRef Id="ATLRedist"/>
+      <MergeRef Id="ATLRedist_Policy"/>-->
+      <!--
+      <MergeRef Id="OLERedist"/>
+      <MergeRef Id="MSComCtrl"/>
+      <MergeRef Id="MSComCtrl2"/>
+      <MergeRef Id="MSComCtrl3"/>
+      <MergeRef Id="ComCatRedist"/>
+      -->
+   </Feature>
+   </Fragment>
+</Wix>

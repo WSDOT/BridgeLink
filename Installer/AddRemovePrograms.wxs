@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!-- Include project wide variables -->
+  <?include Variables.wxi?>
+
+  <?if $(var.CustomizeAddAndRemovePrograms) = "no"?>
+  <Fragment>
+    <Icon Id="$(var.BridgeLinkIcon)" SourceFile='$(var.BridgeLinkSourceRoot)\App\BridgeLink.ico'/>
+
+    <!-- Add and Remove Programs Entries -->
+    <Property Id='ARPCOMMENTS'>BridgeLink is a member of the Alternate Route Project.</Property>
+    <Property Id='ARPCONTACT'>Post your questions to the support forums at http://www.pgsuper.com</Property>
+
+    <?ifdef _TXDOT?>
+    <Property Id='ARPHELPLINK'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
+    <Property Id='ARPURLINFOABOUT'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
+    <?else?>
+    <Property Id='ARPHELPLINK'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
+    <Property Id='ARPURLINFOABOUT'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
+    <?endif?>
+
+    <!--<Property Id='ARPURLUPDATINFO'>URL for product updates</Property>-->
+    <!--<Property Id='ARPREADME'>path to readme file</Property>-->
+    <!--<Property Id='ARPSIZE'>application size in kb (Windows reports bad size)</Property>-->
+
+    <Property Id='ARPPRODUCTICON'>$(var.BridgeLinkIcon)</Property>
+
+    <!-- Remove commented elements to adjust Modify/Remove/Repair buttons for installer -->
+    <!-- Remove the modify button 
+    <Property Id='ARPNOMODIFY'>1</Property>-->
+    <!-- Remove the remove button 
+    <Property Id='ARPNOREMOVE'>1</Property>-->
+    <!-- Remove the repair button 
+    <Property Id='ARPNOREPAIR'>1</Property>-->
+  </Fragment>
+  <?endif?>
+</Wix>

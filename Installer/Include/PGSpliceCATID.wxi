@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+   <?define PGSpliceComponentInfoCATID={6F272A25-A06B-4ee0-8593-DF4946C8AA7B}?>
+   <?define PGSpliceAgentCATID={AF5B66D4-846B-4491-A468-879EE0B1E989}?>
+   <?define PGSpliceExtensionAgentCATID={5875EE83-78FE-4181-834A-C979FAD24222}?>
+   <?define PGSpliceBeamFamilyCATID={505E6892-B4BC-45B5-8C67-393A1F1C8873}?>
+   <?define PGSpliceProjectImporterCATID={DB115813-3828-4564-A2FA-D8DDB368B1DB}?>
+   <?define PGSpliceDataImporterCATID={88E6E707-A7EA-431A-B787-41377D75E0F3}?>
+   <?define PGSpliceDataExporterCATID={D889AF1D-0CA1-4F01-AA2D-84F8F9F3A2DD}?>
+
+</Include>

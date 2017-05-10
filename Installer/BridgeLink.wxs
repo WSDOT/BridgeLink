@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+   <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+   
+   <Product Id="*" 
+            Name="$(var.ProductName) ($(var.Platform))" 
+            Language="1033" 
+            Version="$(var.BridgeLinkReleaseVersion)" 
+            Manufacturer="$(var.Manufacturer)" 
+            UpgradeCode="$(var.UpgradeCode)">
+		<Package Id="*" 
+               Compressed="yes" 
+               Comments="$(var.PackageComment)"
+               InstallerVersion="301"
+               Keywords="Integrated Bridge Engineering Software Environment"
+               Languages="1033"
+               Manufacturer="$(var.Manufacturer)"
+               Platform="$(var.Platform)"
+               InstallScope="perMachine" />
+
+		<MajorUpgrade 
+         DowngradeErrorMessage="A newer version of [ProductName] is already installed." 
+         Schedule="afterInstallValidate"/> 
+
+      <Upgrade Id="$(var.UpgradeCode)">
+         <UpgradeVersion OnlyDetect="no" Property='PREVIOUSFOUND' Minimum="0.0.0.0" IncludeMinimum="yes" Maximum="$(var.BridgeLinkReleaseVersion)" IncludeMaximum="no"/>
+      </Upgrade>
+
+
+      <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+      <!-- Define the directory structure on the target machine -->
+      <Directory Id="TARGETDIR" Name="SourceDir">
+         <Directory Id="$(var.ProgramFilesDirectory)">
+            <Directory Id="$(var.InstallationFolder)" Name="$(var.InstallationFolder)">
+               <Directory Id="APPLICATIONFOLDER" Name="$(var.ProductName)">
+                 <Directory Id="Documentation" Name="Docs"></Directory>
+               </Directory>
+            </Directory>
+         </Directory>
+         <Directory Id="ProgramMenuFolder">
+            <Directory Id="EngineeringApplicationsStartMenuFolder" Name="$(var.StartMenuFolderName)">
+               <Directory Id="BridgeLinkStartMenuFolder" Name="$(var.ProductName)"/>
+            </Directory>
+         </Directory>
+        <?ifdef _TXDOT?>
+        <Directory Id="DesktopFolder" Name="DesktopFolder"/>
+        <?endif?>
+      </Directory>
+
+
+      <!-- BridgeLink Application -->
+     <Feature Id="BridgeLink"
+               Absent="disallow" 
+               ConfigurableDirectory="APPLICATIONFOLDER"
+               Description="BridgeLink Application"
+               Display="expand"
+               Title="BridgeLink (Required)" 
+               Level="1">
+         
+         <!-- Components for the main executable program -->
+			<ComponentRef Id="BridgeLinkComponents" Primary="yes" /> <!-- This is the main BridgeLink executable -->
+         <ComponentRef Id="BridgeLinkSupportFiles"/> <!-- BridgeLink support files such as the help document -->
+         <ComponentRef Id="EngineeringApplicationsShortcuts"/><!-- Creates the "Engineering Applications" shortcut from the Start menu -->
+         <ComponentRef Id="BridgeLinkShortcuts"/> <!-- Creates the "BridgeLink" shortcut under "Engineering Applications" -->
+        <ComponentRef Id="BridgeLinkDocs"/> <!-- Locally installed end user documentation -->
+        <ComponentRef Id="BridgeLinkDocumentationShortcuts"/>
+         
+         <!-- Components for the required dependicies -->
+         <ComponentRef Id="WBFLComponents"/> <!-- WBFL and dependent components -->
+         <ComponentRef Id="OpenBridgeML"/>
+         <ComponentRef Id="Xalan"/>
+         <ComponentRef Id="XalanMessages"/>
+         <ComponentRef Id="Xerces"/>
+         <FeatureRef Id="Redistributables" />
+
+         <!-- This are the BridgeLink Plugin Applications in this installer package -->
+         <FeatureRef Id="PGSuper" /> <!-- PGSuper and PGSplice -->
+         <FeatureRef Id="BEToolbox" />
+         <FeatureRef Id="XBeamRate" />
+
+      </Feature>
+
+     <?if $(var.Platform) = "x64"?>
+     <PropertyRef Id='BRIDGELINK32FOUND'/>
+     <?else?>
+     <PropertyRef Id='BRIDGELINK64FOUND'/>
+     <?endif?>
+     
+     <?if $(var.CustomInstallationCondition1) = "yes"?>
+     <PropertyRef Id='INSTALLCONDITION1'/>
+     <?endif?>
+     <?if $(var.CustomInstallationCondition2) = "yes"?>
+     <PropertyRef Id='INSTALLCONDITION2'/>
+     <?endif?>
+     <?if $(var.CustomInstallationCondition3) = "yes"?>
+     <PropertyRef Id='INSTALLCONDITION3'/>
+     <?endif?>
+
+
+     <!-- Add and Remove Program Information (referenced in from AddRemovePrograms.wxs)-->
+     <?if $(var.CustomizeAddAndRemovePrograms) = "no"?>
+       <PropertyRef Id='ARPCOMMENTS'/>
+       <PropertyRef Id='ARPCONTACT'/>
+
+       <?ifdef _TXDOT?>
+         <PropertyRef Id='ARPHELPLINK'/>
+         <PropertyRef Id='ARPURLINFOABOUT'/>
+       <?else?>
+         <PropertyRef Id='ARPHELPLINK'/>
+         <PropertyRef Id='ARPURLINFOABOUT'/>
+       <?endif?>
+
+       <PropertyRef Id='ARPPRODUCTICON'/>
+     <?else?>
+       <PropertyRef Id='ARPCOMMENTS'/>
+       <PropertyRef Id='ARPCONTACT'/>
+       <PropertyRef Id='ARPHELPLINK'/>
+       <PropertyRef Id='ARPURLINFOABOUT'/>
+       <PropertyRef Id='ARPPRODUCTICON'/>
+       <PropertyRef Id='ARPHELPTELEPHONE'/>
+     <?endif?>
+
+
+     <!-- Add default user interface -->
+      <Property Id='WixAppFolder'
+                Value='WixPerMachineFolder' />
+      <WixVariable Id='WixUISupportPerUser' Value='0'/>
+
+      <!--<UIRef Id='WixUI_Advanced'/>-->
+      <UIRef Id='WixUI_FeatureTree'/>
+      <UIRef Id='WixUI_ErrorProgressText'/>
+
+
+      <!-- Use our custom bitmaps in the UI -->
+      <WixVariable Id="WixUIDialogBmp"
+                   Value="DialogBitmap.bmp"/>
+      <WixVariable Id="WixUIBannerBmp"
+                   Value="DialogBanner.bmp"/>
+
+      <!-- Content for the license agreement -->
+      <WixVariable Id="WixUILicenseRtf"
+                   Value="License.rtf"/>
+
+      <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="Thank you for installing BridgeLink"/>
+   </Product>
+</Wix>

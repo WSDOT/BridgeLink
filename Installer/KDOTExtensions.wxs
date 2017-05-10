@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <!-- Include project wide variables -->
+  <?include Variables.wxi?>
+  <?include PGSuperCATID.wxi?>
+  <?include PGSpliceCATID.wxi?>
+
+  <Fragment>
+
+    <!-- KDOT PGSuper Extensions -->
+    <DirectoryRef Id="APPLICATIONFOLDER"
+                  FileSource="$(var.PGSuperSourceRoot)\Extensions\KDOT\$(var.PlatformFolder)">
+      <Component Id="KDOTExport"
+                 Guid="{E929E3AE-8CBB-4e08-8E80-7C9173C75ADA}"
+                 Win64="$(var.IsWin64)">
+        <File Id="KDOTExport.dll"
+              Name="KDOTExport.dll"
+              KeyPath="yes" />
+
+
+        <!-- CAD Data Exporter -->
+        <?define KDOTCADDataExporterCLSID={775F87BC-07DF-4177-B001-F98E011C6AB4}?>
+        <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                   Root="HKCR"
+                   Key ="CLSID\$(var.KDOTCADDataExporterCLSID)"/>
+        <RegistryValue Root="HKCR"
+                       Key="CLSID\$(var.KDOTCADDataExporterCLSID)"
+                       Value="KDOT CAD Data Exporter"
+                       Type="string" />
+        <RegistryValue Root="HKCR"
+                       Key="CLSID\$(var.KDOTCADDataExporterCLSID)\InprocServer32"
+                       Value="[APPLICATIONFOLDER]KDOTExport.dll"
+                       Type="string" />
+        <RegistryValue Root="HKCR"
+                       Key="CLSID\$(var.KDOTCADDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                       Value=""
+                       Type="string" />
+
+
+        <!-- KDOT Component Information Object -->
+        <?define PGSuperKDOTInfoCLSID={75AAA5FD-16D5-415d-B2AD-8FF123C27B45}?>
+        <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                     Root="HKCR"
+                     Key ="CLSID\$(var.PGSuperKDOTInfoCLSID)"/>
+        <RegistryValue Root="HKCR"
+                       Key="CLSID\$(var.PGSuperKDOTInfoCLSID)"
+                       Value="KDOT Component Information"
+                       Type="string" />
+        <RegistryValue Root="HKCR"
+                       Key="CLSID\$(var.PGSuperKDOTInfoCLSID)\InprocServer32"
+                       Value="[APPLICATIONFOLDER]KDOTExport.dll"
+                       Type="string" />
+        <RegistryValue Root="HKCR"
+                       Key="CLSID\$(var.PGSuperKDOTInfoCLSID)\Implemented Categories\$(var.PGSuperComponentInfoCATID)"
+                       Value=""
+                       Type="string" />
+
+      </Component>
+
+    </DirectoryRef>
+
+    <DirectoryRef Id="BridgeLinkStartMenuFolder">
+
+      <!-- Start menu item for help file -->
+        <Component Id="KDOTShortcuts" Guid="{FE82ABA0-4244-4c07-97DB-346AEE1B3CAF}" Win64="$(var.IsWin64)">
+
+          <util:InternetShortcut Id="KDOTDocShortcut" Name="KDOT Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/KDOT/$(var.KDOTDocumentationVersion)" Type="url"/>
+
+          <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+            <RegistryValue Name="installed"
+                           Type="integer"
+                           Value="1"
+                           KeyPath="yes"/>
+          </RegistryKey>
+
+        </Component>
+
+    </DirectoryRef>
+
+    <Feature Id="KDOTExtensions"
+             Absent="allow"
+             ConfigurableDirectory="APPLICATIONFOLDER"
+             Description="Extend PGSuper with KDOT specific features"
+             Display="expand"
+             Title="KDOT Extensions (Optional)"
+             Level="$(var.KDOTFeatureLevel)">
+      <ComponentRef Id="KDOTExport"/>
+      <ComponentRef Id="KDOTDocs"/>
+      <ComponentRef Id="KDOTShortcuts"/>
+    </Feature>
+
+  </Fragment>
+</Wix>

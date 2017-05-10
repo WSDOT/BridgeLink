@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeLink", "BridgeLink.vcxproj", "{64DB12F5-FF88-497F-9150-AEDC5C924D6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Profile|Win32 = Profile|Win32
+		Profile|x64 = Profile|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Debug|Win32.Build.0 = Debug|Win32
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Debug|x64.ActiveCfg = Debug|x64
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Debug|x64.Build.0 = Debug|x64
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Profile|Win32.ActiveCfg = Debug|x64
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Profile|x64.ActiveCfg = Debug|x64
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Profile|x64.Build.0 = Debug|x64
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Release|Win32.ActiveCfg = Release|Win32
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Release|Win32.Build.0 = Release|Win32
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Release|x64.ActiveCfg = Release|x64
+		{64DB12F5-FF88-497F-9150-AEDC5C924D6A}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

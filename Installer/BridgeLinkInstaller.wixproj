@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.7</ProductVersion>
+    <ProjectGuid>{ea7b5405-6d7d-42ee-aa76-fbdc078d050a}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>BridgeLink_1.1.0_$(Platform)_$(Configuration)</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <IncludeSearchPaths>Include\</IncludeSearchPaths>
+    <Name>BridgeLinkInstaller</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|x86' ">
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <DefineConstants>_TXDOT;</DefineConstants>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|x64' ">
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <DefineConstants>_TXDOT;</DefineConstants>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|AnyCPU' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|Any CPU' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AddRemovePrograms.wxs" />
+    <Compile Include="Apache.wxs">
+      <Link>Apache.wxs</Link>
+    </Compile>
+    <Compile Include="BEToolbox.wxs" />
+    <Compile Include="BEToolboxFragments.wxs" />
+    <Compile Include="BridgeLinkComponents.wxs" />
+    <Compile Include="BridgeLinkFragments.wxs" />
+    <Compile Include="InstallationConditions.wxs" />
+    <Compile Include="KDOTExtensions.wxs" />
+    <Compile Include="LibraryEditor.wxs" />
+    <Compile Include="MergeModules.wxs" />
+    <Compile Include="BridgeLink.wxs" />
+    <Compile Include="PGSuper.wxs" />
+    <Compile Include="PGSuperBeams.wxs" />
+    <Compile Include="PGSuperFragments.wxs" />
+    <Compile Include="PGSuperTemplates.wxs" />
+    <Compile Include="StartMenuShortcuts.wxs" />
+    <Compile Include="OpenBridgeML.wxs" />
+    <Compile Include="WBFL.wxs">
+      <Link>WBFL.wxs</Link>
+    </Compile>
+    <Compile Include="TxDOTExtensions.wxs" />
+    <Compile Include="WSDOTExtensions.wxs" />
+    <Compile Include="XBeamRate.wxs" />
+    <Compile Include="XBeamRateFragments.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DialogBanner.bmp" />
+    <Content Include="DialogBitmap.bmp" />
+    <Content Include="Include\CustomizationVariables.wxi" />
+    <Content Include="Include\PGSpliceCATID.wxi" />
+    <Content Include="Include\PGSuperCATID.wxi" />
+    <Content Include="Include\Variables.wxi" />
+    <Content Include="License.rtf" />
+    <Content Include="Scripts\BuildBEToolboxFragments.js" />
+    <Content Include="Scripts\BuildPGSuperFragments.js" />
+    <Content Include="Scripts\BuildBridgeLinkFragments.js" />
+    <Content Include="Scripts\BuildXBeamRateFragments.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixFirewallExtension">
+      <HintPath>$(WixExtDir)\WixFirewallExtension.dll</HintPath>
+      <Name>WixFirewallExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Include" />
+    <Folder Include="Scripts" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+  <PropertyGroup>
+    <PreBuildEvent>cscript  $(ProjectDir)\Scripts\BuildBridgeLinkFragments.js //NoLogo &gt; $(ProjectDir)BridgeLinkFragments.wxs
+cscript  $(ProjectDir)\Scripts\BuildBEToolboxFragments.js //NoLogo &gt; $(ProjectDir)BEToolboxFragments.wxs
+cscript  $(ProjectDir)\Scripts\BuildPGSuperFragments.js //NoLogo &gt; $(ProjectDir)PGSuperFragments.wxs
+cscript  $(ProjectDir)\Scripts\BuildXBeamRateFragments.js //NoLogo &gt; $(ProjectDir)XBeamRateFragments.wxs</PreBuildEvent>
+  </PropertyGroup>
+</Project>

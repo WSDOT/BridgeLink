@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+   <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+   <?include PGSuperCATID.wxi?>
+   <?include PGSpliceCATID.wxi?>
+
+  <Fragment>
+      
+      <!-- Start menu item for help file -->
+      <DirectoryRef Id="BridgeLinkStartMenuFolder">
+         <Component Id="BEToolboxShortcuts" Guid="{6777548A-04BF-4d86-A184-51DEEB27D552}" Win64="$(var.IsWin64)">
+
+           <util:InternetShortcut Id="BEToolboxDocShortcut" Name="BEToobox Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BEToolbox/$(var.BEToolboxDocumentationVersion)" Type="url"/>
+
+           <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+             <RegistryValue Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes"/>
+           </RegistryKey>
+
+         </Component>
+      </DirectoryRef>
+
+      <!-- BEToolbox files -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.BEToolboxSourceRoot)\$(var.PlatformFolder)" >
+         <Component Id ="BEToolboxComponents"
+                    Guid="{AD5706B4-F2CE-4153-A263-C549D0E28B2F}"
+                    Win64="$(var.IsWin64)">
+
+            <File Id="BEToolbox.dll"    Name="BEToolbox.dll" KeyPath ="yes"/>
+
+            <!-- BEToolbox file associations -->
+           <!-- NOTE: Also need to add an entry in BridgeLinkComponents.wxs -->
+            <ProgId Id="UltCol.Document" Icon="BEToolbox.dll" IconIndex="4" />
+            <ProgId Id="GenComp.Document" Icon="BEToolbox.dll" IconIndex="1" />
+            <ProgId Id="GirComp.Document" Icon="BEToolbox.dll" IconIndex="3"/>
+            <ProgId Id="BoxGdr.Document" Icon="BEToolbox.dll" IconIndex="2"/>
+           <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="7"/>
+           <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="8"/>
+           <ProgId Id="Spectra.Document" Icon="BEToolbox.dll" IconIndex="5"/>
+
+           <!-- BEToolbox registry entries-->
+            
+            <!-- BEToolbox Application Plugin -->
+            <?define BEToolboxCLSID={B5E128D4-78F3-48e0-970E-812C2281EE4E}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BEToolboxCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxCLSID)"
+                           Value="BEToolbox"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
+                           Value=""
+                           Type="string" />
+            
+            <!-- BEToolbox Component Information Object -->
+            <?define BEToolboxComponentInfoCLSID={8BC4CCD2-35D5-4f2c-AA18-0E2D58FF5C3A}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BEToolboxComponentInfoCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxComponentInfoCLSID)"
+                           Value="BEToolbox Component Information"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxComponentInfoCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BEToolboxComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
+                           Value=""
+                           Type="string" />
+
+
+           <!-- PGSuper/PGSplice Plug-ins-->
+
+           <!-- Curvel Exporter -->
+           <?define WSDOTCurvelDataExporterCLSID={E89CC143-53C9-43df-B1B4-E522769DE29B}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.WSDOTCurvelDataExporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)"
+                          Value="Curvel Exporter"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!-- Curvel Importer -->
+           <?define WSDOTCurvelDataImporterCLSID={E56801AC-B583-4e9e-A2D8-2AA64079BE15}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.WSDOTCurvelDataImporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)"
+                          Value="Curvel Importer"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)\Implemented Categories\$(var.PGSuperDataImporterCATID)"
+                          Value=""
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)\Implemented Categories\$(var.PGSpliceDataImporterCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!-- GenComp Exporter -->
+           <?define WSDOTGenCompDataExporterCLSID={16A21688-25B4-4118-ABF4-DD6D4983A2CD}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.WSDOTGenCompDataExporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)"
+                          Value="GenComp Exporter"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!-- PGStable Exporter -->
+           <?define WSDOTPGStableDataExporterCLSID={FF96408C-27B3-4288-8A44-6F80652BE187}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.WSDOTPGStableDataExporterCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTPGStableDataExporterCLSID)"
+                          Value="PGStable Exporter"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTPGStableDataExporterCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTPGStableDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.WSDOTPGStableDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+
+         </Component>
+      </DirectoryRef >
+
+    <DirectoryRef Id="APPLICATIONFOLDER"
+                  FileSource ="$(var.BEToolboxSourceRoot)" >
+      <Component Id="BEToolboxSpectraFiles" Guid="{BB480BFC-68C7-4a3c-A810-2CE55BF54199}" Win64="$(var.IsWin64)">
+        <File Id="us_hazard_7pc75.2014.bin"    Name="us_hazard_7pc75.2014.bin" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef >
+
+    <!-- BEToolboxXML -->
+     <DirectoryRef Id="APPLICATIONFOLDER"
+                   FileSource ="$(var.BEToolboxSourceRoot)\$(var.PlatformFolder)" >
+       <Component Id="BEToolboxXML" Guid="{1415A11D-9B93-4aa3-AC21-39B61DCDDFBD}" Win64="$(var.IsWin64)">
+         <File Id="BEToolboxXML.dll"    Name="BEToolboxXML.dll" KeyPath="yes"/>
+       </Component>
+     </DirectoryRef >
+
+
+
+     <!-- BEToolbox Application Plugin -->
+      <Feature Id="BEToolbox"
+               Absent="allow"
+               ConfigurableDirectory="APPLICATIONFOLDER"
+               Description="WSDOT Bridge Engineering Tools"
+               Display="expand"
+               Title="BEToolbox (Optional)"
+               Level="$(var.BEToolboxFeatureLevel)">
+         <ComponentRef Id="BEToolboxComponents" Primary="yes" />
+         <ComponentRef Id="BEToolboxShortcuts"/>
+        <ComponentRef Id="BEToolboxImages"/>
+        <ComponentRef Id="BEToolboxSpectraFiles"/>
+        <ComponentRef Id="BEToolboxDocs"/>
+        <ComponentRef Id="BEToolboxXML"/>
+      </Feature>
+   </Fragment>
+</Wix>
+

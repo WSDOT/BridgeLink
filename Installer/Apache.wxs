@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+   <!-- Include project wide variables -->
+   <?include Variables.wxi?>
+
+   <Fragment>
+
+      <!-- Xalan -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.XalanSourceRoot)" >
+         <Component Id="Xalan" Guid="{919789C1-6418-4c3e-8E77-F77FFB70CFED}" Win64="$(var.IsWin64)">
+            <File Id="Xalan_C_1_11.dll"    Name="Xalan-C_1_11.dll" KeyPath="yes"/>
+         </Component>
+      </DirectoryRef >
+
+      <!-- XalanMessages -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.XalanSourceRoot)" >
+         <Component Id="XalanMessages" Guid="{BA115681-0E2B-4fe8-B0BD-5A62A7CF0397}" Win64="$(var.IsWin64)">
+            <File Id="XalanMessages_1_11.dll"    Name="XalanMessages_1_11.dll" KeyPath="yes"/>
+         </Component>
+      </DirectoryRef >
+
+
+      <!-- Xerces -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.XercesSourceRoot)" >
+         <Component Id="Xerces" Guid="{C1EBA88B-0D32-4300-B0ED-574A9568DCC8}" Win64="$(var.IsWin64)">
+            <File Id="xerces_c_3_1.dll"    Name="xerces-c_3_1.dll" KeyPath="yes"/>
+         </Component>
+      </DirectoryRef >
+
+   </Fragment>
+</Wix>
