@@ -74,6 +74,7 @@ BEGIN_MESSAGE_MAP(CBridgeLinkApp, CEAFPluginApp)
 	// Standard print setup command
 	ON_COMMAND(ID_FILE_PRINT_SETUP, CWinApp::OnFilePrintSetup)
    ON_COMMAND(IDM_CONFIGURE_BRIDGELINK, &CBridgeLinkApp::OnConfigure)
+   ON_UPDATE_COMMAND_UI(IDM_CONFIGURE_BRIDGELINK,&CBridgeLinkApp::OnConfigureUpdateUI)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -125,6 +126,11 @@ bool CBridgeLinkApp::UnregisterCallback(IDType ID)
 void CBridgeLinkApp::OnFirstRun()
 {
    Configure();
+}
+
+void CBridgeLinkApp::OnConfigureUpdateUI(CCmdUI* pCmdUI)
+{
+   pCmdUI->Enable(m_ConfigurationCallbacks.size() != 0);
 }
 
 void CBridgeLinkApp::Configure()
