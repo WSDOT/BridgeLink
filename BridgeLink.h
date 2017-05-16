@@ -89,6 +89,7 @@ public:
 	afx_msg void OnHelpInetBridgeLink();
    afx_msg void OnHelpInetARP();
    afx_msg void OnScreenSize();
+   afx_msg void OnConfigureUpdateUI(CCmdUI* pCmdUI);
    afx_msg void OnConfigure();
    afx_msg void OnHelp();
 	//}}AFX_MSG
