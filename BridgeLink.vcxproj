@@ -633,38 +633,6 @@ makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
     <None Include="res\BridgeLink.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BSDev\BridgeSightBeams\BridgeSightBeams.vcxproj">
-      <Project>{97594692-8589-4d03-ac71-3418f372ae67}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\BSDev\BridgeSightLibAdminTool\BridgeSightLibAdminTool.vcxproj">
-      <Project>{372f91c2-384d-4783-9de8-a800468e091f}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\BSDev\BridgeSightSecurity\BridgeSightSecurity\BridgeSightSecurity.vcxproj">
-      <Project>{1f6a68d3-4747-4dbc-9b22-2151a5a9107b}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\BSDev\Coin3D_Dime\Dime.vcxproj">
-      <Project>{7c01a84e-1e67-44ea-a3f6-10d9d5a70c94}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\BSDev\PGSuperExtensions\PGSuperExtensions.vcxproj">
-      <Project>{ff666915-fc29-4b0e-9eda-2945c9241115}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\BSDev\PGSuperOpis\PGSuperOpis.vcxproj">
-      <Project>{0589886a-b84a-495f-9e2a-03846784540b}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\BSDev\PGSuperProDxfExporter\PGSuperProDxfExporter.vcxproj">
-      <Project>{12921f31-a949-4e4e-a9cb-bda0cbd7ee2a}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\BSDev\PGSuperVBent\PGSuperVBent.vcxproj">
-      <Project>{64604dfd-731b-430c-8a07-bed5ab00112f}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\BridgeLinkBEToolbox\BEToolbox.vcxproj">
       <Project>{3282ac39-1beb-4c8e-8fa0-2e3f4cc1bb45}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
@@ -687,14 +655,6 @@ makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
     </ProjectReference>
     <ProjectReference Include="..\MakeDocMap\MakeDocMap.vcxproj">
       <Project>{eb9ad1ec-526f-4375-84b4-aa7bac67d522}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\OpenBridgePlugin\OpenBridgePlugin.vcxproj">
-      <Project>{c7fc0fd4-dd87-4523-ae7e-20fa363d4202}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\OpenBridgeViewer\OpenBridgeViewer.vcxproj">
-      <Project>{c390a9a9-e03a-454c-90d7-90a10219732f}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\PGSuper\AnalysisAgent\AnalysisAgent.vcxproj">

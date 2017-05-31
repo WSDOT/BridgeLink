@@ -4,7 +4,13 @@ var directory;
 if ( objArgs.Count() == 0 )
    directory = ".\\x64\\Release";
 else
-   directory = objArgs(0);
+    directory = objArgs(0);
+
+var options;
+if (objArgs.Count() == 2)
+    options = objArgs(1) + " ";
+else
+    options = "";
 
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
 var folder = FSO.GetFolder(directory);
@@ -22,7 +28,7 @@ for ( fc.moveFirst(); !fc.atEnd(); fc.moveNext() )
       // make sure it isn't a WBFL dll - these don't get registered because we are using RegFreeCOM
       if (fileName.substring(idx+1,idx+5) != "WBFL")
       {
-         var cmd = "%SYSTEMROOT%\\System32\\regsvr32.exe /s " + fileName;
+         var cmd = "%SYSTEMROOT%\\System32\\regsvr32.exe /s " + options + fileName;
          var result = wsShell.Run(cmd,1,"TRUE");
 
          var msg = cmd;
