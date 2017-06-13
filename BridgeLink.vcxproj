@@ -624,7 +624,6 @@ makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
     <Image Include="res\ConfigurationWatermark.bmp" />
     <Image Include="res\KDOT.ico" />
     <Image Include="res\splash.bmp" />
-    <Image Include="res\start.jpg" />
     <Image Include="res\txdot.ico" />
     <Image Include="res\Wsdot.ico" />
   </ItemGroup>

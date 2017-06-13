@@ -84,9 +84,6 @@
     <Image Include="res\splash.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\start.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\txdot.ico">
       <Filter>Resource Files</Filter>
     </Image>
