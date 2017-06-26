@@ -5,7 +5,7 @@
    <?define BridgeLinkReleaseVersion = 1.1.2?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
    <?define BridgeLinkVersion   = 1.1.2.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
    <?define BEToolboxVersion    = 3.1.2.0?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
-   <?define OpenBridgeMLVersion = 0.2.2.0?>
+   <?define OpenBridgeMLVersion = 0.2.1.1?>
    <?define PGSuperVersion      = 3.1.2.0?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
    <?define WBFLVersion         = 4.1.2.0?>
    <?define XBeamRateVersion    = 1.1.2.0?> <!-- also change this version number in the BuildXBRateFragments.js file -->
