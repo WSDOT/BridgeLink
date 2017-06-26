@@ -108,6 +108,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dime", "..\..\BSDev\Coin3D_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeSightDXFExporter", "..\..\BSDev\PGSuperProDxfExporter\PGSuperProDxfExporter.vcxproj", "{12921F31-A949-4E4E-A9CB-BDA0CBD7EE2A}"
 	ProjectSection(ProjectDependencies) = postProject
+		{7C01A84E-1E67-44EA-A3F6-10D9D5A70C94} = {7C01A84E-1E67-44EA-A3F6-10D9D5A70C94}
 		{716009BE-959B-4338-80F5-69ABB0B12A91} = {716009BE-959B-4338-80F5-69ABB0B12A91}
 	EndProjectSection
 EndProject
