@@ -763,11 +763,14 @@
          <ComponentRef Id="PGSuperBeams"/>
          <ComponentRef Id="Deck_Bulb_Tees" />
          <ComponentRef Id="Multiweb" />
+         <ComponentRef Id="LegacySlabs" />
+         <ComponentRef Id="WGirders" />
+         <ComponentRef Id="WBTGirders" />
          <ComponentRef Id="Slabs" />
          <ComponentRef Id="UGirders" />
-         <ComponentRef Id="WBTGirders" />
+         <ComponentRef Id="WFDGGirders" />
+         <ComponentRef Id="WFTDGGirders" />
          <ComponentRef Id="WFGirders" />
-         <ComponentRef Id="WGirders" />
 
          <ComponentRef Id="PGSpliceBeams"/>
          <ComponentRef Id="I_Beams" />

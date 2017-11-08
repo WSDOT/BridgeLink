@@ -14,12 +14,17 @@
             </Directory>
             <Directory Id="PGSuperConfigurations" Name="PGSuper">
                <Directory Id="Deck_Bulb_Tees" Name="Deck_Bulb_Tees" />
-               <Directory Id="Multiweb" Name="Multiweb" />
-               <Directory Id="Slabs" Name="Slabs" />
-               <Directory Id="UGirders" Name="U-Girders" />
-               <Directory Id="WBTGirders" Name="WBT-Girders" />
-               <Directory Id="WFGirders" Name="WF-Girders" />
-               <Directory Id="WGirders" Name="W-Girders" />
+              <Directory Id="Legacy" Name="Legacy">
+                 <Directory Id="Multiweb" Name="Multiweb" />
+                 <Directory Id="LegacySlabs" Name="Slabs" />
+                <Directory Id="WBTGirders" Name="WBT-Girders" />
+                <Directory Id="WGirders" Name="W-Girders" />
+              </Directory>
+              <Directory Id="Slabs" Name="Slabs" />
+              <Directory Id="UGirders" Name="U-Girders" />
+              <Directory Id="WFDGGirders" Name="WF_DG-Girders" />
+              <Directory Id="WFTDGGirders" Name="WF_TDG-Girders" />
+              <Directory Id="WFGirders" Name="WF-Girders" />
             </Directory>
          </Directory>
       </DirectoryRef>
@@ -34,6 +39,7 @@
          </DirectoryRef>
 
          <!-- PGSuper Configurations -->
+         <!-- WSDOT\Deck Bulb Tee-->
          <DirectoryRef Id="Deck_Bulb_Tees"
                        FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Deck_Bulb_Tees" >
             <Component Id="Deck_Bulb_Tees"
@@ -45,27 +51,64 @@
                <File Id="W65DG.pgt"     Name="W65DG.pgt"/>
             </Component>
          </DirectoryRef>
+     
+         <!-- WSDOT\Legacy -->
          <DirectoryRef Id="Multiweb"
-                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Multiweb" >
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Legacy\Multiweb" >
             <Component Id="Multiweb"
                        Guid="{3F084D09-7FF9-4fca-AB41-FA662B4D5B41}"
                        Win64="$(var.IsWin64)">
                <File Id="RibbedGirder.pgt"   Name="Ribbed Girder.pgt"          KeyPath="yes"/>
             </Component>
          </DirectoryRef>
-         <DirectoryRef Id="Slabs"
-                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Slabs" >
-            <Component Id="Slabs"
+         <DirectoryRef Id="LegacySlabs"
+                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Legacy\Slabs" >
+            <Component Id="LegacySlabs"
                        Guid="{47B2E980-30CF-47c1-AC5F-423EB1F7FF36}"
                        Win64="$(var.IsWin64)">
-               <File Id="Slab1"    Name="1-0 Solid Slab.pgt"     KeyPath="yes"/>
-               <File Id="Slab2"    Name="1-6 Voided Slab.pgt"/>
-               <File Id="Slab3"    Name="2-2 Voided Slab.pgt"/>
-               <File Id="Slab4"    Name="2-6 Voided Slab.pgt"/>
-               <File Id="Slab5"    Name="3-0 Voided Slab.pgt"/>
+               <File Id="LegacySlab1"    Name="1-0 Solid Slab.pgt"     KeyPath="yes"/>
+               <File Id="LegacySlab2"    Name="1-6 Voided Slab.pgt"/>
+              <File Id="LegacySlab3"    Name="2-0 Voided Slab.pgt"/>
+              <File Id="LegacySlab4"    Name="2-2 Voided Slab.pgt"/>
+              <File Id="LegacySlab5"    Name="2-6 Voided Slab.pgt"/>
+               <File Id="LegacySlab6"    Name="3-0 Voided Slab.pgt"/>
             </Component>
          </DirectoryRef>
-         <DirectoryRef Id="UGirders"
+     <DirectoryRef Id="WBTGirders"
+                   FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Legacy\WBT-Girders" >
+       <Component Id="WBTGirders"
+                  Guid="{CF510295-A099-43a7-B70A-16D1AA36FE1E}"
+                  Win64="$(var.IsWin64)">
+         <File Id="W32BTG.pgt"      Name="W32BTG.pgt"           KeyPath="yes"/>
+         <File Id="W38BTG.pgt"      Name="W38BTG.pgt"/>
+         <File Id="W62BTG.pgt"      Name="W62BTG.pgt"/>
+       </Component>
+     </DirectoryRef>
+     <DirectoryRef Id="WGirders"
+                   FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Legacy\W-Girders" >
+       <Component Id="WGirders"
+                  Guid="{B151B186-77DD-4286-AFF0-A575A19F7623}"
+                  Win64="$(var.IsWin64)">
+         <File Id="W42G.pgt"      Name="W42G.pgt"             KeyPath="yes"/>
+         <File Id="W50G.pgt"      Name="W50G.pgt"/>
+         <File Id="W58G.pgt"      Name="W58G.pgt"/>
+         <File Id="W74G.pgt"      Name="W74G.pgt"/>
+       </Component>
+     </DirectoryRef>
+
+     <DirectoryRef Id="Slabs"
+                   FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\Slabs" >
+       <Component Id="Slabs"
+                  Guid="{8C3587A1-6848-4F2D-8005-EA20FC098514}"
+                  Win64="$(var.IsWin64)">
+         <File Id="Slab1"    Name="1-0 Solid Slab.pgt"     KeyPath="yes"/>
+         <File Id="Slab2"    Name="1-6 Voided Slab.pgt"/>
+         <File Id="Slab3"    Name="2-0 Voided Slab.pgt"/>
+         <File Id="Slab4"    Name="2-2 Voided Slab.pgt"/>
+         <File Id="Slab5"    Name="2-6 Voided Slab.pgt"/>
+       </Component>
+     </DirectoryRef>
+     <DirectoryRef Id="UGirders"
                        FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\U-Girders" >
             <Component Id="UGirders"
                        Guid="{971AD810-96A5-486b-8EA4-2ADD97B54857}"
@@ -75,17 +118,42 @@
                <File Id="U54G6.pgt"       Name="U54G6.pgt"/>
             </Component>
          </DirectoryRef>
-         <DirectoryRef Id="WBTGirders"
-                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\WBT-Girders" >
-            <Component Id="WBTGirders"
-                       Guid="{CF510295-A099-43a7-B70A-16D1AA36FE1E}"
-                       Win64="$(var.IsWin64)">
-               <File Id="W32BTG.pgt"      Name="W32BTG.pgt"           KeyPath="yes"/>
-               <File Id="W38BTG.pgt"      Name="W38BTG.pgt"/>
-               <File Id="W62BTG.pgt"      Name="W62BTG.pgt"/>
-            </Component>
-         </DirectoryRef>
-         <DirectoryRef Id="WFGirders"
+
+     <DirectoryRef Id="WFDGGirders"
+                   FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\WF_DG-Girders" >
+       <Component Id="WFDGGirders"
+                  Guid="{43AF92C9-AB8F-450D-A1CB-1AC76DC294FA}"
+                  Win64="$(var.IsWin64)">
+         <File Id="WF39DG.pgt"             Name="WF39DG.pgt"              KeyPath="yes"/>
+         <File Id="WF45DG.pgt"             Name="WF45DG.pgt"/>
+         <File Id="WF53DG.pgt"             Name="WF53DG.pgt"/>
+         <File Id="WF61DG.pgt"             Name="WF61DG.pgt"/>
+         <File Id="WF69DG.pgt"             Name="WF69DG.pgt"/>
+         <File Id="WF77DG.pgt"             Name="WF77DG.pgt"/>
+         <File Id="WF86DG.pgt"             Name="WF86DG.pgt"/>
+         <File Id="WF98DG.pgt"             Name="WF98DG.pgt"/>
+         <File Id="WF103DG.pgt"            Name="WF103DG.pgt"/>
+       </Component>
+     </DirectoryRef>
+
+     <DirectoryRef Id="WFTDGGirders"
+                   FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\WF_TDG-Girders" >
+       <Component Id="WFTDGGirders"
+                  Guid="{9D677A23-C930-407C-921E-DE5064B3D03A}"
+                  Win64="$(var.IsWin64)">
+         <File Id="WF36TDG.pgt"             Name="WF36TDG.pgt"              KeyPath="yes"/>
+         <File Id="WF42TDG.pgt"             Name="WF42TDG.pgt"/>
+         <File Id="WF50TDG.pgt"             Name="WF50TDG.pgt"/>
+         <File Id="WF58TDG.pgt"             Name="WF58TDG.pgt"/>
+         <File Id="WF66TDG.pgt"             Name="WF66TDG.pgt"/>
+         <File Id="WF74TDG.pgt"             Name="WF74TDG.pgt"/>
+         <File Id="WF83TDG.pgt"             Name="WF83TDG.pgt"/>
+         <File Id="WF95TDG.pgt"             Name="WF95TDG.pgt"/>
+         <File Id="WF100TDG.pgt"            Name="WF100TDG.pgt"/>
+       </Component>
+     </DirectoryRef>
+
+     <DirectoryRef Id="WFGirders"
                        FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\WF-Girders" >
             <Component Id="WFGirders"
                        Guid="{BD0780EB-07AE-455c-B907-C84B7EF44732}"
@@ -99,17 +167,6 @@
                <File Id="WF83G.pgt"             Name="WF83G.pgt"/>
                <File Id="WF95G.pgt"             Name="WF95G.pgt"/>
                <File Id="WF100G.pgt"            Name="WF100G.pgt"/>
-            </Component>
-         </DirectoryRef>
-         <DirectoryRef Id="WGirders"
-                       FileSource="$(var.PGSuperSourceRoot)\Configurations\PGSuper\W-Girders" >
-            <Component Id="WGirders"
-                       Guid="{B151B186-77DD-4286-AFF0-A575A19F7623}"
-                       Win64="$(var.IsWin64)">
-               <File Id="W42G.pgt"      Name="W42G.pgt"             KeyPath="yes"/>
-               <File Id="W50G.pgt"      Name="W50G.pgt"/>
-               <File Id="W58G.pgt"      Name="W58G.pgt"/>
-               <File Id="W74G.pgt"      Name="W74G.pgt"/>
             </Component>
          </DirectoryRef>
 
