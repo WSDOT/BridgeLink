@@ -110,7 +110,7 @@
                         Value=""
                         Type="string" />
 
-         <!-- TxDOT Component Information Object -->
+         <!-- TxDOT PGSuper Extension Component Information Object -->
          <?define PGSuperTxDOTInfoCLSID={785F2ACE-127B-4647-8062-ED49537E962C}?>
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
@@ -128,6 +128,25 @@
                         Value=""
                         Type="string" />
 
+
+         <!-- TOGA Component Information Object -->
+         <?define TogaComponentInfoCLSID={AF010EB6-4A8D-4404-ADAB-D6CA62EC9AA1}?>
+         <RegistryKey ForceCreateOnInstall="yes"
+                      ForceDeleteOnUninstall="yes"
+                      Root="HKCR"
+                      Key ="CLSID\$(var.TogaComponentInfoCLSID)"/>
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TogaComponentInfoCLSID)"
+                        Value="TOGA Component Information"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TogaComponentInfoCLSID)\InprocServer32"
+                        Value="[APPLICATIONFOLDER]TxDOTAgent.dll"
+                        Type="string" />
+         <RegistryValue Root="HKCR"
+                        Key="CLSID\$(var.TogaComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
+                        Value=""
+                        Type="string" />
        </Component>
      </DirectoryRef>
 
@@ -207,6 +226,7 @@
        </Component>
      </DirectoryRef>
 
+     
      <Feature Id="TxDOTExtensions"
               Absent="allow"
               ConfigurableDirectory="APPLICATIONFOLDER"
