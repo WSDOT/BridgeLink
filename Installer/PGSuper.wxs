@@ -214,7 +214,7 @@
                         Key ="CLSID\$(var.PGSpliceProjectImporterCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceProjectImporterCLSID)"
-                          Value="PGSPlice Project Importer"
+                          Value="PGSplice Project Importer"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceProjectImporterCLSID)\InprocServer32"
