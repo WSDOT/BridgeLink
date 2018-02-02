@@ -53,7 +53,7 @@ void CConfigureBridgeLinkDlg::Init(std::map<IDType,IBridgeLinkConfigurationCallb
    {
       IBridgeLinkConfigurationCallback* pCallback = iter->second;
       CPropertyPage* pPage = pCallback->CreatePropertyPage();
-      m_vExtensionPages.push_back( std::make_pair(pCallback,pPage) );
+      m_vExtensionPages.emplace_back(pCallback,pPage);
       if ( pPage )
       {
          AddPage(pPage);
