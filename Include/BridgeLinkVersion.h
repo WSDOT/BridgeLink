@@ -26,7 +26,7 @@
 #define _BRIDGELINK_VERSION 114 // version 1.1.4
 #endif
 
-#define _BETA_VERSION          // When defined, building beta versions
+//#define _BETA_VERSION          // When defined, building beta versions
 
 // includes WBFL Version macro and
 // macros that define the minimum version of Windows and IE
