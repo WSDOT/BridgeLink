@@ -2,13 +2,13 @@
 <Include>
   <?include CustomizationVariables.wxi?>
   
-   <?define BridgeLinkReleaseVersion = 1.1.4?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
-   <?define BridgeLinkVersion   = 1.1.4.3?> <!-- This defines the version number of the executable application (probably won't change much)-->
-   <?define BEToolboxVersion    = 3.1.4.3?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
+   <?define BridgeLinkReleaseVersion = 1.1.5?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
+   <?define BridgeLinkVersion   = 1.1.5.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BEToolboxVersion    = 3.1.5.0?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
    <?define OpenBridgeMLVersion = 0.2.1.5?>
-   <?define PGSuperVersion      = 3.1.4.3?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 4.1.4.3?>
-   <?define XBeamRateVersion    = 1.1.4.3?> <!-- also change this version number in the BuildXBRateFragments.js file -->
+   <?define PGSuperVersion      = 3.1.5.0?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = 4.1.5.0?>
+   <?define XBeamRateVersion    = 1.1.5.0?> <!-- also change this version number in the BuildXBRateFragments.js file -->
 
   <?define BridgeLinkDocumentationVersion=1.1?>
   <?define BEToolboxDocumentationVersion=3.1?>
