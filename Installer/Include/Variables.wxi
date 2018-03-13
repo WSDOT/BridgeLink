@@ -6,17 +6,17 @@
    <?define BridgeLinkVersion   = 1.2.0.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
    <?define BEToolboxVersion    = 3.2.0.0?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
    <?define OpenBridgeMLVersion = 0.3.0.0?>
-   <?define PGSuperVersion      = 3.2.0.0?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define PGSuperVersion      = 4.0.0.0?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
    <?define WBFLVersion         = 4.2.0.0?>
    <?define XBeamRateVersion    = 1.2.0.0?> <!-- also change this version number in the BuildXBRateFragments.js file -->
 
   <?define BridgeLinkDocumentationVersion=1.2?>
   <?define BEToolboxDocumentationVersion=3.2?>
-  <?define PGSuperDocumentationVersion=3.2?>
-  <?define PGSpliceDocumentationVersion=3.2?>
-  <?define PGSLibraryDocumentationVersion=3.2?>
-  <?define TOGADocumentationVersion=3.2?>
-  <?define KDOTDocumentationVersion=3.2?>
+  <?define PGSuperDocumentationVersion=4.0?>
+  <?define PGSpliceDocumentationVersion=4.0?>
+  <?define PGSLibraryDocumentationVersion=4.0?>
+  <?define TOGADocumentationVersion=4.0?>
+  <?define KDOTDocumentationVersion=4.0?>
   <?define XBRateDocumentationVersion=1.2?>
 
   <?define ExeName=BridgeLink?>
