@@ -696,10 +696,6 @@ makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
       <Project>{2055203d-02fc-4d11-bdf0-411e9f465e93}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\PGSuper\PGSuperIDL\PGSuperIDL.vcxproj">
-      <Project>{8042f343-0709-45cc-90a6-97be1a70fc37}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\PGSuper\ProjectAgent\ProjectAgent.vcxproj">
       <Project>{a69bd69e-07d6-4326-b25a-938bec2bb378}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
