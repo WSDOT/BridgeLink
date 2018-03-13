@@ -214,7 +214,7 @@
                         Key ="CLSID\$(var.PGSpliceProjectImporterCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceProjectImporterCLSID)"
-                          Value="PGSPlice Project Importer"
+                          Value="PGSplice Project Importer"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceProjectImporterCLSID)\InprocServer32"
@@ -762,11 +762,15 @@
          <ComponentRef Id="PGSuperBeams"/>
          <ComponentRef Id="Deck_Bulb_Tees" />
          <ComponentRef Id="Multiweb" />
+         <ComponentRef Id="LegacySlabs" />
+         <ComponentRef Id="WGirders" />
+         <ComponentRef Id="WBTGirders" />
          <ComponentRef Id="Slabs" />
          <ComponentRef Id="UGirders" />
-         <ComponentRef Id="WBTGirders" />
+         <ComponentRef Id="WFDGGirders_ShearKey" />
+         <ComponentRef Id="WFDGGirders_UHPCJoint" />
+         <ComponentRef Id="WFTDGGirders" />
          <ComponentRef Id="WFGirders" />
-         <ComponentRef Id="WGirders" />
 
          <ComponentRef Id="PGSpliceBeams"/>
          <ComponentRef Id="I_Beams" />
