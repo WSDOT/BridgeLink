@@ -44,6 +44,8 @@ void CConfigureBridgeLinkDlg::Init(std::map<IDType,IBridgeLinkConfigurationCallb
    
    SetWizardMode();
 
+   m_Pages.reserve(configurationPageCallbacks.size() + 1);
+
    AddPage( &m_BridgeLinkPage );
    m_Pages.push_back((LRESULT)m_BridgeLinkPage.m_psp.pszTemplate);
 

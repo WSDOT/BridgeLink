@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <SourcePath>$(SourcePath)</SourcePath>
+    <ExecutablePath>$(XSDDIR)\bin;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(APACHEHOME)\XALANCPKG-11-31-X64-VC100\include;$(APACHEHOME)\XERCESCPKG-31-X64-VC100\include;$(XSDDIR)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(APACHEHOME)\XALANCPKG-11-31-X64-VC100\lib;$(APACHEHOME)\XERCESCPKG-31-X64-VC100\lib;$(XSDDIR)\lib64\vc-10.0;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <CXX_Tree_Mapping_Rule />
+    <CXX_Tree_Mapping_Rule>
+      <CxxStd>0</CxxStd>
+      <CharType>1</CharType>
+    </CXX_Tree_Mapping_Rule>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
