@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <SourcePath>$(SourcePath)</SourcePath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>C:\Program Files\Rogue Wave\Stingray Studio 12.1\Include;C:\Program Files\Rogue Wave\Stingray Studio 12.1\RWUXTheme\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\Rogue Wave\Stingray Studio 12.1\Lib\vc14\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
