@@ -1,3 +1,42 @@
+////////////////////////////////////////////////////////////////////////
+// Performs self-registration for all COM DLLs
+// Run this script before running a release or debug build
+// If the wrong type (debug/release) DLLs are registered when
+// launching from the IDE, the application can crash.
+//
+// To setup registration commands in Visual Studio
+// 1) Select Tools > External Tools
+// 2) Press [Add]
+// 3) Enter the following
+//
+// For x64 Debug builds
+// Title: Register (x64 Debug)
+// Command: cscript.exe
+// Arguments: F:\ARP\BridgeLink\RegFreeCOM\RegFiles.js .\x64\Debug
+// Initial Directory: F:\ARP\BridgeLink\RegFreeCOM\
+// Use Output Window [x]
+//
+// For x64 Release builds
+// Title: Register (x64 Release)
+// Command: cscript.exe
+// Arguments: F:\ARP\BridgeLink\RegFreeCOM\RegFiles.js
+// Initial Directory: F:\ARP\BridgeLink\RegFreeCOM\
+// Use Output Window [x]
+//
+// For Unregistering x64 Debug builds
+// Title: Unregister (x64 Debug)
+// Command: cscript.exe
+// Arguments: F:\ARP\BridgeLink\RegFreeCOM\RegFiles.js
+// Initial Directory: F:\ARP\BridgeLink\RegFreeCOM\ .\x64\Debug /u
+// Use Output Window [x]
+//
+// For Unregistering x64 Release builds
+// Title: Unregister (x64 Release)
+// Command: cscript.exe
+// Arguments: F:\ARP\BridgeLink\RegFreeCOM\RegFiles.js
+// Initial Directory: F:\ARP\BridgeLink\RegFreeCOM\ .\x64\Release /u
+// Use Output Window [x]
+
 var wsShell = new ActiveXObject("WScript.Shell");
 var objArgs = WScript.Arguments;
 var directory;
