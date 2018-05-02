@@ -26,6 +26,13 @@
 #include "BridgeLinkView2.h"
 #include "ComponentInfo.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+
 CComModule _Module;
 
 BEGIN_OBJECT_MAP(ObjectMap)
