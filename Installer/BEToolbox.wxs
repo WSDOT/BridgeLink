@@ -94,7 +94,7 @@
                         Key ="CLSID\$(var.BoxGdrToolCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.BoxGdrToolCLSID)"
-                          Value="BEToolbox BoxGdr"
+                          Value="BoxGdr"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.BoxGdrToolCLSID)\InprocServer32"
@@ -113,7 +113,7 @@
                         Key ="CLSID\$(var.GenCompToolCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.GenCompToolCLSID)"
-                          Value="BEToolbox GenComp"
+                          Value="GenComp"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.GenCompToolCLSID)\InprocServer32"
@@ -132,7 +132,7 @@
                         Key ="CLSID\$(var.GirCompToolCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.GirCompToolCLSID)"
-                          Value="BEToolbox GirComp"
+                          Value="GirComp"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.GirCompToolCLSID)\InprocServer32"
@@ -151,7 +151,7 @@
                         Key ="CLSID\$(var.UltColToolCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.UltColToolCLSID)"
-                          Value="BEToolbox UltCol"
+                          Value="UltCol"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.UltColToolCLSID)\InprocServer32"
@@ -170,7 +170,7 @@
                         Key ="CLSID\$(var.CurvelToolCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.CurvelToolCLSID)"
-                          Value="BEToolbox Curvel"
+                          Value="Curvel"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.CurvelToolCLSID)\InprocServer32"
@@ -189,7 +189,7 @@
                         Key ="CLSID\$(var.PGStableToolCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGStableToolCLSID)"
-                          Value="BEToolbox PGStable"
+                          Value="PGStable"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGStableToolCLSID)\InprocServer32"
@@ -208,7 +208,7 @@
                         Key ="CLSID\$(var.SpectraToolCLSID)"/>
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.SpectraToolCLSID)"
-                          Value="BEToolbox Spectra"
+                          Value="Spectra"
                           Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.SpectraToolCLSID)\InprocServer32"
