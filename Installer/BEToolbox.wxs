@@ -5,6 +5,7 @@
    <?include Variables.wxi?>
    <?include PGSuperCATID.wxi?>
    <?include PGSpliceCATID.wxi?>
+  <?include BEToolboxCATID.wxi?>
 
   <Fragment>
       
@@ -83,6 +84,140 @@
                            Value=""
                            Type="string" />
 
+
+           <!-- BEToolbox Tools -->
+           <!-- BoxGdr -->
+           <?define BoxGdrToolCLSID={4C9C743B-199E-43C8-AF13-F1D16669ACC9}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.BoxGdrToolCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BoxGdrToolCLSID)"
+                          Value="BEToolbox BoxGdr"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BoxGdrToolCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BoxGdrToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!--GenComp -->
+           <?define GenCompToolCLSID={D84CBB4B-97C9-47A9-A7D1-83702A99A9CE}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.GenCompToolCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.GenCompToolCLSID)"
+                          Value="BEToolbox GenComp"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.GenCompToolCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.GenCompToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!--GirComp -->
+           <?define GirCompToolCLSID={AFF95666-CCDE-45A3-85DA-6E10336D4A79}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.GirCompToolCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.GirCompToolCLSID)"
+                          Value="BEToolbox GirComp"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.GirCompToolCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.GirCompToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!--UltCol -->
+           <?define UltColToolCLSID={174F1702-B615-4925-ADA4-9466606622F8}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.UltColToolCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.UltColToolCLSID)"
+                          Value="BEToolbox UltCol"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.UltColToolCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.UltColToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!--Curvel -->
+           <?define CurvelToolCLSID={90DA3F11-67D6-45D8-9469-CCA6278021AD}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.CurvelToolCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.CurvelToolCLSID)"
+                          Value="BEToolbox Curvel"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.CurvelToolCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.CurvelToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!--PGStable -->
+           <?define PGStableToolCLSID={876DBB2E-ECF9-4439-8F8F-E09A486018DF}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.PGStableToolCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGStableToolCLSID)"
+                          Value="BEToolbox PGStable"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGStableToolCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.PGStableToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!--Spectra -->
+           <?define SpectraToolCLSID={91F9BC47-B245-4E2E-B642-9F926C5A5E14}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.SpectraToolCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.SpectraToolCLSID)"
+                          Value="BEToolbox Spectra"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.SpectraToolCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.SpectraToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                          Value=""
+                          Type="string" />
 
            <!-- PGSuper/PGSplice Plug-ins-->
 

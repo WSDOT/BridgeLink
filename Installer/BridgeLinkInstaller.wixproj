@@ -6,7 +6,7 @@
     <ProductVersion>3.7</ProductVersion>
     <ProjectGuid>{ea7b5405-6d7d-42ee-aa76-fbdc078d050a}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>BridgeLink_1.2.0_Beta_0_$(Platform)_$(Configuration)</OutputName>
+    <OutputName>BridgeLink_1.2.0_Beta_1_%24%28Platform%29_%24%28Configuration%29</OutputName>
     <OutputType>Package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
@@ -78,9 +78,13 @@
   <ItemGroup>
     <Content Include="DialogBanner.bmp" />
     <Content Include="DialogBitmap.bmp" />
+    <Content Include="Include\BEToolboxCATID.wxi" />
     <Content Include="Include\CustomizationVariables.wxi" />
     <Content Include="Include\PGSpliceCATID.wxi" />
-    <Content Include="Include\PGSuperCATID.wxi" />
+    <Content Include="Include\PGSuperCATID.wxi">
+      <Link>
+      </Link>
+    </Content>
     <Content Include="Include\Variables.wxi" />
     <Content Include="License.rtf" />
     <Content Include="Scripts\BuildBEToolboxFragments.js" />
