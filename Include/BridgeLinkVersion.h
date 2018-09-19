@@ -23,7 +23,7 @@
 #pragma once
 
 #ifndef _BRIDGELINK_VERSION
-#define _BRIDGELINK_VERSION 127 // version 1.2.7
+#define _BRIDGELINK_VERSION 128 // version 1.2.8
 #endif
 
 #define _BETA_VERSION          // When defined, building beta versions
