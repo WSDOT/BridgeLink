@@ -23,10 +23,10 @@
 #pragma once
 
 #ifndef _BRIDGELINK_VERSION
-#define _BRIDGELINK_VERSION 128 // version 1.2.8
+#define _BRIDGELINK_VERSION 129 // version 1.2.9
 #endif
 
-#define _BETA_VERSION          // When defined, building beta versions
+//#define _BETA_VERSION          // When defined, building beta versions
 
 // includes WBFL Version macro and
 // macros that define the minimum version of Windows and IE
