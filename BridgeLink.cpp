@@ -370,6 +370,9 @@ CString CBridgeLinkApp::GetVersion(bool bIncludeBuildNumber) const
       // remove the build number
       int pos = strVersion.ReverseFind(_T('.')); // find the last '.'
       strVersion = strVersion.Left(pos);
+
+      pos = strVersion.ReverseFind(_T('.')); // find the last '.'
+      strVersion = strVersion.Left(pos);
    }
 
    return strVersion;
