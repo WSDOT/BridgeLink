@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BridgeLinkDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BridgeLink\\1.2");
+var BridgeLinkDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BridgeLink\\4.0");
 var fc = new Enumerator(BridgeLinkDocsFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
