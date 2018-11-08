@@ -13,7 +13,7 @@ cd \ARP\PGSuper
 call UpdateBinFiles.bat
 
 REM - Update BEToolbox Files
-cd \ARP\BridgeLinkBEToolbox
+cd \ARP\BEToolbox
 call UpdateBinFiles.bat
 
 
