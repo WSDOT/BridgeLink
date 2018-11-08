@@ -334,7 +334,7 @@
 
 
             <DirectoryRef Id="APPLICATIONFOLDER"
-                    FileSource ="$(var.PGSuperSourceRoot)\App\$(var.PlatformFolder)" >
+                    FileSource ="$(var.PGSuperSourceRoot)\App" >
          <Component Id="MD5Deep"
                     Guid="{22D58AA0-9F9E-4907-B3B5-20510C46A173}"
                     Win64="$(var.IsWin64)">
