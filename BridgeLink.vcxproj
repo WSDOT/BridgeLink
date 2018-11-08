@@ -646,28 +646,12 @@ makehm IDW_,HIDW_,0x50000 resource.h &gt;&gt;"hlp\$(TargetName).hm"
     <None Include="res\BridgeLink.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BridgeLinkBEToolbox\BEToolbox.vcxproj">
+    <ProjectReference Include="..\BEToolbox\BEToolbox.vcxproj">
       <Project>{3282ac39-1beb-4c8e-8fa0-2e3f4cc1bb45}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\BridgeLinkBEToolbox\BEToolboxXML\BEToolboxXML.vcxproj">
+    <ProjectReference Include="..\BEToolbox\BEToolboxXML\BEToolboxXML.vcxproj">
       <Project>{3004a4e6-3542-40b1-9b15-331862819988}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\ExtensionAgentExample\ExtensionAgentExample.vcxproj">
-      <Project>{84aaad2e-2039-4922-9124-18852c5616f1}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\IEPluginExample\IEPluginExample.vcxproj">
-      <Project>{bca09a79-0afe-4990-afb9-c33d3eb2015d}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\LibraryMgrPluginExample\LibraryMgrPluginExample.vcxproj">
-      <Project>{7253d020-a179-45cb-b8e1-aeb359920214}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\MakeDocMap\MakeDocMap.vcxproj">
-      <Project>{eb9ad1ec-526f-4375-84b4-aa7bac67d522}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\PGSuper\AnalysisAgent\AnalysisAgent.vcxproj">

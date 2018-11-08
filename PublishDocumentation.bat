@@ -16,7 +16,7 @@ SET XBRATE_VERSION=%BRIDGELINK_VERSION%
 
 REM - Build the documentation sets
 call \ARP\BridgeLink\Documentation\BuildDocumentation.bat          %BRIDGELINK_VERSION%
-call \ARP\BridgeLinkBEToolbox\Documentation\BuildDocumentation.bat %BETOOLBOX_VERSION%
+call \ARP\BEToolbox\Documentation\BuildDocumentation.bat           %BETOOLBOX_VERSION%
 call \ARP\PGSuper\Documentation\BuildDocumentation.bat             %PGSUPER_VERSION%
 call \ARP\PGSuper\TxDOTAgent\Documentation\BuildDocumentation.bat  %PGSUPER_VERSION%
 call \ARP\PGSuper\KDOTExport\Documentation\BuildDocumentation.bat  %PGSUPER_VERSION%
@@ -35,8 +35,8 @@ copy \ARP\BridgeLink\Documentation\doc\html\* %DOC_TARGET%\BridgeLink\%BRIDGELIN
 
 rmdir /S /Q %DOC_TARGET%\BEToolbox\%BETOOLBOX_VERSION%\
 mkdir %DOC_TARGET%\BEToolbox\%BETOOLBOX_VERSION%\
-copy \ARP\BridgeLinkBEToolbox\Documentation\BEToolbox.dm %DOC_TARGET%\BEToolbox\%BETOOLBOX_VERSION%\BEToolbox.dm.html
-copy \ARP\BridgeLinkBEToolbox\Documentation\doc\html\* %DOC_TARGET%\BEToolbox\%BETOOLBOX_VERSION%\
+copy \ARP\BEToolbox\Documentation\BEToolbox.dm %DOC_TARGET%\BEToolbox\%BETOOLBOX_VERSION%\BEToolbox.dm.html
+copy \ARP\BEToolbox\Documentation\doc\html\* %DOC_TARGET%\BEToolbox\%BETOOLBOX_VERSION%\
 
 rmdir /S /Q %DOC_TARGET%\PGSuper\%PGSUPER_VERSION%\
 mkdir %DOC_TARGET%\PGSuper\%PGSUPER_VERSION%\
