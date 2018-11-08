@@ -22,8 +22,16 @@
 
 #pragma once
 
+// Version Number Scheme... major.minor.fix.build
+// major = major version number (increment for major, significant new features, releases) 
+// minor = minor version number (increment for minor, bug fix releases)
+// fix = increment for hot fixes (don't increment major.minor for hot fixes)
+// build = the build or release candidate number
+//
+// hot fixes - sometimes there are bugs that need to be fixed and deployed now. That is a hot fix.
+
 #ifndef _BRIDGELINK_VERSION
-#define _BRIDGELINK_VERSION 409 // version 4.0.9
+#define _BRIDGELINK_VERSION 4010 // version 4.0.10
 #endif
 
 //#define _BETA_VERSION          // When defined, building beta versions
