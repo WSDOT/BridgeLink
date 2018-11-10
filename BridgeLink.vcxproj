@@ -169,12 +169,9 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <CustomBuildStep>
-      <Message>
-      </Message>
-      <Command>
-      </Command>
-      <Outputs>
-      </Outputs>
+      <Message>Installing WBFL for BridgeLink</Message>
+      <Command>$(WBFLDIR)\InstallWBFL.bat $(PlatformName) $(ConfigurationName) $(BRIDGELINKDIR)\RegFreeCOM</Command>
+      <Outputs>$(BRIDGELINKDIR)\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll</Outputs>
       <Inputs>
       </Inputs>
     </CustomBuildStep>
@@ -224,7 +221,8 @@
       <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
     </Manifest>
     <PreBuildEvent>
-      <Command>$(WBFLDIR)\InstallWBFL.bat $(Platform) $(Configuration) $(BRIDGELINKDIR)\RegFreeCOM\</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>
@@ -233,12 +231,9 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <CustomBuildStep>
-      <Message>
-      </Message>
-      <Command>
-      </Command>
-      <Outputs>
-      </Outputs>
+      <Message>Installing WBFL for BridgeLink</Message>
+      <Command>$(WBFLDIR)\InstallWBFL.bat $(PlatformName) $(ConfigurationName) $(BRIDGELINKDIR)\RegFreeCOM</Command>
+      <Outputs>$(BRIDGELINKDIR)\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll</Outputs>
       <Inputs>
       </Inputs>
     </CustomBuildStep>
@@ -288,7 +283,8 @@
       <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
     </Manifest>
     <PreBuildEvent>
-      <Command>$(WBFLDIR)\InstallWBFL.bat $(Platform) $(Configuration) $(BRIDGELINKDIR)\RegFreeCOM\</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>
@@ -297,12 +293,9 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <CustomBuildStep>
-      <Message>
-      </Message>
-      <Command>
-      </Command>
-      <Outputs>
-      </Outputs>
+      <Message>Installing WBFL for BridgeLink</Message>
+      <Command>$(WBFLDIR)\InstallWBFL.bat $(PlatformName) $(ConfigurationName) $(BRIDGELINKDIR)\RegFreeCOM</Command>
+      <Outputs>$(BRIDGELINKDIR)\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll</Outputs>
       <Inputs>
       </Inputs>
     </CustomBuildStep>
@@ -355,19 +348,17 @@
       <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
     </Manifest>
     <PreBuildEvent>
-      <Command>$(WBFLDIR)\InstallWBFL.bat $(Platform) $(Configuration) $(BRIDGELINKDIR)\RegFreeCOM\</Command>
+      <Command>
+      </Command>
       <Message>
       </Message>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <CustomBuildStep>
-      <Message>
-      </Message>
-      <Command>
-      </Command>
-      <Outputs>
-      </Outputs>
+      <Message>Installing WBFL for BridgeLink</Message>
+      <Command>$(WBFLDIR)\InstallWBFL.bat $(PlatformName) $(ConfigurationName) $(BRIDGELINKDIR)\RegFreeCOM</Command>
+      <Outputs>$(BRIDGELINKDIR)\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll</Outputs>
       <Inputs>
       </Inputs>
     </CustomBuildStep>
@@ -420,19 +411,17 @@
       <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
     </Manifest>
     <PreBuildEvent>
-      <Command>$(WBFLDIR)\InstallWBFL.bat $(Platform) $(Configuration) $(BRIDGELINKDIR)\RegFreeCOM\</Command>
+      <Command>
+      </Command>
       <Message>
       </Message>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
     <CustomBuildStep>
-      <Message>
-      </Message>
-      <Command>
-      </Command>
-      <Outputs>
-      </Outputs>
+      <Message>Installing WBFL for BridgeLink</Message>
+      <Command>$(WBFLDIR)\InstallWBFL.bat $(PlatformName) $(ConfigurationName) $(BRIDGELINKDIR)\RegFreeCOM</Command>
+      <Outputs>$(BRIDGELINKDIR)\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll</Outputs>
       <Inputs>
       </Inputs>
     </CustomBuildStep>
@@ -483,19 +472,17 @@
       <AdditionalManifestFiles>$(WBFLDIR)\RegFreeCOM\WBFL.$(PlatformName).$(ConfigurationName).manifest</AdditionalManifestFiles>
     </Manifest>
     <PreBuildEvent>
-      <Command>$(WBFLDIR)\InstallWBFL.bat $(Platform) $(Configuration) $(BRIDGELINKDIR)\RegFreeCOM\</Command>
+      <Command>
+      </Command>
       <Message>
       </Message>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
     <CustomBuildStep>
-      <Message>
-      </Message>
-      <Command>
-      </Command>
-      <Outputs>
-      </Outputs>
+      <Message>Installing WBFL for BridgeLink</Message>
+      <Command>$(WBFLDIR)\InstallWBFL.bat $(PlatformName) $(ConfigurationName) $(BRIDGELINKDIR)\RegFreeCOM</Command>
+      <Outputs>$(BRIDGELINKDIR)\RegFreeCOM\$(PlatformName)\$(ConfigurationName)\WBFL*.dll</Outputs>
       <Inputs>
       </Inputs>
     </CustomBuildStep>
@@ -549,7 +536,8 @@
       <AdditionalManifestFiles>$(WBFLDIR)\RegFreeCOM\WBFL.$(PlatformName).$(ConfigurationName).manifest</AdditionalManifestFiles>
     </Manifest>
     <PreBuildEvent>
-      <Command>$(WBFLDIR)\InstallWBFL.bat $(Platform) $(Configuration) $(BRIDGELINKDIR)\RegFreeCOM\</Command>
+      <Command>
+      </Command>
       <Message>
       </Message>
     </PreBuildEvent>
