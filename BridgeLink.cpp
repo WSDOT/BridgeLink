@@ -21,7 +21,7 @@
 ///////////////////////////////////////////////////////////////////////
 
 // BridgeLink.cpp : Defines the class behaviors for the application.
-//
+// this is a test
 
 #include "stdafx.h"
 
