@@ -6,7 +6,7 @@
     <ProductVersion>3.7</ProductVersion>
     <ProjectGuid>{ea7b5405-6d7d-42ee-aa76-fbdc078d050a}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>BridgeLink_4.0.1_$(Platform)_$(Configuration)</OutputName>
+    <OutputName>BridgeLink_4.0.2_%24%28Platform%29_%24%28Configuration%29</OutputName>
     <OutputType>Package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
