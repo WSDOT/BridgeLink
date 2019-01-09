@@ -7,7 +7,6 @@
     <SourcePath>$(SourcePath)</SourcePath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <IncludePath>$(BRIDGELINKDIR);$(BRIDGELINKDIR)\Include;$(BOOSTDIR);$(IncludePath)</IncludePath>
-    <LibraryPath>$(BOOSTDIR)\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
