@@ -70,7 +70,6 @@
          
          <!-- Components for the required dependicies -->
          <ComponentRef Id="WBFLComponents"/> <!-- WBFL and dependent components -->
-         <ComponentRef Id="OpenBridgeML"/>
          <ComponentRef Id="Xalan"/>
          <ComponentRef Id="XalanMessages"/>
          <ComponentRef Id="Xerces"/>
