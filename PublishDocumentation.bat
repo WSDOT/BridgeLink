@@ -13,6 +13,7 @@ SET PGSUPER_VERSION=%BRIDGELINK_VERSION%
 SET PGSPLICE_VERSION=%BRIDGELINK_VERSION%
 SET PGSLIBRARY_VERISON=%BRIDGELINK_VERSION%
 SET XBRATE_VERSION=%BRIDGELINK_VERSION%
+SET BARLIST_VERSION=5.1
 
 REM - Build the documentation sets
 call \ARP\BridgeLink\Documentation\BuildDocumentation.bat          %BRIDGELINK_VERSION%
@@ -21,6 +22,7 @@ call \ARP\PGSuper\Documentation\BuildDocumentation.bat             %PGSUPER_VERS
 call \ARP\PGSuper\TxDOTAgent\Documentation\BuildDocumentation.bat  %PGSUPER_VERSION%
 call \ARP\PGSuper\KDOTExport\Documentation\BuildDocumentation.bat  %PGSUPER_VERSION%
 call \ARP\XBeamRate\Documentation\BuildDocumentation.bat           %XBRATE_VERSION%
+call \ARP\Barlist\Documentation\BuildDocumentation.bat           %BARLIST_VERSION%
 
 cd \ARP\BridgeLink
 
@@ -67,6 +69,11 @@ rmdir /S /Q %DOC_TARGET%\XBRate\%XBRATE_VERSION%\
 mkdir %DOC_TARGET%\XBRate\%XBRATE_VERSION%\
 copy \ARP\XBeamRate\Documentation\XBRate.dm %DOC_TARGET%\XBRate\%XBRATE_VERSION%\XBRate.dm.html
 copy \ARP\XBeamRate\Documentation\doc\html\* %DOC_TARGET%\XBRate\%XBRATE_VERSION%\
+
+rmdir /S /Q %DOC_TARGET%\Barlist\%BARLIST_VERSION%\
+mkdir %DOC_TARGET%\Barlist\%BARLIST_VERSION%\
+copy \ARP\Barlist\Documentation\Barlist.dm %DOC_TARGET%\Barlist\%BARLIST_VERSION%\Barlist.dm.html
+copy \ARP\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\%BARLIST_VERSION%\
 
 :END
 

@@ -6,7 +6,7 @@
     <ProductVersion>3.7</ProductVersion>
     <ProjectGuid>{ea7b5405-6d7d-42ee-aa76-fbdc078d050a}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>BridgeLink_4.1.0_%24%28Platform%29_%24%28Configuration%29</OutputName>
+    <OutputName>BridgeLink_4.1.0_$(Platform)_$(Configuration)</OutputName>
     <OutputType>Package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
@@ -52,6 +52,7 @@
     <Compile Include="Apache.wxs">
       <Link>Apache.wxs</Link>
     </Compile>
+    <Compile Include="BarlistDLL.wxs" />
     <Compile Include="BEToolbox.wxs" />
     <Compile Include="BEToolboxFragments.wxs" />
     <Compile Include="BridgeLinkComponents.wxs" />
@@ -86,6 +87,7 @@
     </Content>
     <Content Include="Include\Variables.wxi" />
     <Content Include="License.rtf" />
+    <Content Include="Scripts\BuildBarlistFragments.js" />
     <Content Include="Scripts\BuildBEToolboxFragments.js" />
     <Content Include="Scripts\BuildPGSuperFragments.js" />
     <Content Include="Scripts\BuildBridgeLinkFragments.js" />
@@ -114,7 +116,8 @@
     <PreBuildEvent>cscript  $(ProjectDir)\Scripts\BuildBridgeLinkFragments.js //NoLogo &gt; $(ProjectDir)BridgeLinkFragments.wxs
 cscript  $(ProjectDir)\Scripts\BuildBEToolboxFragments.js //NoLogo &gt; $(ProjectDir)BEToolboxFragments.wxs
 cscript  $(ProjectDir)\Scripts\BuildPGSuperFragments.js //NoLogo &gt; $(ProjectDir)PGSuperFragments.wxs
-cscript  $(ProjectDir)\Scripts\BuildXBeamRateFragments.js //NoLogo &gt; $(ProjectDir)XBeamRateFragments.wxs</PreBuildEvent>
+cscript  $(ProjectDir)\Scripts\BuildXBeamRateFragments.js //NoLogo &gt; $(ProjectDir)XBeamRateFragments.wxs
+cscript  $(ProjectDir)\Scripts\BuildBarlistFragments.js //NoLogo &gt; $(ProjectDir)BarlistFragments.wxs</PreBuildEvent>
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.

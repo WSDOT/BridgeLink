@@ -79,6 +79,7 @@
          <FeatureRef Id="PGSuper" /> <!-- PGSuper and PGSplice -->
          <FeatureRef Id="BEToolbox" />
          <FeatureRef Id="XBeamRate" />
+       <FeatureRef Id="Barlist"/>
 
       </Feature>
 
