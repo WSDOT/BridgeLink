@@ -3,8 +3,9 @@
 
   <!-- Include project wide variables -->
   <?include Variables.wxi?>
-  
-   <Fragment>
+  <?include BarlistCATID.wxi?>
+
+  <Fragment>
       
       <!-- Start menu item for help file -->
       <DirectoryRef Id="BridgeLinkStartMenuFolder">
@@ -370,7 +371,6 @@
            <RegistryValue Root="HKCR" Key="CLSID\$(var.Type99CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
            
            <!-- Barlist Add in Component Category -->
-           <?define BarlistAddinCATID={88FF9D4E-1F47-11d3-8941-006097C68A9C}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="Component Categories\$(var.BarlistAddinCATID)"/>
            <RegistryValue Root="HKCR" Key="Component Categories\$(var.BarlistAddinCATID)" Name="800" Value="Barlist Add-ins" Type="string" />
 
