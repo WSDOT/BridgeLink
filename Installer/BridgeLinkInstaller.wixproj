@@ -53,6 +53,7 @@
       <Link>Apache.wxs</Link>
     </Compile>
     <Compile Include="BarlistDLL.wxs" />
+    <Compile Include="BarlistFragments.wxs" />
     <Compile Include="BEToolbox.wxs" />
     <Compile Include="BEToolboxFragments.wxs" />
     <Compile Include="BridgeLinkComponents.wxs" />
@@ -78,6 +79,7 @@
   <ItemGroup>
     <Content Include="DialogBanner.bmp" />
     <Content Include="DialogBitmap.bmp" />
+    <Content Include="Include\BarlistCATID.wxi" />
     <Content Include="Include\BEToolboxCATID.wxi" />
     <Content Include="Include\CustomizationVariables.wxi" />
     <Content Include="Include\PGSpliceCATID.wxi" />
