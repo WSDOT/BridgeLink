@@ -17,6 +17,11 @@ REM - Update XBeam Rate Files
 cd \ARP\XBeamRate
 call UpdateBinFiles.bat
 
+
+REM - Update Barlist Files
+cd \ARP\Barlist
+call UpdateBinFiles.bat
+
 REM - Update Bridge Link Files
 
 cd \ARP\BridgeLink
