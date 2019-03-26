@@ -2,22 +2,23 @@
 <Include>
   <?include CustomizationVariables.wxi?>
   
-   <?define BridgeLinkReleaseVersion = 4.0.2?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
-   <?define BridgeLinkVersion   = 4.0.11.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
-   <?define BEToolboxVersion    = 4.0.11.0?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
-   <?define OpenBridgeMLVersion = 0.3.1.0?>
-   <?define PGSuperVersion      = 4.0.11.0?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 4.2.9.1?>
-   <?define XBeamRateVersion    = 4.0.11.0?> <!-- also change this version number in the BuildXBRateFragments.js file -->
+   <?define BridgeLinkReleaseVersion = 4.1.0?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
+   <?define BridgeLinkVersion   = 4.1.0.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BEToolboxVersion    = 4.1.0.0?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
+   <?define PGSuperVersion      = 4.1.0.0?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = 4.4.0.0?>
+   <?define XBeamRateVersion    = 4.1.0.0?> <!-- also change this version number in the BuildXBRateFragments.js file -->
+   <?define BarlistVersion   = 5.1.0.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
 
-  <?define BridgeLinkDocumentationVersion=4.0?>
-  <?define BEToolboxDocumentationVersion=4.0?>
-  <?define PGSuperDocumentationVersion=4.0?>
-  <?define PGSpliceDocumentationVersion=4.0?>
-  <?define PGSLibraryDocumentationVersion=4.0?>
-  <?define TOGADocumentationVersion=4.0?>
-  <?define KDOTDocumentationVersion=4.0?>
-  <?define XBRateDocumentationVersion=4.0?>
+  <?define BridgeLinkDocumentationVersion=4.1?>
+  <?define BEToolboxDocumentationVersion=4.1?>
+  <?define PGSuperDocumentationVersion=4.1?>
+  <?define PGSpliceDocumentationVersion=4.1?>
+  <?define PGSLibraryDocumentationVersion=4.1?>
+  <?define TOGADocumentationVersion=4.1?>
+  <?define KDOTDocumentationVersion=4.1?>
+  <?define XBRateDocumentationVersion=4.1?>
+<?define BarlistDocumentationVersion=5.1?>
 
   <?define ExeName=BridgeLink?>
 
@@ -30,6 +31,7 @@
   <?define TOGADocumentationTarget=TOGA?>
   <?define KDOTDocumentationTarget=KDOT?>
   <?define XBRateDocumentationTarget=XBRate?>
+<?define BarlistDocumentationTarget=Barlist?>
 
   <?define BridgeLinkDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.BridgeLinkDocumentationTarget)\$(var.BridgeLinkDocumentationVersion)?>
   <?define BEToolboxDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.BEToolboxDocumentationTarget)\$(var.BEToolboxDocumentationVersion)?>
@@ -39,6 +41,7 @@
   <?define TOGADocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.TOGADocumentationTarget)\$(var.TOGADocumentationVersion)?>
   <?define KDOTDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.KDOTDocumentationTarget)\$(var.KDOTDocumentationVersion)?>
   <?define XBRateDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.XBRateDocumentationTarget)\$(var.XBRateDocumentationVersion)?>
+  <?define BarlistDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.BarlistDocumentationTarget)\$(var.BarlistDocumentationVersion)?>
 
   <?if $(var.Platform) = "x64"?>
       <?define ProgramFilesDirectory = ProgramFiles64Folder?>
@@ -64,6 +67,7 @@
   <?define KDOTFeatureLevel=101?>
   <?define BEToolboxFeatureLevel=1?>
   <?define XBRateFeatureLevel=1?>
+  <?define BarlistFeatureLevel=101?>
   <?else?>
   <?ifndef StartMenuFolderName?>
   <?define StartMenuFolderName=Engineering Applications?>
@@ -74,6 +78,7 @@
   <?define KDOTFeatureLevel=1?>
   <?define BEToolboxFeatureLevel=1?>
   <?define XBRateFeatureLevel=1?>
+  <?define BarlistFeatureLevel=1?>
   <?endif?>
 
   <?define BridgeLinkAppPluginCATID={1D069A0E-7436-4275-A129-C84ADC22DE68}?>
@@ -83,18 +88,18 @@
    <?define WBFLSourceRoot=\ARP_RELEASE\WBFL\$(var.WBFLVersion)\bin\?>
    <?define BEToolboxSourceRoot=\ARP_RELEASE\BEToolbox\$(var.BEToolboxVersion)\bin\?>
    <?define PGSuperSourceRoot=\ARP_RELEASE\PGSuper\$(var.PGSuperVersion)\bin\?>
-   <?define OpenBridgeMLSourceRoot=\ARP_RELEASE\OpenBridgeML\$(var.OpenBridgeMLVersion)\bin\?>
-  <?define XBeamRateSourceRoot=\ARP_RELEASE\XBeamRate\$(var.XBeamRateVersion)\bin\?>
+    <?define XBeamRateSourceRoot=\ARP_RELEASE\XBeamRate\$(var.XBeamRateVersion)\bin\?>
+   <?define BarlistSourceRoot=\ARP_RELEASE\Barlist\$(var.BarlistVersion)\bin\?>
   
 
 <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
    
    <?if $(var.Platform)="x64"?>
-      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X64-VC100\bin\?>
-      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X64-VC100\bin\?>
+      <?define XalanSourceRoot=\ARP\BEToolbox\BEToolboxXML\Apache\XALANCPKG-11-31-X64-VC100\bin\?>
+      <?define XercesSourceRoot=\ARP\WBFL\Apache\XERCESCPKG-31-X64-VC100\bin\?>
    <?else?>
-      <?define XalanSourceRoot=\Apache\xalan-builds\XALANCPKG-11-31-X86-VC100\bin\?>
-      <?define XercesSourceRoot=\Apache\xalan-builds\XERCESCPKG-31-X86-VC100\bin\?>
+      <?define XalanSourceRoot=\ARP\BEToolbox\BEToolboxXML\Apache\XALANCPKG-11-31-X86-VC100\bin\?>
+      <?define XercesSourceRoot=\ARP\WBFL\Apache\XERCESCPKG-31-X86-VC100\bin\?>
    <?endif?>
 
 </Include>

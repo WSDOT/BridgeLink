@@ -1,9 +1,5 @@
 REM - Script to prepare for Release
 
-REM - Update OpenBridgeML Files
-cd \ARP\OpenBridgeML
-call UpdateBinFiles.bat
-
 REM - Update WBFL Files
 cd \ARP\WBFL
 call UpdateBinFiles.bat
@@ -19,6 +15,11 @@ call UpdateBinFiles.bat
 
 REM - Update XBeam Rate Files
 cd \ARP\XBeamRate
+call UpdateBinFiles.bat
+
+
+REM - Update Barlist Files
+cd \ARP\Barlist
 call UpdateBinFiles.bat
 
 REM - Update Bridge Link Files

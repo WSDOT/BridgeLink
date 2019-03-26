@@ -6,12 +6,11 @@
   <PropertyGroup>
     <SourcePath>$(SourcePath)</SourcePath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(BOOSTDIR);$(IncludePath)</IncludePath>
-    <LibraryPath>$(BOOSTDIR)\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(BRIDGELINKDIR);$(BRIDGELINKDIR)\Include;$(BOOSTDIR);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalLibraryDirectories>\ARP\BridgeLink\RegFreeCOM\$(PlatformName)\$(ConfigurationName)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BRIDGELINKDIR)\RegFreeCOM\$(PlatformName)\$(ConfigurationName)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

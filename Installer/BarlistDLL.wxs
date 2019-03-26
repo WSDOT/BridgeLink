@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <!-- Include project wide variables -->
+  <?include Variables.wxi?>
+  <?include BarlistCATID.wxi?>
+
+  <Fragment>
+      
+      <!-- Start menu item for help file -->
+      <DirectoryRef Id="BridgeLinkStartMenuFolder">
+         <Component Id="BarlistDllShortcuts" Guid="{DC098F33-D528-4CE9-A778-4840D4B04A90}" Win64="$(var.IsWin64)">
+
+           <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
+             <RegistryValue Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes"/>
+           </RegistryKey>
+
+         </Component>
+      </DirectoryRef>
+
+      <!-- Barlist files -->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.BarlistSourceRoot)\$(var.PlatformFolder)" >
+         <Component Id ="BarlistDllComponents"
+                    Guid="{90B3F72F-E68E-4880-B746-C1487CB38189}"
+                    Win64="$(var.IsWin64)">
+
+            <File Id="Barlist.dll"    Name="Barlist.dll" KeyPath ="yes"/>
+           
+            <!-- Barlist file associations -->
+           <ProgId Id="Barlist.Document" Icon="Barlist.dll" IconIndex="0" />
+           <ProgId Id="BarlistCollaboration.Document" Icon="Barlist.dll" IconIndex="7" />
+
+           <!-- Barlist registry entries-->
+            
+            <!-- Barlist - BridgeLink Application Plugin -->
+            <?define BarlistAppPluginCLSID={CFD04C61-6C91-42ED-8CAB-33DB07D08069}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BarlistAppPluginCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BarlistAppPluginCLSID)"
+                           Value="Barlist"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BarlistAppPluginCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]Barlist.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BarlistAppPluginCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
+                           Value=""
+                           Type="string" />
+            
+            <!-- Barlist Component Information Object (for Barlist About dialog) -->
+            <?define BarlistComponentInfoCLSID={C357C429-FEB4-4CB9-87A9-A07DE7EE3D3F}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BarlistComponentInfoCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BarlistComponentInfoCLSID)"
+                           Value="Barlist Component Information"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BarlistComponentInfoCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]Barlist.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BarlistComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
+                           Value=""
+                           Type="string" />
+           
+           <!-- Bars.dll -->
+           <?define BarInfoMgrCLSID={F1F5C068-12AA-11D3-8932-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.BarInfoMgrCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarInfoMgrCLSID)"
+                          Value="Bar Information Manager"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarInfoMgrCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]Bars.dll"
+                          Type="string" />
+
+           <?define BarlistCLSID={BFC2D3AA-143B-11D3-8934-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.BarlistCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarlistCLSID)"
+                          Value="Barlist"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarlistCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]Bars.dll"
+                          Type="string" />
+
+
+           <?define BarlistAddinMgrCLSID={12FCFC9B-1F41-11D3-8941-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.BarlistAddinMgrCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarlistAddinMgrCLSID)"
+                          Value="Barlist Addin Manager"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarlistAddinMgrCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]Bars.dll"
+                          Type="string" />
+
+
+           <?define BarRecordCLSID={BFC2D3A8-143B-11D3-8934-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.BarRecordCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarRecordCLSID)"
+                          Value="Bar Record"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarRecordCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]Bars.dll"
+                          Type="string" />
+
+           <?define BarRecordCollectionCLSID={BFC2D3B0-143B-11D3-8934-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes"
+                        ForceDeleteOnUninstall="yes"
+                        Root="HKCR"
+                        Key ="CLSID\$(var.BarRecordCollectionCLSID)"/>
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarRecordCollectionCLSID)"
+                          Value="Bar Records"
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.BarRecordCollectionCLSID)\InprocServer32"
+                          Value="[APPLICATIONFOLDER]Bars.dll"
+                          Type="string" />
+
+           <?define Type50CLSID={2597E762-150F-11d3-8937-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type50CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type50CLSID)"  Value="Bend Type 50" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type50CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+
+           <?define Type51CLSID={0B21EEEE-1539-11d3-8937-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type51CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type51CLSID)"  Value="Bend Type 51" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type51CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+
+           <?define Type52CLSID={F02C1198-1F86-11d3-8942-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type52CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type52CLSID)"  Value="Bend Type 52" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type52CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+
+           <?define Type53CLSID={735049B2-1F88-11d3-8942-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type53CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type53CLSID)"  Value="Bend Type 53" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type53CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type54CLSID={E5303A00-1F89-11d3-8942-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type54CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type54CLSID)"  Value="Bend Type 54" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type54CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type55CLSID={3BB5B3A0-2007-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type55CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type55CLSID)"  Value="Bend Type 55" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type55CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type56CLSID={994EC4D4-2007-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type56CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type56CLSID)"  Value="Bend Type 56" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type56CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type57CLSID={0F985006-2008-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type57CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type57CLSID)"  Value="Bend Type 57" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type57CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type58CLSID={ADCEDC5E-2008-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type58CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type58CLSID)"  Value="Bend Type 58" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type58CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type59CLSID={C82A1B4A-2008-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type59CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type59CLSID)"  Value="Bend Type 59" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type59CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type60CLSID={9ECEEF80-200A-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type60CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type60CLSID)"  Value="Bend Type 60" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type60CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type61CLSID={56F9528C-200E-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type61CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type61CLSID)"  Value="Bend Type 61" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type61CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type62CLSID={16599174-2013-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type62CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type62CLSID)"  Value="Bend Type 62" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type62CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type63CLSID={05A27426-2014-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type63CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type63CLSID)"  Value="Bend Type 63" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type63CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type66CLSID={11E8EBE8-2019-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type66CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type66CLSID)"  Value="Bend Type 66" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type66CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type67CLSID={8920C5DC-2014-11d3-8944-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type67CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type67CLSID)"  Value="Bend Type 67" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type67CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type68CLSID={A6226848-2267-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type68CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type68CLSID)"  Value="Bend Type 68" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type68CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type69CLSID={46B52712-226A-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type69CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type69CLSID)"  Value="Bend Type 69" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type69CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type70CLSID={97275C84-226E-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type70CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type70CLSID)"  Value="Bend Type 70" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type70CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type71CLSID={CB9B5150-2278-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type71CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type71CLSID)"  Value="Bend Type 71" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type71CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type72CLSID={37C70690-2273-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type72CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type72CLSID)"  Value="Bend Type 72" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type72CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type73CLSID={4264FF58-2273-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type73CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type73CLSID)"  Value="Bend Type 73" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type73CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type74CLSID={66B70B7C-227C-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type74CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type74CLSID)"  Value="Bend Type 74" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type74CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type75CLSID={0667F52E-2272-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type75CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type75CLSID)"  Value="Bend Type 75" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type75CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type76CLSID={8832784E-2273-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type76CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type76CLSID)"  Value="Bend Type 76" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type76CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type77CLSID={A2010C7C-2273-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type77CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type77CLSID)"  Value="Bend Type 77" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type77CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type78CLSID={A2010C7D-2273-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type78CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type78CLSID)"  Value="Bend Type 78" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type78CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type79CLSID={250EC1C4-2286-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type79CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type79CLSID)"  Value="Bend Type 79" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type79CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type80CLSID={F8ED1936-2287-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type80CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type80CLSID)"  Value="Bend Type 80" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type80CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type81CLSID={4D3D0582-2283-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type81CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type81CLSID)"  Value="Bend Type 81" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type81CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type82CLSID={724228F8-2283-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type82CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type82CLSID)"  Value="Bend Type 82" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type82CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type83CLSID={E7C3523C-227E-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type83CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type83CLSID)"  Value="Bend Type 83" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type83CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type84CLSID={F2B8BB52-2286-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type84CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type84CLSID)"  Value="Bend Type 84" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type84CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type89CLSID={AD8A63C4-2280-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type89CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type89CLSID)"  Value="Bend Type 89" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type89CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type90CLSID={007D2B14-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type90CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type90CLSID)"  Value="Bend Type 90" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type90CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type91CLSID={21647F26-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type91CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type91CLSID)"  Value="Bend Type 91" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type91CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type92CLSID={3ECDC162-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type92CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type92CLSID)"  Value="Bend Type 92" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type92CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type93CLSID={5D9A4200-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type93CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type93CLSID)"  Value="Bend Type 93" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type93CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type94CLSID={78848E04-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type94CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type94CLSID)"  Value="Bend Type 94" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type94CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type95CLSID={99AC4194-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type95CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type95CLSID)"  Value="Bend Type 95" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type95CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type96CLSID={B60CDECA-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type96CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type96CLSID)"  Value="Bend Type 96" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type96CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type97CLSID={CFFCD3E4-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type97CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type97CLSID)"  Value="Bend Type 97" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type97CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type98CLSID={ED9362CE-228D-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type98CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type98CLSID)"  Value="Bend Type 98" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type98CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+
+           <?define Type99CLSID={0A6670E4-228E-11d3-8945-006097C68A9C}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type99CLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type99CLSID)"  Value="Bend Type 99" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type99CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+           
+           <!-- Barlist Add in Component Category -->
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="Component Categories\$(var.BarlistAddinCATID)"/>
+           <RegistryValue Root="HKCR" Key="Component Categories\$(var.BarlistAddinCATID)" Name="800" Value="Barlist Add-ins" Type="string" />
+
+           <!-- BXF Add in -->
+           <?define BXFAddinCLSID={B026E9AF-CCE7-41D4-AFBF-E2DEF7528EDA}?>
+           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.BXFAddinCLSID)"/>
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)"  Value="Barlist Exchange File" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)\InprocServer32" Value="[APPLICATIONFOLDER]BXF.dll" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)\Implemented Categories\$(var.BarlistAddinCATID)" Value="" Type="string" />
+
+         </Component>
+      </DirectoryRef >
+
+     <DirectoryRef Id="APPLICATIONFOLDER"
+                   FileSource ="$(var.BarlistSourceRoot)" >
+       <Component Id="BarlistXSD" Guid="{8D0F60DE-1FCA-41CD-AC1D-869C00F1AA21}" Win64="$(var.IsWin64)">
+         <File Id="Barlist.xsd"       Name="Barlist.xsd"/>
+       </Component>
+     </DirectoryRef >
+     
+     
+     <!-- Barlist DLLs -->
+     <DirectoryRef Id="APPLICATIONFOLDER"
+                   FileSource ="$(var.BarlistSourceRoot)\$(var.PlatformFolder)" >
+       <Component Id="BarlistDLLs" Guid="{CADE0630-B3A2-46E7-99E6-45311D0B5490}" Win64="$(var.IsWin64)">
+         <File Id="Bars.dll"    Name="Bars.dll" KeyPath="yes"/>
+         <File Id="BXF.dll"    Name="BXF.dll" />
+       </Component>
+     </DirectoryRef >
+
+
+      <Feature Id="Barlist"
+               Absent="allow"
+               ConfigurableDirectory="APPLICATIONFOLDER"
+               Description="Barlist"
+               Display="expand"
+               Title="Barlist (Optional)"
+               Level="$(var.BarlistFeatureLevel)">
+         <ComponentRef Id="BarlistDllComponents" Primary="yes" />
+         <ComponentRef Id="BarlistDllShortcuts"/>
+         <ComponentRef Id="BarlistDLLs"/>
+        <ComponentRef Id="BarlistXSD"/>
+      </Feature>
+   </Fragment>
+
+</Wix>
+
+
