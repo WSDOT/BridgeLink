@@ -177,6 +177,27 @@
              </Extension>
            </ProgId>
 
+             <!-- Barlist file associations -->
+             <ProgId Id="Barlist.Document">
+               <Extension Id="bar"
+                          ContentType="application/bar">
+                 <Verb Id="Open"
+                       Command="&amp;Open with BridgeLink:Barlist"
+                       TargetFile="BridgeLink.exe"
+                       Argument='"%1"' />
+               </Extension>
+             </ProgId>
+
+             <ProgId Id="BarlistCollaboration.Document">
+               <Extension Id="cbm"
+                          ContentType="application/cbm">
+                 <Verb Id="Open"
+                       Command="&amp;Open with BridgeLink:Barlist"
+                       TargetFile="BridgeLink.exe"
+                       Argument='"%1"' />
+               </Extension>
+             </ProgId>
+
          </Component>
       </DirectoryRef >
 
