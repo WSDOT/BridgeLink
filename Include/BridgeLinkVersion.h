@@ -31,7 +31,7 @@
 // hot fixes - sometimes there are bugs that need to be fixed and deployed now. That is a hot fix.
 
 #ifndef _BRIDGELINK_VERSION
-#define _BRIDGELINK_VERSION 410 // version 4.1.0
+#define _BRIDGELINK_VERSION 411 // version 4.1.1
 #endif
 
 //#define _BETA_VERSION          // When defined, building beta versions
