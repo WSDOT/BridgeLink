@@ -23,6 +23,7 @@ call \ARP\PGSuper\TxDOTAgent\Documentation\BuildDocumentation.bat  %PGSUPER_DOCU
 call \ARP\PGSuper\KDOTExport\Documentation\BuildDocumentation.bat  %PGSUPER_DOCUMENTATION_VERSION%
 call \ARP\XBeamRate\Documentation\BuildDocumentation.bat           %XBRATE_DOCUMENTATION_VERSION%
 call \ARP\Barlist\Documentation\BuildDocumentation.bat           %BARLIST_DOCUMENTATION_VERSION%
+call \ARP\Barlist\Barlist\Documentation\BuildDocumentation.bat           %BARLIST_DOCUMENTATION_VERSION%
 
 cd \ARP\BridgeLink
 
@@ -74,6 +75,12 @@ rmdir /S /Q %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 copy \ARP\Barlist\Documentation\Barlist.dm %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\Barlist.dm.html
 copy \ARP\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
+
+
+rmdir /S /Q %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
+mkdir %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
+copy \ARP\Barlist\Barlist\Documentation\Barlist.dm %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\Barlist.dm.html
+copy \ARP\Barlist\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 
 :END
 
