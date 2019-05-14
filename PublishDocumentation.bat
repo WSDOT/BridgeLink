@@ -79,7 +79,7 @@ copy \ARP\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\%BARLIST_DOCUMEN
 
 rmdir /S /Q %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
-copy \ARP\Barlist\Barlist\Documentation\Barlist.dm %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\Barlist.dm.html
+copy \ARP\Barlist\Barlist\Documentation\Barlist.dm %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\BarlistDocs.dm.html
 copy \ARP\Barlist\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 
 :END
