@@ -10,7 +10,7 @@ This repository holds the source code for the BridgeLink application. If you are
 This project is jointly developed by the Washington State and Texas Departments of Transportation
 
 * **Richard Brice, PE** - [WSDOT](https://github.com/RickBrice)
-* **Richard Pickings, PE** - [BridgeSight Inc](http://www.bridgesight.com)
+* **Richard Pickings, PE** - [BridgeSight Inc](http://www.bridgesight.com) for TxDOT
 
 ## License
 
