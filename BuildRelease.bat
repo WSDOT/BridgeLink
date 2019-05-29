@@ -1,12 +1,12 @@
 REM - Script to prepare for Release
 
-SET VERSION=4.1.2.0
+SET VERSION=4.1.3.0
 
 REM - after Barlist normalizes with the rest of the system, eliminate this and just use VERSION
-SET BARLIST_VERSION=5.1.2.0
+SET BARLIST_VERSION=5.1.3.0
 
 REM - after WBFL normalizes with the rest of the system, eliminate this and just use VERSION
-SET WBFL_VERSION=4.4.2.0
+SET WBFL_VERSION=4.4.3.0
 
 REM - Step 1. Update the documentation
 cd \ARP\BridgeLink
