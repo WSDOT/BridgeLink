@@ -14,18 +14,22 @@ The distribution provided by WSDOT has several standard BridgeLink Applications.
 
 ## Standard BridgeLink Applications
 The standard BridgeLink Applications provided by WSDOT are:
-* [BEToolbox](../../BEToolbox/4.0/index.html)
-* [PGSuper](../../PGSuper/4.0/index.html) with WSDOT, TxDOT, and [KDOT](../../KDOT/3.0/index.html) Extensions
-* [PGSplice](../../PGSplice/4.0/index.html) with WSDOT Extensions
-* [PGS Library Editor](../../PGSLibrary/4.0/index.html)
-* [TOGA](../../TOGA/4.0/index.html)
-* [XBRate](../../XBRate/4.0/index.html)
+* [Barlist](../../Barlist/Barlist/5.1/index.html)
+* [BEToolbox](../../BEToolbox/4.1/index.html)
+* [PGSuper](../../PGSuper/4.1/index.html) with WSDOT, TxDOT, and [KDOT](../../KDOT/3.0/index.html) Extensions
+* [PGSplice](../../PGSplice/4.1/index.html) with WSDOT Extensions
+* [PGS Library Editor](../../PGSLibrary/4.1/index.html)
+* [TOGA](../../TOGA/4.1/index.html)
+* [XBRate](../../XBRate/4.1/index.html)
 
 These applications are briefly described in the sections that follow. You can get detailed information about each application from its manual.
 
 > Think of BridgeLink like you think of Microsoft Office. It is a suite of applications. Think of the various BridgeLink Applications like Microsoft Word, Excel, and PowerPoint. They are applications that belong to the suite.
 
-## [BEToolbox](../../BEToolbox/4.0/)
+## [Barlist](../../Barlist/Barlist/5.1/)
+The Barlist application computes reinforcing steel quantity estimates. Barlist features an Explorer-style interface for managing reinforcement groups and bar records, an interactive bend guide for selecting bend diagraphs, and support for third party add-in components.
+
+## [BEToolbox](../../BEToolbox/4.1/)
 
 The Bridge Engineers Toolbox (BEToolbox) application is a collection of useful bridge engineering utility programs. These programs have their origins in the earliest days of computer applications at the WSDOT Bridge Design Office. These applications have endured through decades of change in computing and bridge engineer technology because of their simplicity and usefulness. 
 
@@ -37,7 +41,7 @@ GenComp | GenComp computes the geometric section properties of a generalized com
 GirComp | GirComp computes the geometric section properties of a built-up or rolled steel section with a composite concrete slab.
 UltCol  | UltCol computes axial/bending interaction for a circular reinforced concrete column.
 
-## [PGSuper](../../PGSuper/4.0/)
+## [PGSuper](../../PGSuper/4.1/)
 PGSuper is a BridgeLink Application for design, analysis, and load rating of precast-prestressed girder bridges in accordance with AASHTO LRFD Bridge Design Specifications and AASHTO Manual for Bridge Evaluation. PGSuper can model a wide variety of bridge configurations including I-beams, U-beams (tub girders), voided slabs, box beams, double tees, and deck bulb tee for simple span and multi-span continuous structures.
 
 Features | Description
@@ -54,19 +58,19 @@ Analysis Results | Analysis results are presented in graphical and textual forma
 Customization | PGSuper is unique in that it doesn't have any default values. New projects are created from templates and the templates establish default values. PGSuper also has a library system where frequently used sets of complex information are stored. The library system includes definitions of common materials, girders, barriers, vehicles, project criteria, and load rating criteria. Together, the templates and libraries form a PGSuper Configuration.  You can create your own PGSuper Configuration and tailor it to your specific needs. PGSuper can be customized by changing its configuration.
 Extensions | PGSuper can be extended with PGSuper Application Extensions. WSDOT and TxDOT have created extensions that provide agency-specific features. The WSDOT Girder Schedule report is one example. This report brings together all of the information a designer needs to include in the girder schedule for a WSDOT PS&E package.
 
-## [PGSplice](../../PGSplice/4.0/)
+## [PGSplice](../../PGSplice/4.1/)
 PGSplice is a BridgeLink Application for design, analysis, and load rating of spliced precast-prestressed girder bridges in accordance with AASHTO Specifications. PGSplice can model a wide variety of spliced girder bridge configurations including multi-span structures with cantilever pier segments, drop in field segments, erection towers, strong back hangers and multi-stage post-tensioning. PGSplice analyzes spliced girder structures with a non-linear time step method.
 
 PGSplice is very similar to PGSuper in terms of its bridge modeling, analysis capabilities, and analysis results features. The biggest difference is that PGSplice can model multi-span continuous post-tensioned spliced girders. Most of the items discussed above for PGSuper are applicable to PGSplice.
 
 Spliced girders are analyzed with a non-linear time step method. Time-dependent concrete properties, creep and shrinkage of concrete, and relaxation of prestressing steel can be modeled with the AASHTO LRFD, ACI209, and CEB-FIP Model Code.
 
-## [PGSuper/PGSplice Library Editor](../../PGSLibrary/4.0/)
+## [PGSuper/PGSplice Library Editor](../../PGSLibrary/4.1/)
 The PGSuper/PGSplice Library Editor is a utility application for creating and managing libraries for PGSuper and PGSplice. The library editor is used by application administrators to create shared libraries. These libraries, when combined with project templates, form PGSuper and PGSplice Configurations. These configurations can be placed on a local area network for sharing within an organization or in the cloud for sharing around the world.
 
-## [Texas Optional Girder Analysis (TOGA)](../../TOGA/4.0/)
+## [Texas Optional Girder Analysis (TOGA)](../../TOGA/4.1/)
 The TOGA application is a utility program used by TxDOT engineers to evaluate contractor submitted optional designs. TOGA is generally not used outside of TxDOT.
 
-## [XBRate](../../XBRate/4.0)
+## [XBRate](../../XBRate/4.1)
 The XBRate is a cross beam load rating application. XBRate is both an extension for PGSuper and PGSplice as well as a stand-alone BridgeLink application. XBRate adds a pier view, load rating reports, analysis results graphs, editing, and reinforced concrete cross beam load rating capabilities to PGSuper and PGSplice. Cross beam geometry, dead loads, and live loads are extracted from PGSuper/PGSplice. When used as a stand-alone BridgeLink application, XBRate models a generalized pier and cross beam. Superstructure reactions for dead and live loads are input from an external source and load rating computations are performed. Load rating calculations include Level 1, 2, and 3 ratings and load posting analysis as needed.
 
