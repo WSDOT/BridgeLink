@@ -41,6 +41,7 @@
      <DirectoryRef Id="APPLICATIONFOLDER"
                    FileSource="$(var.PGSuperSourceRoot)\Extensions\TxDOT\$(var.PlatformFolder)">
        <Directory Id="TogaTemplates" Name="TogaTemplates" />
+       <Directory Id="TxCADExport" Name="TxCADExport" />
        <Component Id="TxDOTAgent"
                   Guid="{D0E840E4-9139-4FD3-A162-AAEBAF31686E}"
                   Win64="$(var.IsWin64)">
@@ -166,6 +167,18 @@
          </RegistryKey>
        </Component>
      </DirectoryRef>
+     
+     <!-- TxCAD Export Excel Templates -->
+     <DirectoryRef Id ="TxCADExport" FileSource="$(var.PGSuperSourceRoot)\Extensions\TxDOT\TxCADExport">
+       <Component Id="TxCADExportTemplates" Guid="{3C52164C-CA38-4471-BE60-4F427501202E}" Win64="$(var.IsWin64)">
+         <File Id="CADExport_Harped.xltx" Name="CADExport-Harped.xltx"/>
+         <File Id="CADExport_Straight.xltx" Name="CADExport-Straight.xltx"/>
+
+           <RegistryKey Root="HKCU" Key="Software\Washington State Department of Transportation\BridgeLink\Settings"  ForceDeleteOnUninstall="yes">
+             <RegistryValue Name="TxCADExportTemplateFolder" Type="string" Value="[APPLICATIONFOLDER]TxCADExport\" KeyPath="yes"/>
+           </RegistryKey>
+       </Component>
+     </DirectoryRef>
 
      <!-- TxDOT Toga Templates -->
      <DirectoryRef Id="TogaTemplates"
@@ -238,6 +251,8 @@
        <ComponentRef Id="TOGADocs"/>
        <ComponentRef Id="TOGAShortcuts"/>
        <ComponentRef Id="TxDOTTogaTemplates"/>
+       <ComponentRef Id="TxCADExportTemplates"/>
+       <ComponentRef Id="TxCADExportDocs"/>
        <?ifdef _TXDOT?>
           <ComponentRef Id="TxDOTCustomization"/>
        <?endif?>

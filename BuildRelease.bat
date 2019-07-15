@@ -1,17 +1,17 @@
 REM - Script to prepare for Release
 
 
-SET VERSION=5.0.0.0
+SET VERSION=5.0.0.1
 
 REM - after Barlist normalizes with the rest of the system, eliminate this and just use VERSION
 
-SET BARLIST_VERSION=5.2.0.0
-
+SET BARLIST_VERSION=5.2.0.1
 
 
 REM - Step 1. Update the documentation
 
 cd \ARP\BridgeLink
+
 call PublishDocumentation.bat
 
 
@@ -19,6 +19,7 @@ call PublishDocumentation.bat
 REM - Step 2. Update the binary files
 
 cd \ARP\BridgeLink
+
 call UpdateBinFiles.bat
 
 
@@ -63,3 +64,5 @@ mkdir WBFL\%VERSION%\bin
 xcopy /E /I /Y  \ARP\WBFL\bin\* WBFL\%VERSION%\bin
 
 
+
+cd \ARP\BridgeLink

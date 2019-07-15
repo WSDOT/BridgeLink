@@ -5,6 +5,7 @@ var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\5.0");
 var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\5.0");
 var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\5.0");
 var TOGADocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\5.0");
+var TxCADExportDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\5.0");
 var KDOTDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\5.0");
 
 var fc = new Enumerator(ImagesFolder.Files);
@@ -182,6 +183,37 @@ WScript.Echo("</Component>");
 WScript.Echo("</DirectoryRef>");
 WScript.Echo("</Fragment>");
 
+
+/////////////////////////////////////////////////////
+WScript.Echo("<Fragment Id='TxCADExportDocs'>");
+
+WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.TxCADExportDocumentationSourceRoot)\">");
+WScript.Echo("<Directory Id=\"TxCADExportDocsRoot\" Name=\"$(var.TxCADExportDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"TxCADExportDocs\" Name=\"$(var.TxCADExportDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
+WScript.Echo("</DirectoryRef>");
+
+WScript.Echo("<DirectoryRef Id='TxCADExportDocs' FileSource=\"$(var.TxCADExportDocumentationSourceRoot)\">");
+WScript.Echo("<Component Id='TxCADExportDocs' Guid='{38B4998F-CD5C-407F-9E38-B4E65F7BF577}' Win64='$(var.IsWin64)'>");
+var fcDocs = new Enumerator(TxCADExportDocsFolder.Files);
+var i = 0;
+for (; !fcDocs.atEnd() ; fcDocs.moveNext()) {
+    var s = new String(fcDocs.item());
+    var lastIdx = s.lastIndexOf("\\");
+    var fileName = new String;
+    fileName = s.substring(lastIdx + 1);
+
+    var fileTag = new String;
+    if (fileName == "index.html")
+        fileTag = "<File Id='TxCADExportDocs" + (i++) + "' Name='" + fileName + "' KeyPath='yes' />";
+    else
+        fileTag = "<File Id='TxCADExportDocs" + (i++) + "' Name='" + fileName + "' />";
+
+    WScript.Echo(fileTag);
+}
+WScript.Echo("</Component>");
+WScript.Echo("</DirectoryRef>");
+WScript.Echo("</Fragment>");
 
 /////////////////////////////////////////////////////
 WScript.Echo("<Fragment Id='KDOTDocs'>");
