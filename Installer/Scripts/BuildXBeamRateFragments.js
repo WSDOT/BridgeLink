@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\4.1.5.0\\bin\\images");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\4.1.6.0\\bin\\images");
 var XBRateDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\XBRate\\4.1");
 var fc = new Enumerator(ImagesFolder.Files);
 
