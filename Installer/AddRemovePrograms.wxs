@@ -9,14 +9,14 @@
 
     <!-- Add and Remove Programs Entries -->
     <Property Id='ARPCOMMENTS'>BridgeLink is a member of the Alternate Route Project.</Property>
-    <Property Id='ARPCONTACT'>Post your questions to the support forums at http://www.pgsuper.com</Property>
+    <Property Id='ARPCONTACT'>Post your questions to the support forums at https://www.pgsuper.com</Property>
 
     <?ifdef _TXDOT?>
     <Property Id='ARPHELPLINK'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
     <Property Id='ARPURLINFOABOUT'>http://www.txdot.gov/inside-txdot/division/information-technology/engineering-software.html</Property>
     <?else?>
-    <Property Id='ARPHELPLINK'>http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BridgeLink/$(var.BridgeLinkDocumentationVersion)</Property>
-    <Property Id='ARPURLINFOABOUT'>http://www.wsdot.wa.gov/eesc/bridge/software</Property>
+    <Property Id='ARPHELPLINK'>https://www.wsdot.wa.gov/eesc/bridge/software/Documentation/BridgeLink/$(var.BridgeLinkDocumentationVersion)</Property>
+    <Property Id='ARPURLINFOABOUT'>https://www.wsdot.wa.gov/eesc/bridge/software</Property>
     <?endif?>
 
     <!--<Property Id='ARPURLUPDATINFO'>URL for product updates</Property>-->
