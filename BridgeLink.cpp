@@ -513,7 +513,7 @@ void CBridgeLinkApp::OnHelpJoinArpList()
 {
    HINSTANCE hInstance = ::ShellExecute(m_pMainWnd->GetSafeHwnd(),
                                         _T("open"),
-										_T("http://www.pgsuper.com/drupal/forum"),
+										_T("http://www.pgsuper.com/content/forum"),
                                          0,0,SW_SHOWDEFAULT);
 
    if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR)
