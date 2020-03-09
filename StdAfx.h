@@ -32,10 +32,9 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#define STRICT
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0600
-#endif
+#include <EAF\EAF.h>
+#include <EAF\EAFHelp.h>
+#include <MFCtools\MFCtools.h>
 
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
 
@@ -47,9 +46,6 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 #include <afxpriv.h>        // Private MFC extensions
 
-#include <EAF\EAF.h>
-#include <EAF\EAFHelp.h>
-#include <MFCtools\MFCtools.h>
 #include <afxdlgs.h>
 
 //{{AFX_INSERT_LOCATION}}
