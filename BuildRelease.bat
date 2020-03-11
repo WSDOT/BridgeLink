@@ -1,11 +1,11 @@
 REM - Script to prepare for Release
 
 
-SET VERSION=5.0.0.9
+SET VERSION=5.1.0.0
 
 REM - after Barlist normalizes with the rest of the system, eliminate this and just use VERSION
 
-SET BARLIST_VERSION=5.2.0.9
+SET BARLIST_VERSION=5.3.0.0
 
 REM - Step 1. Update the documentation
 
