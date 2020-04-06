@@ -62,7 +62,7 @@
 
   <?ifdef _TXDOT?>
   <?ifndef StartMenuFolderName?>
-  <?define StartMenuFolderName=Texas Department of Transportation?>
+  <?define StartMenuFolderName=BridgeLink?>
   <?endif?>
   <?define PGSuperFeatureLevel=1?>
   <?define WSDOTFeatureLevel=101?>
