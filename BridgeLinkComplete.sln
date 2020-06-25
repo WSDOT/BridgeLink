@@ -217,7 +217,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeLinkTestPlugin", "Bri
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KDOTExport", "..\PGSuper\KDOTExport\KDOTExport.vcxproj", "{C6F6E6A6-916E-491D-A1DF-DC1E8814C3FB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BEToolboxToolExtensions", "..\BEToolbox\BEToolboxExtensions\BEToolboxToolExtensions.vcxproj", "{20A164A7-E901-4138-BD72-CB98F27ED4CF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BEToolboxToolExtensions", "..\BEToolboxExtensions\BEToolboxToolExtensions.vcxproj", "{20A164A7-E901-4138-BD72-CB98F27ED4CF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3282AC39-1BEB-4C8E-8FA0-2E3F4CC1BB45} = {3282AC39-1BEB-4C8E-8FA0-2E3F4CC1BB45}
 	EndProjectSection
