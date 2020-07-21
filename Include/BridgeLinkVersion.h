@@ -30,12 +30,13 @@
 //
 // hot fixes - sometimes there are bugs that need to be fixed and deployed now. That is a hot fix.
 
-#ifndef _BRIDGELINK_VERSION
-#define _BRIDGELINK_VERSION 510 // version 5.1.0
-#endif
-
 #define _BETA_VERSION          // When defined, building beta versions
 
 // includes WBFL Version macro and
 // macros that define the minimum version of Windows and IE
 #include <WBFLVersion.h>
+
+#ifndef _BRIDGELINK_VERSION
+#define _BRIDGELINK_VERSION _WBFL_VERSION
+#endif
+

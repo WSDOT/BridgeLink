@@ -116,7 +116,7 @@
                        Win64="$(var.IsWin64)">
                <File Id="U54G4.pgt"       Name="U54G4.pgt"             KeyPath="yes"/>
                <File Id="U54G5.pgt"       Name="U54G5.pgt"/>
-               <File Id="U54G6.pgt"       Name="U54G6.pgt"/>
+               <!--<File Id="U54G6.pgt"       Name="U54G6.pgt"/> Removed because UxxG6 are no longer standard girders -->
             </Component>
          </DirectoryRef>
 
