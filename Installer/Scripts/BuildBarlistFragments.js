@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\5.2");
+var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\5.2");
 var fc = new Enumerator(BarlistDocsFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
@@ -15,13 +15,16 @@ WScript.Echo("<Fragment Id='BarlistDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BarlistDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"BarlistDocsRoot\" Name=\"$(var.BarlistDocumentationTarget)\"> <!-- Create the documentation directory -->");
-WScript.Echo("<Directory Id=\"BarlistDocs\" Name=\"$(var.BarlistDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BarlistDocsRoot2\" Name=\"$(var.BarlistDocumentationTarget)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BarlistDocs\" Name=\"$(var.BarlistDocumentationVersion)\"> <!-- Create the documentation directory -->");
+WScript.Echo("</Directory>");
+WScript.Echo("</Directory>");
 WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
 
 WScript.Echo("<DirectoryRef Id='BarlistDocs' FileSource=\"$(var.BarlistDocumentationSourceRoot)\">");
-WScript.Echo("<Component Id='BarlistDocs' Guid='{EA697C8B-8863-420d-BCB7-411C653DC2EE}' Win64='$(var.IsWin64)'>");
+WScript.Echo("<Component Id='BarlistDocs' Guid='{5D4C0C4E-51FC-4006-AB90-B472C713EFFD}' Win64='$(var.IsWin64)'>");
 var fcDocs = new Enumerator(BarlistDocsFolder.Files);
 var i = 0;
 for (; !fcDocs.atEnd(); fcDocs.moveNext()) {

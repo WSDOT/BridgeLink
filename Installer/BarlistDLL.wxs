@@ -11,6 +11,8 @@
       <DirectoryRef Id="BridgeLinkStartMenuFolder">
          <Component Id="BarlistDllShortcuts" Guid="{DC098F33-D528-4CE9-A778-4840D4B04A90}" Win64="$(var.IsWin64)">
 
+           <util:InternetShortcut Id="BarlistDocShortcut" Name="Barlist Documentation" Target="http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/Barlist/$(var.BarlistDocumentationVersion)" Type="url"/>
+
            <RegistryKey Root="HKCU" Key="Software\Microsoft\[ProductName]"  ForceDeleteOnUninstall="yes">
              <RegistryValue Name="installed"
                             Type="integer"
@@ -413,6 +415,7 @@
          <ComponentRef Id="BarlistDllShortcuts"/>
          <ComponentRef Id="BarlistDLLs"/>
         <ComponentRef Id="BarlistXSD"/>
+        <ComponentRef Id="BarlistDocs"/>
       </Feature>
    </Fragment>
 

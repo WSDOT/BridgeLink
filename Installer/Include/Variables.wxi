@@ -44,7 +44,7 @@
   <?define TxCADExportDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.TxCADExportDocumentationTarget)\$(var.TxCADExportDocumentationVersion)?>
   <?define KDOTDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.KDOTDocumentationTarget)\$(var.KDOTDocumentationVersion)?>
   <?define XBRateDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.XBRateDocumentationTarget)\$(var.XBRateDocumentationVersion)?>
-  <?define BarlistDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.BarlistDocumentationTarget)\$(var.BarlistDocumentationVersion)?>
+  <?define BarlistDocumentationSourceRoot=$(var.DocumentationSourceRoot)\$(var.BarlistDocumentationTarget)\$(var.BarlistDocumentationTarget)\$(var.BarlistDocumentationVersion)?>
 
   <?if $(var.Platform) = "x64"?>
       <?define ProgramFilesDirectory = ProgramFiles64Folder?>
