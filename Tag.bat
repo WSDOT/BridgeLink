@@ -3,7 +3,7 @@ REM - Script to tag all the git repositories
 REM - This is the tag that will be applied to the repository
 REM - for official releases, use x.y.z version number
 REM - for beta releases, use x.y.z_beta_n 
-SET TAG=version_5.0.4.0
+SET TAG=version_5.0.5.0
 
 cd \ARP\BEToolbox\
 git tag %TAG%
