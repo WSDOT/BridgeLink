@@ -30,7 +30,7 @@ git tag 6.0.0_beta_5
 git push
 git push --tags
 
-cd \ARP\XBRate\
+cd \ARP\XBeamRate\
 git commit -a -m "Updated version numbers for 6.0 Beta 5"
 git tag 6.0.0_beta_5
 git push
