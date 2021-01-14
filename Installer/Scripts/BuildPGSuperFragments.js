@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\6.0.0.5\\bin\\images");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\6.0.0.6\\bin\\images");
 var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\6.0");
 var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\6.0");
 var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\6.0");
