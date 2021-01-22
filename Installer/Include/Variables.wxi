@@ -2,24 +2,24 @@
 <Include>
   <?include CustomizationVariables.wxi?>
   
-   <?define BridgeLinkReleaseVersion = 5.0.5?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
-   <?define BridgeLinkVersion   = 5.0.5.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
-   <?define BEToolboxVersion    = 5.0.5.0?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
-   <?define PGSuperVersion      = 5.0.5.0?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 5.0.5.0?>
-   <?define XBeamRateVersion    = 5.0.5.0?> <!-- also change this version number in the BuildXBRateFragments.js file -->
-   <?define BarlistVersion   = 5.2.5.0?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BridgeLinkReleaseVersion = 6.0.0?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
+   <?define BridgeLinkVersion   = 6.0.0.6?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BEToolboxVersion    = 6.0.0.6?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
+   <?define PGSuperVersion      = 6.0.0.6?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = 6.0.0.6?>
+   <?define XBeamRateVersion    = 6.0.0.6?> <!-- also change this version number in the BuildXBRateFragments.js file -->
+   <?define BarlistVersion   = 6.0.0.6?> <!-- This defines the version number of the executable application (probably won't change much)-->
 
-  <?define BridgeLinkDocumentationVersion=5.0?>
-  <?define BEToolboxDocumentationVersion=5.0?>
-  <?define PGSuperDocumentationVersion=5.0?>
-  <?define PGSpliceDocumentationVersion=5.0?>
-  <?define PGSLibraryDocumentationVersion=5.0?>
-  <?define TOGADocumentationVersion=5.0?>
-  <?define TxCADExportDocumentationVersion=5.0?>
-  <?define KDOTDocumentationVersion=5.0?>
-  <?define XBRateDocumentationVersion=5.0?>
-<?define BarlistDocumentationVersion=5.2?>
+  <?define BridgeLinkDocumentationVersion=6.0?>
+  <?define BEToolboxDocumentationVersion=6.0?>
+  <?define PGSuperDocumentationVersion=6.0?>
+  <?define PGSpliceDocumentationVersion=6.0?>
+  <?define PGSLibraryDocumentationVersion=6.0?>
+  <?define TOGADocumentationVersion=6.0?>
+  <?define TxCADExportDocumentationVersion=6.0?>
+  <?define KDOTDocumentationVersion=6.0?>
+  <?define XBRateDocumentationVersion=6.0?>
+<?define BarlistDocumentationVersion=6.0?>
 
   <?define ExeName=BridgeLink?>
 
@@ -62,7 +62,7 @@
 
   <?ifdef _TXDOT?>
   <?ifndef StartMenuFolderName?>
-  <?define StartMenuFolderName=BridgeLink?>
+  <?define StartMenuFolderName=Texas Department of Transportation?>
   <?endif?>
   <?define PGSuperFeatureLevel=1?>
   <?define WSDOTFeatureLevel=101?>

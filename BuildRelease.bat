@@ -1,11 +1,7 @@
 REM - Script to prepare for Release
 
 
-SET VERSION=5.0.5.0
-
-REM - after Barlist normalizes with the rest of the system, eliminate this and just use VERSION
-
-SET BARLIST_VERSION=5.2.5.0
+SET VERSION=6.0.0.6
 
 REM - Step 1. Update the documentation
 
@@ -28,9 +24,9 @@ REM - Step 3. Copy binaries to the release file tree
 cd \ARP_RELEASE
 
 
-mkdir Barlist\%BARLIST_VERSION%\bin
+mkdir Barlist\%VERSION%\bin
 
-xcopy /E /I /Y \ARP\Barlist\bin\* Barlist\%BARLIST_VERSION%\bin
+xcopy /E /I /Y \ARP\Barlist\bin\* Barlist\%VERSION%\bin
 
 
 

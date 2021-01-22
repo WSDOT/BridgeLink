@@ -3,40 +3,47 @@ REM - Script to tag all the git repositories
 REM - This is the tag that will be applied to the repository
 REM - for official releases, use x.y.z version number
 REM - for beta releases, use x.y.z_beta_n 
-SET TAG=version_5.0.5.0
+REM SET TAG=6.0.0_beta_6
+REM git tag %TAG% isn't working so the takes are explicit... use search/replace to update in all places
 
 cd \ARP\BEToolbox\
-git tag %TAG%
+git commit -a -m "Updated version numbers for 6.0 Beta 6"
+git tag 6.0.0_beta_6
 git push
 git push --tags
 
 cd \ARP\BEToolboxExtensions\
-git tag %TAG%
+git commit -a -m "Updated version numbers for 6.0 Beta 6"
+git tag 6.0.0_beta_6
 git push
 git push --tags
 
 cd \ARP\Barlist\
-git tag %TAG%
+git commit -a -m "Updated version numbers for 6.0 Beta 6"
+git tag 6.0.0_beta_6
 git push
 git push --tags
 
 cd \ARP\PGSuper\
-git tag %TAG%
+git commit -a -m "Updated version numbers for 6.0 Beta 6"
+git tag 6.0.0_beta_6
 git push
 git push --tags
 
-cd \ARP\XBRate\
-git tag %TAG%
+cd \ARP\XBeamRate\
+git commit -a -m "Updated version numbers for 6.0 Beta 6"
+git tag 6.0.0_beta_6
 git push
 git push --tags
 
 cd \ARP\WBFL\
-git tag %TAG%
+git commit -a -m "Updated version numbers for 6.0 Beta 6"
+git tag 6.0.0_beta_6
 git push
 git push --tags
 
 cd \ARP\BridgeLink\
-git tag %TAG%
+git commit -a -m "Updated version numbers for 6.0 Beta 6"
+git tag 6.0.0_beta_6
 git push
 git push --tags
-

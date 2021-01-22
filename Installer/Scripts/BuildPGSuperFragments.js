@@ -1,12 +1,12 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\5.0.5.0\\bin\\images");
-var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\5.0");
-var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\5.0");
-var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\5.0");
-var TOGADocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\5.0");
-var TxCADExportDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\5.0");
-var KDOTDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\5.0");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\6.0.0.6\\bin\\images");
+var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\6.0");
+var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\6.0");
+var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\6.0");
+var TOGADocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\6.0");
+var TxCADExportDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\6.0");
+var KDOTDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\6.0");
 
 var fc = new Enumerator(ImagesFolder.Files);
 
