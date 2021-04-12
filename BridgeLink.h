@@ -97,6 +97,7 @@ public:
 	DECLARE_MESSAGE_MAP()
 
 protected:
+   virtual void ProcessCommandLineOptions(CEAFCommandLineInfo& cmdInfo) override;
    virtual CEAFSplashScreenInfo GetSplashScreenInfo() override;
    virtual LPCTSTR GetRegistryKey() override;
    virtual CMDIFrameWnd* CreateMainFrame() override;
@@ -116,6 +117,8 @@ public:
 private:
    virtual void RegistryInit() override; // All registry initialization goes here
    virtual void RegistryExit() override; // All registry cleanup goes here
+
+   void ConfigureAutoSave();
 
    IDType m_CallbackID;
    std::map<IDType,IBridgeLinkConfigurationCallback*> m_ConfigurationCallbacks;

@@ -38,6 +38,8 @@
 
 #include "ConfigureBridgeLinkDlg.h"
 
+#include <EAF\EAFDataRecoveryHandler.h>
+
 
 // This is the range of command IDs for all plug-in commands... all means all commands added
 // to the menus of the BridgeLink executable program, the AppPlugin document and view menus, 
@@ -103,6 +105,14 @@ void CBridgeLinkApp::SetUserInfo(const CString& strEngineer,const CString& strCo
    VERIFY(WriteProfileString(_T("Options"), _T("CompanyName"),  strCompany));
 }
 
+void CBridgeLinkApp::ConfigureAutoSave()
+{
+   BOOL bAutoSave;
+   int interval;
+   GetAutoSaveInfo(&bAutoSave, &interval);
+   EnableAutoSave(bAutoSave, interval);
+}
+
 IDType CBridgeLinkApp::Register(IBridgeLinkConfigurationCallback* pCallback)
 {
    IDType key = m_CallbackID++;
@@ -138,11 +148,16 @@ void CBridgeLinkApp::Configure()
    CConfigureBridgeLinkDlg dlg(m_ConfigurationCallbacks);
 
    GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
+   GetAutoSaveInfo(&dlg.m_BridgeLinkPage.m_bAutoSave, &dlg.m_BridgeLinkPage.m_AutoSaveInterval);
+
+   // autosave interval is in milliseconds, we want it in minutes
+   dlg.m_BridgeLinkPage.m_AutoSaveInterval /= 60000;
 
    INT_PTR results = dlg.DoModal();
    if ( results == IDOK )
    {
       SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
+      SaveAutoSaveInfo(dlg.m_BridgeLinkPage.m_bAutoSave, dlg.m_BridgeLinkPage.m_AutoSaveInterval*60000);
    }
 }
 
@@ -229,6 +244,13 @@ OLECHAR* CBridgeLinkApp::GetPluginCategoryName()
 CATID CBridgeLinkApp::GetPluginCategoryID()
 {
    return CATID_BridgeLinkPlugin;
+}
+
+void CBridgeLinkApp::ProcessCommandLineOptions(CEAFCommandLineInfo& cmdInfo)
+{
+   // disable AutoSave when processing command line options
+   EnableAutoSave(false, 0);
+   __super::ProcessCommandLineOptions(cmdInfo);
 }
 
 CEAFSplashScreenInfo CBridgeLinkApp::GetSplashScreenInfo()
@@ -334,6 +356,8 @@ BOOL CBridgeLinkApp::InitInstance()
    ::ChangeWindowMessageFilter(WM_DROPFILES,MSGFLT_ADD);
    ::ChangeWindowMessageFilter(WM_COPYDATA, MSGFLT_ADD);
    ::ChangeWindowMessageFilter(0x0049,      MSGFLT_ADD);
+
+   ConfigureAutoSave();
 
 	return TRUE;
 }

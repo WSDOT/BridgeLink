@@ -30,7 +30,10 @@
 #define IDC_LIST1                       1002
 #define IDC_LIST                        1002
 #define IDC_COPYRIGHT                   1003
+#define IDC_AUTOSAVE                    1003
+#define IDC_AUTOSAVE_INTERVAL           1004
 #define IDC_APPICON                     1005
+#define IDC_AUTOSAVE_INTERVAL_LABEL     1006
 #define IDC_DESCRIPTION                 1009
 #define IDC_MOREINFO                    1013
 #define IDC_WIDTH                       1270
@@ -40,6 +43,7 @@
 #define IDC_KDOT                        1669
 #define IDC_BRIDGESIGHT                 1670
 #define IDS_COMPANY                     1699
+#define IDC_AUTOSAVE_INTERVAL_UNITS     1700
 #define IDC_APPLIST                     3333
 #define EAF_RESERVED_COMMAND_BASE       0x8000
 #define EAFID_APP_LEGAL                 32771
@@ -58,9 +62,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        201
+#define _APS_NEXT_RESOURCE_VALUE        202
 #define _APS_NEXT_COMMAND_VALUE         33030
-#define _APS_NEXT_CONTROL_VALUE         1003
+#define _APS_NEXT_CONTROL_VALUE         1701
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
