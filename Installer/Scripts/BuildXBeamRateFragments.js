@@ -1,7 +1,7 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\6.0.0.7\\bin\\images");
-var XBRateDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\XBRate\\6.0");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\6.1.0.0\\bin\\images");
+var XBRateDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\XBRate\\6.1");
 var fc = new Enumerator(ImagesFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
