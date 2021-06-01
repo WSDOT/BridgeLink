@@ -132,9 +132,9 @@ BEGIN
     EDITTEXT        IDC_ENGINEER,172,71,96,14,ES_AUTOHSCROLL
     LTEXT           "Company",IDC_STATIC,132,89,31,8
     EDITTEXT        IDC_COMPANY,172,87,96,14,ES_AUTOHSCROLL
-    GROUPBOX        "Autosave and Recovery",IDC_STATIC,120,116,218,43
+    GROUPBOX        "AutoSave and Recovery",IDC_STATIC,120,116,218,43
     CONTROL         "Enable",IDC_AUTOSAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,136,37,10
-    LTEXT           "Autosave interval",IDC_AUTOSAVE_INTERVAL_LABEL,186,136,58,8
+    LTEXT           "AutoSave interval",IDC_AUTOSAVE_INTERVAL_LABEL,186,136,58,8
     EDITTEXT        IDC_AUTOSAVE_INTERVAL,245,134,21,14,ES_AUTOHSCROLL
     LTEXT           "minutes",IDC_AUTOSAVE_INTERVAL_UNITS,269,136,26,8
     LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,170,218,28
