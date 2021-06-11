@@ -190,7 +190,7 @@ CString CBridgeLinkApp::GetDocumentationRootLocation()
 
       // Get the default location for the documentation root from the local machine registry hive
       // If not present, use the WSDOT location
-      CString strDefaultDocumentationRootLocation = GetLocalMachineString(_T("Settings"),_T("DocumentationRoot"), _T("http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/"));
+      CString strDefaultDocumentationRootLocation = GetLocalMachineString(_T("Settings"),_T("DocumentationRoot"), _T("https://www.wsdot.wa.gov/eesc/bridge/software/Documentation/"));
 
       // Get the user's setting, using the local machine setting as the default if not present
       CString strDocumentationRootLocation = GetProfileString(_T("Settings"),_T("DocumentationRoot"),strDefaultDocumentationRootLocation);
@@ -352,7 +352,7 @@ BOOL CBridgeLinkApp::InitInstance()
    sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
 
    // Need to let drag and drop messages through
-   // See http://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/
+   // See https://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/
    ::ChangeWindowMessageFilter(WM_DROPFILES,MSGFLT_ADD);
    ::ChangeWindowMessageFilter(WM_COPYDATA, MSGFLT_ADD);
    ::ChangeWindowMessageFilter(0x0049,      MSGFLT_ADD);
@@ -444,9 +444,9 @@ void CBridgeLinkApp::OnHelp()
 
 CString CBridgeLinkApp::GetWsdotUrl()
 {
-//   CString url = GetProfileString(_T("Settings"), _T("WsdotUrl"), _T("http://www.wsdot.wa.gov"));
+//   CString url = GetProfileString(_T("Settings"), _T("WsdotUrl"), _T("https://www.wsdot.wa.gov"));
 
-   CString strDefault(_T("http://www.wsdot.wa.gov"));
+   CString strDefault(_T("https://www.wsdot.wa.gov"));
 
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_LOCAL_MACHINE,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
@@ -471,9 +471,9 @@ CString CBridgeLinkApp::GetWsdotUrl()
 
 CString CBridgeLinkApp::GetWsdotBridgeUrl()
 {
-//   CString url = GetProfileString(_T("Settings"), _T("WsdotBridgeUrl"), _T("http://www.wsdot.wa.gov/eesc/bridge"));
+//   CString url = GetProfileString(_T("Settings"), _T("WsdotBridgeUrl"), _T("https://www.wsdot.wa.gov/eesc/bridge"));
 
-   CString strDefault(_T("http://www.wsdot.wa.gov/eesc/bridge"));
+   CString strDefault(_T("https://www.wsdot.wa.gov/eesc/bridge"));
 
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_LOCAL_MACHINE,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
@@ -498,7 +498,7 @@ CString CBridgeLinkApp::GetWsdotBridgeUrl()
 
 CString CBridgeLinkApp::GetBridgeLinkUrl()
 {
-   CString strDefault(_T("http://www.wsdot.wa.gov/eesc/bridge/software/index.cfm?fuseaction=software_detail&software_id=69"));
+   CString strDefault(_T("https://www.wsdot.wa.gov/eesc/bridge/software/index.cfm?fuseaction=software_detail&software_id=69"));
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_LOCAL_MACHINE,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
    if ( result != ERROR_SUCCESS )
@@ -537,7 +537,7 @@ void CBridgeLinkApp::OnHelpJoinArpList()
 {
    HINSTANCE hInstance = ::ShellExecute(m_pMainWnd->GetSafeHwnd(),
                                         _T("open"),
-										_T("http://www.pgsuper.com/content/forum"),
+										_T("https://www.pgsuper.com/content/forum"),
                                          0,0,SW_SHOWDEFAULT);
 
    if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR)
@@ -550,7 +550,7 @@ void CBridgeLinkApp::OnHelpInetARP()
 {
    HINSTANCE hInstance = ::ShellExecute(m_pMainWnd->GetSafeHwnd(),
                                         _T("open"),
-                                        _T("http://wsdot.wa.gov/eesc/bridge/alternateroute"),
+                                        _T("https://wsdot.wa.gov/eesc/bridge/alternateroute"),
                                          0,0,SW_SHOWDEFAULT);
 
    if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR )
