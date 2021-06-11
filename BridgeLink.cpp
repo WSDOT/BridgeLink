@@ -413,6 +413,14 @@ void CBridgeLinkApp::RegistryInit()
    m_pszProfileName = _tcsdup(_T("BridgeLink"));
 
    CEAFPluginApp::RegistryInit();
+
+   // In CEAFApp::InitInstance, RegistryInit() is called before the help window is created
+   // so this is an excellent location to set the value.
+   //
+   // This is a little bit of a secret setting. We want the default to be NOT to use the default help window (See Mantis 1327)
+   // If users want the old help window back, we can tell them to put the UseDefaultHelpWindow key in Settings and set the value to "Yes"
+   CString strDefaultHelpWindow = GetProfileString(_T("Settings"), _T("UseDefaultHelpWindow"), _T("No"));
+   m_bUseHelpWindow = (strDefaultHelpWindow.CompareNoCase(_T("No")) == 0) ? FALSE : TRUE;
 }
 
 void CBridgeLinkApp::RegistryExit()
