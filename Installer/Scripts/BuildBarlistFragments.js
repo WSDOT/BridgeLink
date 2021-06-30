@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\6.0");
+var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\6.2");
 var fc = new Enumerator(BarlistDocsFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
