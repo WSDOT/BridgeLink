@@ -7,7 +7,7 @@ REM - this assumes documentation for version 1.1.0 is the same as for version 1.
 REM - which will generally be true. This way we don't have to publish new documentation
 REM - for every bug-fix release. Just use 1.1 for the version number
 
-SET BRIDGELINK_DOCUMENTATION_VERSION=6.2
+SET BRIDGELINK_DOCUMENTATION_VERSION=7.0
 SET BETOOLBOX_DOCUMENTATION_VERSION=%BRIDGELINK_DOCUMENTATION_VERSION%
 SET PGSUPER_DOCUMENTATION_VERSION=%BRIDGELINK_DOCUMENTATION_VERSION%
 SET PGSPLICE_DOCUMENTATION_VERSION=%BRIDGELINK_DOCUMENTATION_VERSION%
