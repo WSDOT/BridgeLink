@@ -20,6 +20,8 @@
   <?define KDOTDocumentationVersion=7.0?>
   <?define XBRateDocumentationVersion=7.0?>
 <?define BarlistDocumentationVersion=7.0?>
+	
+	<?define IncludeExperimentalFeatures?> <!-- Comment out to exclude experimental features from isntaller-->
 
   <?define ExeName=BridgeLink?>
 
@@ -71,7 +73,8 @@
   <?define BEToolboxFeatureLevel=1?>
   <?define XBRateFeatureLevel=1?>
   <?define BarlistFeatureLevel=101?>
-  <?else?>
+	<?define ExperimentalFeatureLevel=101?>
+	<?else?>
   <?ifndef StartMenuFolderName?>
   <?define StartMenuFolderName=Engineering Applications?>
   <?endif?>
@@ -82,7 +85,8 @@
   <?define BEToolboxFeatureLevel=1?>
   <?define XBRateFeatureLevel=1?>
   <?define BarlistFeatureLevel=1?>
-  <?endif?>
+	<?define ExperimentalFeatureLevel=101?>
+	<?endif?>
 
   <?define BridgeLinkAppPluginCATID={1D069A0E-7436-4275-A129-C84ADC22DE68}?>
    <?define BridgeLinkComponentInfoCATID={AF28A0E7-E9AD-4839-9901-5F004209498B}?>

@@ -4,7 +4,7 @@ REM - This is the tag that will be applied to the repository
 REM - for official releases, use x.y.z version number
 REM - for beta releases, use x.y.z_beta_n 
 REM SET TAG=7.0.0_beta_0
-REM git tag %TAG% isn't working so the takes are explicit... use search/replace to update in all places
+REM git tag %TAG% isn't working so the tags are explicit... use search/replace to update in all places
 
 cd \ARP\BEToolbox\
 git commit -a -m "Updated version numbers for 7.0 Beta 0"
@@ -25,6 +25,12 @@ git push
 git push --tags
 
 cd \ARP\PGSuper\
+git commit -a -m "Updated version numbers for 7.0 Beta 0"
+git tag 7.0.0_beta_0
+git push
+git push --tags
+
+cd \ARP\PGSuperExperimental\
 git commit -a -m "Updated version numbers for 7.0 Beta 0"
 git tag 7.0.0_beta_0
 git push

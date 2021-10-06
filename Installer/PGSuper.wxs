@@ -732,6 +732,10 @@
          <FeatureRef Id="WSDOTExtensions"/>
          <FeatureRef Id="TxDOTExtensions"/>
          <FeatureRef Id="KDOTExtensions"/>
+		   
+		   <?ifdef IncludeExperimentalFeatures?>
+         <FeatureRef Id="ExperementalFeatures"/>
+		   <?endif?>
 
          <ComponentRef Id="PGSuperComponents" Primary="yes" />
          <ComponentRef Id="PGSuperComponents2" />

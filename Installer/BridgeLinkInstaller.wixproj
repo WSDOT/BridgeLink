@@ -58,6 +58,7 @@
     <Compile Include="BEToolboxFragments.wxs" />
     <Compile Include="BridgeLinkComponents.wxs" />
     <Compile Include="BridgeLinkFragments.wxs" />
+    <Compile Include="ExperimentalExtensions.wxs" />
     <Compile Include="InstallationConditions.wxs" />
     <Compile Include="KDOTExtensions.wxs" />
     <Compile Include="LibraryEditor.wxs" />
