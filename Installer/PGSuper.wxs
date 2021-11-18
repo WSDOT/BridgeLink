@@ -460,12 +460,12 @@
          <Component Id="GridControl"
                     Guid="{AD86F1C4-31CF-4D3C-B7BE-9A38C0BAC715}"
                     Win64="$(var.IsWin64)">
-           <File Id="rwuxthemesu14.dll"
-                 Name="RWUXThemeSU14.dll" />
-           <File Id="wsdot_og1210asu.dll"
-                 Name="wsdot_og1210asu.dll" KeyPath="yes"/>
-           <File Id="sfl1210asu.dll"
-                 Name="sfl1210asu.dll"/>         </Component>
+           <File Id="RWUXThemeSU16.dll"
+                 Name="RWUXThemeSU16.dll" />
+           <File Id="og1320asu.dll"
+                 Name="og1320asu.dll" KeyPath="yes"/>
+           <File Id="sfl1320asu.dll"
+                 Name="sfl1320asu.dll"/>         </Component>
       </DirectoryRef>
 
 
