@@ -158,6 +158,7 @@ void CBridgeLinkApp::Configure()
    {
       SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
       SaveAutoSaveInfo(dlg.m_BridgeLinkPage.m_bAutoSave, dlg.m_BridgeLinkPage.m_AutoSaveInterval*60000);
+      ConfigureAutoSave();
    }
 }
 
