@@ -400,6 +400,8 @@
        <Component Id="BarlistDLLs" Guid="{CADE0630-B3A2-46E7-99E6-45311D0B5490}" Win64="$(var.IsWin64)">
          <File Id="Bars.dll"    Name="Bars.dll" KeyPath="yes"/>
          <File Id="BXF.dll"    Name="BXF.dll" />
+          <File Id="BarlistExcelExporter.dll" Name="BarlistExcelExporter.dll" />
+          <File Id="Barlist_Template.xltx" Name="Barlist_Template.xltx" />
        </Component>
      </DirectoryRef >
 
