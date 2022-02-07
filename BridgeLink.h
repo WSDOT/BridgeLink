@@ -92,6 +92,7 @@ public:
    afx_msg void OnConfigureUpdateUI(CCmdUI* pCmdUI);
    afx_msg void OnConfigure();
    afx_msg void OnHelp();
+   afx_msg void OnHelpViewer();
 	//}}AFX_MSG
 	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo) override;
 	DECLARE_MESSAGE_MAP()

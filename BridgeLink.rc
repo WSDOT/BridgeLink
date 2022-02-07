@@ -174,6 +174,7 @@ BEGIN
     BEGIN
         MENUITEM "&Help Topics",                ID_HELP_FINDER
         MENUITEM "Help Source",                 EAFID_HELP_SOURCE
+        MENUITEM "Help Viewer...",              ID_HELP_VIEWER
         MENUITEM SEPARATOR
         POPUP "&Online Resources"
         BEGIN
@@ -349,6 +350,7 @@ BEGIN
     ID_HELP_INET_WSDOT      "Open the WSDOT Home Page at www.wsdot.wa.gov"
     ID_HELP_INET_BRIDGELINK "Open the BridgeLink Home Page\nBridgeLink Online Resources"
     IDM_CONFIGURE_BRIDGELINK "Configure BridgeLink and it's applications"
+    IDM_HELP_OPTIONS        "Configure options for displaying documentation\nHelp Options"
 END
 
 STRINGTABLE

@@ -71,6 +71,7 @@ BEGIN_MESSAGE_MAP(CBridgeLinkApp, CEAFPluginApp)
    ON_COMMAND(ID_HELP_INET_ARP, OnHelpInetARP)
    ON_COMMAND(ID_SCREEN_SIZE,OnScreenSize)
    ON_COMMAND(ID_HELP,OnHelp)
+   ON_COMMAND(ID_HELP_VIEWER,OnHelpViewer)
 	//}}AFX_MSG_MAP
 	// Standard file based document commands
 	// Standard print setup command
@@ -417,15 +418,13 @@ void CBridgeLinkApp::RegistryInit()
 
    // In CEAFApp::InitInstance, RegistryInit() is called before the help window is created
    // so this is an excellent location to set the value.
-   //
-   // This is a little bit of a secret setting. We want the default to be NOT to use the default help window (See Mantis 1327)
-   // If users want the old help window back, we can tell them to put the UseDefaultHelpWindow key in Settings and set the value to "Yes"
-   CString strDefaultHelpWindow = GetProfileString(_T("Settings"), _T("UseDefaultHelpWindow"), _T("No"));
+   CString strDefaultHelpWindow = GetProfileString(_T("Settings"), _T("UseBuiltinHelpWindow"), _T("No"));
    m_bUseHelpWindow = (strDefaultHelpWindow.CompareNoCase(_T("No")) == 0) ? FALSE : TRUE;
 }
 
 void CBridgeLinkApp::RegistryExit()
 {
+   WriteProfileString(_T("Settings"), _T("UseBuildinHelpWindow"), m_bUseHelpWindow ? _T("Yes") : _T("No"));
    CEAFPluginApp::RegistryExit();
 }
 
@@ -449,6 +448,15 @@ void CBridgeLinkApp::OnScreenSize()
 void CBridgeLinkApp::OnHelp()
 {
    // do nothing... just need this so MFC doesn't hide help buttons
+}
+
+void CBridgeLinkApp::OnHelpViewer()
+{
+   int result = AfxRBChoose(_T("Documentation Viewer"), _T("Select the documentation viewer"), _T("Built-in viewer\nDefault web browser"), m_bUseHelpWindow ? 0 : 1, TRUE);
+   if (result != -1)
+   {
+      m_bUseHelpWindow = (result == 0 ? TRUE : FALSE);
+   }
 }
 
 CString CBridgeLinkApp::GetWsdotUrl()
