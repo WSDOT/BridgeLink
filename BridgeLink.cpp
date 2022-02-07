@@ -71,7 +71,6 @@ BEGIN_MESSAGE_MAP(CBridgeLinkApp, CEAFPluginApp)
    ON_COMMAND(ID_HELP_INET_ARP, OnHelpInetARP)
    ON_COMMAND(ID_SCREEN_SIZE,OnScreenSize)
    ON_COMMAND(ID_HELP,OnHelp)
-   ON_COMMAND(ID_HELP_VIEWER,OnHelpViewer)
 	//}}AFX_MSG_MAP
 	// Standard file based document commands
 	// Standard print setup command
@@ -424,7 +423,7 @@ void CBridgeLinkApp::RegistryInit()
 
 void CBridgeLinkApp::RegistryExit()
 {
-   WriteProfileString(_T("Settings"), _T("UseBuildinHelpWindow"), m_bUseHelpWindow ? _T("Yes") : _T("No"));
+   WriteProfileString(_T("Settings"), _T("UseBuiltinHelpWindow"), m_bUseHelpWindow ? _T("Yes") : _T("No"));
    CEAFPluginApp::RegistryExit();
 }
 
@@ -447,17 +446,9 @@ void CBridgeLinkApp::OnScreenSize()
 
 void CBridgeLinkApp::OnHelp()
 {
-   // do nothing... just need this so MFC doesn't hide help buttons
+   // do nothing... just need this so MFC doesn't hide help buttns
 }
 
-void CBridgeLinkApp::OnHelpViewer()
-{
-   int result = AfxRBChoose(_T("Documentation Viewer"), _T("Select the documentation viewer"), _T("Built-in viewer\nDefault web browser"), m_bUseHelpWindow ? 0 : 1, TRUE);
-   if (result != -1)
-   {
-      m_bUseHelpWindow = (result == 0 ? TRUE : FALSE);
-   }
-}
 
 CString CBridgeLinkApp::GetWsdotUrl()
 {

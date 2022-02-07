@@ -2,16 +2,7 @@
 // Microsoft Visual C++ generated include file.
 // Used by BridgeLink.rc
 //
-#define EAFID_INDICATOR_MODIFIED        1
-#define EAFID_INDICATOR_MIN             1
-#define EAFID_INDICATOR_STATUS          2
-#define EAFID_INDICATOR_AUTOCALC_ON     3
-#define EAFID_INDICATOR_AUTOCALC_OFF    4
-#define EAFID_INDICATOR_MAX             4
 #define IDS_E_ONLINERESOURCES           9
-#define EAF_TOOLBAR_MENU_COUNT          40
-#define EAF_REPORT_MENU_COUNT           50
-#define EAF_GRAPH_MENU_COUNT            50
 #define IDR_MAINFRAME                   128
 #define IDB_SPLASH                      130
 #define IDB_CONFIGURATION_HEADER        131
@@ -45,19 +36,13 @@
 #define IDS_COMPANY                     1699
 #define IDC_AUTOSAVE_INTERVAL_UNITS     1700
 #define IDC_APPLIST                     3333
-#define EAF_RESERVED_COMMAND_BASE       0x8000
-#define EAFID_APP_LEGAL                 32771
-#define EAFID_TIPOFTHEDAY               32775
-#define EAFID_MANAGE_APP_PLUGINS        32776
-#define EAFID_HELP_SOURCE               32782
 #define ID_HELP_JOINARPLIST             33024
 #define ID_HELP_INET_ARP                33025
 #define ID_HELP_INET_WSDOT              33026
 #define ID_HELP_INET_BRIDGELINK         33027
 #define ID_SCREEN_SIZE                  33028
 #define IDM_CONFIGURE_BRIDGELINK        33029
-#define IDM_HELP_OPTIONS                33030
-#define ID_HELP_VIEWER                  33031
+
 
 // Next default values for new objects
 // 
@@ -65,7 +50,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        202
-#define _APS_NEXT_COMMAND_VALUE         33032
+#define _APS_NEXT_COMMAND_VALUE         33033
 #define _APS_NEXT_CONTROL_VALUE         1701
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
