@@ -36,6 +36,8 @@
 // Arguments: F:\ARP\BridgeLink\RegFreeCOM\RegFiles.js
 // Initial Directory: F:\ARP\BridgeLink\RegFreeCOM\ .\x64\Release /u
 // Use Output Window [x]
+//
+// NOTE: The External Tools feature doesn't seem to be able to interpret the $(ARPDIR) environment variable. You will need to change "F:\ARP" to whereever your ARPDIR.
 
 var wsShell = new ActiveXObject("WScript.Shell");
 var objArgs = WScript.Arguments;

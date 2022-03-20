@@ -40,7 +40,18 @@ The general prerequisites are:
 
 3. Clone the repository into **drive letter**:/ARP/ and create an environment variable ARPDIR to this folder.
 
-4. Obtain and install the Stingray ObjectiveGrid product from Perforce (https://www.perforce.com/products/stingray). Several of the BridgeLink plug-in applications use this grid control product in the UI since a suitable open source grid control has not been identified.
+4. Obtain and install the Stingray ObjectiveGrid product from Perforce (https://www.perforce.com/products/stingray). Several of the BridgeLink plug-in applications use this grid control product in the UI since a suitable open source grid control has not been identified. A do-nothing proxy for the  ObjectiveGrid control is available WBFL. This proxy enables full BridgeLink suite builds without the ObjectiveGrid control. The proxy does not simulate grid functionality, it simply provides dummy classes and methods to enable builds. Accessing windows and dialogs that utilize the ObjectiveGrid control will not function properly and may crash. See WBFL for details on building the BridgeLink suite without ObjectiveGrid.
+
+## Registering BridgeLink Plug-in Applications
+All BridgeLink applications are plug-ins to the BridgeLink-environment. BridgeLink discovers the plug-in applications at runtime using COM Component Categories.
+
+When running BridgeLink from the Visual Studio development environment, you must register the BridgeLink plug-in applications with RegSvr32.exe. Additionally, some BridgeLink plug-in applications themselves have runtime discoverable components. One example is PGSuper. These components must be registered as well.
+
+To make life easy, there is a script file in the BridgeLink source code called RegFiles.js. The header of this file provides step-by-step instructions for setting up the Visual Studio **Tools > External Tools** feature to register all these components automatically.
+
+Before starting a debugging session, use the script file to register all of the Debug or Release build components (depending on if you are starting the debugger or just launching the application, respectively). 
+
+If anyone has a better way of automatically registering these components, please implement and send a pull request.
 
 ## Authors
 This project is jointly developed by the Washington State and Texas Departments of Transportation
