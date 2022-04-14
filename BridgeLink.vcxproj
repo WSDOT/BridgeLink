@@ -272,9 +272,8 @@
       <Project>{30dd6886-34ba-48bd-9bb6-08e8cd79cad7}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\PGSuper\Graphing\Graphing.vcxproj">
+    <ProjectReference Include="..\PGSuper\Graphs\Graphs.vcxproj">
       <Project>{a29f3c02-af58-4e29-a791-caa5a1ce28b6}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\PGSuper\KDOTExport\KDOTExport.vcxproj">
       <Project>{c6f6e6a6-916e-491d-a1df-dc1e8814c3fb}</Project>
