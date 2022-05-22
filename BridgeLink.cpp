@@ -349,8 +349,8 @@ BOOL CBridgeLinkApp::InitInstance()
 
    // Must be done after call to base class InitInstance because OLE has not been
    // initialized yet.
-   //sysComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin); // this is done by the base class
-   sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
+   //WBFL::System::ComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin); // this is done by the base class
+   WBFL::System::ComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
 
    // Need to let drag and drop messages through
    // See https://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/
