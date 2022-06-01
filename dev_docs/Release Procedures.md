@@ -51,6 +51,12 @@ When making an official release (not a beta release), the version constant must 
 
 `#define _WBFL_VERSION 710 // version 7.1.0`
 
+***Beta/Production Releases***
+
+If this is a production (final) release, comment out the `_BETA_VERSION` macro in `BridgeLinkVersion.h`.
+
+This macro causes certain debugging features to be compiled into Beta releases. We do not want this features in the final production release of the software.
+
 ***Compile***
 
 Once the version numbers are update do a complete build of the WBFL and BridgeLinkComplete solutions.
