@@ -1,7 +1,7 @@
 REM - Script to prepare for Release
 
 
-SET VERSION=7.0.0.6
+SET VERSION=7.0.0.7
 
 REM - Step 1. Update the documentation
 

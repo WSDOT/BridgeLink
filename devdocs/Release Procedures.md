@@ -92,14 +92,17 @@ Copy the resulting installer packages to `\ARP_INSTALLERS`.
 
 **Test the installer**
 
-Test the installer packages peform deploying them
+Test the installer packages before deploying them.
 
 **Tag and commit**
-Run the Tag.bat file to tag and commit the release.
+
+The various repositories need to be tagged at the point of release. Edit the `Tag.bat` file and change the tag and commit message as described in the file header.
+
+Run the `Tag.bat` file to tag and commit the release.
 
 **Release Notes**
 
-Update the release notes in `\ARP_INSTALLER\Release Notes`
+Update the release notes in `\ARP_INSTALLER\Release Notes`. Where ever possible append the Mantis issue number to the note with "(Mnnnn)" where nnnn is the issue number.
 
 **Deploying the WSDOT installer**
 
