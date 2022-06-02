@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // BridgeLink - BridgeLink Extensible Application Framework
-// Copyright © 1999-2021  Washington State Department of Transportation
+// Copyright © 1999-2022  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
 // This program is free software; you can redistribute it and/or modify
@@ -58,11 +58,19 @@ void CConfigureBridgeLinkPage::DoDataExchange(CDataExchange* pDX)
 	CPropertyPage::DoDataExchange(pDX);
    DDX_Text(pDX,IDC_ENGINEER,m_strEngineer);
    DDX_Text(pDX,IDC_COMPANY,m_strCompany);
+
+   DDX_Check(pDX, IDC_AUTOSAVE, m_bAutoSave);
+   DDX_Text(pDX, IDC_AUTOSAVE_INTERVAL, m_AutoSaveInterval);
+   if (m_bAutoSave)
+   {
+      DDV_MinMaxInt(pDX, m_AutoSaveInterval, 1, 60);
+   }
 }
 
 
 BEGIN_MESSAGE_MAP(CConfigureBridgeLinkPage, CPropertyPage)
    ON_COMMAND(ID_HELP,OnHelp)
+   ON_BN_CLICKED(IDC_AUTOSAVE, &CConfigureBridgeLinkPage::OnBnClickedAutosave)
 END_MESSAGE_MAP()
 
 
@@ -97,7 +105,18 @@ BOOL CConfigureBridgeLinkPage::OnInitDialog()
    CPropertyPage::OnInitDialog();
 
    // TODO:  Add extra initialization here
+   OnBnClickedAutosave();
 
    return TRUE;  // return TRUE unless you set the focus to a control
    // EXCEPTION: OCX Property Pages should return FALSE
+}
+
+
+void CConfigureBridgeLinkPage::OnBnClickedAutosave()
+{
+   // TODO: Add your control notification handler code here
+   int nCmdShow = IsDlgButtonChecked(IDC_AUTOSAVE) == BST_CHECKED ? SW_SHOW : SW_HIDE;
+   GetDlgItem(IDC_AUTOSAVE_INTERVAL_LABEL)->ShowWindow(nCmdShow);
+   GetDlgItem(IDC_AUTOSAVE_INTERVAL)->ShowWindow(nCmdShow);
+   GetDlgItem(IDC_AUTOSAVE_INTERVAL_UNITS)->ShowWindow(nCmdShow);
 }

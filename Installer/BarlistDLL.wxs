@@ -383,6 +383,13 @@
            <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)\InprocServer32" Value="[APPLICATIONFOLDER]BXF.dll" Type="string" />
            <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)\Implemented Categories\$(var.BarlistAddinCATID)" Value="" Type="string" />
 
+            <!-- ExcelExporter Add in -->
+            <?define ExcelAddinCLSID={344436BE-AB02-47A2-919F-9E45DD33DFF2}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.ExcelAddinCLSID)"/>
+            <RegistryValue Root="HKCR" Key="CLSID\$(var.ExcelAddinCLSID)"  Value="Barlist Excel Exporter" Type="string" />
+            <RegistryValue Root="HKCR" Key="CLSID\$(var.ExcelAddinCLSID)\InprocServer32" Value="[APPLICATIONFOLDER]BarlistExcelExporter.dll" Type="string" />
+            <RegistryValue Root="HKCR" Key="CLSID\$(var.ExcelAddinCLSID)\Implemented Categories\$(var.BarlistAddinCATID)" Value="" Type="string" />
+
          </Component>
       </DirectoryRef >
 
@@ -390,6 +397,7 @@
                    FileSource ="$(var.BarlistSourceRoot)" >
        <Component Id="BarlistXSD" Guid="{8D0F60DE-1FCA-41CD-AC1D-869C00F1AA21}" Win64="$(var.IsWin64)">
          <File Id="Barlist.xsd"       Name="Barlist.xsd"/>
+          <File Id="Barlist_Template.xltx" Name="Barlist_Template.xltx" />
        </Component>
      </DirectoryRef >
      
@@ -400,6 +408,7 @@
        <Component Id="BarlistDLLs" Guid="{CADE0630-B3A2-46E7-99E6-45311D0B5490}" Win64="$(var.IsWin64)">
          <File Id="Bars.dll"    Name="Bars.dll" KeyPath="yes"/>
          <File Id="BXF.dll"    Name="BXF.dll" />
+          <File Id="BarlistExcelExporter.dll" Name="BarlistExcelExporter.dll" />
        </Component>
      </DirectoryRef >
 

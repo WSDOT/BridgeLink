@@ -1,30 +1,33 @@
 REM - Script to prepare for Release
 
 REM - Update WBFL Files
-cd \ARP\WBFL
+cd %ARPDIR%\WBFL
 call UpdateBinFiles.bat
 
 REM - Update PGSuper/PGSplice Files
-cd \ARP\PGSuper
+cd %ARPDIR%\PGSuper
+call UpdateBinFiles.bat
+
+cd %ARPDIR%\PGSuperExperimental
 call UpdateBinFiles.bat
 
 REM - Update BEToolbox Files
-cd \ARP\BEToolbox
+cd %ARPDIR%\BEToolbox
 call UpdateBinFiles.bat
 
 
 REM - Update XBeam Rate Files
-cd \ARP\XBeamRate
+cd %ARPDIR%\XBeamRate
 call UpdateBinFiles.bat
 
 
 REM - Update Barlist Files
-cd \ARP\Barlist
+cd %ARPDIR%\Barlist
 call UpdateBinFiles.bat
 
 REM - Update Bridge Link Files
 
-cd \ARP\BridgeLink
+cd %ARPDIR%\BridgeLink
 SET BINTARGET=bin
 
 

@@ -1,6 +1,7 @@
 // Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
+#include "EAF\EAFResources.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -125,13 +126,19 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSM
 CAPTION "BridgeLink"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    LTEXT           "Engineer",IDC_STATIC,120,73,29,8
-    EDITTEXT        IDC_ENGINEER,158,71,96,14,ES_AUTOHSCROLL
-    LTEXT           "Company",IDC_STATIC,120,89,31,8
-    EDITTEXT        IDC_COMPANY,158,87,96,14,ES_AUTOHSCROLL
-    LTEXT           "The information below is used to personalize reports, graphs, and other output from the various BridgeLink application.",IDC_STATIC,120,49,218,17
     LTEXT           "Welcome to BridgeLink.\nThis wizard will guide you through the configuration process",IDC_STATIC,120,7,218,22
-    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,119,218,28
+    GROUPBOX        "Personalize",IDC_STATIC,120,37,218,72
+    LTEXT           "The information below is used to personalize reports, graphs, and other output from the various BridgeLink application.",IDC_STATIC,132,49,196,17
+    LTEXT           "Engineer",IDC_STATIC,132,73,29,8
+    EDITTEXT        IDC_ENGINEER,172,71,96,14,ES_AUTOHSCROLL
+    LTEXT           "Company",IDC_STATIC,132,89,31,8
+    EDITTEXT        IDC_COMPANY,172,87,96,14,ES_AUTOHSCROLL
+    GROUPBOX        "AutoSave and Recovery",IDC_STATIC,120,116,218,43
+    CONTROL         "Enable",IDC_AUTOSAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,136,37,10
+    LTEXT           "AutoSave interval",IDC_AUTOSAVE_INTERVAL_LABEL,186,136,58,8
+    EDITTEXT        IDC_AUTOSAVE_INTERVAL,245,134,21,14,ES_AUTOHSCROLL
+    LTEXT           "minutes",IDC_AUTOSAVE_INTERVAL_UNITS,269,136,26,8
+    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,170,218,28
 END
 
 
@@ -168,6 +175,7 @@ BEGIN
     BEGIN
         MENUITEM "&Help Topics",                ID_HELP_FINDER
         MENUITEM "Help Source",                 EAFID_HELP_SOURCE
+        MENUITEM "Help Viewer...",              EAFID_HELP_VIEWER
         MENUITEM SEPARATOR
         POPUP "&Online Resources"
         BEGIN
@@ -215,8 +223,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 6,1,0,0
- PRODUCTVERSION 6,1,0,0
+ FILEVERSION 7,0,0,7
+ PRODUCTVERSION 7,0,0,7
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -234,12 +242,12 @@ BEGIN
             VALUE "Comments", "A member of the Alternate Route Project"
             VALUE "CompanyName", "Washington State Department of Transportation"
             VALUE "FileDescription", "BridgeLink"
-            VALUE "FileVersion", "6.1.0.0"
+            VALUE "FileVersion", "7.0.0.7"
             VALUE "InternalName", "BridgeLink"
-            VALUE "LegalCopyright", "Copyright © 1999-2021, Washington State Department of Transportation, All Rights Reserved"
+            VALUE "LegalCopyright", "Copyright © 1999-2022, Washington State Department of Transportation, All Rights Reserved"
             VALUE "OriginalFilename", "BridgeLink.EXE"
             VALUE "ProductName", "BridgeLink Application"
-            VALUE "ProductVersion", "6.1.0.0"
+            VALUE "ProductVersion", "7.0.0.7"
         END
     END
     BLOCK "VarFileInfo"
@@ -290,11 +298,23 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 338
         VERTGUIDE, 120
+        VERTGUIDE, 132
         TOPMARGIN, 7
         BOTTOMMARGIN, 201
     END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_CONFIGURE_BRIDGELINK AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 
 /////////////////////////////////////////////////////////////////////////////

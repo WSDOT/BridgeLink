@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // BridgeLink - BridgeLink Extensible Application Framework
-// Copyright © 1999-2021  Washington State Department of Transportation
+// Copyright © 1999-2022  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
 // This program is free software; you can redistribute it and/or modify
@@ -37,6 +37,8 @@
 #include "MainFrm.h"
 
 #include "ConfigureBridgeLinkDlg.h"
+
+#include <EAF\EAFDataRecoveryHandler.h>
 
 
 // This is the range of command IDs for all plug-in commands... all means all commands added
@@ -103,6 +105,14 @@ void CBridgeLinkApp::SetUserInfo(const CString& strEngineer,const CString& strCo
    VERIFY(WriteProfileString(_T("Options"), _T("CompanyName"),  strCompany));
 }
 
+void CBridgeLinkApp::ConfigureAutoSave()
+{
+   BOOL bAutoSave;
+   int interval;
+   GetAutoSaveInfo(&bAutoSave, &interval);
+   EnableAutoSave(bAutoSave, interval);
+}
+
 IDType CBridgeLinkApp::Register(IBridgeLinkConfigurationCallback* pCallback)
 {
    IDType key = m_CallbackID++;
@@ -138,11 +148,17 @@ void CBridgeLinkApp::Configure()
    CConfigureBridgeLinkDlg dlg(m_ConfigurationCallbacks);
 
    GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
+   GetAutoSaveInfo(&dlg.m_BridgeLinkPage.m_bAutoSave, &dlg.m_BridgeLinkPage.m_AutoSaveInterval);
+
+   // autosave interval is in milliseconds, we want it in minutes
+   dlg.m_BridgeLinkPage.m_AutoSaveInterval /= 60000;
 
    INT_PTR results = dlg.DoModal();
    if ( results == IDOK )
    {
       SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
+      SaveAutoSaveInfo(dlg.m_BridgeLinkPage.m_bAutoSave, dlg.m_BridgeLinkPage.m_AutoSaveInterval*60000);
+      ConfigureAutoSave();
    }
 }
 
@@ -175,7 +191,7 @@ CString CBridgeLinkApp::GetDocumentationRootLocation()
 
       // Get the default location for the documentation root from the local machine registry hive
       // If not present, use the WSDOT location
-      CString strDefaultDocumentationRootLocation = GetLocalMachineString(_T("Settings"),_T("DocumentationRoot"), _T("http://www.wsdot.wa.gov/eesc/bridge/software/Documentation/"));
+      CString strDefaultDocumentationRootLocation = GetLocalMachineString(_T("Settings"),_T("DocumentationRoot"), _T("https://www.wsdot.wa.gov/eesc/bridge/software/Documentation/"));
 
       // Get the user's setting, using the local machine setting as the default if not present
       CString strDocumentationRootLocation = GetProfileString(_T("Settings"),_T("DocumentationRoot"),strDefaultDocumentationRootLocation);
@@ -229,6 +245,13 @@ OLECHAR* CBridgeLinkApp::GetPluginCategoryName()
 CATID CBridgeLinkApp::GetPluginCategoryID()
 {
    return CATID_BridgeLinkPlugin;
+}
+
+void CBridgeLinkApp::ProcessCommandLineOptions(CEAFCommandLineInfo& cmdInfo)
+{
+   // disable AutoSave when processing command line options
+   EnableAutoSave(false, 0);
+   __super::ProcessCommandLineOptions(cmdInfo);
 }
 
 CEAFSplashScreenInfo CBridgeLinkApp::GetSplashScreenInfo()
@@ -330,10 +353,12 @@ BOOL CBridgeLinkApp::InitInstance()
    sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
 
    // Need to let drag and drop messages through
-   // See http://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/
+   // See https://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/
    ::ChangeWindowMessageFilter(WM_DROPFILES,MSGFLT_ADD);
    ::ChangeWindowMessageFilter(WM_COPYDATA, MSGFLT_ADD);
    ::ChangeWindowMessageFilter(0x0049,      MSGFLT_ADD);
+
+   ConfigureAutoSave();
 
 	return TRUE;
 }
@@ -389,10 +414,16 @@ void CBridgeLinkApp::RegistryInit()
    m_pszProfileName = _tcsdup(_T("BridgeLink"));
 
    CEAFPluginApp::RegistryInit();
+
+   // In CEAFApp::InitInstance, RegistryInit() is called before the help window is created
+   // so this is an excellent location to set the value.
+   CString strDefaultHelpWindow = GetProfileString(_T("Settings"), _T("UseBuiltinHelpWindow"), _T("No"));
+   m_bUseHelpWindow = (strDefaultHelpWindow.CompareNoCase(_T("No")) == 0) ? FALSE : TRUE;
 }
 
 void CBridgeLinkApp::RegistryExit()
 {
+   WriteProfileString(_T("Settings"), _T("UseBuiltinHelpWindow"), m_bUseHelpWindow ? _T("Yes") : _T("No"));
    CEAFPluginApp::RegistryExit();
 }
 
@@ -415,14 +446,15 @@ void CBridgeLinkApp::OnScreenSize()
 
 void CBridgeLinkApp::OnHelp()
 {
-   // do nothing... just need this so MFC doesn't hide help buttons
+   // do nothing... just need this so MFC doesn't hide help buttns
 }
+
 
 CString CBridgeLinkApp::GetWsdotUrl()
 {
-//   CString url = GetProfileString(_T("Settings"), _T("WsdotUrl"), _T("http://www.wsdot.wa.gov"));
+//   CString url = GetProfileString(_T("Settings"), _T("WsdotUrl"), _T("https://www.wsdot.wa.gov"));
 
-   CString strDefault(_T("http://www.wsdot.wa.gov"));
+   CString strDefault(_T("https://www.wsdot.wa.gov"));
 
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_LOCAL_MACHINE,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
@@ -447,9 +479,9 @@ CString CBridgeLinkApp::GetWsdotUrl()
 
 CString CBridgeLinkApp::GetWsdotBridgeUrl()
 {
-//   CString url = GetProfileString(_T("Settings"), _T("WsdotBridgeUrl"), _T("http://www.wsdot.wa.gov/eesc/bridge"));
+//   CString url = GetProfileString(_T("Settings"), _T("WsdotBridgeUrl"), _T("https://www.wsdot.wa.gov/eesc/bridge"));
 
-   CString strDefault(_T("http://www.wsdot.wa.gov/eesc/bridge"));
+   CString strDefault(_T("https://www.wsdot.wa.gov/eesc/bridge"));
 
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_LOCAL_MACHINE,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
@@ -474,7 +506,7 @@ CString CBridgeLinkApp::GetWsdotBridgeUrl()
 
 CString CBridgeLinkApp::GetBridgeLinkUrl()
 {
-   CString strDefault(_T("http://www.wsdot.wa.gov/eesc/bridge/software/index.cfm?fuseaction=software_detail&software_id=69"));
+   CString strDefault(_T("https://www.wsdot.wa.gov/eesc/bridge/software/index.cfm?fuseaction=software_detail&software_id=69"));
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_LOCAL_MACHINE,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
    if ( result != ERROR_SUCCESS )
@@ -513,7 +545,7 @@ void CBridgeLinkApp::OnHelpJoinArpList()
 {
    HINSTANCE hInstance = ::ShellExecute(m_pMainWnd->GetSafeHwnd(),
                                         _T("open"),
-										_T("http://www.pgsuper.com/content/forum"),
+										_T("https://www.pgsuper.com/content/forum"),
                                          0,0,SW_SHOWDEFAULT);
 
    if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR)
@@ -526,7 +558,7 @@ void CBridgeLinkApp::OnHelpInetARP()
 {
    HINSTANCE hInstance = ::ShellExecute(m_pMainWnd->GetSafeHwnd(),
                                         _T("open"),
-                                        _T("http://wsdot.wa.gov/eesc/bridge/alternateroute"),
+                                        _T("https://wsdot.wa.gov/eesc/bridge/alternateroute"),
                                          0,0,SW_SHOWDEFAULT);
 
    if ( hInstance <= (HINSTANCE)HINSTANCE_ERROR )

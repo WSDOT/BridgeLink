@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // BridgeLink - BridgeLink Extensible Application Framework
-// Copyright © 1999-2021  Washington State Department of Transportation
+// Copyright © 1999-2022  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
 // This program is free software; you can redistribute it and/or modify
@@ -92,11 +92,13 @@ public:
    afx_msg void OnConfigureUpdateUI(CCmdUI* pCmdUI);
    afx_msg void OnConfigure();
    afx_msg void OnHelp();
+   afx_msg void OnHelpViewer();
 	//}}AFX_MSG
 	virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo) override;
 	DECLARE_MESSAGE_MAP()
 
 protected:
+   virtual void ProcessCommandLineOptions(CEAFCommandLineInfo& cmdInfo) override;
    virtual CEAFSplashScreenInfo GetSplashScreenInfo() override;
    virtual LPCTSTR GetRegistryKey() override;
    virtual CMDIFrameWnd* CreateMainFrame() override;
@@ -116,6 +118,8 @@ public:
 private:
    virtual void RegistryInit() override; // All registry initialization goes here
    virtual void RegistryExit() override; // All registry cleanup goes here
+
+   void ConfigureAutoSave();
 
    IDType m_CallbackID;
    std::map<IDType,IBridgeLinkConfigurationCallback*> m_ConfigurationCallbacks;

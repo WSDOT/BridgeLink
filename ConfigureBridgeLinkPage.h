@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // BridgeLink - BridgeLink Extensible Application Framework
-// Copyright © 1999-2021  Washington State Department of Transportation
+// Copyright © 1999-2022  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
 // This program is free software; you can redistribute it and/or modify
@@ -35,6 +35,8 @@ public:
 
    CString m_strEngineer;
    CString m_strCompany;
+   BOOL m_bAutoSave;
+   int m_AutoSaveInterval;
 
 // Dialog Data
 	enum { IDD = IDD_CONFIGURE_BRIDGELINK };
@@ -49,4 +51,5 @@ protected:
    afx_msg void OnHelp();
 public:
    virtual BOOL OnInitDialog() override;
+   afx_msg void OnBnClickedAutosave();
 };

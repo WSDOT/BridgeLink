@@ -301,6 +301,43 @@
                            Value=""
                            Type="string" />
 
+
+            <!-- NU Deck Bulb Tee Factory -->
+            <?define NUDeckBulbTeeFactoryCLSID={D543DA67-2E50-48D1-8E07-E8A97F5198F3}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.NUDeckBulbTeeFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.NUDeckBulbTeeFactoryCLSID)"
+                           Value="NU Deck Bulb Tee"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.NUDeckBulbTeeFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.NUDeckBulbTeeFactoryCLSID)\Implemented Categories\$(var.PGSuperDeckBulbTeeBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- PCI UHPC Deck Bulb Tee Factory -->
+            <?define PCIUHPCDeckBulbTeeFactoryCLSID={28549B5C-856A-443A-B0BE-470348D16BE7}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.PCIUHPCDeckBulbTeeFactoryCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PCIUHPCDeckBulbTeeFactoryCLSID)"
+                           Value="PCI UHPC Deck Bulb Tee"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PCIUHPCDeckBulbTeeFactoryCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.PCIUHPCDeckBulbTeeFactoryCLSID)\Implemented Categories\$(var.PGSuperDeckBulbTeeBeamFactoryCATID)"
+                           Value=""
+                           Type="string" />
+
             <!-- Deck Slab Beam Factory -->
             <?define PGSuperDeckSlabBeamFactoryCLSID={DEFA27AD-3D22-481b-9006-627C65D2648F}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"

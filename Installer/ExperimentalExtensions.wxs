@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <?include Variables.wxi?>
+  <?include PGSuperCATID.wxi?>
+  <?include PGSpliceCATID.wxi?>
+  <Fragment>
+
+
+
+    <!-- PGSuper Experimental Extensions-->
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource="$(var.PGSuperSourceRoot)\Extensions\Experimental\$(var.PlatformFolder)">
+         <Component Id="ExperementalExtensions"
+                    Guid="{39ABB7C0-ACDC-4A42-90BB-56365345AB09}"
+                    Win64="$(var.IsWin64)"
+                    >
+            <File Id="IfcExtensions.dll"
+                  Name="IfcExtensions.dll"
+                  KeyPath="yes" />
+
+           <!-- Ifc Importer -->
+            <?define IfcImporterCLSID={9A717887-EB12-470E-8A4F-C941F65E592B}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.IfcImporterCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.IfcImporterCLSID)"
+                           Value="IFC Importer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                             Key="CLSID\$(var.IfcImporterCLSID)\InprocServer32"
+                             Value="[APPLICATIONFOLDER]IfcExtensions.dll"
+                             Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.IfcImporterCLSID)\Implemented Categories\$(var.PGSuperDataImporterCATID)"
+                          Value=""
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.IfcImporterCLSID)\Implemented Categories\$(var.PGSpliceDataImporterCATID)"
+                          Value=""
+                          Type="string" />
+
+           <!-- Ifc Exporter-->
+             <?define IfcExporterCLSID={4E36E0A6-9EAE-452E-B91C-0099D065A764}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.IfcExporterCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.IfcExporterCLSID)"
+                           Value="Ifc Exporter"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.IfcExporterCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]IfcExtensions.dll"
+                           Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.IfcExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+           <RegistryValue Root="HKCR"
+                          Key="CLSID\$(var.IfcExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
+                          Value=""
+                          Type="string" />
+
+      </Component>
+    </DirectoryRef>
+ 
+       <Feature Id="ExperementalFeatures"
+               Absent="allow"
+               ConfigurableDirectory="APPLICATIONFOLDER"
+               Description="Experimental features for PGSuper and PGSplice"
+               Display="expand"
+               Title="Experimental Features (Optional)"
+               Level="$(var.ExperimentalFeatureLevel)">
+         <ComponentRef Id="ExperementalExtensions"/>
+      </Feature>
+
+  </Fragment>
+</Wix>

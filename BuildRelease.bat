@@ -1,11 +1,11 @@
 REM - Script to prepare for Release
 
 
-SET VERSION=6.1.0.0
+SET VERSION=7.0.0.7
 
 REM - Step 1. Update the documentation
 
-cd \ARP\BridgeLink
+cd %ARPDIR%\BridgeLink
 
 call PublishDocumentation.bat
 
@@ -13,7 +13,7 @@ call PublishDocumentation.bat
 
 REM - Step 2. Update the binary files
 
-cd \ARP\BridgeLink
+cd %ARPDIR%\BridgeLink
 
 call UpdateBinFiles.bat
 
@@ -26,38 +26,39 @@ cd \ARP_RELEASE
 
 mkdir Barlist\%VERSION%\bin
 
-xcopy /E /I /Y \ARP\Barlist\bin\* Barlist\%VERSION%\bin
+xcopy /E /I /Y %ARPDIR%\Barlist\bin\* Barlist\%VERSION%\bin
 
 
 
 mkdir BEToolbox\%VERSION%\bin
 
-xcopy /E /I /Y \ARP\BEToolbox\bin\* BEToolbox\%VERSION%\bin
+xcopy /E /I /Y %ARPDIR%\BEToolbox\bin\* BEToolbox\%VERSION%\bin
 
 
 
 mkdir BridgeLink\%VERSION%\bin
 
-xcopy /E /I /Y  \ARP\BridgeLink\bin\* BridgeLink\%VERSION%\bin
+xcopy /E /I /Y  %ARPDIR%\BridgeLink\bin\* BridgeLink\%VERSION%\bin
 
 
 
 mkdir PGSuper\%VERSION%\bin
 
-xcopy /E /I /Y  \ARP\PGSuper\bin\* PGSuper\%VERSION%\bin
+xcopy /E /I /Y  %ARPDIR%\PGSuper\bin\* PGSuper\%VERSION%\bin
+xcopy /E /I /Y  %ARPDIR%\PGSuperExperimental\bin\* PGSuper\%VERSION%\bin
 
 
 
 mkdir XBeamRate\%VERSION%\bin
 
-xcopy /E /I /Y  \ARP\XBeamRate\bin\* XBeamRate\%VERSION%\bin
+xcopy /E /I /Y  %ARPDIR%\XBeamRate\bin\* XBeamRate\%VERSION%\bin
 
 
 
 mkdir WBFL\%VERSION%\bin
 
-xcopy /E /I /Y  \ARP\WBFL\bin\* WBFL\%VERSION%\bin
+xcopy /E /I /Y  %ARPDIR%\WBFL\bin\* WBFL\%VERSION%\bin
 
 
 
-cd \ARP\BridgeLink
+cd %ARPDIR%\BridgeLink
