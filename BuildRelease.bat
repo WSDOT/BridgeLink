@@ -1,7 +1,7 @@
 REM - Script to prepare for Release
 
 
-SET VERSION=7.0.0.7
+SET VERSION=7.0.1.0
 
 REM - Step 1. Update the documentation
 
@@ -45,7 +45,7 @@ xcopy /E /I /Y  %ARPDIR%\BridgeLink\bin\* BridgeLink\%VERSION%\bin
 mkdir PGSuper\%VERSION%\bin
 
 xcopy /E /I /Y  %ARPDIR%\PGSuper\bin\* PGSuper\%VERSION%\bin
-xcopy /E /I /Y  %ARPDIR%\PGSuperExperimental\bin\* PGSuper\%VERSION%\bin
+xcopy /E /I /Y  %ARPDIR%\PGSuperIfcExtensions\bin\* PGSuper\%VERSION%\bin
 
 
 
