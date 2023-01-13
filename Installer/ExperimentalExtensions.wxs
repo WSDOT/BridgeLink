@@ -14,8 +14,8 @@
                     Guid="{39ABB7C0-ACDC-4A42-90BB-56365345AB09}"
                     Win64="$(var.IsWin64)"
                     >
-            <File Id="IfcExtensions.dll"
-                  Name="IfcExtensions.dll"
+            <File Id="PGSuperIfcExtensions.dll"
+                  Name="PGSuperIfcExtensions.dll"
                   KeyPath="yes" />
 
            <!-- Ifc Importer -->
@@ -25,11 +25,11 @@
                          Key ="CLSID\$(var.IfcImporterCLSID)"/>
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.IfcImporterCLSID)"
-                           Value="IFC Importer"
+                           Value="PGSuper IFC Importer"
                            Type="string" />
             <RegistryValue Root="HKCR"
                              Key="CLSID\$(var.IfcImporterCLSID)\InprocServer32"
-                             Value="[APPLICATIONFOLDER]IfcExtensions.dll"
+                             Value="[APPLICATIONFOLDER]PGSuperIfcExtensions.dll"
                              Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.IfcImporterCLSID)\Implemented Categories\$(var.PGSuperDataImporterCATID)"
@@ -47,11 +47,11 @@
                          Key ="CLSID\$(var.IfcExporterCLSID)"/>
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.IfcExporterCLSID)"
-                           Value="Ifc Exporter"
+                           Value="PGSuper IFC Exporter"
                            Type="string" />
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.IfcExporterCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]IfcExtensions.dll"
+                           Value="[APPLICATIONFOLDER]PGSuperIfcExtensions.dll"
                            Type="string" />
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.IfcExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"

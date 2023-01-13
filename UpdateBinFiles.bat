@@ -8,7 +8,7 @@ REM - Update PGSuper/PGSplice Files
 cd %ARPDIR%\PGSuper
 call UpdateBinFiles.bat
 
-cd %ARPDIR%\PGSuperExperimental
+cd %ARPDIR%\PGSuperIfcExtensions
 call UpdateBinFiles.bat
 
 REM - Update BEToolbox Files

@@ -45,7 +45,7 @@ xcopy /E /I /Y  %ARPDIR%\BridgeLink\bin\* BridgeLink\%VERSION%\bin
 mkdir PGSuper\%VERSION%\bin
 
 xcopy /E /I /Y  %ARPDIR%\PGSuper\bin\* PGSuper\%VERSION%\bin
-xcopy /E /I /Y  %ARPDIR%\PGSuperExperimental\bin\* PGSuper\%VERSION%\bin
+xcopy /E /I /Y  %ARPDIR%\PGSuperIfcExtensions\bin\* PGSuper\%VERSION%\bin
 
 
 

@@ -7,49 +7,49 @@ REM SET TAG=version_7.1.0_beta_0
 REM git tag %TAG% isn't working so the tags are explicit... use search/replace to update in all places
 
 cd \ARP\BEToolbox\
-git commit -a -m "Updated version numbers for 7.1.0 release"
+REM git commit -a -m "Updated version numbers for 7.1.0 release"
 git tag version_7.1.0_beta_0
 git push
 git push --tags
 
 cd \ARP\BEToolboxExtensions\
-git commit -a -m "Updated version numbers for 7.1.0 release"
+REM git commit -a -m "Updated version numbers for 7.1.0 release"
 git tag version_7.1.0_beta_0
 git push
 git push --tags
 
 cd \ARP\Barlist\
-git commit -a -m "Updated version numbers for 7.1.0 release"
+REM git commit -a -m "Updated version numbers for 7.1.0 release"
 git tag version_7.1.0_beta_0
 git push
 git push --tags
 
 cd \ARP\PGSuper\
-git commit -a -m "Updated version numbers for 7.1.0 release"
+REM git commit -a -m "Updated version numbers for 7.1.0 release"
 git tag version_7.1.0_beta_0
 git push
 git push --tags
 
 cd \ARP\PGSuperExperimental\
-git commit -a -m "Updated version numbers for 7.1.0 release"
+REM git commit -a -m "Updated version numbers for 7.1.0 release"
 git tag version_7.1.0_beta_0
 git push
 git push --tags
 
 cd \ARP\XBeamRate\
-git commit -a -m "Updated version numbers for 7.1.0 release"
+REM git commit -a -m "Updated version numbers for 7.1.0 release"
 git tag version_7.1.0_beta_0
 git push
 git push --tags
 
 cd \ARP\WBFL\
-git commit -a -m "Updated version numbers for 7.1.0 release"
+REM git commit -a -m "Updated version numbers for 7.1.0 release"
 git tag version_7.1.0_beta_0
 git push
 git push --tags
 
 cd \ARP\BridgeLink\
-git commit -a -m "Updated version numbers for 7.1.0 release"
+REM git commit -a -m "Updated version numbers for 7.1.0 release"
 git tag version_7.1.0_beta_0
 git push
 git push --tags
