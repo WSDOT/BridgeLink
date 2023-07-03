@@ -4,15 +4,15 @@ This whitepaper documents the procedures for releasing the BridgeLink applicatio
 
 **Building source for release**
 
-Before BridgeLink can be release, the source files must be updated with version information and built.
+Before BridgeLink can be released, the source files must be updated with version information and built.
 
 ***Unit and Regression Tests***
 
-Beforing publishing a release, run the WBFL unit tests and the regression tests for all of the BridgeLink applications. Verify all tests pass and all issues are resolved.
+Before publishing a release, run the WBFL unit tests and the regression tests for all of the BridgeLink applications. Verify all tests pass and all issues are resolved.
 
-***Update Copyright Date***
+***Update Copyright Notice***
 
-Once a year, the copyright date must be updated to the current year. Every source file contains the copyright date and must be updated. Additionally, the DLL and EXE resources must have their copyright data updated as well. The easiest way to update the copyright date is to search and replace "Copyright © 1999-2021" with the correct ending year. Do this in both the WBFL and BridgeLinkComplete solutions.
+Once a year, the copyright notice must be updated to the current year. Every source file contains the copyright notice and must be updated. Additionally, the DLL and EXE resources must have their copyright data updated as well. The easiest way to update the copyright date is to search and replace "Copyright © 1999-2021" with the correct ending year (of course, the ending year range will change so you actually need to search for the year range 1999-yyyy). Do this in both the WBFL and BridgeLinkComplete solutions.
 
 Commit the copyright update to GIT.
 
@@ -41,6 +41,7 @@ Also, `\ARP\BridgeLink\Documentation\src\index.md` contains links to the various
 There are several script files (bat files) used to prepare the installer build environment. The version number must be updated in these files as well. Update the version number in the following files:
 
 * BuildRelease.bat
+* PublishDocumentation.bat
 * Tag.bat
 
 Updating the version number in Tag.bat is a little cumbersome. Review the comments at the top of the file for additional information.
@@ -55,11 +56,11 @@ When making an official release (not a beta release), the version constant must 
 
 If this is a production (final) release, comment out the `_BETA_VERSION` macro in `BridgeLinkVersion.h`.
 
-This macro causes certain debugging features to be compiled into Beta releases. We do not want this features in the final production release of the software.
+This macro causes certain debugging features to be compiled into Beta releases. We do not want these features in the final production release of the software.
 
 ***Compile***
 
-Once the version numbers are update do a complete build of the WBFL and BridgeLinkComplete solutions.
+Once the version numbers are update, do a complete build of the WBFL and BridgeLinkComplete solutions.
 
 Commit to GIT with a commit message stating "Updated version numbers for 7.1 Beta 3". Of course, you'll substitute the actual version number in the commit message.
 
@@ -67,7 +68,7 @@ Commit to GIT with a commit message stating "Updated version numbers for 7.1 Bet
 
 Before the installer can be built, the build envinroment must be prepared. This is made easy through script files. The BuildRelease.bat file copies all the files for the release into predefined locations for the BridgeLinkInstaller project. This batch script also builds and publishes the complete BridgeLink end user documentation set. The batch script does not published PGSuper or PGSplice configurations.
 
-* Using a command prompt or PowerShell window, nagivate to `\ARP\BridgeLink` and run `BuildRelease.bat`
+* Using a command prompt or PowerShell (as adminstrator), nagivate to `\ARP\BridgeLink` and run `BuildRelease.bat`
 
 **Building the installer (MSI) package**
 
@@ -92,7 +93,7 @@ Copy the resulting installer packages to `\ARP_INSTALLERS`.
 
 **Test the installer**
 
-Test the installer packages before deploying them.
+Test the installer packages before deploying them. A good way to test them is to start Windows Sandbox (a virtual machine) and install the software and try it out.
 
 **Tag and commit**
 
@@ -102,11 +103,11 @@ Run the `Tag.bat` file to tag and commit the release.
 
 **Release Notes**
 
-Update the release notes in `\ARP_INSTALLER\Release Notes`. Where ever possible append the Mantis issue number to the note with "(Mnnnn)" where nnnn is the issue number.
+Update the release notes in `\ARP_INSTALLER\Release Notes`. Whereever possible append the Mantis issue number to the note with "(Mnnnn)" where nnnn is the issue number.
 
 **Deploying the WSDOT installer**
 
-BridgeLink must be deployed to WSDOT engineers and to the public via the WSDOT web site.
+BridgeLink must be deployed to WSDOT engineers (internal) and to the public via the WSDOT web site (external).
 
 ***Internal deployment***
 
