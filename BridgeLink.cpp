@@ -145,20 +145,28 @@ void CBridgeLinkApp::OnConfigureUpdateUI(CCmdUI* pCmdUI)
 
 void CBridgeLinkApp::Configure()
 {
-   CConfigureBridgeLinkDlg dlg(m_ConfigurationCallbacks);
-
-   GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
-   GetAutoSaveInfo(&dlg.m_BridgeLinkPage.m_bAutoSave, &dlg.m_BridgeLinkPage.m_AutoSaveInterval);
-
-   // autosave interval is in milliseconds, we want it in minutes
-   dlg.m_BridgeLinkPage.m_AutoSaveInterval /= 60000;
-
-   INT_PTR results = dlg.DoModal();
-   if ( results == IDOK )
+   // Can't configure if there are other instances of bridgelink running. This avoids race condition on libraries and templates
+   if (EAFAreOtherBridgeLinksRunning())
    {
-      SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
-      SaveAutoSaveInfo(dlg.m_BridgeLinkPage.m_bAutoSave, dlg.m_BridgeLinkPage.m_AutoSaveInterval*60000);
-      ConfigureAutoSave();
+      ::AfxMessageBox(_T("BridgeLink cannot be configured at this time because other running instances of the BridgeLink application have been detected. Please close all other open BridgeLink applications and try again."),MB_OK | MB_ICONEXCLAMATION);
+   }
+   else
+   {
+      CConfigureBridgeLinkDlg dlg(m_ConfigurationCallbacks);
+
+      GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
+      GetAutoSaveInfo(&dlg.m_BridgeLinkPage.m_bAutoSave,&dlg.m_BridgeLinkPage.m_AutoSaveInterval);
+
+      // autosave interval is in milliseconds, we want it in minutes
+      dlg.m_BridgeLinkPage.m_AutoSaveInterval /= 60000;
+
+      INT_PTR results = dlg.DoModal();
+      if (results == IDOK)
+      {
+         SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
+         SaveAutoSaveInfo(dlg.m_BridgeLinkPage.m_bAutoSave,dlg.m_BridgeLinkPage.m_AutoSaveInterval * 60000);
+         ConfigureAutoSave();
+      }
    }
 }
 
