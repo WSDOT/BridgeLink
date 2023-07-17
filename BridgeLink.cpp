@@ -146,7 +146,7 @@ void CBridgeLinkApp::OnConfigureUpdateUI(CCmdUI* pCmdUI)
 void CBridgeLinkApp::Configure()
 {
    // Can't configure if there are other instances of bridgelink running. This avoids race condition on libraries and templates
-   if (EAFAreOtherBridgeLinksRunning())
+   if (EAFAreOtherProgramInstancesRunning())
    {
       ::AfxMessageBox(_T("BridgeLink cannot be configured at this time because other running instances of the BridgeLink application have been detected. Please close all other open BridgeLink applications and try again."),MB_OK | MB_ICONEXCLAMATION);
    }
