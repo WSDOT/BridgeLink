@@ -18,7 +18,7 @@ Commit the copyright update to GIT.
 
 ***Version Numbers***
 
-Before releasing, the version number must be incremented. The easiest way to do this is search and replace the version number. The version number is represented in two forms in the RC files. The forms are x.y.z.b and x,y,z,b and both forms must be replaced. Do this search and replace in the WBFL, BridgeLinkComplete, and BridgeLinkInstaller solutions.
+Before releasing, the version number must be incremented. The easiest way to do this is search and replace the version number. The version number is represented in two forms in the RC files. The forms are x.y.z.b and x,y,z,b and both forms must be replaced. Do this search and replace in the WBFL, BridgeLinkComplete, and BridgeLinkInstaller (located in \ARP\BridgeLink\Installers) solutions.
 
 As an example, when release the third beta of version 7.1.0 do a search and replace of 7.1.0.2 with 7.1.0.3 and 7,1,0,2 with 7,1,0,3.
 
@@ -42,6 +42,7 @@ There are several script files (bat files) used to prepare the installer build e
 
 * BuildRelease.bat
 * PublishDocumentation.bat
+* PublishConfigurations.bat
 * Tag.bat
 
 Updating the version number in Tag.bat is a little cumbersome. Review the comments at the top of the file for additional information.
@@ -62,7 +63,7 @@ This macro causes certain debugging features to be compiled into Beta releases. 
 
 Once the version numbers are update, do a complete build of the WBFL and BridgeLinkComplete solutions.
 
-Commit to GIT with a commit message stating "Updated version numbers for 7.1 Beta 3". Of course, you'll substitute the actual version number in the commit message.
+Commit to GIT with a commit message stating "Updated version numbers for 7.1 Beta 3", or something similar. Of course, you'll substitute the actual version number in the commit message.
 
 **Preparing the installer build environment**
 
@@ -72,7 +73,7 @@ Before the installer can be built, the build envinroment must be prepared. This 
 
 **Building the installer (MSI) package**
 
-After the installer build environment is prepared, the BridgeLinkInstaller solution is used to build the MSI installer packages. This solution creates two installer packages, one for WSDOT and one for TxDOT. The TxDOT package differs from the WSDOT package in that it has defaults set for the TxDOT engineering environment.
+After the installer build environment is prepared, the BridgeLinkInstaller solution is used to build the MSI installer packages. This solution creates installer packages for WSDOT and TxDOT. The TxDOT package differs from the WSDOT package in that it has defaults set for the TxDOT engineering environment.
 
 In Visual Studio, select Build > Batch Build, select the Release and TxDOT x64 Solution Configurations and build. The resulting MSI files are located in:
 
