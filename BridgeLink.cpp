@@ -235,7 +235,7 @@ LPCTSTR CBridgeLinkApp::GetRegistryKey()
    return _T("Washington State Department of Transportation");
 }
 
-OLECHAR* CBridgeLinkApp::GetAppPluginCategoryName()
+LPCTSTR CBridgeLinkApp::GetAppPluginCategoryName()
 {
    return _T("BridgeLink Application Plugin");
 }
@@ -245,7 +245,7 @@ CATID CBridgeLinkApp::GetAppPluginCategoryID()
    return CATID_BridgeLinkAppPlugin;
 }
 
-OLECHAR* CBridgeLinkApp::GetPluginCategoryName()
+LPCTSTR CBridgeLinkApp::GetPluginCategoryName()
 {
    return _T("BridgeLink Plugin");
 }
