@@ -43,8 +43,9 @@
            <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="7"/>
            <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="8"/>
            <ProgId Id="Spectra.Document" Icon="BEToolbox.dll" IconIndex="5"/>
+            <ProgId Id="BrgCalc.Document" Icon="BEToolbox.dll" IconIndex="6"/>
 
-           <!-- BEToolbox registry entries-->
+            <!-- BEToolbox registry entries-->
             
             <!-- BEToolbox Application Plugin -->
             <?define BEToolboxCLSID={B5E128D4-78F3-48e0-970E-812C2281EE4E}?>
@@ -219,7 +220,26 @@
                           Value=""
                           Type="string" />
 
-           <!-- PGSuper/PGSplice Plug-ins-->
+            <!-- BrgCalc -->
+            <?define BrgCalcToolCLSID={8D4B1258-B4CF-424D-8CAA-E6664D7141A0}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.BrgCalcToolCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BrgCalcToolCLSID)"
+                           Value="BrgCalc"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BrgCalcToolCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.BrgCalcToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                           Value=""
+                           Type="string" />
+
+            <!-- PGSuper/PGSplice Plug-ins-->
 
            <!-- Curvel Exporter -->
            <?define WSDOTCurvelDataExporterCLSID={E89CC143-53C9-43df-B1B4-E522769DE29B}?>

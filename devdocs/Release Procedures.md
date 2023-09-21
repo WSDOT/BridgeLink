@@ -20,7 +20,7 @@ Commit the copyright update to GIT.
 
 Before releasing, the version number must be incremented. The easiest way to do this is search and replace the version number. The version number is represented in two forms in the RC files. The forms are x.y.z.b and x,y,z,b and both forms must be replaced. Do this search and replace in the WBFL, BridgeLinkComplete, and BridgeLinkInstaller (located in \ARP\BridgeLink\Installers) solutions.
 
-As an example, when release the third beta of version 7.1.0 do a search and replace of 7.1.0.2 with 7.1.0.3 and 7,1,0,2 with 7,1,0,3.
+As an example, when releasing the third beta of version 7.1.0 do a search and replace of 7.1.0.2 with 7.1.0.3 and 7,1,0,2 with 7,1,0,3.
 
 ****Versioning the Installer Package****
 
@@ -63,8 +63,6 @@ This macro causes certain debugging features to be compiled into Beta releases. 
 
 Once the version numbers are update, do a complete build of the WBFL and BridgeLinkComplete solutions.
 
-Commit to GIT with a commit message stating "Updated version numbers for 7.1 Beta 3", or something similar. Of course, you'll substitute the actual version number in the commit message.
-
 **Preparing the installer build environment**
 
 Before the installer can be built, the build envinroment must be prepared. This is made easy through script files. The BuildRelease.bat file copies all the files for the release into predefined locations for the BridgeLinkInstaller project. This batch script also builds and publishes the complete BridgeLink end user documentation set. The batch script does not published PGSuper or PGSplice configurations.
@@ -80,7 +78,7 @@ In Visual Studio, select Build > Batch Build, select the Release and TxDOT x64 S
 * WSDOT - `\ARP\BridgeLink\installer\bin\x64\Release`
 * TxDOT - `\ARP\BridgeLink\installer\bin\x64\TxDOT`
 
-Occasionally, the Visual Studio macros well get messed up in the BridgeLinkInstaller.wixproj project file. If the resulting MSI files contain $(Project) and $(Configuration) in the filename, open the .wixproj file in a text editor, find the following line
+Occasionally, the Visual Studio macros well get messed up in the BridgeLinkInstaller.wixproj project file. If the resulting MSI files contain `$(Project)` and `$(Configuration)` in the filename, open the .wixproj file in a text editor, find the following line
 
     <OutputName>BridgeLink_7.0.0_Beta_5_%24%28Platform%29_%24%28Configuration%29</OutputName>
 
@@ -116,6 +114,6 @@ Copy the installer package to `J:\installs\BridgeLink`. Rename the installer pac
 
 ***External deployment***
 
-Copy the installer package to `\\wsdot\Resources\Topics\Publish\Web\ProdCF\EESC\Bridge\software\Downloads\BridgeLink_x.y` (where x.y is the version number). Rename the installer package to BridgeLink_x.y.z.msi.
+Copy the WSDOT installer package to `\\wsdot\Resources\Topics\Publish\Web\ProdCF\EESC\Bridge\software\Downloads\BridgeLink_x.y` (where x.y is the version number). Rename the installer package to BridgeLink_x.y.z.msi.
 
 Using the Admin interface of the Bridge Office Software Download site, add the new release, change the previous release to archival status, and update the release history with the release notes.
