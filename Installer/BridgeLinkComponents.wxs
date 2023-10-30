@@ -167,7 +167,16 @@
              </Extension>
            </ProgId>
 
-           <!-- XBeam Rate file associations -->
+            <ProgId Id="BrgCalc.Document">
+               <Extension Id="BrgCalc" ContentType="application/BrgCalc">
+                  <Verb Id="Open"
+                        Command="&amp;Open with BridgeLink:BEToolbox:BrgCalc"
+                        TargetFile="BridgeLink.exe"
+                        Argument='"%1"' />
+               </Extension>
+            </ProgId>
+
+            <!-- XBeam Rate file associations -->
            <ProgId Id="XBeamRate.Document">
              <Extension Id="XBR" ContentType="application/XBeamRate">
                <Verb Id="Open"

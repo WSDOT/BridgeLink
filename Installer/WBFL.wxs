@@ -18,6 +18,7 @@
             <!-- <File Id="WBFLBridgeGeometryAgent.dll"    Name="WBFLBridgeGeometryAgent.dll"/> -->
             <!-- <File Id="WBFLBridgeModeling.dll"   Name="WBFLBridgeModeling.dll"/> -->
             <File Id="WBFLCogo.dll"             Name="WBFLCogo.dll"/>
+            <File Id="WBFLCoordGeom.dll"             Name="WBFLCoordGeom.dll"/>
             <File Id="WBFLCore.dll"             Name="WBFLCore.dll"/>
             <File Id="WBFLDManip.dll"           Name="WBFLDManip.dll"/>
             <File Id="WBFLDManipTools.dll"      Name="WBFLDManipTools.dll"/>
@@ -25,35 +26,30 @@
             <File Id="WBFLFem2d.dll"            Name="WBFLFem2d.dll"/>
             <File Id="WBFLGenericBridge.dll"    Name="WBFLGenericBridge.dll"/>
             <File Id="WBFLGenericBridgeTools.dll"             Name="WBFLGenericBridgeTools.dll"/>
-            <File Id="WBFLGeometricPrimitives.dll"             Name="WBFLGeometricPrimitives.dll"/>
             <File Id="WBFLGeometry.dll"              Name="WBFLGeometry.dll"/>
             <File Id="WBFLGeomModel.dll"             Name="WBFLGeomModel.dll"/>
-            <File Id="WBFLGraphicsLib.dll"           Name="WBFLGraphicsLib.dll"/>
+            <File Id="WBFLGraphing.dll"           Name="WBFLGraphing.dll"/>
             <File Id="WBFLLBAM.dll"              Name="WBFLLBAM.dll"/>
             <File Id="WBFLLBAMAnalysis.dll"          Name="WBFLLBAMAnalysis.dll"/>
             <File Id="WBFLLBAMAnalysisUtility.dll"   Name="WBFLLBAMAnalysisUtility.dll"/>
             <File Id="WBFLLBAMLiveLoader.dll"        Name="WBFLLBAMLiveLoader.dll"/>
             <File Id="WBFLLBAMLoadCombiner.dll"      Name="WBFLLBAMLoadCombiner.dll"/>
             <File Id="WBFLLBAMUtility.dll"           Name="WBFLLBAMUtility.dll"/>
-            <!--<File Id="WBFLLibrary.dll"               Name="WBFLLibrary.dll"/> Depreciated-->
             <File Id="WBFLLibraryFw.dll"             Name="WBFLLibraryFw.dll"/>
             <File Id="WBFLLoading.dll"              Name="WBFLLoading.dll"/>
             <File Id="WBFLLrfd.dll"              Name="WBFLLrfd.dll"/>
-            <File Id="WBFLMaterial.dll"              Name="WBFLMaterial.dll"/>
+            <File Id="WBFLMaterials.dll"              Name="WBFLMaterials.dll"/>
             <File Id="WBFLMath.dll"              Name="WBFLMath.dll"/>
             <File Id="WBFLMfcTools.dll"              Name="WBFLMfcTools.dll"/>
             <File Id="WBFLRCCapacity.dll"              Name="WBFLRCCapacity.dll"/>
-            <File Id="WBFLReinforcedConcrete.dll"              Name="WBFLReinforcedConcrete.dll"/>
+            <File Id="WBFLRCSection.dll"              Name="WBFLRCSection.dll"/>
             <File Id="WBFLReporter.dll"              Name="WBFLReporter.dll"/>
             <File Id="WBFLReportManager.dll"              Name="WBFLReportManager.dll"/>
             <File Id="WBFLReportManagerAgent.dll"              Name="WBFLReportManagerAgent.dll"/>
-            <File Id="WBFLGraphManager.dll"              Name="WBFLGraphManager.dll"/>
             <File Id="WBFLGraphManagerAgent.dll"              Name="WBFLGraphManagerAgent.dll"/>
             <File Id="WBFLRoark.dll"              Name="WBFLRoark.dll"/>
-            <File Id="WBFLSections.dll"              Name="WBFLSections.dll"/>
             <File Id="WBFLSystem.dll"              Name="WBFLSystem.dll"/>
             <File Id="WBFLTools.dll"              Name="WBFLTools.dll"/>
-            <!--<File Id="WBFLTransactions.dll"              Name="WBFLTransactions.dll"/> Depreciated-->
             <File Id="WBFLUnitMgt.dll"              Name="WBFLUnitMgt.dll"/>
             <File Id="WBFLUnits.dll"              Name="WBFLUnits.dll"/>
             <File Id="WBFLUnitServer.dll"              Name="WBFLUnitServer.dll"/>

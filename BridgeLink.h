@@ -68,9 +68,9 @@ public:
 
 // CEAFPluginApp overrides
 public:
-   virtual OLECHAR* GetAppPluginCategoryName() override;
+   virtual LPCTSTR GetAppPluginCategoryName() override;
    virtual CATID GetAppPluginCategoryID() override;
-   virtual OLECHAR* GetPluginCategoryName() override;
+   virtual LPCTSTR GetPluginCategoryName() override;
    virtual CATID GetPluginCategoryID() override;
 
 // Overrides

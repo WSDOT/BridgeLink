@@ -121,9 +121,9 @@ STDAPI DllRegisterServer(void)
    if ( FAILED(hr) )
       return hr;
 
-   sysComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLinkAppPlugin, true);
+   WBFL::System::ComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLinkAppPlugin, true);
 
-   sysComCatMgr::RegWithCategory(CLSID_BridgeLinkExampleComponentInfo,CATID_BridgeLinkComponentInfo,true);
+   WBFL::System::ComCatMgr::RegWithCategory(CLSID_BridgeLinkExampleComponentInfo,CATID_BridgeLinkComponentInfo,true);
 
    return S_OK;
 }
@@ -133,9 +133,9 @@ STDAPI DllRegisterServer(void)
 
 STDAPI DllUnregisterServer(void)
 {
-   sysComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLinkAppPlugin, false);
+   WBFL::System::ComCatMgr::RegWithCategory(CLSID_Plugin, CATID_BridgeLinkAppPlugin, false);
 
-   sysComCatMgr::RegWithCategory(CLSID_BridgeLinkExampleComponentInfo,CATID_BridgeLinkComponentInfo,false);
+   WBFL::System::ComCatMgr::RegWithCategory(CLSID_BridgeLinkExampleComponentInfo,CATID_BridgeLinkComponentInfo,false);
 
    return _Module.UnregisterServer(TRUE);
 }

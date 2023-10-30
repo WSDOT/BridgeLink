@@ -145,20 +145,28 @@ void CBridgeLinkApp::OnConfigureUpdateUI(CCmdUI* pCmdUI)
 
 void CBridgeLinkApp::Configure()
 {
-   CConfigureBridgeLinkDlg dlg(m_ConfigurationCallbacks);
-
-   GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
-   GetAutoSaveInfo(&dlg.m_BridgeLinkPage.m_bAutoSave, &dlg.m_BridgeLinkPage.m_AutoSaveInterval);
-
-   // autosave interval is in milliseconds, we want it in minutes
-   dlg.m_BridgeLinkPage.m_AutoSaveInterval /= 60000;
-
-   INT_PTR results = dlg.DoModal();
-   if ( results == IDOK )
+   // Can't configure if there are other instances of bridgelink running. This avoids race condition on libraries and templates
+   if (EAFAreOtherProgramInstancesRunning())
    {
-      SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
-      SaveAutoSaveInfo(dlg.m_BridgeLinkPage.m_bAutoSave, dlg.m_BridgeLinkPage.m_AutoSaveInterval*60000);
-      ConfigureAutoSave();
+      ::AfxMessageBox(_T("BridgeLink cannot be configured at this time because other running instances of the BridgeLink application have been detected. Please close all other open BridgeLink applications and try again."),MB_OK | MB_ICONEXCLAMATION);
+   }
+   else
+   {
+      CConfigureBridgeLinkDlg dlg(m_ConfigurationCallbacks);
+
+      GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
+      GetAutoSaveInfo(&dlg.m_BridgeLinkPage.m_bAutoSave,&dlg.m_BridgeLinkPage.m_AutoSaveInterval);
+
+      // autosave interval is in milliseconds, we want it in minutes
+      dlg.m_BridgeLinkPage.m_AutoSaveInterval /= 60000;
+
+      INT_PTR results = dlg.DoModal();
+      if (results == IDOK)
+      {
+         SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
+         SaveAutoSaveInfo(dlg.m_BridgeLinkPage.m_bAutoSave,dlg.m_BridgeLinkPage.m_AutoSaveInterval * 60000);
+         ConfigureAutoSave();
+      }
    }
 }
 
@@ -227,7 +235,7 @@ LPCTSTR CBridgeLinkApp::GetRegistryKey()
    return _T("Washington State Department of Transportation");
 }
 
-OLECHAR* CBridgeLinkApp::GetAppPluginCategoryName()
+LPCTSTR CBridgeLinkApp::GetAppPluginCategoryName()
 {
    return _T("BridgeLink Application Plugin");
 }
@@ -237,7 +245,7 @@ CATID CBridgeLinkApp::GetAppPluginCategoryID()
    return CATID_BridgeLinkAppPlugin;
 }
 
-OLECHAR* CBridgeLinkApp::GetPluginCategoryName()
+LPCTSTR CBridgeLinkApp::GetPluginCategoryName()
 {
    return _T("BridgeLink Plugin");
 }
@@ -349,8 +357,8 @@ BOOL CBridgeLinkApp::InitInstance()
 
    // Must be done after call to base class InitInstance because OLE has not been
    // initialized yet.
-   //sysComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin); // this is done by the base class
-   sysComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
+   //WBFL::System::ComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin); // this is done by the base class
+   WBFL::System::ComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
 
    // Need to let drag and drop messages through
    // See https://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/
