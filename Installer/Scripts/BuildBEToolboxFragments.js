@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\8.0.0.4\\bin\\images");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\8.0.0.5\\bin\\images");
 var BEToolboxDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BEToolbox\\8.0");
 var fc = new Enumerator(ImagesFolder.Files);
 
