@@ -42,8 +42,8 @@
             <ProgId Id="BoxGdr.Document" Icon="BEToolbox.dll" IconIndex="2"/>
            <ProgId Id="Curvel.Document" Icon="BEToolbox.dll" IconIndex="7"/>
            <ProgId Id="PGStable.Document" Icon="BEToolbox.dll" IconIndex="8"/>
-           <ProgId Id="Spectra.Document" Icon="BEToolbox.dll" IconIndex="5"/>
             <ProgId Id="BrgCalc.Document" Icon="BEToolbox.dll" IconIndex="6"/>
+            <ProgId Id="Spectra.Document" Icon="BEToolbox.dll" IconIndex="5"/>
 
             <!-- BEToolbox registry entries-->
             
@@ -202,24 +202,8 @@
                           Type="string" />
 
            <!--Spectra -->
-           <?define SpectraToolCLSID={91F9BC47-B245-4E2E-B642-9F926C5A5E14}?>
-           <RegistryKey ForceCreateOnInstall="yes"
-                        ForceDeleteOnUninstall="yes"
-                        Root="HKCR"
-                        Key ="CLSID\$(var.SpectraToolCLSID)"/>
-           <RegistryValue Root="HKCR"
-                          Key="CLSID\$(var.SpectraToolCLSID)"
-                          Value="Spectra"
-                          Type="string" />
-           <RegistryValue Root="HKCR"
-                          Key="CLSID\$(var.SpectraToolCLSID)\InprocServer32"
-                          Value="[APPLICATIONFOLDER]BEToolbox.dll"
-                          Type="string" />
-           <RegistryValue Root="HKCR"
-                          Key="CLSID\$(var.SpectraToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
-                          Value=""
-                          Type="string" />
-
+           <!-- Moved to optional component in version 8.0 -->
+            
             <!-- BrgCalc -->
             <?define BrgCalcToolCLSID={8D4B1258-B4CF-424D-8CAA-E6664D7141A0}?>
             <RegistryKey ForceCreateOnInstall="yes"
@@ -348,7 +332,6 @@
      </DirectoryRef >
 
 
-
      <!-- BEToolbox Application Plugin -->
       <Feature Id="BEToolbox"
                Absent="allow"
@@ -357,6 +340,7 @@
                Display="expand"
                Title="BEToolbox (Optional)"
                Level="$(var.BEToolboxFeatureLevel)">
+         <FeatureRef Id="BEToolbox_Spectra"/>
          <ComponentRef Id="BEToolboxComponents" Primary="yes" />
          <ComponentRef Id="BEToolboxShortcuts"/>
         <ComponentRef Id="BEToolboxImages"/>

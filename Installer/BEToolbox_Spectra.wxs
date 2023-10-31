@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <?include Variables.wxi?>
+   <?include BEToolboxCATID.wxi?>
+
+   <Fragment>
+
+
+
+     <DirectoryRef Id="APPLICATIONFOLDER"
+                   FileSource ="$(var.BEToolboxSourceRoot)\$(var.PlatformFolder)" >
+
+        <Component Id="BEToolbox_Spectra"
+                    Guid="{C2E05472-1513-45A8-AF4B-13E62F2FF119}"
+                    Win64="$(var.IsWin64)"
+                    >
+
+
+           <?define SpectraToolCLSID={91F9BC47-B245-4E2E-B642-9F926C5A5E14}?>
+            <RegistryKey ForceCreateOnInstall="yes"
+                         ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.SpectraToolCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.SpectraToolCLSID)"
+                           Value="Spectra"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.SpectraToolCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]BEToolbox.dll"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.SpectraToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
+                           Value=""
+                           Type="string" />
+
+         </Component>
+    </DirectoryRef>
+ 
+       <Feature Id="BEToolbox_Spectra"
+               Absent="allow"
+               ConfigurableDirectory="APPLICATIONFOLDER"
+               Description="BEToolbox Spectra tool"
+               Display="expand"
+               Title="BEToolbox Spectra tool"
+               Level="$(var.BEToolbox_Spectra_Level)">
+         <ComponentRef Id="BEToolbox_Spectra"/>
+      </Feature>
+
+  </Fragment>
+</Wix>
