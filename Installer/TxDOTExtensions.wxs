@@ -250,10 +250,12 @@
               Level="$(var.TxDOTFeatureLevel)">
        <ComponentRef Id="TxDOTAgent"/>
        <ComponentRef Id="TOGADocs"/>
+        <ComponentRef Id="TOGASearchDocs"/>
        <ComponentRef Id="TOGAShortcuts"/>
        <ComponentRef Id="TxDOTTogaTemplates"/>
        <ComponentRef Id="TxCADExportTemplates"/>
        <ComponentRef Id="TxCADExportDocs"/>
+        <ComponentRef Id="TxCADExportSearchDocs"/>
        <?ifdef _TXDOT?>
           <ComponentRef Id="TxDOTCustomization"/>
        <?endif?>

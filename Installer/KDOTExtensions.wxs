@@ -87,6 +87,7 @@
              Level="$(var.KDOTFeatureLevel)">
       <ComponentRef Id="KDOTExport"/>
       <ComponentRef Id="KDOTDocs"/>
+       <ComponentRef Id="KDOTSearchDocs"/>
       <ComponentRef Id="KDOTShortcuts"/>
     </Feature>
 

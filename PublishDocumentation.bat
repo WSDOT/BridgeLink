@@ -34,60 +34,60 @@ REM - Copy the documentation sets to the WSDOT server
 rmdir /S /Q %DOC_TARGET%\BridgeLink\%BRIDGELINK_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\BridgeLink\%BRIDGELINK_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\BridgeLink\Documentation\BridgeLink.dm %DOC_TARGET%\BridgeLink\%BRIDGELINK_DOCUMENTATION_VERSION%\BridgeLink.dm.html
-copy %ARPDIR%\BridgeLink\Documentation\doc\html\* %DOC_TARGET%\BridgeLink\%BRIDGELINK_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\BridgeLink\Documentation\doc\html\* %DOC_TARGET%\BridgeLink\%BRIDGELINK_DOCUMENTATION_VERSION%\
 
 rmdir /S /Q %DOC_TARGET%\BEToolbox\%BETOOLBOX_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\BEToolbox\%BETOOLBOX_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\BEToolbox\Documentation\BEToolbox.dm %DOC_TARGET%\BEToolbox\%BETOOLBOX_DOCUMENTATION_VERSION%\BEToolbox.dm.html
-copy %ARPDIR%\BEToolbox\Documentation\doc\html\* %DOC_TARGET%\BEToolbox\%BETOOLBOX_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\BEToolbox\Documentation\doc\html\* %DOC_TARGET%\BEToolbox\%BETOOLBOX_DOCUMENTATION_VERSION%\
 
 rmdir /S /Q %DOC_TARGET%\PGSuper\%PGSUPER_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\PGSuper\%PGSUPER_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\PGSuper\Documentation\PGSuper.dm %DOC_TARGET%\PGSuper\%PGSUPER_DOCUMENTATION_VERSION%\PGSuper.dm.html
-copy %ARPDIR%\PGSuper\Documentation\PGSuper\doc\html\* %DOC_TARGET%\PGSuper\%PGSUPER_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\PGSuper\Documentation\PGSuper\doc\html\* %DOC_TARGET%\PGSuper\%PGSUPER_DOCUMENTATION_VERSION%\
 
 rmdir /S /Q %DOC_TARGET%\PGSplice\%PGSPLICE_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\PGSplice\%PGSPLICE_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\PGSuper\Documentation\PGSplice.dm %DOC_TARGET%\PGSplice\%PGSPLICE_DOCUMENTATION_VERSION%\PGSplice.dm.html
-copy %ARPDIR%\PGSuper\Documentation\PGSplice\doc\html\* %DOC_TARGET%\PGSplice\%PGSPLICE_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\PGSuper\Documentation\PGSplice\doc\html\* %DOC_TARGET%\PGSplice\%PGSPLICE_DOCUMENTATION_VERSION%\
 
 rmdir /S /Q %DOC_TARGET%\PGSLibrary\%PGSLIBRARY_VERISON%\
 mkdir %DOC_TARGET%\PGSLibrary\%PGSLIBRARY_VERISON%\
 copy %ARPDIR%\PGSuper\Documentation\PGSLibrary.dm %DOC_TARGET%\PGSLibrary\%PGSLIBRARY_VERISON%\PGSLibrary.dm.html
-copy %ARPDIR%\PGSuper\Documentation\PGSLibrary\doc\html\* %DOC_TARGET%\PGSLibrary\%PGSLIBRARY_VERISON%\
+xcopy /s /y /d %ARPDIR%\PGSuper\Documentation\PGSLibrary\doc\html\* %DOC_TARGET%\PGSLibrary\%PGSLIBRARY_VERISON%\
 
 rmdir /S /Q %DOC_TARGET%\TOGA\%PGSUPER_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\TOGA\%PGSUPER_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\PGSuper\TxDOTAgent\Documentation\TOGA\Toga.dm %DOC_TARGET%\TOGA\%PGSUPER_DOCUMENTATION_VERSION%\Toga.dm.html
-copy %ARPDIR%\PGSuper\TxDOTAgent\Documentation\TOGA\doc\html\* %DOC_TARGET%\TOGA\%PGSUPER_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\PGSuper\TxDOTAgent\Documentation\TOGA\doc\html\* %DOC_TARGET%\TOGA\%PGSUPER_DOCUMENTATION_VERSION%\
 
 
 rmdir /S /Q %DOC_TARGET%\TxCADExport\%PGSUPER_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\TxCADExport\%PGSUPER_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\PGSuper\TxDOTAgent\Documentation\TxCADExport\TxCADExport.dm %DOC_TARGET%\TxCADExport\%PGSUPER_DOCUMENTATION_VERSION%\TxCADExport.dm.html
-copy %ARPDIR%\PGSuper\TxDOTAgent\Documentation\TxCADExport\doc\html\* %DOC_TARGET%\TxCADExport\%PGSUPER_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\PGSuper\TxDOTAgent\Documentation\TxCADExport\doc\html\* %DOC_TARGET%\TxCADExport\%PGSUPER_DOCUMENTATION_VERSION%\
 
 
 rmdir /S /Q %DOC_TARGET%\KDOT\%PGSUPER_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\KDOT\%PGSUPER_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\PGSuper\KDOTExport\Documentation\KDOT.dm %DOC_TARGET%\KDOT\%PGSUPER_DOCUMENTATION_VERSION%\KDOT.dm.html
-copy %ARPDIR%\PGSuper\KDOTExport\Documentation\doc\html\* %DOC_TARGET%\KDOT\%PGSUPER_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\PGSuper\KDOTExport\Documentation\doc\html\* %DOC_TARGET%\KDOT\%PGSUPER_DOCUMENTATION_VERSION%\
 
 rmdir /S /Q %DOC_TARGET%\XBRate\%XBRATE_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\XBRate\%XBRATE_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\XBeamRate\Documentation\XBRate.dm %DOC_TARGET%\XBRate\%XBRATE_DOCUMENTATION_VERSION%\XBRate.dm.html
-copy %ARPDIR%\XBeamRate\Documentation\doc\html\* %DOC_TARGET%\XBRate\%XBRATE_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\XBeamRate\Documentation\doc\html\* %DOC_TARGET%\XBRate\%XBRATE_DOCUMENTATION_VERSION%\
 
 rmdir /S /Q %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\Barlist\Documentation\Barlist.dm %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\Barlist.dm.html
-copy %ARPDIR%\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 
 
 rmdir /S /Q %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 mkdir %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 copy %ARPDIR%\Barlist\Barlist\Documentation\Barlist.dm %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\BarlistDocs.dm.html
-copy %ARPDIR%\Barlist\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
+xcopy /s /y /d %ARPDIR%\Barlist\Barlist\Documentation\doc\html\* %DOC_TARGET%\Barlist\Barlist\%BARLIST_DOCUMENTATION_VERSION%\
 
 :END
 

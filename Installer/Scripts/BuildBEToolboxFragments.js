@@ -2,6 +2,7 @@
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
 var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\BEToolbox\\8.0.0.5\\bin\\images");
 var BEToolboxDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BEToolbox\\8.0");
+var BEToolboxDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BEToolbox\\8.0\\search");
 var fc = new Enumerator(ImagesFolder.Files);
 
 WScript.Echo("<?xml version='1.0'?>");
@@ -48,7 +49,10 @@ WScript.Echo("<Fragment Id='BEToolboxDocs'>");
 
 WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BEToolboxDocumentationSourceRoot)\">");
 WScript.Echo("<Directory Id=\"BEToolboxDocsRoot\" Name=\"$(var.BEToolboxDocumentationTarget)\"> <!-- Create the documentation directory -->");
-WScript.Echo("<Directory Id=\"BEToolboxDocs\" Name=\"$(var.BEToolboxDocumentationVersion)\"/> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BEToolboxDocs\" Name=\"$(var.BEToolboxDocumentationVersion)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BEToolboxSearchDocs\" Name=\"search\"> <!-- Create the search directory -->");
+WScript.Echo("</Directory>");
+WScript.Echo("</Directory>");
 WScript.Echo("</Directory>");
 WScript.Echo("</DirectoryRef>");
 
@@ -75,6 +79,28 @@ for (; !fcDocs.atEnd(); fcDocs.moveNext()) {
 }
 WScript.Echo("</Component>");
 WScript.Echo("</DirectoryRef>");
+
+WScript.Echo("<DirectoryRef Id='BEToolboxSearchDocs' FileSource=\"$(var.BEToolboxDocumentationSourceRoot)\\search\">");
+WScript.Echo("<Component Id='BEToolboxSearchDocs' Guid='' Win64='$(var.IsWin64)'>");
+var fcSearchDocs = new Enumerator(BEToolboxDocsSearchFolder.Files);
+var i = 0;
+for (; !fcSearchDocs.atEnd(); fcSearchDocs.moveNext()) {
+   var s = new String(fcSearchDocs.item());
+   var lastIdx = s.lastIndexOf("\\");
+   var fileName = new String;
+   fileName = s.substring(lastIdx + 1);
+
+   var fileExt = new String;
+   fileExt = fileName.substring(fileName.lastIndexOf("."));
+
+   var fileTag = new String;
+   fileTag = "<File Id='BEToolboxSearchDocs" + (i++) + "' Name='" + fileName + "' />";
+
+   WScript.Echo(fileTag);
+}
+WScript.Echo("</Component>");
+WScript.Echo("</DirectoryRef>");
+
 WScript.Echo("</Fragment>");
 
 WScript.Echo("</Wix>");
