@@ -1,7 +1,7 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
 var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\8.0");
-var fc = new Enumerator(BarlistDocsFolder.Files);
+var BarlistDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\8.0\\search");
 
 WScript.Echo("<?xml version='1.0'?>");
 WScript.Echo("<!-- This file genereted by BuildBarlistFragment.js script-->");
@@ -17,6 +17,8 @@ WScript.Echo("<DirectoryRef Id=\"Documentation\" FileSource =\"$(var.BarlistDocu
 WScript.Echo("<Directory Id=\"BarlistDocsRoot\" Name=\"$(var.BarlistDocumentationTarget)\"> <!-- Create the documentation directory -->");
 WScript.Echo("<Directory Id=\"BarlistDocsRoot2\" Name=\"$(var.BarlistDocumentationTarget)\"> <!-- Create the documentation directory -->");
 WScript.Echo("<Directory Id=\"BarlistDocs\" Name=\"$(var.BarlistDocumentationVersion)\"> <!-- Create the documentation directory -->");
+WScript.Echo("<Directory Id=\"BarlistSearchDocs\" Name=\"search\"> <!--Create the search directory-->");
+WScript.Echo("</Directory>");
 WScript.Echo("</Directory>");
 WScript.Echo("</Directory>");
 WScript.Echo("</Directory>");
@@ -43,6 +45,27 @@ for (; !fcDocs.atEnd(); fcDocs.moveNext()) {
         fileTag = "<File Id='BarlistDocs" + (i++) + "' Name='" + fileName + "' />";
 
     WScript.Echo(fileTag);
+}
+WScript.Echo("</Component>");
+WScript.Echo("</DirectoryRef>");
+
+WScript.Echo("<DirectoryRef Id='BarlistSearchDocs' FileSource=\"$(var.BarlistDocumentationSourceRoot)\\search\">");
+WScript.Echo("<Component Id='BarlistSearchDocs' Guid='{0764D2B8-7D1E-4214-99B4-E157E06AED1E}' Win64='$(var.IsWin64)'>");
+var fcSearchDocs = new Enumerator(BarlistDocsSearchFolder.Files);
+var i = 0;
+for (; !fcSearchDocs.atEnd(); fcSearchDocs.moveNext()) {
+   var s = new String(fcSearchDocs.item());
+   var lastIdx = s.lastIndexOf("\\");
+   var fileName = new String;
+   fileName = s.substring(lastIdx + 1);
+
+   var fileExt = new String;
+   fileExt = fileName.substring(fileName.lastIndexOf("."));
+
+   var fileTag = new String;
+   fileTag = "<File Id='BarlistSearchDocs" + (i++) + "' Name='" + fileName + "' />";
+
+   WScript.Echo(fileTag);
 }
 WScript.Echo("</Component>");
 WScript.Echo("</DirectoryRef>");

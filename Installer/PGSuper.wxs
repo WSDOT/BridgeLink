@@ -751,8 +751,11 @@
 
          <ComponentRef Id="Images"/>
          <ComponentRef Id="PGSuperDocs"/>
+          <ComponentRef Id="PGSuperSearchDocs"/>
          <ComponentRef Id="PGSpliceDocs"/>
+          <ComponentRef Id="PGSpliceSearchDocs"/>
          <ComponentRef Id="PGSLibraryDocs"/>
+          <ComponentRef Id="PGSLibrarySearchDocs"/>
 
          <ComponentRef Id="AnalysisAgent"/>
          <ComponentRef Id="BridgeAgent"/>

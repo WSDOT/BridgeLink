@@ -371,6 +371,7 @@
          <ComponentRef Id="XBeamRateShortcuts"/>
          <ComponentRef Id="XBRImages"/>
         <ComponentRef Id="XBRateDocs"/>
+         <ComponentRef Id="XBRateSearchDocs"/>
         <ComponentRef Id="XBeamRateTips"/>
          <ComponentRef Id="XBeamRateDLLs"/>
         <ComponentRef Id="XBeamRatePierAgent"/>

@@ -346,6 +346,7 @@
         <ComponentRef Id="BEToolboxImages"/>
         <ComponentRef Id="BEToolboxSpectraFiles"/>
         <ComponentRef Id="BEToolboxDocs"/>
+         <ComponentRef Id="BEToolboxSearchDocs"/>
         <ComponentRef Id="BEToolboxXML"/>
       </Feature>
    </Fragment>

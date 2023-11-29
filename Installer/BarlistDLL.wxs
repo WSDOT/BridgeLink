@@ -425,6 +425,7 @@
          <ComponentRef Id="BarlistDLLs"/>
         <ComponentRef Id="BarlistXSD"/>
         <ComponentRef Id="BarlistDocs"/>
+         <ComponentRef Id="BarlistSearchDocs"/>
       </Feature>
    </Fragment>
 
