@@ -347,7 +347,7 @@
         <ComponentRef Id="BEToolboxSpectraFiles"/>
         <ComponentRef Id="BEToolboxDocs"/>
          <ComponentRef Id="BEToolboxSearchDocs"/>
-        <ComponentRef Id="BEToolboxXML"/>
+         <ComponentRef Id="BEToolboxXML"/>
       </Feature>
    </Fragment>
 </Wix>

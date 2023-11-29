@@ -1,6 +1,6 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\8.0.0.5\\bin\\images");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\8.0.1.0\\bin\\images");
 var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\8.0");
 var PGSuperDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\8.0\\search");
 var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\8.0");
@@ -282,7 +282,7 @@ for (; !fcSearchDocs.atEnd(); fcSearchDocs.moveNext()) {
    var fileTag = new String;
    fileTag = "<File Id='TOGASearchDocs" + (i++) + "' Name='" + fileName + "' />";
 
-    WScript.Echo(fileTag);
+   WScript.Echo(fileTag);
 }
 WScript.Echo("</Component>");
 WScript.Echo("</DirectoryRef>");

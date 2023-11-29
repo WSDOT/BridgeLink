@@ -86,9 +86,9 @@
              Title="KDOT Extensions (Optional)"
              Level="$(var.KDOTFeatureLevel)">
       <ComponentRef Id="KDOTExport"/>
-      <ComponentRef Id="KDOTDocs"/>
+       <ComponentRef Id="KDOTDocs"/>
        <ComponentRef Id="KDOTSearchDocs"/>
-      <ComponentRef Id="KDOTShortcuts"/>
+       <ComponentRef Id="KDOTShortcuts"/>
     </Feature>
 
   </Fragment>
