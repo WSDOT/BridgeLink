@@ -166,6 +166,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BarlistExcelExporter", "..\
 		{E2E82570-23E6-4991-8D0E-AA57C1416D5F} = {E2E82570-23E6-4991-8D0E-AA57C1416D5F}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaristUnitTests", "..\Barlist\BaristUnitTests\BaristUnitTests.vcxproj", "{77B39CAD-CD6A-44C5-90E4-C15E52957D2C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BAF8F8B7-5950-4E78-8A32-892636F6197A} = {BAF8F8B7-5950-4E78-8A32-892636F6197A}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -332,6 +337,10 @@ Global
 		{FC93C7D7-288A-4746-9120-55F6AF1581C2}.Debug|x64.Build.0 = Debug|x64
 		{FC93C7D7-288A-4746-9120-55F6AF1581C2}.Release|x64.ActiveCfg = Release|x64
 		{FC93C7D7-288A-4746-9120-55F6AF1581C2}.Release|x64.Build.0 = Release|x64
+		{77B39CAD-CD6A-44C5-90E4-C15E52957D2C}.Debug|x64.ActiveCfg = Debug|x64
+		{77B39CAD-CD6A-44C5-90E4-C15E52957D2C}.Debug|x64.Build.0 = Debug|x64
+		{77B39CAD-CD6A-44C5-90E4-C15E52957D2C}.Release|x64.ActiveCfg = Release|x64
+		{77B39CAD-CD6A-44C5-90E4-C15E52957D2C}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
