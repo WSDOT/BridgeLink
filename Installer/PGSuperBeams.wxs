@@ -809,6 +809,19 @@
                         Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
                         Type="string" />
 
+            <!-- Time Step Loss Engineer -->
+            <?define TimeStepLossEngineerCLSID={26275720-66E8-40f6-A4C3-79404FB64968}?>
+            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+                         Root="HKCR"
+                         Key ="CLSID\$(var.TimeStepLossEngineerCLSID)"/>
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.TimeStepLossEngineerCLSID)"
+                           Value="Time Step Loss Engineer"
+                           Type="string" />
+            <RegistryValue Root="HKCR"
+                           Key="CLSID\$(var.TimeStepLossEngineerCLSID)\InprocServer32"
+                           Value="[APPLICATIONFOLDER]PGSuperBeams.dll"
+                           Type="string" />
 
             <!-- Age Adjusted Material -->
             <?define AgeAdjustedMaterialCLSID={6E0E1094-075A-4cad-80C1-0D423B6162BD}?>
