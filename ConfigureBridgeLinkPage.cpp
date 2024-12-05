@@ -59,6 +59,16 @@ void CConfigureBridgeLinkPage::DoDataExchange(CDataExchange* pDX)
    DDX_Text(pDX,IDC_ENGINEER,m_strEngineer);
    DDX_Text(pDX,IDC_COMPANY,m_strCompany);
 
+   int browserType{ 0 };
+   DDX_Radio(pDX, IDC_STANDARD, browserType);
+   if (browserType == 0)
+   {
+	   m_strBrowser = _T("IE");
+   }
+   else
+   {
+	   m_strBrowser = _T("Edge");
+   }
    DDX_Check(pDX, IDC_AUTOSAVE, m_bAutoSave);
    DDX_Text(pDX, IDC_AUTOSAVE_INTERVAL, m_AutoSaveInterval);
    if (m_bAutoSave)

@@ -47,6 +47,8 @@ interface IBridgeLink
 {
    virtual void GetUserInfo(CString* pstrEngineer,CString* pstrCompany) = 0;
    virtual void SetUserInfo(const CString& strEngineer,const CString& strCompany) = 0;
+   virtual void GetBrowserType(CString* pstrBrowser) = 0;
+   virtual void SetBrowserType(const CString& strBrowser) = 0;
    virtual IDType Register(IBridgeLinkConfigurationCallback* pCallback) = 0;
    virtual bool UnregisterCallback(IDType ID) = 0;
 };
@@ -60,6 +62,8 @@ public:
 // IBridgeLink
    virtual void GetUserInfo(CString* pstrEngineer,CString* pstrCompany) override;
    virtual void SetUserInfo(const CString& strEngineer,const CString& strCompany) override;
+   virtual void GetBrowserType(CString* pstrBrowser) override;
+   virtual void SetBrowserType(const CString& strBrowser) override;
    virtual IDType Register(IBridgeLinkConfigurationCallback* pCallback) override;
    virtual bool UnregisterCallback(IDType ID) override;
 

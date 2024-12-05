@@ -1,7 +1,6 @@
 // Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
-#include "EAF\EAFResources.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -127,18 +126,21 @@ CAPTION "BridgeLink"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     LTEXT           "Welcome to BridgeLink.\nThis wizard will guide you through the configuration process",IDC_STATIC,120,7,218,22
-    GROUPBOX        "Personalize",IDC_STATIC,120,37,218,72
-    LTEXT           "The information below is used to personalize reports, graphs, and other output from the various BridgeLink application.",IDC_STATIC,132,49,196,17
-    LTEXT           "Engineer",IDC_STATIC,132,73,29,8
-    EDITTEXT        IDC_ENGINEER,172,71,96,14,ES_AUTOHSCROLL
-    LTEXT           "Company",IDC_STATIC,132,89,31,8
-    EDITTEXT        IDC_COMPANY,172,87,96,14,ES_AUTOHSCROLL
-    GROUPBOX        "AutoSave and Recovery",IDC_STATIC,120,116,218,43
-    CONTROL         "Enable",IDC_AUTOSAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,136,37,10
-    LTEXT           "AutoSave interval",IDC_AUTOSAVE_INTERVAL_LABEL,186,136,58,8
-    EDITTEXT        IDC_AUTOSAVE_INTERVAL,245,134,21,14,ES_AUTOHSCROLL
-    LTEXT           "minutes",IDC_AUTOSAVE_INTERVAL_UNITS,269,136,26,8
-    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,170,218,28
+    GROUPBOX        "Personalize",IDC_STATIC,120,32,218,72
+    LTEXT           "The information below is used to personalize reports, graphs, and other output from the various BridgeLink application.",IDC_STATIC,132,44,196,17
+    LTEXT           "Engineer",IDC_STATIC,132,68,29,8
+    EDITTEXT        IDC_ENGINEER,172,66,96,14,ES_AUTOHSCROLL
+    LTEXT           "Company",IDC_STATIC,132,84,31,8
+    EDITTEXT        IDC_COMPANY,172,82,96,14,ES_AUTOHSCROLL
+    GROUPBOX        "AutoSave and Recovery",IDC_STATIC,120,106,218,32
+    CONTROL         "Enable",IDC_AUTOSAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,120,37,10
+    LTEXT           "AutoSave interval",IDC_AUTOSAVE_INTERVAL_LABEL,186,120,58,8
+    EDITTEXT        IDC_AUTOSAVE_INTERVAL,245,118,21,14,ES_AUTOHSCROLL
+    LTEXT           "minutes",IDC_AUTOSAVE_INTERVAL_UNITS,269,120,26,8
+    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,173,218,28
+    GROUPBOX        "View Setting",IDC_STATIC,120,140,218,32
+    CONTROL         "Standard",IDC_STANDARD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,132,155,44,10
+    CONTROL         "Advanced",IDC_ADVANCED,"Button",BS_AUTORADIOBUTTON,193,155,47,10
 END
 
 
