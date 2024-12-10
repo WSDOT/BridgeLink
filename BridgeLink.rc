@@ -138,7 +138,7 @@ BEGIN
     EDITTEXT        IDC_AUTOSAVE_INTERVAL,245,118,21,14,ES_AUTOHSCROLL
     LTEXT           "minutes",IDC_AUTOSAVE_INTERVAL_UNITS,269,120,26,8
     LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,173,218,28
-    GROUPBOX        "View Setting",IDC_STATIC,120,140,218,32
+    GROUPBOX        "Report Viewer",IDC_STATIC,120,140,218,32
     CONTROL         "Standard",IDC_STANDARD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,132,155,44,10
     CONTROL         "Advanced",IDC_ADVANCED,"Button",BS_AUTORADIOBUTTON,193,155,47,10
 END
