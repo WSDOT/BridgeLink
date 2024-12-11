@@ -35,6 +35,7 @@ public:
 
    CString m_strEngineer;
    CString m_strCompany;
+   CString m_strBrowser;
    BOOL m_bAutoSave;
    int m_AutoSaveInterval;
 

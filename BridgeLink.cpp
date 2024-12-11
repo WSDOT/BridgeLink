@@ -95,14 +95,25 @@ void CBridgeLinkApp::GetUserInfo(CString* pstrEngineer,CString* pstrCompany)
 {
    CString strDefaultCompany  = GetLocalMachineString(_T("Options"),_T("CompanyName"), _T("Your Company"));
    CString strDefaultEngineer = GetLocalMachineString(_T("Options"),_T("EngineerName"),_T("Your Name"));
-   *pstrEngineer = GetProfileString(_T("Options"),_T("EngineerName"), strDefaultEngineer);
+   *pstrEngineer = GetProfileString(_T("Options"), _T("EngineerName"), strDefaultEngineer);
    *pstrCompany  = GetProfileString(_T("Options"),_T("CompanyName"), strDefaultCompany);
+}
+
+void CBridgeLinkApp::GetBrowserType(CString* pstrBrowser)
+{
+    CString strDefaultBrowser = GetLocalMachineString(_T("Settings"), _T("ReportBrowser"), _T("IE"));
+    *pstrBrowser = GetProfileString(_T("Settings"), _T("ReportBrowser"), strDefaultBrowser);
 }
 
 void CBridgeLinkApp::SetUserInfo(const CString& strEngineer,const CString& strCompany)
 {
    VERIFY(WriteProfileString(_T("Options"), _T("EngineerName"), strEngineer));
    VERIFY(WriteProfileString(_T("Options"), _T("CompanyName"),  strCompany));
+}
+
+void CBridgeLinkApp::SetBrowserType(const CString& strBrowser)
+{
+    VERIFY(WriteProfileString(_T("Settings"), _T("ReportBrowser"), strBrowser));
 }
 
 void CBridgeLinkApp::ConfigureAutoSave()
@@ -156,6 +167,7 @@ void CBridgeLinkApp::Configure()
 
       GetUserInfo(&dlg.m_BridgeLinkPage.m_strEngineer,&dlg.m_BridgeLinkPage.m_strCompany);
       GetAutoSaveInfo(&dlg.m_BridgeLinkPage.m_bAutoSave,&dlg.m_BridgeLinkPage.m_AutoSaveInterval);
+      GetBrowserType(&dlg.m_BridgeLinkPage.m_strBrowser);
 
       // autosave interval is in milliseconds, we want it in minutes
       dlg.m_BridgeLinkPage.m_AutoSaveInterval /= 60000;
@@ -165,6 +177,7 @@ void CBridgeLinkApp::Configure()
       {
          SetUserInfo(dlg.m_BridgeLinkPage.m_strEngineer,dlg.m_BridgeLinkPage.m_strCompany);
          SaveAutoSaveInfo(dlg.m_BridgeLinkPage.m_bAutoSave,dlg.m_BridgeLinkPage.m_AutoSaveInterval * 60000);
+         SetBrowserType(dlg.m_BridgeLinkPage.m_strBrowser);
          ConfigureAutoSave();
       }
    }
