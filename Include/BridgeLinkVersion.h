@@ -30,7 +30,7 @@
 //
 // hot fixes - sometimes there are bugs that need to be fixed and deployed now. That is a hot fix.
 
-#define _BETA_VERSION          // When defined, building beta versions
+//#define _BETA_VERSION          // When defined, building beta versions
 
 // includes WBFL Version macro and
 // macros that define the minimum version of Windows and IE
