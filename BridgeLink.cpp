@@ -53,11 +53,6 @@
 // BridgeLink itself can accept plug-in commands. We have to carve out a little bit of the range defined above for our use.
 #define BRIDGELINK_PLUGIN_COMMAND_COUNT 0x0100 // we'll reserve 256 command IDs for direct BridgeLink plug-in commands
 
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif
 
 /////////////////////////////////////////////////////////////////////////////
 // CBridgeLinkApp
@@ -81,15 +76,6 @@ END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // CBridgeLinkApp construction
-
-CBridgeLinkApp::CBridgeLinkApp()
-{
-   m_CallbackID = 0;
-}
-
-CBridgeLinkApp::~CBridgeLinkApp()
-{
-}
 
 void CBridgeLinkApp::GetUserInfo(CString* pstrEngineer,CString* pstrCompany)
 {
@@ -207,7 +193,7 @@ CString CBridgeLinkApp::GetDocumentationRootLocation()
    {
       // NOTE: The following approach allows third party distributers to use their own server for documentation.
       // Their installer should write the documentation root location to HKLM\Settings\DocumentationRoot.
-      // This value will be the default when the documenation root setting is read for a specific user from HKCU\Settings\DocumentationRoot
+      // This value will be the default when the documentation root setting is read for a specific user from HKCU\Settings\DocumentationRoot
       // If the HKCU value isn't found, the default from HKLM is used.
 
       // Get the default location for the documentation root from the local machine registry hive
@@ -248,12 +234,12 @@ LPCTSTR CBridgeLinkApp::GetRegistryKey()
    return _T("Washington State Department of Transportation");
 }
 
-LPCTSTR CBridgeLinkApp::GetAppPluginCategoryName()
+LPCTSTR CBridgeLinkApp::GetPluginAppCategoryName()
 {
    return _T("BridgeLink Application Plugin");
 }
 
-CATID CBridgeLinkApp::GetAppPluginCategoryID()
+CATID CBridgeLinkApp::GetPluginAppCategoryID()
 {
    return CATID_BridgeLinkAppPlugin;
 }
@@ -353,7 +339,7 @@ BOOL CBridgeLinkApp::InitInstance()
    // ALL means all commands added to the menus of the main executable, the 
    // EAFAppPlugin document and view menus, and plugin supplied menus,
    // toolbars, and accelerator tables
-   CEAFPluginCommandManager::ReserveTotalCommandIDRange(BRIDGELINK_FIRST_PLUGIN_COMMAND,BRIDGELINK_LAST_PLUGIN_COMMAND);
+   WBFL::EAF::PluginCommandManager::ReserveTotalCommandIDRange(BRIDGELINK_FIRST_PLUGIN_COMMAND,BRIDGELINK_LAST_PLUGIN_COMMAND);
 
    // Reserve BRIDGELINK_PLUGIN_COMMAND_COUNT command IDs for commands that get added
    // to the main application
@@ -368,11 +354,6 @@ BOOL CBridgeLinkApp::InitInstance()
       return FALSE;
    }
 
-   // Must be done after call to base class InitInstance because OLE has not been
-   // initialized yet.
-   //WBFL::System::ComCatMgr::CreateCategory(_T("BridgeLink Application Plugin"),CATID_BridgeLinkAppPlugin); // this is done by the base class
-   WBFL::System::ComCatMgr::CreateCategory(_T("BridgeLink Components"),CATID_BridgeLinkComponentInfo);
-
    // Need to let drag and drop messages through
    // See https://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/
    ::ChangeWindowMessageFilter(WM_DROPFILES,MSGFLT_ADD);
@@ -380,13 +361,14 @@ BOOL CBridgeLinkApp::InitInstance()
    ::ChangeWindowMessageFilter(0x0049,      MSGFLT_ADD);
 
    ConfigureAutoSave();
-
-	return TRUE;
+   
+   return TRUE;
 }
 
 int CBridgeLinkApp::ExitInstance() 
 {
-   return CEAFApp::ExitInstance();
+   m_LogFile.close();
+   return __super::ExitInstance();
 }
 
 

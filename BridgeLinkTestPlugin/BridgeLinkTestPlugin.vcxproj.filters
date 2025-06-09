@@ -60,18 +60,12 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Midl Include="BridgeLinkTestPlugin.idl" />
+    <ClInclude Include="CLSID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="BridgeLinkTestPlugin.def" />
-    <None Include="ComponentInfo.rgs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Plugin.rgs">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

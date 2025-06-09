@@ -1,6 +1,7 @@
 // Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
+#include "EAF\EAFResources.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -185,6 +186,7 @@ BEGIN
             MENUITEM "&BridgeLink Home Page",       ID_HELP_INET_BRIDGELINK
         END
         MENUITEM SEPARATOR
+        MENUITEM "Logs",                        EAFID_LOGGING
         MENUITEM "&Tip of the Day...",          EAFID_TIPOFTHEDAY
         MENUITEM "&Legal Notices...",           EAFID_APP_LEGAL
         MENUITEM "&About BridgeLink...",        ID_APP_ABOUT

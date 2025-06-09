@@ -171,6 +171,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaristUnitTests", "..\Barli
 		{BAF8F8B7-5950-4E78-8A32-892636F6197A} = {BAF8F8B7-5950-4E78-8A32-892636F6197A}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BridgeLinkManifestBuilder", "BridgeLinkManifestBuilder\BridgeLinkManifestBuilder.vcxproj", "{70291543-72A1-4403-A5E5-458CD1A98705}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -341,6 +343,10 @@ Global
 		{77B39CAD-CD6A-44C5-90E4-C15E52957D2C}.Debug|x64.Build.0 = Debug|x64
 		{77B39CAD-CD6A-44C5-90E4-C15E52957D2C}.Release|x64.ActiveCfg = Release|x64
 		{77B39CAD-CD6A-44C5-90E4-C15E52957D2C}.Release|x64.Build.0 = Release|x64
+		{70291543-72A1-4403-A5E5-458CD1A98705}.Debug|x64.ActiveCfg = Debug|x64
+		{70291543-72A1-4403-A5E5-458CD1A98705}.Debug|x64.Build.0 = Debug|x64
+		{70291543-72A1-4403-A5E5-458CD1A98705}.Release|x64.ActiveCfg = Release|x64
+		{70291543-72A1-4403-A5E5-458CD1A98705}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

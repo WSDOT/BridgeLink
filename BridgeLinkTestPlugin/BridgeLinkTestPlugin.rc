@@ -39,12 +39,6 @@ BEGIN
     "\0"
 END
 
-3 TEXTINCLUDE 
-BEGIN
-    "1 TYPELIB ""BridgeLinkTestPlugin.tlb""\r\n"
-    "\0"
-END
-
 #endif    // APSTUDIO_INVOKED
 
 
@@ -54,8 +48,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,1
- PRODUCTVERSION 1,0,0,1
+ FILEVERSION 8,1,0,1
+ PRODUCTVERSION 8,1,0,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -71,12 +65,12 @@ BEGIN
         BLOCK "040904B0"
         BEGIN
             VALUE "FileDescription", "BridgeLinkTestPlugin Module"
-            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "FileVersion", "8.1.0.1"
             VALUE "InternalName", "BridgeLinkTestPlugin"
-            VALUE "LegalCopyright", "Copyright 2009"
+            VALUE "LegalCopyright", "Copyright 2009-2025"
             VALUE "OriginalFilename", "BridgeLinkTestPlugin.DLL"
             VALUE "ProductName", "BridgeLinkTestPlugin Module"
-            VALUE "ProductVersion", "1, 0, 0, 1"
+            VALUE "ProductVersion", "8.1.0.1"
         END
     END
     BLOCK "VarFileInfo"
@@ -84,15 +78,6 @@ BEGIN
         VALUE "Translation", 0x409, 1200
     END
 END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// REGISTRY
-//
-
-IDR_PLUGIN              REGISTRY                "Plugin.rgs"
-IDR_COMPONENTINFO       REGISTRY                "ComponentInfo.rgs"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -182,16 +167,3 @@ END
 
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
-
-
-
-#ifndef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
-// Generated from the TEXTINCLUDE 3 resource.
-//
-1 TYPELIB "BridgeLinkTestPlugin.tlb"
-
-/////////////////////////////////////////////////////////////////////////////
-#endif    // not APSTUDIO_INVOKED
-

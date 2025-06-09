@@ -22,14 +22,16 @@
 
 #pragma once
 
-interface IBridgeLinkConfigurationParent
+class IBridgeLinkConfigurationParent
 {
+public:
    virtual LRESULT GetBackPage() = 0;
    virtual LRESULT GetNextPage() = 0;
 };
 
-interface IBridgeLinkConfigurationCallback
+class IBridgeLinkConfigurationCallback
 {
+public:
    virtual CPropertyPage* CreatePropertyPage() = 0;
    virtual void OnOK(CPropertyPage* pPage) = 0;
 };

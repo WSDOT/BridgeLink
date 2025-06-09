@@ -22,41 +22,21 @@
 
 
 #pragma once
-#include <EAF\EAFComponentInfo.h>
-#include "resource.h"
 
-class ATL_NO_VTABLE CBridgeLinkExampleComponentInfo : 
-   public CComObjectRootEx<CComSingleThreadModel>,
-   public CComCoClass<CBridgeLinkExampleComponentInfo, &CLSID_BridgeLinkExampleComponentInfo>,
-   public IEAFComponentInfo
+#include <EAF\ApplicationComponentInfo.h>
+
+class CBridgeLinkExampleComponentInfo : public WBFL::EAF::ApplicationComponentInfo
 {
 public:
-   CBridgeLinkExampleComponentInfo()
-   {
-   }
+   CBridgeLinkExampleComponentInfo() = default;
 
-DECLARE_REGISTRY_RESOURCEID(IDR_COMPONENTINFO)
-DECLARE_CLASSFACTORY_SINGLETON(CBridgeLinkExampleComponentInfo)
-
-BEGIN_COM_MAP(CBridgeLinkExampleComponentInfo)
-   COM_INTERFACE_ENTRY(IEAFComponentInfo)
-END_COM_MAP()
-
-BEGIN_CONNECTION_POINT_MAP(CBridgeLinkExampleComponentInfo)
-END_CONNECTION_POINT_MAP()
-
-   HRESULT FinalConstruct();
-   void FinalRelease();
-
-// IEAFComponentInfo
+// IComponentInfo
 public:
-   virtual BOOL Init(CEAFApp* pApp) override;
-   virtual void Terminate() override;
-   virtual CString GetName() override;
-   virtual CString GetDescription() override;
-   virtual HICON GetIcon() override;
-   virtual bool HasMoreInfo() override;
-   virtual void OnMoreInfo() override;
+   BOOL Init(CEAFApp* pApp) override;
+   void Terminate() override;
+   CString GetName() override;
+   CString GetDescription() override;
+   HICON GetIcon() override;
+   bool HasMoreInfo() override;
+   void OnMoreInfo() override;
 };
-
-OBJECT_ENTRY_AUTO(__uuidof(BridgeLinkExampleComponentInfo), CBridgeLinkExampleComponentInfo)

@@ -32,11 +32,6 @@
 
 #include "StartPageWndProvider.h"
 
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainFrame
@@ -116,8 +111,7 @@ void CMainFrame::Dump(CDumpContext& dc) const
 }
 #endif //_DEBUG
 
-
-CEAFStartPageWnd* CMainFrame::CreateStartPage()
+std::shared_ptr<CEAFStartPageWnd> CMainFrame::CreateStartPage()
 {
    HKEY key;
    LONG result = ::RegOpenKeyEx(HKEY_CURRENT_USER,_T("SOFTWARE\\Washington State Department of Transportation\\BridgeLink\\Settings"),0,KEY_QUERY_VALUE,&key);
@@ -141,16 +135,18 @@ CEAFStartPageWnd* CMainFrame::CreateStartPage()
    HRESULT hr = ::CLSIDFromString(strCLSID,&clsid);
    if ( hr != NOERROR )
    {
+      WBFL::System::Logger::Debug(_T("Invalid start page provider CLSID"));
       return nullptr;
    }
 
-   CComPtr<IStartPageWndProvider> provider;
-   if ( FAILED(provider.CoCreateInstance(clsid)) )
+   auto start_page_wnd_provider = WBFL::EAF::ComponentManager::GetInstance().CreateComponent<IStartPageWndProvider>(clsid);
+   if ( !start_page_wnd_provider)
    {
+      WBFL::System::Logger::Debug(_T("Failed to create start page provider"));
       return nullptr;
    }
 
-   return provider->CreateStartPage();
+   return start_page_wnd_provider->CreateStartPage();
 }
 
 /////////////////////////////////////////////////////////////////////////////

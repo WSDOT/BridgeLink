@@ -57,7 +57,7 @@ public:
 #endif
 
 protected:
-   virtual CEAFStartPageWnd* CreateStartPage() override;
+   std::shared_ptr<CEAFStartPageWnd> CreateStartPage() override;
 
 // Generated message map functions
 protected:

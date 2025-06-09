@@ -56,33 +56,34 @@ interface IBridgeLink
 class CBridgeLinkApp : public CEAFPluginApp, public IBridgeLink
 {
 public:
-	CBridgeLinkApp();
-   ~CBridgeLinkApp();
+	CBridgeLinkApp() = default;
+   ~CBridgeLinkApp() = default;
 
 // IBridgeLink
-   virtual void GetUserInfo(CString* pstrEngineer,CString* pstrCompany) override;
-   virtual void SetUserInfo(const CString& strEngineer,const CString& strCompany) override;
-   virtual void GetBrowserType(CString* pstrBrowser) override;
-   virtual void SetBrowserType(const CString& strBrowser) override;
-   virtual IDType Register(IBridgeLinkConfigurationCallback* pCallback) override;
-   virtual bool UnregisterCallback(IDType ID) override;
+   void GetUserInfo(CString* pstrEngineer,CString* pstrCompany) override;
+   void SetUserInfo(const CString& strEngineer,const CString& strCompany) override;
+   void GetBrowserType(CString* pstrBrowser) override;
+   void SetBrowserType(const CString& strBrowser) override;
+   IDType Register(IBridgeLinkConfigurationCallback* pCallback) override;
+   bool UnregisterCallback(IDType ID) override;
 
-   virtual void OnFirstRun() override;
+   void OnFirstRun() override;
+
    void Configure();
 
 // CEAFPluginApp overrides
 public:
-   virtual LPCTSTR GetAppPluginCategoryName() override;
-   virtual CATID GetAppPluginCategoryID() override;
-   virtual LPCTSTR GetPluginCategoryName() override;
-   virtual CATID GetPluginCategoryID() override;
+   LPCTSTR GetPluginAppCategoryName() override;
+   CATID GetPluginAppCategoryID() override;
+   LPCTSTR GetPluginCategoryName() override;
+   CATID GetPluginCategoryID() override;
 
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CBridgeLinkApp)
 	public:
-	virtual BOOL InitInstance() override;
-	virtual int ExitInstance() override;
+	BOOL InitInstance() override;
+	int ExitInstance() override;
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -102,13 +103,13 @@ public:
 	DECLARE_MESSAGE_MAP()
 
 protected:
-   virtual void ProcessCommandLineOptions(CEAFCommandLineInfo& cmdInfo) override;
-   virtual CEAFSplashScreenInfo GetSplashScreenInfo() override;
-   virtual LPCTSTR GetRegistryKey() override;
-   virtual CMDIFrameWnd* CreateMainFrame() override;
-   virtual CATID GetComponentInfoCategoryID() override;
-   virtual CString GetProductCode() override;
-   virtual CString GetDocumentationRootLocation() override;
+   void ProcessCommandLineOptions(CEAFCommandLineInfo& cmdInfo) override;
+   CEAFSplashScreenInfo GetSplashScreenInfo() override;
+   LPCTSTR GetRegistryKey() override;
+   CMDIFrameWnd* CreateMainFrame() override;
+   CATID GetComponentInfoCategoryID() override;
+   CString GetProductCode() override;
+   CString GetDocumentationRootLocation() override;
 
 public:
    CString GetVersion(bool bIncludeBuildNumber) const;
@@ -120,12 +121,14 @@ public:
    CString GetBridgeLinkUrl();
 
 private:
-   virtual void RegistryInit() override; // All registry initialization goes here
-   virtual void RegistryExit() override; // All registry cleanup goes here
+   void RegistryInit() override; // All registry initialization goes here
+   void RegistryExit() override; // All registry cleanup goes here
 
    void ConfigureAutoSave();
 
-   IDType m_CallbackID;
+   std::ofstream m_LogFile;
+
+   IDType m_CallbackID = 0;
    std::map<IDType,IBridgeLinkConfigurationCallback*> m_ConfigurationCallbacks;
 };
 

@@ -3,9 +3,7 @@
 // Used by BridgeLinkTestPlugin.rc
 //
 #define IDS_PROJNAME                    100
-#define IDR_PLUGIN                      102
 #define IDR_EXAMPLE                     129
-#define IDR_COMPONENTINFO               130
 #define IDI_ICON1                       205
 #define IDI_ICON                        205
 #define ID_NEW_VIEW                     33029

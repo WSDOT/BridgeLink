@@ -33,7 +33,7 @@
 #endif // _MSC_VER > 1000
 
 #include <EAF\EAF.h>
-#include <EAF\EAFHelp.h>
+#include <EAF\Help.h>
 #include <MFCtools\MFCtools.h>
 
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers

@@ -51,11 +51,6 @@
 #define IDC_ADVANCED                    1702
 #define IDC_APPLIST                     3333
 #define EAF_RESERVED_COMMAND_BASE       0x8000
-#define EAFID_APP_LEGAL                 32771
-#define EAFID_TIPOFTHEDAY               32775
-#define EAFID_MANAGE_APP_PLUGINS        32776
-#define EAFID_HELP_SOURCE               32782
-#define EAFID_HELP_VIEWER               32786
 #define ID_HELP_JOINARPLIST             33024
 #define ID_HELP_INET_ARP                33025
 #define ID_HELP_INET_WSDOT              33026
@@ -69,7 +64,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        202
-#define _APS_NEXT_COMMAND_VALUE         33033
+#define _APS_NEXT_COMMAND_VALUE         33035
 #define _APS_NEXT_CONTROL_VALUE         1702
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
