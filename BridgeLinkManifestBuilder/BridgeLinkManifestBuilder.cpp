@@ -53,7 +53,7 @@
 
 #include "../BridgeLinkTestPlugin/CLSID.h"
 
-#include "../../BEToolboxExtensions/CLSID.h"
+//#include "../../BEToolboxExtensions/CLSID.h"
 #include "../../BEToolbox/BEToolboxToolExample/CLSID.h"
 
 #include "../../PGSuper/Include/Plugins/PGSuperIEPlugin.h"
@@ -174,11 +174,11 @@ void BEToolboxExperimentalTools()
 {
    // Creates the manifest for BEToolbox experimental tools
    // DO NOT DISTRIBUTE THIS MANIFEST
-   WBFL::EAF::ComponentManager::GetInstance().Reset();
-   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("RCCapacity Tool"), CLSID_RCCapacityTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
-   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("SVT Tool"), CLSID_SVTTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
-   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("M3C Tool"), CLSID_M3CTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
-   WBFL::EAF::ComponentManager::GetInstance().Save(_T("Experimental.Manifest.BEToolbox"));
+   //WBFL::EAF::ComponentManager::GetInstance().Reset();
+   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("RCCapacity Tool"), CLSID_RCCapacityTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
+   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("SVT Tool"), CLSID_SVTTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
+   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("M3C Tool"), CLSID_M3CTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
+   //WBFL::EAF::ComponentManager::GetInstance().Save(_T("Experimental.Manifest.BEToolbox"));
 }
 
 void BEToolboxPGSImportersExporters()
