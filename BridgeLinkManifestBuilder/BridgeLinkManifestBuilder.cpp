@@ -81,7 +81,8 @@
 #include "../../PGSuper/Include/PGSuperLibraryMgrCATID.h"
 #include "../../PGSuper/IEPluginExample/IEPluginExample.h"
 
-#include "../../PGSuperIfcExtensions/IfcExtensions.h"
+//#include "../../PGSuperIfcExtensions/IfcExtensions.h"
+//#include "../../PGSuperScriptingExtension/CLSID.h"
 
 
 #include "../../XBeamRate/Include/XBeamRateCatCom.h"
@@ -291,6 +292,12 @@ void PGSuper_Experimental()
    //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("IFC Importer"), CLSID_PGSuperIfcImporter, _T("PGSuperIfcExtensions.dll"), { CATID_PGSuperDataImporter, CATID_PGSpliceDataImporter });
 
    //WBFL::EAF::ComponentManager::GetInstance().Save(_T("Experimental.Manifest.PGSuper"));
+
+   //WBFL::EAF::ComponentManager::GetInstance().Reset();
+
+   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("IFC Exporter"), CLSID_PGSuperScriptingAgent, _T("PGSuperScriptingExtension.dll"), CATID_PGSuperExtensionAgent);
+
+   //WBFL::EAF::ComponentManager::GetInstance().Save(_T("Scripting.Manifest.PGSuper"));
 }
 
 void PGSuper_Examples()
