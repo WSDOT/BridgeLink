@@ -129,7 +129,7 @@ void BridgeLinkApplications()
 
 void BridgeLinkApplicationPluginExample()
 {
-   // Creates teh manifiest for the BridgeLink Example Application Plugin
+   // Creates teh manifest for the BridgeLink Example Application Plugin
    // DO NOT DISTRIBUTE THIS MANIFEST
    auto& cm = WBFL::EAF::ComponentManager::GetInstance();
    cm.Reset();
@@ -148,7 +148,7 @@ void Barlist()
 
 void BEToolboxTools()
 {
-   // Creates the mainfiest for BEToolbox's tools
+   // Creates the manifest for BEToolbox's tools
    WBFL::EAF::ComponentManager::GetInstance().Reset();
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("BoxGdr Tool"), CLSID_BoxGdrTool, _T("BEToolbox.dll"), CATID_BEToolboxTool);
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("GenComp Tool"), CLSID_GenCompTool, _T("BEToolbox.dll"), CATID_BEToolboxTool);
