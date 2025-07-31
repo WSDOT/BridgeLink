@@ -7,49 +7,49 @@ REM SET TAG=version_8.0.7.1
 REM git tag %TAG% isn't working so the tags are explicit... use search/replace to update in all places
 
 cd \ARP\BEToolbox\
-git commit -a -m "Updated version numbers for 8.0.8.0 release"
-git tag version_8.0.8.0
+git commit -a -m "Updated version numbers for 8.0.9.0 release"
+git tag version_8.0.9.0
 git push
 git push --tags
 
 cd \ARP\BEToolboxExtensions\
-git commit -a -m "Updated version numbers for 8.0.8.0 release"
-git tag version_8.0.8.0
+git commit -a -m "Updated version numbers for 8.0.9.0 release"
+git tag version_8.0.9.0
 git push
 git push --tags
 
 cd \ARP\Barlist\
-git commit -a -m "Updated version numbers for 8.0.8.0 release"
-git tag version_8.0.8.0
+git commit -a -m "Updated version numbers for 8.0.9.0 release"
+git tag version_8.0.9.0
 git push
 git push --tags
 
 cd \ARP\PGSuper\
-git commit -a -m "Updated version numbers for 8.0.8.0 release"
-git tag version_8.0.8.0
+git commit -a -m "Updated version numbers for 8.0.9.0 release"
+git tag version_8.0.9.0
 git push
 git push --tags
 
 cd \ARP\PGSuperIfcExtensions\
-git commit -a -m "Updated version numbers for 8.0.8.0 release"
-git tag version_8.0.8.0
+git commit -a -m "Updated version numbers for 8.0.9.0 release"
+git tag version_8.0.9.0
 git push
 git push --tags
 
 cd \ARP\XBeamRate\
-git commit -a -m "Updated version numbers for 8.0.8.0 release"
-git tag version_8.0.8.0
+git commit -a -m "Updated version numbers for 8.0.9.0 release"
+git tag version_8.0.9.0
 git push
 git push --tags
 
 cd \ARP\WBFL\
-git commit -a -m "Updated version numbers for 8.0.8.0 release"
-git tag version_8.0.8.0
+git commit -a -m "Updated version numbers for 8.0.9.0 release"
+git tag version_8.0.9.0
 git push
 git push --tags
 
 cd \ARP\BridgeLink\
-git commit -a -m "Updated version numbers for 8.0.8.0 release"
-git tag version_8.0.8.0
+git commit -a -m "Updated version numbers for 8.0.9.0 release"
+git tag version_8.0.9.0
 git push
 git push --tags

@@ -456,16 +456,16 @@
 
       <!-- Grid Control -->
       <DirectoryRef Id="APPLICATIONFOLDER"
-                    FileSource ="$(var.GridSourceRoot)$(var.PlatformFolder)">
+                    FileSource ="$(var.GridSourceRoot)$(var.PlatformFolder)\14.4">
          <Component Id="GridControl"
                     Guid="{AD86F1C4-31CF-4D3C-B7BE-9A38C0BAC715}"
                     Win64="$(var.IsWin64)">
-           <File Id="RWUXThemeSU16.dll"
-                 Name="RWUXThemeSU16.dll" />
-           <File Id="og1320asu.dll"
-                 Name="og1320asu.dll" KeyPath="yes"/>
-           <File Id="sfl1320asu.dll"
-                 Name="sfl1320asu.dll"/>         </Component>
+           <File Id="RWUXThemeSU17.dll"
+                 Name="RWUXThemeSU17.dll" />
+           <File Id="og1440asu.dll"
+                 Name="og1440asu.dll" KeyPath="yes"/>
+           <File Id="sfl1440asu.dll"
+                 Name="sfl1440asu.dll"/>         </Component>
       </DirectoryRef>
 
 
