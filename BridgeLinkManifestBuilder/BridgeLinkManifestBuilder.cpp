@@ -256,6 +256,8 @@ void WSDOT_PGSuper()
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("WSDOT Component Information"), CLSID_WSDOTPGSuperComponentInfo, _T("WSDOTAgent.dll"), CATID_PGSuperComponentInfo);
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("WSDOT Component Information"), CLSID_WSDOTPGSpliceComponentInfo, _T("WSDOTAgent.dll"), CATID_PGSpliceComponentInfo);
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("WSDOT Extension Agent"), CLSID_WSDOTAgent, _T("WSDOTAgent.dll"), { CATID_PGSuperExtensionAgent, CATID_PGSpliceExtensionAgent });
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("WSDOT Girder Schedule Exporter"), CLSID_WSDOTGirderScheduleExporter, _T("WSDOTAgent.dll"), CATID_PGSuperDataExporter);
+
 
    WBFL::EAF::ComponentManager::GetInstance().Save(_T("WSDOT.Manifest.PGSuper"));
 }
