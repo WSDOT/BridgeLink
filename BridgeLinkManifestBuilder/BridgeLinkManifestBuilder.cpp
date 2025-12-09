@@ -116,7 +116,6 @@ void BridgeLinkApplications()
    cm.RegisterComponent(_T("XBeam Rate"), CLSID_XBeamRatePluginApp, _T("XBeamRate.dll"), CATID_BridgeLinkAppPlugin);
 
    // BridgeLink Plugin Application Component Information Objects
-   cm.RegisterComponent(_T("BridgeLink Example Component Information"), CLSID_BridgeLinkExampleComponentInfo, _T("BridgeLinkTestPlugin.dll"), CATID_BridgeLinkComponentInfo);
    cm.RegisterComponent(_T("Barlist Component Information"), CLSID_BarlistComponentInfo, _T("Barlist.dll"), { CATID_BridgeLinkComponentInfo,CATID_BarlistComponentInfo });
    cm.RegisterComponent(_T("TOGA Component Information"), CLSID_TOGAPluginAppComponentInfo, _T("TxDOTAgent.dll"), CATID_BridgeLinkComponentInfo);
    cm.RegisterComponent(_T("BEToolbox Component Information"), CLSID_BEToolboxComponentInfo, _T("BEToolbox.dll"), CATID_BridgeLinkComponentInfo);
@@ -134,6 +133,7 @@ void BridgeLinkApplicationPluginExample()
    auto& cm = WBFL::EAF::ComponentManager::GetInstance();
    cm.Reset();
    cm.RegisterComponent(_T("BridgeLink Plugin Example"), CLSID_BridgeLinkExamplePluginApp, _T("BridgeLinkTestPlugin.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("BridgeLink Example Component Information"), CLSID_BridgeLinkExampleComponentInfo, _T("BridgeLinkTestPlugin.dll"), CATID_BridgeLinkComponentInfo);
    cm.Save(_T("PluginExample.Manifest.BridgeLink"));
 }
 
