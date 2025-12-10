@@ -33,6 +33,7 @@ SET BINTARGET=bin
 
 REM - Application files
 xcopy /Y /d RegFreeCOM\x64\Release\BridgeLink.exe 	%BINTARGET%\App\x64\
+xcopy /Y /d RegFreeCOM\x64\Release\Application.Manifest.BridgeLink         %BINTARGET%\App\x64\
 xcopy /Y /d BridgeLink.tip				%BINTARGET%\App\
 xcopy /Y /d License.txt					%BINTARGET%\App\
 xcopy /Y /d res\BridgeLink.ico                          %BINTARGET%\App\

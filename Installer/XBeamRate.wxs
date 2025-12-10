@@ -34,6 +34,8 @@
                     Win64="$(var.IsWin64)">
 
             <File Id="XBeamRate.dll"    Name="XBeamRate.dll" KeyPath ="yes"/>
+            <File Id="Application.Manifest.XBeamRate" Name="Application.Manifest.XBeamRate"/>
+            <File Id="XBeamRateExtensions.Manifest.PGSuper" Name="XBeamRateExtensions.Manifest.PGSuper"/>
 
             <!-- XBeam Rate file associations -->
             <ProgId Id="XBeamRate.Document" Icon="XBeamRate.dll" IconIndex="0" />

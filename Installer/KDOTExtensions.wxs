@@ -17,10 +17,11 @@
         <File Id="KDOTExport.dll"
               Name="KDOTExport.dll"
               KeyPath="yes" />
+         <File Id="KDOT.Manifest.PGSuper" Name="KDOT.Manifest.PGSuper"/>
 
 
         <!-- CAD Data Exporter -->
-        <?define KDOTCADDataExporterCLSID={775F87BC-07DF-4177-B001-F98E011C6AB4}?>
+        <!--<?define KDOTCADDataExporterCLSID={775F87BC-07DF-4177-B001-F98E011C6AB4}?>
         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                    Root="HKCR"
                    Key ="CLSID\$(var.KDOTCADDataExporterCLSID)"/>
@@ -35,11 +36,11 @@
         <RegistryValue Root="HKCR"
                        Key="CLSID\$(var.KDOTCADDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
                        Value=""
-                       Type="string" />
+                       Type="string" />-->
 
 
         <!-- KDOT Component Information Object -->
-        <?define PGSuperKDOTInfoCLSID={75AAA5FD-16D5-415d-B2AD-8FF123C27B45}?>
+        <!--<?define PGSuperKDOTInfoCLSID={75AAA5FD-16D5-415d-B2AD-8FF123C27B45}?>
         <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                      Root="HKCR"
                      Key ="CLSID\$(var.PGSuperKDOTInfoCLSID)"/>
@@ -54,7 +55,7 @@
         <RegistryValue Root="HKCR"
                        Key="CLSID\$(var.PGSuperKDOTInfoCLSID)\Implemented Categories\$(var.PGSuperComponentInfoCATID)"
                        Value=""
-                       Type="string" />
+                       Type="string" />-->
 
       </Component>
 

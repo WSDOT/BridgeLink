@@ -48,8 +48,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 8,1,0,1
- PRODUCTVERSION 8,1,0,1
+ FILEVERSION 9,0,0,1
+ PRODUCTVERSION 9,0,0,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -65,12 +65,12 @@ BEGIN
         BLOCK "040904B0"
         BEGIN
             VALUE "FileDescription", "BridgeLinkTestPlugin Module"
-            VALUE "FileVersion", "8.1.0.1"
+            VALUE "FileVersion", "9.0.0.1"
             VALUE "InternalName", "BridgeLinkTestPlugin"
             VALUE "LegalCopyright", "Copyright 2009-2025"
             VALUE "OriginalFilename", "BridgeLinkTestPlugin.DLL"
             VALUE "ProductName", "BridgeLinkTestPlugin Module"
-            VALUE "ProductVersion", "8.1.0.1"
+            VALUE "ProductVersion", "9.0.0.1"
         END
     END
     BLOCK "VarFileInfo"

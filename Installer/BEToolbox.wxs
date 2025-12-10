@@ -33,6 +33,8 @@
                     Win64="$(var.IsWin64)">
 
             <File Id="BEToolbox.dll"    Name="BEToolbox.dll" KeyPath ="yes"/>
+            <File Id="Application.Manifest.BEToolbox" Name="Application.Manifest.BEToolbox"/>
+            <File Id="BEToolboxExtensions.Manifest.PGSuper" Name="BEToolboxExtensions.Manifest.PGSuper"/>
 
             <!-- BEToolbox file associations -->
            <!-- NOTE: Also need to add an entry in BridgeLinkComponents.wxs -->
@@ -48,7 +50,7 @@
             <!-- BEToolbox registry entries-->
             
             <!-- BEToolbox Application Plugin -->
-            <?define BEToolboxCLSID={B5E128D4-78F3-48e0-970E-812C2281EE4E}?>
+            <!--<?define BEToolboxCLSID={B5E128D4-78F3-48e0-970E-812C2281EE4E}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -64,10 +66,10 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.BEToolboxCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
             
             <!-- BEToolbox Component Information Object -->
-            <?define BEToolboxComponentInfoCLSID={8BC4CCD2-35D5-4f2c-AA18-0E2D58FF5C3A}?>
+            <!--<?define BEToolboxComponentInfoCLSID={8BC4CCD2-35D5-4f2c-AA18-0E2D58FF5C3A}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -83,12 +85,12 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.BEToolboxComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
 
            <!-- BEToolbox Tools -->
            <!-- BoxGdr -->
-           <?define BoxGdrToolCLSID={4C9C743B-199E-43C8-AF13-F1D16669ACC9}?>
+           <!--<?define BoxGdrToolCLSID={4C9C743B-199E-43C8-AF13-F1D16669ACC9}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -104,10 +106,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.BoxGdrToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!--GenComp -->
-           <?define GenCompToolCLSID={D84CBB4B-97C9-47A9-A7D1-83702A99A9CE}?>
+           <!--<?define GenCompToolCLSID={D84CBB4B-97C9-47A9-A7D1-83702A99A9CE}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -123,10 +125,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.GenCompToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!--GirComp -->
-           <?define GirCompToolCLSID={AFF95666-CCDE-45A3-85DA-6E10336D4A79}?>
+           <!--<?define GirCompToolCLSID={AFF95666-CCDE-45A3-85DA-6E10336D4A79}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -142,10 +144,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.GirCompToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!--UltCol -->
-           <?define UltColToolCLSID={174F1702-B615-4925-ADA4-9466606622F8}?>
+           <!--<?define UltColToolCLSID={174F1702-B615-4925-ADA4-9466606622F8}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -161,10 +163,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.UltColToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!--Curvel -->
-           <?define CurvelToolCLSID={90DA3F11-67D6-45D8-9469-CCA6278021AD}?>
+           <!--<?define CurvelToolCLSID={90DA3F11-67D6-45D8-9469-CCA6278021AD}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -180,10 +182,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.CurvelToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!--PGStable -->
-           <?define PGStableToolCLSID={876DBB2E-ECF9-4439-8F8F-E09A486018DF}?>
+           <!--<?define PGStableToolCLSID={876DBB2E-ECF9-4439-8F8F-E09A486018DF}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -199,13 +201,13 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGStableToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!--Spectra -->
            <!-- Moved to optional component in version 8.0 -->
             
             <!-- BrgCalc -->
-            <?define BrgCalcToolCLSID={8D4B1258-B4CF-424D-8CAA-E6664D7141A0}?>
+            <!--<?define BrgCalcToolCLSID={8D4B1258-B4CF-424D-8CAA-E6664D7141A0}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -221,12 +223,12 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.BrgCalcToolCLSID)\Implemented Categories\$(var.BEToolboxToolCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
             <!-- PGSuper/PGSplice Plug-ins-->
 
            <!-- Curvel Exporter -->
-           <?define WSDOTCurvelDataExporterCLSID={E89CC143-53C9-43df-B1B4-E522769DE29B}?>
+           <!--<?define WSDOTCurvelDataExporterCLSID={E89CC143-53C9-43df-B1B4-E522769DE29B}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
                       Key ="CLSID\$(var.WSDOTCurvelDataExporterCLSID)"/>
@@ -245,10 +247,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.WSDOTCurvelDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!-- Curvel Importer -->
-           <?define WSDOTCurvelDataImporterCLSID={E56801AC-B583-4e9e-A2D8-2AA64079BE15}?>
+           <!--<?define WSDOTCurvelDataImporterCLSID={E56801AC-B583-4e9e-A2D8-2AA64079BE15}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
                       Key ="CLSID\$(var.WSDOTCurvelDataImporterCLSID)"/>
@@ -267,10 +269,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.WSDOTCurvelDataImporterCLSID)\Implemented Categories\$(var.PGSpliceDataImporterCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!-- GenComp Exporter -->
-           <?define WSDOTGenCompDataExporterCLSID={16A21688-25B4-4118-ABF4-DD6D4983A2CD}?>
+           <!--<?define WSDOTGenCompDataExporterCLSID={16A21688-25B4-4118-ABF4-DD6D4983A2CD}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
                       Key ="CLSID\$(var.WSDOTGenCompDataExporterCLSID)"/>
@@ -289,10 +291,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.WSDOTGenCompDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!-- PGStable Exporter -->
-           <?define WSDOTPGStableDataExporterCLSID={FF96408C-27B3-4288-8A44-6F80652BE187}?>
+           <!--<?define WSDOTPGStableDataExporterCLSID={FF96408C-27B3-4288-8A44-6F80652BE187}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
                       Key ="CLSID\$(var.WSDOTPGStableDataExporterCLSID)"/>
@@ -311,7 +313,7 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.WSDOTPGStableDataExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
          </Component>
       </DirectoryRef >

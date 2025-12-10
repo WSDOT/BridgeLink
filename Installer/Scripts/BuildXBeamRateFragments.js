@@ -1,8 +1,8 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\8.0.0.5\\bin\\images");
-var XBRateDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\XBRate\\8.0");
-var XBRateDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\XBRate\\8.0\\search");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\XBeamRate\\9.0.0.1\\bin\\images");
+var XBRateDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\XBRate\\9.0");
+var XBRateDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\XBRate\\9.0\\search");
 
 WScript.Echo("<?xml version='1.0'?>");
 WScript.Echo("<!-- This file genereted by BuildXBeamRateImagesFragment.js script-->");

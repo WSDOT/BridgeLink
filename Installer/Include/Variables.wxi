@@ -2,24 +2,24 @@
 <Include>
   <?include CustomizationVariables.wxi?>
   
-   <?define BridgeLinkReleaseVersion = 8.0.0?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
-   <?define BridgeLinkVersion   = 8.0.0.5?> <!-- This defines the version number of the executable application (probably won't change much)-->
-   <?define BEToolboxVersion    = 8.0.0.5?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
-   <?define PGSuperVersion      = 8.0.0.5?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 8.0.0.5?>
-   <?define XBeamRateVersion    = 8.0.0.5?> <!-- also change this version number in the BuildXBRateFragments.js file -->
-   <?define BarlistVersion   = 8.0.0.5?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BridgeLinkReleaseVersion = 9.0.0?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
+   <?define BridgeLinkVersion   = 9.0.0.1?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BEToolboxVersion    = 9.0.0.1?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
+   <?define PGSuperVersion      = 9.0.0.1?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = 9.0.0.1?>
+   <?define XBeamRateVersion    = 9.0.0.1?> <!-- also change this version number in the BuildXBRateFragments.js file -->
+   <?define BarlistVersion   = 9.0.0.1?> <!-- This defines the version number of the executable application (probably won't change much)-->
 
-  <?define BridgeLinkDocumentationVersion=8.0?>
-  <?define BEToolboxDocumentationVersion=8.0?>
-  <?define PGSuperDocumentationVersion=8.0?>
-  <?define PGSpliceDocumentationVersion=8.0?>
-  <?define PGSLibraryDocumentationVersion=8.0?>
-  <?define TOGADocumentationVersion=8.0?>
-  <?define TxCADExportDocumentationVersion=8.0?>
-  <?define KDOTDocumentationVersion=8.0?>
-  <?define XBRateDocumentationVersion=8.0?>
-<?define BarlistDocumentationVersion=8.0?>
+  <?define BridgeLinkDocumentationVersion=9.0?>
+  <?define BEToolboxDocumentationVersion=9.0?>
+  <?define PGSuperDocumentationVersion=9.0?>
+  <?define PGSpliceDocumentationVersion=9.0?>
+  <?define PGSLibraryDocumentationVersion=9.0?>
+  <?define TOGADocumentationVersion=9.0?>
+  <?define TxCADExportDocumentationVersion=9.0?>
+  <?define KDOTDocumentationVersion=9.0?>
+  <?define XBRateDocumentationVersion=9.0?>
+<?define BarlistDocumentationVersion=9.0?>
 	
 	<?define IncludeExperimentalFeatures?> <!-- Comment out to exclude experimental features from installer-->
 

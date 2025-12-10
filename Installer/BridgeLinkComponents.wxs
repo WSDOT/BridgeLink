@@ -15,9 +15,11 @@
                     Guid="{9F639678-37CE-48a2-8EDD-ED5F699EDC0D}"
                     Win64="$(var.IsWin64)">
 
-           <File Id="BridgeLink.exe"    Name="BridgeLink.exe" KeyPath ="yes">
+
+            <File Id="BridgeLink.exe"    Name="BridgeLink.exe" KeyPath ="yes">
              <fire:FirewallException Id="FWX1" Name="BridgeLink" Scope="any" IgnoreFailure="yes"/>
            </File>
+            <File Id="Application.Manifest.BridgeLink" Name ="Application.Manifest.BridgeLink"/>
             
             <!-- define component categories for the main executable
             Categories are: BridgeLink Application Plugins (such as PGSuper, Library Editor, TOGA, BEToolbox)

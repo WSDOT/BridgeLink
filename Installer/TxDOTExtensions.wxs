@@ -48,13 +48,15 @@
          <File Id="TxDOTAgent.dll"
                Name="TxDOTAgent.dll"
                KeyPath="yes" />
+          <File Id="TxDOT.Manifest.PGSuper" Name="TxDOT.Manifest.PGSuper"/>
+          <File Id="Extensions.Manifest.TOGA" Name="Extensions.Manifest.TOGA"/>
 
          <!-- TOGA file associations -->
          <ProgId Id="Toga.Document" Icon="TxDOTAgent.dll" IconIndex="0"/>
 
 
          <!-- CAD Data Exporter -->
-         <?define TxDOTCADDataExporterCLSID={9274354C-D0B7-437c-A5B3-3FFBFB17ADE3}?>
+         <!--<?define TxDOTCADDataExporterCLSID={9274354C-D0B7-437c-A5B3-3FFBFB17ADE3}?>
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                     Root="HKCR"
                     Key ="CLSID\$(var.TxDOTCADDataExporterCLSID)"/>
@@ -69,10 +71,10 @@
          <RegistryValue Root="HKCR"
                         Key="CLSID\$(var.TxDOTCADDataExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
                         Value=""
-                        Type="string" />
+                        Type="string" />-->
 
          <!-- TOGA Component-->
-         <?define TOGABridgeLinkAppPluginCLSID={F4629B75-7EF8-4159-A09A-9F4F30B60501}?>
+         <!--<?define TOGABridgeLinkAppPluginCLSID={F4629B75-7EF8-4159-A09A-9F4F30B60501}?>
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
                       Key ="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)"/>
@@ -87,10 +89,10 @@
          <RegistryValue Root="HKCR"
                         Key="CLSID\$(var.TOGABridgeLinkAppPluginCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
                         Value=""
-                        Type="string" />
+                        Type="string" />-->
 
          <!-- TxDOT PGSuper Extension Agent -->
-         <?define PGSuperTxDOTExtensionAgentCLSID={3700B253-8489-457c-8A6D-D174F95C457C}?>
+         <!--<?define PGSuperTxDOTExtensionAgentCLSID={3700B253-8489-457c-8A6D-D174F95C457C}?>
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
                       Key ="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)"/>
@@ -109,10 +111,10 @@
          <RegistryValue Root="HKCR"
                         Key="CLSID\$(var.PGSuperTxDOTExtensionAgentCLSID)\Implemented Categories\$(var.TogaExtensionAgentCATID)"
                         Value=""
-                        Type="string" />
+                        Type="string" />-->
 
          <!-- TxDOT PGSuper Extension Component Information Object -->
-         <?define PGSuperTxDOTInfoCLSID={785F2ACE-127B-4647-8062-ED49537E962C}?>
+         <!--<?define PGSuperTxDOTInfoCLSID={785F2ACE-127B-4647-8062-ED49537E962C}?>
          <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                       Root="HKCR"
                       Key ="CLSID\$(var.PGSuperTxDOTInfoCLSID)"/>
@@ -127,11 +129,11 @@
          <RegistryValue Root="HKCR"
                         Key="CLSID\$(var.PGSuperTxDOTInfoCLSID)\Implemented Categories\$(var.PGSuperComponentInfoCATID)"
                         Value=""
-                        Type="string" />
+                        Type="string" />-->
 
 
          <!-- TOGA Component Information Object -->
-         <?define TogaComponentInfoCLSID={AF010EB6-4A8D-4404-ADAB-D6CA62EC9AA1}?>
+         <!--<?define TogaComponentInfoCLSID={AF010EB6-4A8D-4404-ADAB-D6CA62EC9AA1}?>
          <RegistryKey ForceCreateOnInstall="yes"
                       ForceDeleteOnUninstall="yes"
                       Root="HKCR"
@@ -147,7 +149,7 @@
          <RegistryValue Root="HKCR"
                         Key="CLSID\$(var.TogaComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
                         Value=""
-                        Type="string" />
+                        Type="string" />-->
        </Component>
      </DirectoryRef>
 
