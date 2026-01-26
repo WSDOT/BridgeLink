@@ -77,6 +77,8 @@ IDI_TXDOT               ICON                    "res\\txdot.ico"
 
 IDI_KDOT                ICON                    "res\\KDOT.ico"
 
+IDI_EARTH               ICON                    "res\\Globe.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -141,7 +143,8 @@ BEGIN
     LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,173,218,28
     GROUPBOX        "Report Viewer",IDC_STATIC,120,140,218,32
     CONTROL         "Standard",IDC_STANDARD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,132,155,44,10
-    CONTROL         "Advanced",IDC_ADVANCED,"Button",BS_AUTORADIOBUTTON,193,155,47,10
+    CONTROL         "Advanced",IDC_ADVANCED,"Button",BS_AUTORADIOBUTTON,174,155,47,10
+    ICON            IDI_EARTH,IDC_STATIC_EARTH,219,154,14,13
 END
 
 

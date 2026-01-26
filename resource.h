@@ -25,6 +25,7 @@
 #define IDI_TXDOT                       239
 #define IDD_SCREEN_SIZE                 280
 #define IDI_KDOT                        310
+#define IDI_EARTH                       311
 #define IDD_ABOUTBOX                    999
 #define IDC_ENGINEER                    1000
 #define IDC_COMPANY                     1001
@@ -39,6 +40,7 @@
 #define IDC_DESCRIPTION                 1009
 #define IDC_MOREINFO                    1013
 #define IDC_WIDTH                       1270
+#define IDC_STATIC_EARTH                1539
 #define IDC_HEIGHT                      1629
 #define IDC_WSDOT                       1666
 #define IDC_TXDOT                       1668
