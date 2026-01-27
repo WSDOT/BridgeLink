@@ -53,6 +53,9 @@ void CConfigureBridgeLinkPage::DoDataExchange(CDataExchange* pDX)
 	CPropertyPage::DoDataExchange(pDX);
    DDX_Text(pDX,IDC_ENGINEER,m_strEngineer);
    DDX_Text(pDX,IDC_COMPANY,m_strCompany);
+   m_WebView2HyperLink.SetURL(_T("https://developer.microsoft.com/en-us/microsoft-edge/webview2"));
+   DDX_Control(pDX, IDC_WEBVIEW2_HYPERLINK, m_WebView2HyperLink);
+
 
    int browserType{ 0 };
 
@@ -140,3 +143,4 @@ void CConfigureBridgeLinkPage::OnBnClickedAutosave()
    GetDlgItem(IDC_AUTOSAVE_INTERVAL)->ShowWindow(nCmdShow);
    GetDlgItem(IDC_AUTOSAVE_INTERVAL_UNITS)->ShowWindow(nCmdShow);
 }
+
