@@ -1,7 +1,6 @@
 // Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
-#include "EAF\EAFResources.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -77,6 +76,8 @@ IDI_TXDOT               ICON                    "res\\txdot.ico"
 
 IDI_KDOT                ICON                    "res\\KDOT.ico"
 
+IDI_EARTH               ICON                    "res\\Globe.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -121,7 +122,7 @@ BEGIN
     LTEXT           "pixels",IDC_STATIC,77,56,18,8
 END
 
-IDD_CONFIGURE_BRIDGELINK DIALOGEX 0, 0, 345, 208
+IDD_CONFIGURE_BRIDGELINK DIALOGEX 0, 0, 345, 240
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "BridgeLink"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
@@ -138,10 +139,13 @@ BEGIN
     LTEXT           "AutoSave interval",IDC_AUTOSAVE_INTERVAL_LABEL,186,120,58,8
     EDITTEXT        IDC_AUTOSAVE_INTERVAL,245,118,21,14,ES_AUTOHSCROLL
     LTEXT           "minutes",IDC_AUTOSAVE_INTERVAL_UNITS,269,120,26,8
-    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,173,218,28
-    GROUPBOX        "Report Viewer",IDC_STATIC,120,140,218,32
-    CONTROL         "Standard",IDC_STANDARD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,132,155,44,10
-    CONTROL         "Advanced",IDC_ADVANCED,"Button",BS_AUTORADIOBUTTON,193,155,47,10
+    LTEXT           "The remaining steps of this wizard provide configuration settings for the BridgeLink Applications. Refer to the documentation for each application for detailed configuration information.",IDC_STATIC,120,197,218,28
+    GROUPBOX        "Report Viewer",IDC_STATIC,120,140,218,53
+    CONTROL         "Standard",IDC_STANDARD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,132,155,48,11
+    CONTROL         "Advanced",IDC_ADVANCED,"Button",BS_AUTORADIOBUTTON,179,155,48,11
+    ICON            IDI_EARTH,IDC_STATIC_EARTH,223,174,14,13
+    PUSHBUTTON      "Get Microsoft WebView2...",IDC_WEBVIEW2_HYPERLINK,242,176,87,13,0,WS_EX_TRANSPARENT
+    LTEXT           "Microsoft WebView2 runtime is required for 'Advanced' option",IDC_STATIC,229,156,100,19
 END
 
 
@@ -304,7 +308,7 @@ BEGIN
         VERTGUIDE, 120
         VERTGUIDE, 132
         TOPMARGIN, 7
-        BOTTOMMARGIN, 201
+        BOTTOMMARGIN, 233
     END
 END
 #endif    // APSTUDIO_INVOKED

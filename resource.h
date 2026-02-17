@@ -25,6 +25,7 @@
 #define IDI_TXDOT                       239
 #define IDD_SCREEN_SIZE                 280
 #define IDI_KDOT                        310
+#define IDI_EARTH                       311
 #define IDD_ABOUTBOX                    999
 #define IDC_ENGINEER                    1000
 #define IDC_COMPANY                     1001
@@ -39,6 +40,8 @@
 #define IDC_DESCRIPTION                 1009
 #define IDC_MOREINFO                    1013
 #define IDC_WIDTH                       1270
+#define IDC_WEBVIEW2_HYPERLINK          1537
+#define IDC_STATIC_EARTH                1539
 #define IDC_HEIGHT                      1629
 #define IDC_WSDOT                       1666
 #define IDC_TXDOT                       1668
@@ -51,6 +54,12 @@
 #define IDC_ADVANCED                    1702
 #define IDC_APPLIST                     3333
 #define EAF_RESERVED_COMMAND_BASE       0x8000
+#define EAFID_APP_LEGAL                 32771
+#define EAFID_TIPOFTHEDAY               32775
+#define EAFID_MANAGE_APP_PLUGINS        32776
+#define EAFID_HELP_SOURCE               32782
+#define EAFID_HELP_VIEWER               32786
+#define EAFID_LOGGING                   32787
 #define ID_HELP_JOINARPLIST             33024
 #define ID_HELP_INET_ARP                33025
 #define ID_HELP_INET_WSDOT              33026

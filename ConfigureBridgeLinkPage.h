@@ -21,6 +21,8 @@
 ///////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include <afx.h>
+#include <afxlinkctrl.h>
 
 
 // CConfigureBridgeLinkPage dialog
@@ -36,6 +38,7 @@ public:
    CString m_strEngineer;
    CString m_strCompany;
    CString m_strBrowser;
+   CMFCLinkCtrl   m_WebView2HyperLink;
    BOOL m_bAutoSave;
    int m_AutoSaveInterval;
 
