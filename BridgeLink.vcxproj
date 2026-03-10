@@ -248,6 +248,7 @@
     <Image Include="res\bss.ico" />
     <Image Include="res\ConfigurationHeader.bmp" />
     <Image Include="res\ConfigurationWatermark.bmp" />
+    <Image Include="res\globe.ico" />
     <Image Include="res\KDOT.ico" />
     <Image Include="res\splash.bmp" />
     <Image Include="res\txdot.ico" />

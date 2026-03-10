@@ -1,7 +1,7 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BridgeLinkDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BridgeLink\\8.0");
-var BridgeLinkDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BridgeLink\\8.0\\search");
+var BridgeLinkDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BridgeLink\\9.0");
+var BridgeLinkDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\BridgeLink\\9.0\\search");
 
 WScript.Echo("<?xml version='1.0'?>");
 WScript.Echo("<!-- This file genereted by BuildBridgeLinkFragment.js script-->");

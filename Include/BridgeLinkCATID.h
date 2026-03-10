@@ -22,6 +22,8 @@
 
 #pragma once
 
+#include <guiddef.h>
+
 // CATID for plug-ins that extend BridgeLink itself
 // {885F1426-44D9-4df3-A53D-CCF557DD2227}
 DEFINE_GUID(CATID_BridgeLinkPlugin, 

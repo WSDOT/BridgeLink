@@ -10,15 +10,17 @@
             Version="$(var.BridgeLinkReleaseVersion)" 
             Manufacturer="$(var.Manufacturer)" 
             UpgradeCode="$(var.UpgradeCode)">
-		<Package Id="*" 
-               Compressed="yes" 
+      <Package Id="*"
+               Compressed="yes"
                Comments="$(var.PackageComment)"
                InstallerVersion="301"
                Keywords="Integrated Bridge Engineering Software Environment"
                Languages="1033"
                Manufacturer="$(var.Manufacturer)"
                Platform="$(var.Platform)"
-               InstallScope="perMachine" />
+               InstallScope="perMachine"
+               />
+      
 
 		<MajorUpgrade 
          DowngradeErrorMessage="A newer version of [ProductName] is already installed." 
@@ -59,7 +61,7 @@
                Display="expand"
                Title="BridgeLink (Required)" 
                Level="1">
-         
+     
          <!-- Components for the main executable program -->
 			<ComponentRef Id="BridgeLinkComponents" Primary="yes" /> <!-- This is the main BridgeLink executable -->
          <ComponentRef Id="BridgeLinkSupportFiles"/> <!-- BridgeLink support files such as the help document -->

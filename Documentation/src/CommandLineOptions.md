@@ -32,6 +32,7 @@ Option | Description
 /Help | Same as /?
 \<app options\> \<_filename_\> | BridgeLink opens the file with its associated BridgeLink Application. For example, if a file with a pgs extension is given on the command line, BridgeLink opens the file with PGSuper. The application specific options, \<app options\> are then processed by the BridgeLink Application. If the file name is omitted, the application specific options \<app options\> are passed to all BridgeLink Applications until an application is found that can process them. If no application can be found the command line options window is displayed. <br> Example: <br> BridgeLink.exe /Configuration=WSDOT:WSDOT <br> Finds the first BridgeLink Application that knows how to process the /Configuration option.
 /App=\<appname\> \<app options\> \<_filename_\> | BridgeLink Applications are not guaranteed to have unique command line options.  Use this instead of \<app options\> alone to pass application specific command line options to a specific BridgeLink Application. Identify the specific BridgeLink Application with /App=<appname\>. <br> Example: <br> BridgeLink.exe /App=PGSuper /Configuration=WSDOT:WSDOT <br> Passes the /Configuration option to the PGSuper Application
+/v | Enable verbose application logging
 
 > NOTE: Command line options for specific BridgeLink Applications are found in the documentation for those applications.
 

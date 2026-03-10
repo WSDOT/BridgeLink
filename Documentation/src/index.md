@@ -14,13 +14,13 @@ The distribution provided by WSDOT has several standard BridgeLink Applications.
 
 ## Standard BridgeLink Applications
 The standard BridgeLink Applications provided by WSDOT are:
-* [Barlist](../../Barlist/Barlist/8.0/index.html)
-* [BEToolbox](../../BEToolbox/8.0/index.html)
-* [PGSuper](../../PGSuper/8.0/index.html) with WSDOT, TxDOT, and [KDOT](../../KDOT/8.0/index.html) Extensions
-* [PGSplice](../../PGSplice/8.0/index.html) with WSDOT Extensions
-* [PGS Library Editor](../../PGSLibrary/8.0/index.html)
-* [TOGA](../../TOGA/8.0/index.html)
-* [XBRate](../../XBRate/8.0/index.html)
+* [Barlist](../../Barlist/Barlist/8.1/index.html)
+* [BEToolbox](../../BEToolbox/8.1/index.html)
+* [PGSuper](../../PGSuper/8.1/index.html) with WSDOT, TxDOT, and [KDOT](../../KDOT/8.0/index.html) Extensions
+* [PGSplice](../../PGSplice/8.1/index.html) with WSDOT Extensions
+* [PGS Library Editor](../../PGSLibrary/8.1/index.html)
+* [TOGA](../../TOGA/8.1/index.html)
+* [XBRate](../../XBRate/8.1/index.html)
 
 These applications are briefly described in the sections that follow. You can get detailed information about each application from its manual.
 

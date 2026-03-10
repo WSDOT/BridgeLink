@@ -1,0 +1,74 @@
+{
+    "Component": {
+        "Component": {
+            "Name": "PGSLibrary Editor",
+            "CLSID": "{E96DEDC8-4D09-47EA-98E9-9731692D40AB}",
+            "dll": "PGSuperLibrary.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    },
+    "Component": {
+        "Component": {
+            "Name": "Barlist",
+            "CLSID": "{CFD04C61-6C91-42ED-8CAB-33DB07D08069}",
+            "dll": "Barlist.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    },
+    "Component": {
+        "Component": {
+            "Name": "TxDOT Optional Girder Analysis (TOGA)",
+            "CLSID": "{F4629B75-7EF8-4159-A09A-9F4F30B60501}",
+            "dll": "TxDOTAgent.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    },
+    "Component": {
+        "Component": {
+            "Name": "BEToolbox",
+            "CLSID": "{B5E128D4-78F3-48E0-970E-812C2281EE4E}",
+            "dll": "BEToolbox.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    },
+    "Component": {
+        "Component": {
+            "Name": "PGSuper",
+            "CLSID": "{22F091F9-B2BE-4313-BDA3-8F46A44681E9}",
+            "dll": "PGSuper.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    },
+    "Component": {
+        "Component": {
+            "Name": "PGSplice",
+            "CLSID": "{64EC8856-B47A-4CD3-A8F0-1270ADD7733D}",
+            "dll": "PGSuper.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    },
+    "Component": {
+        "Component": {
+            "Name": "PGSuper Project Importer",
+            "CLSID": "{73B452CE-0955-4FF5-AB8C-EF54BD1DFB72}",
+            "dll": "PGSuper.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    },
+    "Component": {
+        "Component": {
+            "Name": "PGSplice Project Importer",
+            "CLSID": "{398F7443-AA27-442F-ADA4-866E38BE596D}",
+            "dll": "PGSuper.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    },
+    "Component": {
+        "Component": {
+            "Name": "XBeam Rate",
+            "CLSID": "{B195CE70-2D27-4FA6-B0E5-99D09022D662}",
+            "dll": "XBeamRate.dll",
+            "Categories": "{1D069A0E-7436-4275-A129-C84ADC22DE68}"
+        }
+    }
+}

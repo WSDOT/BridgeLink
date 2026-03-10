@@ -1,18 +1,18 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\8.0.9.0\\bin\\images");
-var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\8.0");
-var PGSuperDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\8.0\\search");
-var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\8.0");
-var PGSpliceDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\8.0\\search");
-var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\8.0");
-var PGSLibraryDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\8.0\\search");
-var TOGADocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\8.0");
-var TOGADocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\8.0\\search");
-var TxCADExportDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\8.0");
-var TxCADExportDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\8.0\\search");
-var KDOTDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\8.0");
-var KDOTDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\8.0\\search");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\9.0.0.1\\bin\\images");
+var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\9.0");
+var PGSuperDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\9.0\\search");
+var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\9.0");
+var PGSpliceDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\9.0\\search");
+var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\9.0");
+var PGSLibraryDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\9.0\\search");
+var TOGADocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\9.0");
+var TOGADocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\9.0\\search");
+var TxCADExportDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\9.0");
+var TxCADExportDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\9.0\\search");
+var KDOTDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\9.0");
+var KDOTDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\9.0\\search");
 
 var fc = new Enumerator(ImagesFolder.Files);
 
@@ -282,7 +282,7 @@ for (; !fcSearchDocs.atEnd(); fcSearchDocs.moveNext()) {
    var fileTag = new String;
    fileTag = "<File Id='TOGASearchDocs" + (i++) + "' Name='" + fileName + "' />";
 
-   WScript.Echo(fileTag);
+    WScript.Echo(fileTag);
 }
 WScript.Echo("</Component>");
 WScript.Echo("</DirectoryRef>");

@@ -8,6 +8,7 @@
 
    <Fragment>
       <!-- WSDOT PGSuper Extensions -->
+      
       <DirectoryRef Id="APPLICATIONFOLDER"
                     FileSource ="$(var.PGSuperSourceRoot)\Extensions\WSDOT\$(var.PlatformFolder)">
 
@@ -17,10 +18,11 @@
             <File Id="WSDOTAgent.dll"
                   Name="WSDOTAgent.dll"
                   KeyPath="yes"/>
+            <File Id="WSDOT.Manifest.PGSuper" Name="WSDOT.Manifest.PGSuper"/>
 
             <!-- WSDOT Component Information Object-->
             <!-- PGSuper -->
-            <?define PGSuperWSDOTComponentInfoCLSID={5656F52E-4DC8-4299-8AD1-23EB3AE46353}?>
+            <!--<?define PGSuperWSDOTComponentInfoCLSID={5656F52E-4DC8-4299-8AD1-23EB3AE46353}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperWSDOTComponentInfoCLSID)"/>
@@ -35,11 +37,11 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperWSDOTComponentInfoCLSID)\Implemented Categories\$(var.PGSuperComponentInfoCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
             <!-- PGSplice -->
-            <?define PGSpliceWSDOTComponentInfoCLSID={E389A200-D722-4977-AE9F-939F9C121A1C}?>
-            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+            <!--<?define PGSpliceWSDOTComponentInfoCLSID={E389A200-D722-4977-AE9F-939F9C121A1C}?>-->
+            <!--<RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSpliceWSDOTComponentInfoCLSID)"/>
             <RegistryValue Root="HKCR"
@@ -53,11 +55,11 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceWSDOTComponentInfoCLSID)\Implemented Categories\$(var.PGSpliceComponentInfoCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
             <!-- WSDOT Extension Agent-->
             <!-- PGSuper -->
-            <?define PGSuperWSDOTExtensionAgentCLSID={B1A19633-8880-40bc-A3C9-DDF47F7F1844}?>
+            <!--<?define PGSuperWSDOTExtensionAgentCLSID={B1A19633-8880-40bc-A3C9-DDF47F7F1844}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperWSDOTExtensionAgentCLSID)"/>
@@ -72,7 +74,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperWSDOTExtensionAgentCLSID)\Implemented Categories\$(var.PGSuperExtensionAgentCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
             <!-- PGSplice -->
             <!-- 
@@ -98,6 +100,69 @@
          </Component>
       </DirectoryRef>
 
+      <DirectoryRef Id="APPLICATIONFOLDER"
+                    FileSource ="$(var.PGSuperSourceRoot)\Extensions\WSDOT\$(var.PlatformFolder)">
+         <Directory Id="Template_SI_Units" Name="Template SI Units"/>
+         <Directory Id="Template_US_Units" Name="Template US Units"/>
+      </DirectoryRef>
+      <DirectoryRef Id="Template_SI_Units" FileSource="$(var.PGSuperSourceRoot)\Extensions\WSDOT\$(var.PlatformFolder)\Template SI Units">
+         <Directory Id="SI_Units_Varied_Haunch" Name="Varied Haunch"/>
+      </DirectoryRef>
+      <DirectoryRef Id="Template_US_Units" FileSource="$(var.PGSuperSourceRoot)\Extensions\WSDOT\$(var.PlatformFolder)\Template US Units">
+         <Directory Id="US_Units_Varied_Haunch" Name="Varied Haunch"/>
+      </DirectoryRef>
+
+
+      <DirectoryRef Id="Template_SI_Units"
+                    FileSource="$(var.PGSuperSourceRoot)\Extensions\WSDOT\$(var.PlatformFolder)\Template SI Units">
+         <Component Id="Girder_Schedule_Templates_SI"
+                    Guid="{84D5AE43-201E-4ECC-9BFA-D20BFBD85A42}"
+                    Win64="$(var.IsWin64)">
+            <File Id="SI_WF_Girder_Schedule.xltx" Name="WF_Girder_Schedule.xltx" KeyPath="yes"/>
+            <File Id="SI_Slab_Girder_Schedule.xltx" Name="Slab_Girder_Schedule.xltx"/>
+            <File Id="SI_U_Beam_Schedule.xltx" Name="U_Beam_Schedule.xltx"/>
+            <File Id="SI_WFDG_Girder_Schedule.xltx" Name="WFDG_Girder_Schedule.xltx"/>
+            <File Id="SI_WFTDG_Girder_Schedule.xltx" Name="WFTDG_Girder_Schedule.xltx"/>
+         </Component>
+      </DirectoryRef>
+
+      <DirectoryRef Id="SI_Units_Varied_Haunch"
+                    FileSource="$(var.PGSuperSourceRoot)\Extensions\WSDOT\$(var.PlatformFolder)\Template SI Units\Varied Haunch">
+         <Component Id="Girder_Schedule_Templates_SI_Varied_Haunch"
+                    Guid="{B3AFD755-A986-474F-8457-3D015D681A71}"
+                    Win64="$(var.IsWin64)">
+            <File Id="SI_Varies_WF_Girder_Schedule.xltx" Name="WF_Girder_Schedule.xltx" KeyPath="yes"/>
+            <File Id="SI_Varies_Slab_Girder_Schedule.xltx" Name="Slab_Girder_Schedule.xltx"/>
+            <File Id="SI_Varies_U_Beam_Schedule.xltx" Name="U_Beam_Schedule.xltx"/>
+            <File Id="SI_Varies_WFTDG_Girder_Schedule.xltx" Name="WFTDG_Girder_Schedule.xltx"/>
+         </Component>
+      </DirectoryRef>
+
+      <DirectoryRef Id="Template_US_Units"
+                    FileSource="$(var.PGSuperSourceRoot)\Extensions\WSDOT\$(var.PlatformFolder)\Template US Units">
+         <Component Id="Girder_Schedule_Templates_US"
+                    Guid="{20C3F3F7-FEAE-44E3-A20A-75196EC9615D}"
+                    Win64="$(var.IsWin64)">
+            <File Id="US_WF_Girder_Schedule.xltx" Name="WF_Girder_Schedule.xltx" KeyPath="yes"/>
+            <File Id="US_Slab_Girder_Schedule.xltx" Name="Slab_Girder_Schedule.xltx"/>
+            <File Id="US_U_Beam_Schedule.xltx" Name="U_Beam_Schedule.xltx"/>
+            <File Id="US_WFDG_Girder_Schedule.xltx" Name="WFDG_Girder_Schedule.xltx"/>
+            <File Id="US_WFTDG_Girder_Schedule.xltx" Name="WFTDG_Girder_Schedule.xltx"/>
+         </Component>
+      </DirectoryRef>
+
+      <DirectoryRef Id="US_Units_Varied_Haunch"
+                    FileSource="$(var.PGSuperSourceRoot)\Extensions\WSDOT\$(var.PlatformFolder)\Template US Units\Varied Haunch">
+         <Component Id="Girder_Schedule_Templates_US_Varied_Haunch"
+                    Guid="{F9B4304A-4933-4DF2-8B6C-B27241F47198}"
+                    Win64="$(var.IsWin64)">
+            <File Id="US_Varies_WF_Girder_Schedule.xltx" Name="WF_Girder_Schedule.xltx" KeyPath="yes"/>
+            <File Id="US_Varies_Slab_Girder_Schedule.xltx" Name="Slab_Girder_Schedule.xltx"/>
+            <File Id="US_Varies_U_Beam_Schedule.xltx" Name="U_Beam_Schedule.xltx"/>
+            <File Id="US_Varies_WFTDG_Girder_Schedule.xltx" Name="WFTDG_Girder_Schedule.xltx"/>
+         </Component>
+      </DirectoryRef>
+
       <Feature Id="WSDOTExtensions"
                Absent="allow"
                ConfigurableDirectory="APPLICATIONFOLDER"
@@ -106,6 +171,10 @@
                Title="WSDOT Extensions (Optional)"
                Level="$(var.WSDOTFeatureLevel)">
          <ComponentRef Id="WSDOTAgent"/>
+         <ComponentRef Id="Girder_Schedule_Templates_SI"/>
+         <ComponentRef Id="Girder_Schedule_Templates_SI_Varied_Haunch"/>
+         <ComponentRef Id="Girder_Schedule_Templates_US"/>
+         <ComponentRef Id="Girder_Schedule_Templates_US_Varied_Haunch"/>
       </Feature>
 
    

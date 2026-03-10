@@ -1,7 +1,7 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\8.0");
-var BarlistDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\8.0\\search");
+var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\9.0");
+var BarlistDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\9.0\\search");
 
 WScript.Echo("<?xml version='1.0'?>");
 WScript.Echo("<!-- This file genereted by BuildBarlistFragment.js script-->");

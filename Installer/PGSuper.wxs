@@ -370,6 +370,7 @@
                     Win64="$(var.IsWin64)">
             <File Id="trucks.pgs"   Name="Trucks.pgs"/>
             <File Id="pgsuper.tip"  Name="PGSuper.tip"/>
+            <File Id="Application.Manifest.PGSuper" Name="Application.Manifest.PGSuper"/>
          </Component>
       </DirectoryRef>
 
@@ -472,13 +473,14 @@
       <!-- PGSuper Agents -->
       <DirectoryRef Id="APPLICATIONFOLDER"
                     FileSource="$(var.PGSuperSourceRoot)\AutomationDLLs\$(var.PlatformFolder)">
-
+         
          <Component Id="AnalysisAgent"
                     Guid="{B4242086-386A-4F91-9650-19C831F810BE}"
                     Win64="$(var.IsWin64)">
             <File Id="PGSuperAnalysisAgent.dll"
                   Name="PGSuperAnalysisAgent.dll"
                   KeyPath="yes"/>
+            <!--
             <?define PGSuperAnalysisAgentCLSID={DD1ECB24-F46E-4933-8EE4-1DC0BC67410D}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -499,6 +501,7 @@
                            Key="CLSID\$(var.PGSuperAnalysisAgentCLSID)\Implemented Categories\$(var.PGSpliceAgentCATID)"
                            Value=""
                            Type="string" />
+            -->
          </Component>
          <Component Id="BridgeAgent"
                     Guid="{A805854A-FCF7-411A-AA2E-988605E82186}"
@@ -506,7 +509,7 @@
             <File Id="PGSuperBridgeAgent.dll"
                   Name="PGSuperBridgeAgent.dll"
                   KeyPath="yes"/>
-            <?define PGSuperBridgeAgentCLSID={3FD393DD-8AF4-4cb2-A1C5-71E46C436BA0}?>
+            <!--<?define PGSuperBridgeAgentCLSID={3FD393DD-8AF4-4cb2-A1C5-71E46C436BA0}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperBridgeAgentCLSID)"/>
@@ -525,7 +528,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperBridgeAgentCLSID)\Implemented Categories\$(var.PGSpliceAgentCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
          </Component>
          <Component Id="EngAgent"
                     Guid="{AF75C91F-F9D3-4E91-94E8-6AB49B097803}"
@@ -534,7 +537,7 @@
                   Name="PGSuperEngAgent.dll"
                   KeyPath="yes"/>
 
-            <?define PGSuperEngAgentCLSID={73922319-9243-4974-BA54-CF22593EC9C4}?>
+            <!--<?define PGSuperEngAgentCLSID={73922319-9243-4974-BA54-CF22593EC9C4}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperEngAgentCLSID)"/>
@@ -553,7 +556,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperEngAgentCLSID)\Implemented Categories\$(var.PGSpliceAgentCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
          </Component>
          <Component Id="GraphingAgent"
                     Guid="{4517BA9F-7BD1-4822-BAF2-913259014CBC}"
@@ -562,7 +565,7 @@
                   Name="PGSuperGraphingAgent.dll"
                   KeyPath="yes"/>
 
-            <?define PGSuperGraphingAgentCLSID={B4639189-ED38-4a68-8A18-38026202E9DE}?>
+            <!--<?define PGSuperGraphingAgentCLSID={B4639189-ED38-4a68-8A18-38026202E9DE}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperGraphingAgentCLSID)"/>
@@ -595,7 +598,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceGraphingAgentCLSID)\Implemented Categories\$(var.PGSpliceAgentCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
          </Component>
          <Component Id="ProjectAgent"
                     Guid="{515C4041-17A0-4C07-BA15-83255877D3E2}"
@@ -603,7 +606,7 @@
             <File Id="PGSuperProjectAgent.dll"
                   Name="PGSuperProjectAgent.dll"
                   KeyPath="yes"/>
-            <?define PGSuperProjectAgentCLSID={256B5B5B-762C-4693-8802-6B0351290FEA}?>
+            <!--<?define PGSuperProjectAgentCLSID={256B5B5B-762C-4693-8802-6B0351290FEA}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperProjectAgentCLSID)"/>
@@ -622,7 +625,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperProjectAgentCLSID)\Implemented Categories\$(var.PGSpliceAgentCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
          </Component>
          <Component Id="ReportAgent"
                     Guid="{715052E0-0199-4B3B-B003-27C1C9148315}"
@@ -631,7 +634,7 @@
                   Name="PGSuperReportAgent.dll"
                   KeyPath="yes"/>
 
-            <?define PGSuperReportAgentCLSID={1FFED5EC-7A32-4837-A1F1-99481AFF2825}?>
+            <!--<?define PGSuperReportAgentCLSID={1FFED5EC-7A32-4837-A1F1-99481AFF2825}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperReportAgentCLSID)"/>
@@ -663,7 +666,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceReportAgentCLSID)\Implemented Categories\$(var.PGSpliceAgentCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
          </Component>
          <Component Id="SpecAgent"
                     Guid="{7A838074-0A75-49C2-A5CE-D3024B6B0762}"
@@ -671,7 +674,7 @@
             <File Id="PGSuperSpecAgent.dll"
                   Name="PGSuperSpecAgent.dll"
                   KeyPath="yes"/>
-            <?define PGSuperSpecAgentCLSID={F510647E-1F4F-4fef-8257-6914DE7B07C8}?>
+            <!--<?define PGSuperSpecAgentCLSID={F510647E-1F4F-4fef-8257-6914DE7B07C8}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperSpecAgentCLSID)"/>
@@ -690,7 +693,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperSpecAgentCLSID)\Implemented Categories\$(var.PGSpliceAgentCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
          </Component>
          <Component Id="TestAgent"
                     Guid="{4E6C75C8-B5A1-4D8D-A3F4-5D9AB8B3107E}"
@@ -698,7 +701,7 @@
             <File Id="PGSuperTestAgent.dll"
                   Name="PGSuperTestAgent.dll"
                   KeyPath="yes"/>
-            <?define PGSuperTestAgentCLSID={7D692AAD-39D0-4e73-842C-854457EA0EE6}?>
+            <!--<?define PGSuperTestAgentCLSID={7D692AAD-39D0-4e73-842C-854457EA0EE6}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="CLSID\$(var.PGSuperTestAgentCLSID)"/>
@@ -717,7 +720,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperTestAgentCLSID)\Implemented Categories\$(var.PGSpliceAgentCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
          </Component>
       </DirectoryRef>
 
@@ -752,12 +755,12 @@
          <ComponentRef Id="Images"/>
          <ComponentRef Id="PGSuperDocs"/>
           <ComponentRef Id="PGSuperSearchDocs"/>
-          <ComponentRef Id="PGSpliceDocs"/>
+         <ComponentRef Id="PGSpliceDocs"/>
           <ComponentRef Id="PGSpliceSearchDocs"/>
-          <ComponentRef Id="PGSLibraryDocs"/>
+         <ComponentRef Id="PGSLibraryDocs"/>
           <ComponentRef Id="PGSLibrarySearchDocs"/>
 
-          <ComponentRef Id="AnalysisAgent"/>
+         <ComponentRef Id="AnalysisAgent"/>
          <ComponentRef Id="BridgeAgent"/>
          <ComponentRef Id="EngAgent"/>
          <ComponentRef Id="GraphingAgent"/>

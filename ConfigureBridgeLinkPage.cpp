@@ -31,11 +31,6 @@
 #include "BridgeLink.hh"
 
 
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif
 
 
 // CConfigureBridgeLinkPage dialog
@@ -58,6 +53,34 @@ void CConfigureBridgeLinkPage::DoDataExchange(CDataExchange* pDX)
 	CPropertyPage::DoDataExchange(pDX);
    DDX_Text(pDX,IDC_ENGINEER,m_strEngineer);
    DDX_Text(pDX,IDC_COMPANY,m_strCompany);
+   m_WebView2HyperLink.SetURL(_T("https://developer.microsoft.com/en-us/microsoft-edge/webview2"));
+   DDX_Control(pDX, IDC_WEBVIEW2_HYPERLINK, m_WebView2HyperLink);
+
+
+   int browserType{ 0 };
+
+   if (!pDX->m_bSaveAndValidate)
+   {
+	   if (m_strBrowser == _T("IE"))
+	   {
+		   browserType = 0;
+	   }
+	   else
+	   {
+		   browserType = 1;
+	   }
+   }
+	   
+   DDX_Radio(pDX, IDC_STANDARD, browserType);
+   if (browserType == 0)
+   {
+	   m_strBrowser = _T("IE");
+   }
+   else
+   {
+	   m_strBrowser = _T("Edge");
+   }
+
 
    DDX_Check(pDX, IDC_AUTOSAVE, m_bAutoSave);
    DDX_Text(pDX, IDC_AUTOSAVE_INTERVAL, m_AutoSaveInterval);
@@ -120,3 +143,4 @@ void CConfigureBridgeLinkPage::OnBnClickedAutosave()
    GetDlgItem(IDC_AUTOSAVE_INTERVAL)->ShowWindow(nCmdShow);
    GetDlgItem(IDC_AUTOSAVE_INTERVAL_UNITS)->ShowWindow(nCmdShow);
 }
+

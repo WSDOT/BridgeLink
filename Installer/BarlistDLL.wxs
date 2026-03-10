@@ -31,6 +31,7 @@
                     Win64="$(var.IsWin64)">
 
             <File Id="Barlist.dll"    Name="Barlist.dll" KeyPath ="yes"/>
+            <File Id="Application.Manifest.Barlist" Name="Application.Manifest.Barlist"/>
            
             <!-- Barlist file associations -->
            <ProgId Id="Barlist.Document" Icon="Barlist.dll" IconIndex="0" />
@@ -39,7 +40,7 @@
            <!-- Barlist registry entries-->
             
             <!-- Barlist - BridgeLink Application Plugin -->
-            <?define BarlistAppPluginCLSID={CFD04C61-6C91-42ED-8CAB-33DB07D08069}?>
+            <!--<?define BarlistAppPluginCLSID={CFD04C61-6C91-42ED-8CAB-33DB07D08069}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -55,10 +56,10 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.BarlistAppPluginCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
             
             <!-- Barlist Component Information Object (for Barlist About dialog) -->
-            <?define BarlistComponentInfoCLSID={C357C429-FEB4-4CB9-87A9-A07DE7EE3D3F}?>
+            <!--<?define BarlistComponentInfoCLSID={C357C429-FEB4-4CB9-87A9-A07DE7EE3D3F}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -74,10 +75,10 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.BarlistComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
            
            <!-- Bars.dll -->
-           <?define BarInfoMgrCLSID={F1F5C068-12AA-11D3-8932-006097C68A9C}?>
+           <!--<?define BarInfoMgrCLSID={F1F5C068-12AA-11D3-8932-006097C68A9C}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -89,9 +90,9 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.BarInfoMgrCLSID)\InprocServer32"
                           Value="[APPLICATIONFOLDER]Bars.dll"
-                          Type="string" />
+                          Type="string" />-->
 
-           <?define BarlistCLSID={BFC2D3AA-143B-11D3-8934-006097C68A9C}?>
+           <!--<?define BarlistCLSID={BFC2D3AA-143B-11D3-8934-006097C68A9C}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -103,10 +104,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.BarlistCLSID)\InprocServer32"
                           Value="[APPLICATIONFOLDER]Bars.dll"
-                          Type="string" />
+                          Type="string" />-->
 
 
-           <?define BarlistAddinMgrCLSID={12FCFC9B-1F41-11D3-8941-006097C68A9C}?>
+           <!--<?define BarlistAddinMgrCLSID={12FCFC9B-1F41-11D3-8941-006097C68A9C}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -118,10 +119,10 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.BarlistAddinMgrCLSID)\InprocServer32"
                           Value="[APPLICATIONFOLDER]Bars.dll"
-                          Type="string" />
+                          Type="string" />-->
 
 
-           <?define BarRecordCLSID={BFC2D3A8-143B-11D3-8934-006097C68A9C}?>
+           <!--<?define BarRecordCLSID={BFC2D3A8-143B-11D3-8934-006097C68A9C}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -133,9 +134,9 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.BarRecordCLSID)\InprocServer32"
                           Value="[APPLICATIONFOLDER]Bars.dll"
-                          Type="string" />
+                          Type="string" />-->
 
-           <?define BarRecordCollectionCLSID={BFC2D3B0-143B-11D3-8934-006097C68A9C}?>
+           <!--<?define BarRecordCollectionCLSID={BFC2D3B0-143B-11D3-8934-006097C68A9C}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -147,9 +148,9 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.BarRecordCollectionCLSID)\InprocServer32"
                           Value="[APPLICATIONFOLDER]Bars.dll"
-                          Type="string" />
+                          Type="string" />-->
 
-           <?define Type50CLSID={2597E762-150F-11d3-8937-006097C68A9C}?>
+           <!--<?define Type50CLSID={2597E762-150F-11d3-8937-006097C68A9C}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type50CLSID)"/>
            <RegistryValue Root="HKCR" Key="CLSID\$(var.Type50CLSID)"  Value="Bend Type 50" Type="string" />
            <RegistryValue Root="HKCR" Key="CLSID\$(var.Type50CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
@@ -370,25 +371,25 @@
            <?define Type99CLSID={0A6670E4-228E-11d3-8945-006097C68A9C}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.Type99CLSID)"/>
            <RegistryValue Root="HKCR" Key="CLSID\$(var.Type99CLSID)"  Value="Bend Type 99" Type="string" />
-           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type99CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.Type99CLSID)\InprocServer32" Value="[APPLICATIONFOLDER]Bars.dll" Type="string" />-->
            
            <!-- Barlist Add in Component Category -->
-           <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="Component Categories\$(var.BarlistAddinCATID)"/>
-           <RegistryValue Root="HKCR" Key="Component Categories\$(var.BarlistAddinCATID)" Name="800" Value="Barlist Add-ins" Type="string" />
+           <!--<RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="Component Categories\$(var.BarlistAddinCATID)"/>
+           <RegistryValue Root="HKCR" Key="Component Categories\$(var.BarlistAddinCATID)" Name="800" Value="Barlist Add-ins" Type="string" />-->
 
            <!-- BXF Add in -->
-           <?define BXFAddinCLSID={B026E9AF-CCE7-41D4-AFBF-E2DEF7528EDA}?>
+           <!--<?define BXFAddinCLSID={B026E9AF-CCE7-41D4-AFBF-E2DEF7528EDA}?>
            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.BXFAddinCLSID)"/>
            <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)"  Value="Barlist Exchange File" Type="string" />
            <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)\InprocServer32" Value="[APPLICATIONFOLDER]BXF.dll" Type="string" />
-           <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)\Implemented Categories\$(var.BarlistAddinCATID)" Value="" Type="string" />
+           <RegistryValue Root="HKCR" Key="CLSID\$(var.BXFAddinCLSID)\Implemented Categories\$(var.BarlistAddinCATID)" Value="" Type="string" />-->
 
             <!-- ExcelExporter Add in -->
-            <?define ExcelAddinCLSID={344436BE-AB02-47A2-919F-9E45DD33DFF2}?>
+            <!--<?define ExcelAddinCLSID={344436BE-AB02-47A2-919F-9E45DD33DFF2}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" Root="HKCR" Key ="CLSID\$(var.ExcelAddinCLSID)"/>
             <RegistryValue Root="HKCR" Key="CLSID\$(var.ExcelAddinCLSID)"  Value="Barlist Excel Exporter" Type="string" />
             <RegistryValue Root="HKCR" Key="CLSID\$(var.ExcelAddinCLSID)\InprocServer32" Value="[APPLICATIONFOLDER]BarlistExcelExporter.dll" Type="string" />
-            <RegistryValue Root="HKCR" Key="CLSID\$(var.ExcelAddinCLSID)\Implemented Categories\$(var.BarlistAddinCATID)" Value="" Type="string" />
+            <RegistryValue Root="HKCR" Key="CLSID\$(var.ExcelAddinCLSID)\Implemented Categories\$(var.BarlistAddinCATID)" Value="" Type="string" />-->
 
          </Component>
       </DirectoryRef >

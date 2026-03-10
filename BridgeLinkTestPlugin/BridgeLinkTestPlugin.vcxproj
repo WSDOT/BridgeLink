@@ -126,7 +126,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>.\;.\Include;$(ARPDIR)\WBFL\Include;$(ARPDIR)\WBFL\Include\$(Platform);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_ATL_NO_UUIDOF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -183,22 +183,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BridgeLinkTestPlugin.def" />
-    <None Include="ComponentInfo.rgs" />
-    <None Include="Plugin.rgs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Midl Include="BridgeLinkTestPlugin.idl">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\WBFL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <GenerateStublessProxies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateStublessProxies>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\BridgeLinkTestPlugin.tlb</TypeLibraryName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BridgeLinkTestPlugin_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BridgeLinkTestPlugin_i.c</InterfaceIdentifierFileName>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\WBFL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <GenerateStublessProxies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateStublessProxies>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\BridgeLinkTestPlugin.tlb</TypeLibraryName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BridgeLinkTestPlugin_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BridgeLinkTestPlugin_i.c</InterfaceIdentifierFileName>
-    </Midl>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BridgeLinkTestPlugin.rc">
@@ -213,6 +197,7 @@
     <ClInclude Include="BridgeLinkView2.h" />
     <ClInclude Include="ChildFrame2.h" />
     <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="CLSID.h" />
     <ClInclude Include="ComponentInfo.h" />
     <ClInclude Include="Plugin.h" />
     <ClInclude Include="Resource.h" />
