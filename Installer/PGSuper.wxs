@@ -28,7 +28,7 @@
             <!-- PGSuper registry entries-->
 
             <!-- PGSuper Application Plugin -->
-            <?define PGSuperCLSID={22F091F9-B2BE-4313-BDA3-8F46A44681E9}?>
+            <!--<?define PGSuperCLSID={22F091F9-B2BE-4313-BDA3-8F46A44681E9}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -44,10 +44,10 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
             <!-- PGSuper Component Information Object -->
-            <?define PGSuperComponentInfoCLSID={339425CE-5469-41c2-B8A2-511A79B7483F}?>
+            <!--<?define PGSuperComponentInfoCLSID={339425CE-5469-41c2-B8A2-511A79B7483F}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -63,10 +63,10 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
             <!-- PGSuper Project Importer Object -->
-            <?define PGSuperProjectImporterCLSID={73B452CE-0955-4ff5-AB8C-EF54BD1DFB72}?>
+            <!--<?define PGSuperProjectImporterCLSID={73B452CE-0955-4ff5-AB8C-EF54BD1DFB72}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -82,7 +82,7 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSuperProjectImporterCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
             <!-- PGSuper Component Categories -->
 
@@ -95,7 +95,7 @@
            * Project Importers
            * Data Importers
            * Data Exporters-->
-            <RegistryKey ForceCreateOnInstall="yes"
+            <!--<RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="Component Categories\$(var.PGSuperComponentInfoCATID)"/>
@@ -163,13 +163,13 @@
                            Key="Component Categories\$(var.PGSuperDataExporterCATID)"
                            Name="800"
                            Value="PGSuper Data Exporter Plugin"
-                           Type="string" />
+                           Type="string" />-->
 
 
             <!-- PGSplice registry entries-->
 
             <!-- PGSplice Application Plugin -->
-            <?define PGSpliceAppPluginCLSID={64EC8856-B47A-4CD3-A8F0-1270ADD7733D}?>
+            <!--<?define PGSpliceAppPluginCLSID={64EC8856-B47A-4CD3-A8F0-1270ADD7733D}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -185,10 +185,10 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceAppPluginCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
            <!-- PGSplice Component Information Object -->
-            <?define PGSpliceComponentInfoCLSID={52160B92-F03C-495c-A149-CDF1068E99E3}?>
+            <!--<?define PGSpliceComponentInfoCLSID={52160B92-F03C-495c-A149-CDF1068E99E3}?>
             <RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
@@ -204,10 +204,10 @@
             <RegistryValue Root="HKCR"
                            Key="CLSID\$(var.PGSpliceComponentInfoCLSID)\Implemented Categories\$(var.BridgeLinkComponentInfoCATID)"
                            Value=""
-                           Type="string" />
+                           Type="string" />-->
 
            <!-- PGSplice Project Importer Object -->
-           <?define PGSpliceProjectImporterCLSID={398F7443-AA27-442f-ADA4-866E38BE596D}?>
+           <!--<?define PGSpliceProjectImporterCLSID={398F7443-AA27-442f-ADA4-866E38BE596D}?>
            <RegistryKey ForceCreateOnInstall="yes"
                         ForceDeleteOnUninstall="yes"
                         Root="HKCR"
@@ -223,7 +223,7 @@
            <RegistryValue Root="HKCR"
                           Key="CLSID\$(var.PGSpliceProjectImporterCLSID)\Implemented Categories\$(var.BridgeLinkAppPluginCATID)"
                           Value=""
-                          Type="string" />
+                          Type="string" />-->
 
            <!-- PGSplice Component Categories -->
 
@@ -236,7 +236,7 @@
            * Project Importers
            * Data Importers
            * Data Exporters-->
-            <RegistryKey ForceCreateOnInstall="yes"
+            <!--<RegistryKey ForceCreateOnInstall="yes"
                          ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="Component Categories\$(var.PGSpliceComponentInfoCATID)"/>
@@ -304,7 +304,7 @@
                           Key="Component Categories\$(var.PGSpliceDataExporterCATID)"
                           Name="800"
                           Value="PGSplice Data Exporter Plugin"
-                          Type="string" />
+                          Type="string" />-->
 
             <!-- PGSuper/PGSplice creates a log file, remove it on uninstall -->
             <RemoveFile Id="RemovePGSuperLog"  Name="PGSuper.log"  On="uninstall"/>

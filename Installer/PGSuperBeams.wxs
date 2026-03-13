@@ -28,7 +28,7 @@
 
             <!-- Create Beam Factory Component Categories -->
 
-            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
+            <!--<RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
                          Key ="Component Categories\$(var.PGSuperIBeamFactoryCATID)"/>
             <RegistryValue Root="HKCR"
@@ -98,7 +98,7 @@
                            Key="Component Categories\$(var.PGSuperSlabBeamFactoryCATID)"
                            Name="800"
                            Value="PGSuper Slab Beam Factories"
-                           Type="string" />
+                           Type="string" />-->
 
             <!-- Register beam families -->
             <!-- Box Beam Family -->
