@@ -18,7 +18,13 @@
                   Name="PGSuperIfcExtensions.dll"
                   KeyPath="yes" />
 
-           <!-- Ifc Importer -->
+            <File Id="IfcImportTemplate.pgt"
+                  Name="IfcImportTemplate.pgt" />
+
+            <File Id="IfcExtensions.Manifest.PGSuper"
+                  Name="IfcExtensions.Manifest.PGSuper" />
+
+            <!-- Ifc Importer -->
             <?define IfcImporterCLSID={9A717887-EB12-470E-8A4F-C941F65E592B}?>
             <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
                          Root="HKCR"
