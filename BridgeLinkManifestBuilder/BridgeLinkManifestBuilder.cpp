@@ -106,7 +106,7 @@ void BridgeLinkApplications()
 
    // BridgeLink Plugin Applications
    cm.RegisterComponent(_T("PGSLibrary Editor"), CLSID_LibraryAppPlugin, _T("PGSuperLibrary.dll"), CATID_BridgeLinkAppPlugin);
-   cm.RegisterComponent(_T("Barlist"), CLSID_BarlistPluginApp, _T("Barlist.dll"), { CATID_BridgeLinkAppPlugin, CATID_BarlistAppPlugin });
+   cm.RegisterComponent(_T("Barlist"), CLSID_BarlistPluginApp, _T("Barlist.dll"), { CATID_BridgeLinkAppPlugin });
    cm.RegisterComponent(_T("TxDOT Optional Girder Analysis (TOGA)"), CLSID_TOGAPluginApp, _T("TxDOTAgent.dll"), CATID_BridgeLinkAppPlugin);
    cm.RegisterComponent(_T("BEToolbox"), CLSID_BEToolboxPluginApp, _T("BEToolbox.dll"), CATID_BridgeLinkAppPlugin);
    cm.RegisterComponent(_T("PGSuper"), CLSID_PGSuperPluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
@@ -116,7 +116,7 @@ void BridgeLinkApplications()
    cm.RegisterComponent(_T("XBeam Rate"), CLSID_XBeamRatePluginApp, _T("XBeamRate.dll"), CATID_BridgeLinkAppPlugin);
 
    // BridgeLink Plugin Application Component Information Objects
-   cm.RegisterComponent(_T("Barlist Component Information"), CLSID_BarlistComponentInfo, _T("Barlist.dll"), { CATID_BridgeLinkComponentInfo,CATID_BarlistComponentInfo });
+   cm.RegisterComponent(_T("Barlist Component Information"), CLSID_BarlistComponentInfo, _T("Barlist.dll"), { CATID_BridgeLinkComponentInfo });
    cm.RegisterComponent(_T("TOGA Component Information"), CLSID_TOGAPluginAppComponentInfo, _T("TxDOTAgent.dll"), CATID_BridgeLinkComponentInfo);
    cm.RegisterComponent(_T("BEToolbox Component Information"), CLSID_BEToolboxComponentInfo, _T("BEToolbox.dll"), CATID_BridgeLinkComponentInfo);
    cm.RegisterComponent(_T("XBeam Rate Component Information"), CLSID_XBeamRateComponentInfo,  _T("XBeamRate.dll"), CATID_BridgeLinkComponentInfo);
@@ -141,9 +141,14 @@ void Barlist()
 {
    // Creates the manifest for the Barlist application. The plugins are key parts of the application
    WBFL::EAF::ComponentManager::GetInstance().Reset();
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Barlist Component Information"), CLSID_BarlistComponentInfo, _T("Barlist.dll"), { CATID_BarlistComponentInfo });
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Barlist"), CLSID_BarlistPluginApp, _T("Barlist.dll"), { CATID_BarlistAppPlugin });
+   WBFL::EAF::ComponentManager::GetInstance().Save(_T("Application.Manifest.BarlistDriver"));
+
+   WBFL::EAF::ComponentManager::GetInstance().Reset();
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("BXF Exporter"), CLSID_BXFAddin, _T("BXF.dll"), CATID_BarlistPlugin);
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Excel Exporter"), CLSID_ExcelExporterAddin, _T("BarlistExcelExporter.dll"), CATID_BarlistPlugin);
-   WBFL::EAF::ComponentManager::GetInstance().Save(_T("Application.Manifest.Barlist"));
+   WBFL::EAF::ComponentManager::GetInstance().Save(_T("Plugins.Manifest.Barlist"));
 }
 
 void BEToolboxTools()
