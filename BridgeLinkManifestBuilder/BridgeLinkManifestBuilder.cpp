@@ -326,7 +326,7 @@ void XBeamRate_PGSuper()
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("XBRate Extension Agent"), CLSID_XBeamRateAgent, _T("XBeamRate.dll"), { CATID_PGSuperExtensionAgent, CATID_PGSpliceExtensionAgent });
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("XBRate Component Information"), CLSID_XBRatePGSuperComponentInfo, _T("XBeamRate.dll"), CATID_PGSuperComponentInfo);
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("XBRate Component Information"), CLSID_XBRatePGSpliceComponentInfo, _T("XBeamRate.dll"), CATID_PGSpliceComponentInfo);
-   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("XBRate Pier Exporter"), CLSID_XBeamRateDataExporter, _T("XBeamRate.dll"), CATID_PGSuperDataExporter);
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("XBRate Pier Exporter"), CLSID_XBeamRateDataExporter, _T("XBeamRate.dll"), { CATID_PGSuperDataExporter, CATID_PGSpliceDataExporter });
 
    WBFL::EAF::ComponentManager::GetInstance().Save(_T("XBeamRateExtensions.Manifest.PGSuper"));
 }
