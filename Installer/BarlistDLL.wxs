@@ -31,8 +31,9 @@
                     Win64="$(var.IsWin64)">
 
             <File Id="Barlist.dll"    Name="Barlist.dll" KeyPath ="yes"/>
-            <File Id="Application.Manifest.Barlist" Name="Application.Manifest.Barlist"/>
-           
+            <File Id="Application.Manifest.BarlistDriver" Name="Application.Manifest.BarlistDriver"/>
+            <File Id="Plugins.Manifest.Barlist" Name="Plugins.Manifest.Barlist"/>
+
             <!-- Barlist file associations -->
            <ProgId Id="Barlist.Document" Icon="Barlist.dll" IconIndex="0" />
            <ProgId Id="BarlistCollaboration.Document" Icon="Barlist.dll" IconIndex="7" />
