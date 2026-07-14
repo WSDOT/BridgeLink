@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // BridgeLinkManifestBuilder
-// Copyright © 1999-2026  Washington State Department of Transportation
+// Copyright ï¿½ 1999-2026  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
 // This program is free software; you can redistribute it and/or modify
@@ -27,6 +27,8 @@
 /// Technically, the manifest files could be written by hand, but it is much
 /// easier to do it programmatically. Hand-coding requires dealing with GUIDs
 /// and json file format.
+
+#include <targetver.h>
 
 #include "afx.h"
 
