@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // BridgeLink Example - BridgeLink Application Framework Example
-// Copyright © 1999-2026  Washington State Department of Transportation
+// Copyright ï¿½ 1999-2026  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
 // This program is free software; you can redistribute it and/or modify
@@ -32,9 +32,7 @@
 #endif // _MSC_VER > 1000
 
 #define STRICT
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0600
-#endif
+#include <targetver.h>
 #define _ATL_APARTMENT_THREADED
 
 #include <afxwin.h>
