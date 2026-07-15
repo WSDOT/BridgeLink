@@ -55,7 +55,7 @@
 
 #include "../BridgeLinkTestPlugin/CLSID.h"
 
-//#include "../../BEToolboxExtensions/CLSID.h"
+#include "../../BEToolboxExtensions/CLSID.h"
 #include "../../BEToolbox/BEToolboxToolExample/CLSID.h"
 
 #include "../../PGSuper/Include/Plugins/PGSuperIEPlugin.h"
@@ -82,9 +82,6 @@
 #include "../../PGSuper/LibraryMgrPluginExample/CLSID.h"
 #include "../../PGSuper/Include/PGSuperLibraryMgrCATID.h"
 #include "../../PGSuper/IEPluginExample/IEPluginExample.h"
-
-//#include "../../PGSuperIfcExtensions/IfcExtensions.h"
-//#include "../../PGSuperScriptingExtension/CLSID.h"
 
 
 #include "../../XBeamRate/Include/XBeamRateCatCom.h"
@@ -174,18 +171,18 @@ void BEToolboxExampleTool()
    // DO NOT DISTRIBUTE THIS MANIFEST
    WBFL::EAF::ComponentManager::GetInstance().Reset();
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Example Tool"), CLSID_ExampleTool, _T("BEToolboxToolExample.dll"), CATID_BEToolboxTool);
-   WBFL::EAF::ComponentManager::GetInstance().Save(_T("ExampleTool.Manifest.BEToolbox"));
+   WBFL::EAF::ComponentManager::GetInstance().Save(_T("DoNotDistribute_ExampleTool.Manifest.BEToolbox"));
 }
 
 void BEToolboxExperimentalTools()
 {
    // Creates the manifest for BEToolbox experimental tools
    // DO NOT DISTRIBUTE THIS MANIFEST
-   //WBFL::EAF::ComponentManager::GetInstance().Reset();
-   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("RCCapacity Tool"), CLSID_RCCapacityTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
-   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("SVT Tool"), CLSID_SVTTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
-   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("M3C Tool"), CLSID_M3CTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
-   //WBFL::EAF::ComponentManager::GetInstance().Save(_T("Experimental.Manifest.BEToolbox"));
+   WBFL::EAF::ComponentManager::GetInstance().Reset();
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("RCCapacity Tool"), CLSID_RCCapacityTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("SVT Tool"), CLSID_SVTTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("M3C Tool"), CLSID_M3CTool, _T("BEToolboxToolExtensions.dll"), CATID_BEToolboxTool);
+   WBFL::EAF::ComponentManager::GetInstance().Save(_T("DoNotDistribute_Experimental.Manifest.BEToolbox"));
 }
 
 void BEToolboxPGSImportersExporters()
@@ -294,19 +291,6 @@ void KDOT_PGSuper()
 
 void PGSuper_Experimental()
 {
-   //// Creates the manifest for experimental extensions to PGSuper/PGSplice
-   //WBFL::EAF::ComponentManager::GetInstance().Reset();
-
-   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("IFC Exporter"), CLSID_PGSuperIfcExporter, _T("PGSuperIfcExtensions.dll"), { CATID_PGSuperDataExporter, CATID_PGSpliceDataExporter });
-   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("IFC Importer"), CLSID_PGSuperIfcImporter, _T("PGSuperIfcExtensions.dll"), { CATID_PGSuperDataImporter, CATID_PGSpliceDataImporter });
-
-   //WBFL::EAF::ComponentManager::GetInstance().Save(_T("Experimental.Manifest.PGSuper"));
-
-   //WBFL::EAF::ComponentManager::GetInstance().Reset();
-
-   //WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("IFC Exporter"), CLSID_PGSuperScriptingAgent, _T("PGSuperScriptingExtension.dll"), CATID_PGSuperExtensionAgent);
-
-   //WBFL::EAF::ComponentManager::GetInstance().Save(_T("Scripting.Manifest.PGSuper"));
 }
 
 void PGSuper_Examples()
