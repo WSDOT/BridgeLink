@@ -104,8 +104,8 @@
 <?define GridSourceRoot=\ARP_RELEASE\Grid\?>
    
    <?if $(var.Platform)="x64"?>
-      <?define XalanSourceRoot=\ARP\WBFL\Apache\XALANCPKG-11-31-X64-VC100\bin\?>
-      <?define XercesSourceRoot=\ARP\WBFL\Apache\XERCESCPKG-31-X64-VC100\bin\?>
+      <?define XalanSourceRoot=\ARP\WBFL\Apache\XALANCPKG-112-324-X64-VC143\bin\?>
+      <?define XercesSourceRoot=\ARP\WBFL\Apache\XERCESCPKG-324-X64-VC143\bin\?>
    <?else?>
       <?define XalanSourceRoot=\ARP\WBFL\Apache\XALANCPKG-11-31-X86-VC100\bin\?>
       <?define XercesSourceRoot=\ARP\WBFL\Apache\XERCESCPKG-31-X86-VC100\bin\?>
