@@ -19,7 +19,6 @@
             <!-- <File Id="WBFLBridgeModeling.dll"   Name="WBFLBridgeModeling.dll"/> -->
             <File Id="WBFLCogo.dll"             Name="WBFLCogo.dll"/>
             <File Id="WBFLCoordGeom.dll"             Name="WBFLCoordGeom.dll"/>
-            <File Id="WBFLCore.dll"             Name="WBFLCore.dll"/>
             <File Id="WBFLDManip.dll"           Name="WBFLDManip.dll"/>
             <File Id="WBFLDManipTools.dll"      Name="WBFLDManipTools.dll"/>
             <File Id="WBFLEngTools.dll"         Name="WBFLEngTools.dll"/>
