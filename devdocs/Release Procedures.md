@@ -18,7 +18,7 @@ Commit the copyright update to GIT.
 
 ***Version Numbers***
 
-Before releasing, the version number must be incremented. The easiest way to do this is search and replace the version number. The version number is represented in two forms in the RC files. The forms are x.y.z.b and x,y,z,b and both forms must be replaced. Do this search and replace in the WBFL, BridgeLinkComplete, and BridgeLinkInstaller (located in \ARP\BridgeLink\Installers) solutions.
+Before releasing, the version number must be incremented. The easiest way to do this is search and replace the version number. The version number is represented in two forms in the RC files. The forms are x.y.z.b and x,y,z,b and both forms must be replaced. Do this search and replace in the WBFL, BridgeLinkComplete, and BridgeLinkInstaller (located in `\ARP\BridgeLink\Installers`) solutions.
 
 As an example, when releasing the third beta of version 7.1.0 do a search and replace of 7.1.0.2 with 7.1.0.3 and 7,1,0,2 with 7,1,0,3.
 

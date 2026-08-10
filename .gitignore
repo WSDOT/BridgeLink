@@ -330,6 +330,7 @@ ASALocalRun/
 .mfractor/
 
 # Custom
+**/devdocs/API/
 BEToolbox.tip
 PGSplice.tip
 PGSuper.tip
