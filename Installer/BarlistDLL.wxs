@@ -31,6 +31,7 @@
                     Win64="$(var.IsWin64)">
 
             <File Id="Barlist.dll"    Name="Barlist.dll" KeyPath ="yes"/>
+            <File Id="Barlist.Manifest.BridgeLink" Name="Barlist.Manifest.BridgeLink"/>
             <File Id="Application.Manifest.Barlist" Name="Application.Manifest.Barlist"/>
            
             <!-- Barlist file associations -->

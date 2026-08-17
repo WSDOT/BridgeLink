@@ -33,6 +33,7 @@
                     Win64="$(var.IsWin64)">
 
             <File Id="BEToolbox.dll"    Name="BEToolbox.dll" KeyPath ="yes"/>
+            <File Id="BEToolbox.Manifest.BridgeLink" Name="BEToolbox.Manifest.BridgeLink"/>
             <File Id="Application.Manifest.BEToolbox" Name="Application.Manifest.BEToolbox"/>
             <File Id="BEToolboxExtensions.Manifest.PGSuper" Name="BEToolboxExtensions.Manifest.PGSuper"/>
 

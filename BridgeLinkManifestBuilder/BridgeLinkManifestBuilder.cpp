@@ -103,29 +103,38 @@
 void BridgeLinkApplications()
 {
    // Creates manifest for the main BridgeLink application.
+   
+   
    auto& cm = WBFL::EAF::ComponentManager::GetInstance();
    cm.Reset();
-
-   // BridgeLink Plugin Applications
-   cm.RegisterComponent(_T("PGSLibrary Editor"), CLSID_LibraryAppPlugin, _T("PGSuperLibrary.dll"), CATID_BridgeLinkAppPlugin);
    cm.RegisterComponent(_T("Barlist"), CLSID_BarlistPluginApp, _T("Barlist.dll"), { CATID_BridgeLinkAppPlugin, CATID_BarlistAppPlugin });
-   cm.RegisterComponent(_T("TxDOT Optional Girder Analysis (TOGA)"), CLSID_TOGAPluginApp, _T("TxDOTAgent.dll"), CATID_BridgeLinkAppPlugin);
-   cm.RegisterComponent(_T("BEToolbox"), CLSID_BEToolboxPluginApp, _T("BEToolbox.dll"), CATID_BridgeLinkAppPlugin);
-   cm.RegisterComponent(_T("PGSuper"), CLSID_PGSuperPluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
-   cm.RegisterComponent(_T("PGSplice"), CLSID_PGSplicePluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
-   cm.RegisterComponent(_T("PGSuper Project Importer"), CLSID_PGSuperProjectImporterPluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
-   cm.RegisterComponent(_T("PGSplice Project Importer"), CLSID_PGSpliceProjectImporterPluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
-   cm.RegisterComponent(_T("XBeam Rate"), CLSID_XBeamRatePluginApp, _T("XBeamRate.dll"), CATID_BridgeLinkAppPlugin);
-
-   // BridgeLink Plugin Application Component Information Objects
    cm.RegisterComponent(_T("Barlist Component Information"), CLSID_BarlistComponentInfo, _T("Barlist.dll"), { CATID_BridgeLinkComponentInfo,CATID_BarlistComponentInfo });
-   cm.RegisterComponent(_T("TOGA Component Information"), CLSID_TOGAPluginAppComponentInfo, _T("TxDOTAgent.dll"), CATID_BridgeLinkComponentInfo);
-   cm.RegisterComponent(_T("BEToolbox Component Information"), CLSID_BEToolboxComponentInfo, _T("BEToolbox.dll"), CATID_BridgeLinkComponentInfo);
-   cm.RegisterComponent(_T("XBeam Rate Component Information"), CLSID_XBeamRateComponentInfo,  _T("XBeamRate.dll"), CATID_BridgeLinkComponentInfo);
-   cm.RegisterComponent(_T("PGSuper Component Information"), CLSID_PGSuperComponentInfo, _T("PGSuper.dll"), CATID_BridgeLinkComponentInfo);
-   cm.RegisterComponent(_T("PGSplice Component Information"), CLSID_PGSpliceComponentInfo, _T("PGSuper.dll"), CATID_BridgeLinkComponentInfo);
+   cm.Save(_T("Barlist.Manifest.BridgeLink"));
 
-   cm.Save(_T("Application.Manifest.BridgeLink"));
+   cm.Reset();
+   cm.RegisterComponent(_T("PGSLibrary Editor"), CLSID_LibraryAppPlugin, _T("PGSuperLibrary.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("PGSuper"), CLSID_PGSuperPluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("PGSuper Project Importer"), CLSID_PGSuperProjectImporterPluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("PGSuper Component Information"), CLSID_PGSuperComponentInfo, _T("PGSuper.dll"), CATID_BridgeLinkComponentInfo);
+   cm.RegisterComponent(_T("PGSplice"), CLSID_PGSplicePluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("PGSplice Project Importer"), CLSID_PGSpliceProjectImporterPluginApp, _T("PGSuper.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("PGSplice Component Information"), CLSID_PGSpliceComponentInfo, _T("PGSuper.dll"), CATID_BridgeLinkComponentInfo);
+   cm.Save(_T("PGSuper.Manifest.BridgeLink"));
+
+   cm.Reset();
+   cm.RegisterComponent(_T("TxDOT Optional Girder Analysis (TOGA)"), CLSID_TOGAPluginApp, _T("TxDOTAgent.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("TOGA Component Information"), CLSID_TOGAPluginAppComponentInfo, _T("TxDOTAgent.dll"), CATID_BridgeLinkComponentInfo);
+   cm.Save(_T("TOGA.Manifest.BridgeLink"));
+
+   cm.Reset();
+   cm.RegisterComponent(_T("BEToolbox"), CLSID_BEToolboxPluginApp, _T("BEToolbox.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("BEToolbox Component Information"), CLSID_BEToolboxComponentInfo, _T("BEToolbox.dll"), CATID_BridgeLinkComponentInfo);
+   cm.Save(_T("BEToolbox.Manifest.BridgeLink"));
+
+   cm.Reset();
+   cm.RegisterComponent(_T("XBeam Rate"), CLSID_XBeamRatePluginApp, _T("XBeamRate.dll"), CATID_BridgeLinkAppPlugin);
+   cm.RegisterComponent(_T("XBeam Rate Component Information"), CLSID_XBeamRateComponentInfo, _T("XBeamRate.dll"), CATID_BridgeLinkComponentInfo);
+   cm.Save(_T("XBeamRate.Manifest.BridgeLink"));
 }
 
 void BridgeLinkApplicationPluginExample()
@@ -136,7 +145,7 @@ void BridgeLinkApplicationPluginExample()
    cm.Reset();
    cm.RegisterComponent(_T("BridgeLink Plugin Example"), CLSID_BridgeLinkExamplePluginApp, _T("BridgeLinkTestPlugin.dll"), CATID_BridgeLinkAppPlugin);
    cm.RegisterComponent(_T("BridgeLink Example Component Information"), CLSID_BridgeLinkExampleComponentInfo, _T("BridgeLinkTestPlugin.dll"), CATID_BridgeLinkComponentInfo);
-   cm.Save(_T("PluginExample.Manifest.BridgeLink"));
+   cm.Save(_T("DoNotDistribute_PluginExample.Manifest.BridgeLink"));
 }
 
 void Barlist()
@@ -169,7 +178,7 @@ void BEToolboxExampleTool()
    // DO NOT DISTRIBUTE THIS MANIFEST
    WBFL::EAF::ComponentManager::GetInstance().Reset();
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Example Tool"), CLSID_ExampleTool, _T("BEToolboxToolExample.dll"), CATID_BEToolboxTool);
-   WBFL::EAF::ComponentManager::GetInstance().Save(_T("ExampleTool.Manifest.BEToolbox"));
+   WBFL::EAF::ComponentManager::GetInstance().Save(_T("DoNotDistribute_ExampleTool.Manifest.BEToolbox"));
 }
 
 void BEToolboxExperimentalTools()
@@ -317,7 +326,7 @@ void PGSuper_Examples()
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Example PGSuper Project Importer"), CLSID_PGSuperProjectImporter, _T("IEPluginExample.dll"), CATID_PGSuperProjectImporter);
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Example PGSplice Project Importer"), CLSID_PGSpliceProjectImporter, _T("IEPluginExample.dll"), CATID_PGSpliceProjectImporter);
 
-   WBFL::EAF::ComponentManager::GetInstance().Save(_T("Examples.Manifest.PGSuper"));
+   WBFL::EAF::ComponentManager::GetInstance().Save(_T("DoNotDistribute_Examples.Manifest.PGSuper"));
 }
 
 void XBeamRate_PGSuper()
