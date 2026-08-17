@@ -371,6 +371,7 @@
             <File Id="trucks.pgs"   Name="Trucks.pgs"/>
             <File Id="pgsuper.tip"  Name="PGSuper.tip"/>
             <File Id="Application.Manifest.PGSuper" Name="Application.Manifest.PGSuper"/>
+            <File Id="PGSuper.Manifest.BridgeLink" Name="PGSuper.Manifest.BridgeLink"/>
          </Component>
       </DirectoryRef>
 

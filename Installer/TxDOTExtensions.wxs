@@ -48,6 +48,7 @@
          <File Id="TxDOTAgent.dll"
                Name="TxDOTAgent.dll"
                KeyPath="yes" />
+          <File Id="TOGA.Manifest.BridgeLink" Name="TOGA.Manifest.BridgeLink"/>
           <File Id="TxDOT.Manifest.PGSuper" Name="TxDOT.Manifest.PGSuper"/>
           <File Id="Extensions.Manifest.TOGA" Name="Extensions.Manifest.TOGA"/>
 
