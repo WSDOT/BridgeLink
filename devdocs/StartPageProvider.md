@@ -35,13 +35,19 @@ This is the interface a third party implements to become a start page provider
 class IStartPageWndProvider
 {
 public:
-   virtual std::shared_ptr<CEAFStartPageWnd> CreateStartPage() = 0;
+   virtual CEAFStartPageWnd* CreateStartPage() = 0;
 };
 ```
 
 Its `CreateStartPage()` follows the same contract as the underlying EAF hook it's standing in for:
-construct and return a `CEAFStartPageWnd`-derived window, but don't call `Create()` on it yourself -
-BridgeLink's main frame does that once the window comes back from the provider.
+construct (with `new`) and return a `CEAFStartPageWnd`-derived window, but don't call `Create()` on
+it yourself - BridgeLink's main frame does that once the window comes back from the provider.
+
+Ownership passes to BridgeLink's main frame, which follows MFC's normal convention for frame
+windows rather than a smart pointer: the window deletes itself (via the inherited
+`CFrameWnd::PostNcDestroy()`) when it is destroyed. Do not wrap the returned window in a
+`std::shared_ptr`/`std::unique_ptr` or otherwise `delete` it yourself - that would race with, or
+duplicate, MFC's own cleanup.
 
 ## Registering a provider
 
