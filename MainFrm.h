@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // BridgeLink - BridgeLink Extensible Application Framework
-// Copyright © 1999-2026  Washington State Department of Transportation
+// Copyright ï¿½ 1999-2026  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
 // This program is free software; you can redistribute it and/or modify
@@ -57,7 +57,7 @@ public:
 #endif
 
 protected:
-   std::shared_ptr<CEAFStartPageWnd> CreateStartPage() override;
+   CEAFStartPageWnd* CreateStartPage() override;
 
 // Generated message map functions
 protected:

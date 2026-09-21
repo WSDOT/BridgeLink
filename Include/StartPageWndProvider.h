@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // BridgeLink - BridgeLink Extensible Application Framework
-// Copyright © 1999-2026  Washington State Department of Transportation
+// Copyright ï¿½ 1999-2026  Washington State Department of Transportation
 //                        Bridge and Structures Office
 //
 // This program is free software; you can redistribute it and/or modify
@@ -34,5 +34,8 @@ class __declspec(uuid("271E5B9C-A3C9-486f-9E89-FD0EBD2B6E58")) IStartPageWndProv
 class IStartPageWndProvider
 {
 public:
-   virtual std::shared_ptr<CEAFStartPageWnd> CreateStartPage() = 0;
+   // Construct the window with "new" but do not call Create() on it - the caller (BridgeLink's
+   // main frame) does that. Ownership passes to the caller, which follows MFC's normal
+   // convention for frame windows: the window deletes itself when it is destroyed.
+   virtual CEAFStartPageWnd* CreateStartPage() = 0;
 };
