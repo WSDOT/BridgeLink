@@ -214,7 +214,8 @@ void PGSuper()
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Eng Agent"), CLSID_EngAgent, _T("PGSuperEngAgent.dll"), { CATID_PGSuperAgent, CATID_PGSpliceAgent });
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Graphing Agent"), CLSID_PGSuperGraphingAgent, _T("PGSuperGraphingAgent.dll"), { CATID_PGSuperAgent, CATID_PGSpliceAgent });
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Project Agent"), CLSID_ProjectAgent, _T("PGSuperProjectAgent.dll"), { CATID_PGSuperAgent, CATID_PGSpliceAgent });
-   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Report Agent"), CLSID_PGSuperReportAgent, _T("PGSuperReportAgent.dll"), { CATID_PGSuperAgent, CATID_PGSpliceAgent });
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Report Agent"), CLSID_PGSuperReportAgent, _T("PGSuperReportAgent.dll"), CATID_PGSuperAgent);
+   WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Report Agent"), CLSID_PGSpliceReportAgent, _T("PGSuperReportAgent.dll"), CATID_PGSpliceAgent);
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Spec Agent"), CLSID_SpecAgent, _T("PGSuperSpecAgent.dll"), { CATID_PGSuperAgent, CATID_PGSpliceAgent });
    WBFL::EAF::ComponentManager::GetInstance().RegisterComponent(_T("Test Agent"), CLSID_TestAgent, _T("PGSuperTestAgent.dll"), { CATID_PGSuperAgent, CATID_PGSpliceAgent });
 
