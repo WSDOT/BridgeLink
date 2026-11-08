@@ -294,7 +294,7 @@
       <Project>{c6f6e6a6-916e-491d-a1df-dc1e8814c3fb}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\PGSuper\MakePgz\MakePgz.vcxproj">
+    <ProjectReference Include="..\PGSuper\ConfigPackager\ConfigPackager.vcxproj">
       <Project>{e8657e0c-0dad-4abd-a464-7a8e8b890e6f}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
