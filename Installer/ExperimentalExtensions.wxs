@@ -1,79 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
   <?include Variables.wxi?>
-  <?include PGSuperCATID.wxi?>
-  <?include PGSpliceCATID.wxi?>
   <Fragment>
 
+    <!-- PGSuper Experimental Extensions: IFC import and export (PGSuperIfcExtensions)
 
+         The files are staged by PGSuperIfcExtensions\UpdateBinFiles.bat (keep the two lists in step)
+         and copied to the release tree by BuildRelease.bat.
 
-    <!-- PGSuper Experimental Extensions-->
-      <DirectoryRef Id="APPLICATIONFOLDER"
-                    FileSource="$(var.PGSuperSourceRoot)\Extensions\Experimental\$(var.PlatformFolder)">
-         <Component Id="ExperementalExtensions"
-                    Guid="{39ABB7C0-ACDC-4A42-90BB-56365345AB09}"
-                    Win64="$(var.IsWin64)"
-                    >
-            <File Id="PGSuperIfcExtensions.dll"
-                  Name="PGSuperIfcExtensions.dll"
-                  KeyPath="yes" />
+         The COM components are registered by their manifests (IfcExtensions.Manifest.PGSuper for
+         the PGSuper/PGSplice importers, exporter, and extension agent; IfcExtensions.Manifest.BridgeLink
+         for the mapping table editor), so there are no registry entries.
 
-           <!-- Ifc Importer -->
-            <?define IfcImporterCLSID={9A717887-EB12-470E-8A4F-C941F65E592B}?>
-            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
-                         Root="HKCR"
-                         Key ="CLSID\$(var.IfcImporterCLSID)"/>
-            <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.IfcImporterCLSID)"
-                           Value="PGSuper IFC Importer"
-                           Type="string" />
-            <RegistryValue Root="HKCR"
-                             Key="CLSID\$(var.IfcImporterCLSID)\InprocServer32"
-                             Value="[APPLICATIONFOLDER]PGSuperIfcExtensions.dll"
-                             Type="string" />
-           <RegistryValue Root="HKCR"
-                          Key="CLSID\$(var.IfcImporterCLSID)\Implemented Categories\$(var.PGSuperDataImporterCATID)"
-                          Value=""
-                          Type="string" />
-           <RegistryValue Root="HKCR"
-                          Key="CLSID\$(var.IfcImporterCLSID)\Implemented Categories\$(var.PGSpliceDataImporterCATID)"
-                          Value=""
-                          Type="string" />
+         Run-time layout (everything is found relative to BridgeLink.exe or the extension DLL):
+            APPLICATIONFOLDER\PGSuperIfcExtensions.dll, manifests, IfcImportTemplate.pgt/.spt
+            APPLICATIONFOLDER\ifcopenshell_*.dll          IfcOpenShell (OpenCASCADE is linked statically)
+            APPLICATIONFOLDER\proj_9.dll, ...             PROJ and its dependencies (georeferencing)
+            APPLICATIONFOLDER\proj\proj.db                EPSG database (MapConversion.cpp, EpsgCatalog.cpp)
+            APPLICATIONFOLDER\MappingTables\Standard.ifcmap   the standard mapping table
+    -->
+    <?define IfcExtensionsSourceRoot=$(var.PGSuperSourceRoot)\Extensions\Experimental\$(var.PlatformFolder)?>
 
-           <!-- Ifc Exporter-->
-             <?define IfcExporterCLSID={4E36E0A6-9EAE-452E-B91C-0099D065A764}?>
-            <RegistryKey ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes"
-                         Root="HKCR"
-                         Key ="CLSID\$(var.IfcExporterCLSID)"/>
-            <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.IfcExporterCLSID)"
-                           Value="PGSuper IFC Exporter"
-                           Type="string" />
-            <RegistryValue Root="HKCR"
-                           Key="CLSID\$(var.IfcExporterCLSID)\InprocServer32"
-                           Value="[APPLICATIONFOLDER]PGSuperIfcExtensions.dll"
-                           Type="string" />
-           <RegistryValue Root="HKCR"
-                          Key="CLSID\$(var.IfcExporterCLSID)\Implemented Categories\$(var.PGSuperDataExporterCATID)"
-                          Value=""
-                          Type="string" />
-           <RegistryValue Root="HKCR"
-                          Key="CLSID\$(var.IfcExporterCLSID)\Implemented Categories\$(var.PGSpliceDataExporterCATID)"
-                          Value=""
-                          Type="string" />
+    <DirectoryRef Id="APPLICATIONFOLDER">
+      <Directory Id="IfcMappingTablesFolder" Name="MappingTables"/>
+      <Directory Id="ProjDataFolder" Name="proj"/>
+    </DirectoryRef>
 
+    <DirectoryRef Id="APPLICATIONFOLDER" FileSource="$(var.IfcExtensionsSourceRoot)">
+      <!-- The extension, its manifests, and the import templates -->
+      <Component Id="ExperementalExtensions"
+                 Guid="{B5B034FF-5197-4E24-A294-C5CD6F8C4F47}"
+                 Win64="$(var.IsWin64)">
+        <File Id="PGSuperIfcExtensions.dll" Name="PGSuperIfcExtensions.dll" KeyPath="yes"/>
+        <File Id="IfcExtensions.Manifest.PGSuper" Name="IfcExtensions.Manifest.PGSuper"/>
+        <File Id="IfcExtensions.Manifest.BridgeLink" Name="IfcExtensions.Manifest.BridgeLink"/>
+        <File Id="IfcImportTemplate.pgt" Name="IfcImportTemplate.pgt"/>
+        <File Id="IfcImportTemplate.spt" Name="IfcImportTemplate.spt"/>
+      </Component>
+
+      <!-- IfcOpenShell -->
+      <Component Id="IfcOpenShell"
+                 Guid="{3458B902-368D-4EAF-A736-79AE685B1D3A}"
+                 Win64="$(var.IsWin64)">
+        <File Id="ifcopenshell_parse.dll" Name="ifcopenshell_parse.dll" KeyPath="yes"/>
+        <File Id="ifcopenshell_plugin.dll" Name="ifcopenshell_plugin.dll"/>
+        <File Id="ifcopenshell_parse_schema_ifc4x3_add2.dll" Name="ifcopenshell_parse_schema_ifc4x3_add2.dll"/>
+        <File Id="ifcopenshell_geometry.dll" Name="ifcopenshell_geometry.dll"/>
+        <File Id="ifcopenshell_geometry_kernel_opencascade.dll" Name="ifcopenshell_geometry_kernel_opencascade.dll"/>
+        <File Id="ifcopenshell_geometry_mapping_ifc4x3_add2.dll" Name="ifcopenshell_geometry_mapping_ifc4x3_add2.dll"/>
+      </Component>
+
+      <!-- PROJ (georeferencing) and the libraries it depends on (vcpkg) -->
+      <Component Id="ProjLibraries"
+                 Guid="{DCB7D6DB-3B3E-44F6-A352-A725F3835DB8}"
+                 Win64="$(var.IsWin64)">
+        <File Id="proj_9.dll" Name="proj_9.dll" KeyPath="yes"/>
+        <File Id="sqlite3.dll" Name="sqlite3.dll"/>
+        <File Id="tiff.dll" Name="tiff.dll"/>
+        <File Id="libcurl.dll" Name="libcurl.dll"/>
+        <File Id="z.dll" Name="z.dll"/>
+        <File Id="jpeg62.dll" Name="jpeg62.dll"/>
+        <File Id="liblzma.dll" Name="liblzma.dll"/>
       </Component>
     </DirectoryRef>
- 
-       <Feature Id="ExperementalFeatures"
-               Absent="allow"
-               ConfigurableDirectory="APPLICATIONFOLDER"
-               Description="Experimental features for PGSuper and PGSplice"
-               Display="expand"
-               Title="Experimental Features (Optional)"
-               Level="$(var.ExperimentalFeatureLevel)">
-         <ComponentRef Id="ExperementalExtensions"/>
-      </Feature>
+
+    <!-- PROJ data, including the EPSG database -->
+    <DirectoryRef Id="ProjDataFolder" FileSource="$(var.IfcExtensionsSourceRoot)\proj">
+      <Component Id="ProjData"
+                 Guid="{EBB5BC1B-3B51-4832-816A-F35A026DA737}"
+                 Win64="$(var.IsWin64)">
+        <File Id="proj.db" Name="proj.db" KeyPath="yes"/>
+        <File Id="proj.ini" Name="proj.ini"/>
+        <File Id="proj_CH" Name="CH"/>
+        <File Id="proj_GL27" Name="GL27"/>
+        <File Id="proj_ITRF2000" Name="ITRF2000"/>
+        <File Id="proj_ITRF2008" Name="ITRF2008"/>
+        <File Id="proj_ITRF2014" Name="ITRF2014"/>
+        <File Id="proj_ITRF2020" Name="ITRF2020"/>
+        <File Id="proj_nad.lst" Name="nad.lst"/>
+        <File Id="proj_nad27" Name="nad27"/>
+        <File Id="proj_nad83" Name="nad83"/>
+        <File Id="proj_other.extra" Name="other.extra"/>
+        <File Id="proj_world" Name="world"/>
+        <File Id="proj_deformation_model.schema.json" Name="deformation_model.schema.json"/>
+        <File Id="proj_projjson.schema.json" Name="projjson.schema.json"/>
+        <File Id="proj_triangulation.schema.json" Name="triangulation.schema.json"/>
+        <File Id="proj_copyright" Name="copyright"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- Mapping tables -->
+    <DirectoryRef Id="IfcMappingTablesFolder" FileSource="$(var.IfcExtensionsSourceRoot)\MappingTables">
+      <Component Id="IfcMappingTables"
+                 Guid="{323E5F0C-57A8-4441-AA5B-C078B71462B7}"
+                 Win64="$(var.IsWin64)">
+        <File Id="Standard.ifcmap" Name="Standard.ifcmap" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <Feature Id="ExperementalFeatures"
+             Absent="allow"
+             ConfigurableDirectory="APPLICATIONFOLDER"
+             Description="Experimental features for PGSuper and PGSplice: IFC import and export, with georeferencing"
+             Display="expand"
+             Title="Experimental Features (Optional)"
+             Level="$(var.ExperimentalFeatureLevel)">
+      <ComponentRef Id="ExperementalExtensions"/>
+      <ComponentRef Id="IfcOpenShell"/>
+      <ComponentRef Id="ProjLibraries"/>
+      <ComponentRef Id="ProjData"/>
+      <ComponentRef Id="IfcMappingTables"/>
+    </Feature>
 
   </Fragment>
 </Wix>
