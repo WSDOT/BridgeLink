@@ -67,7 +67,7 @@ BEGIN
             VALUE "FileDescription", "BridgeLinkTestPlugin Module"
             VALUE "FileVersion", "9.1.0.1"
             VALUE "InternalName", "BridgeLinkTestPlugin"
-            VALUE "LegalCopyright", "Copyright 2009-2025"
+            VALUE "LegalCopyright", "Copyright © 1999-2026, Washington State Department of Transportation, All Rights Reserved\0"
             VALUE "OriginalFilename", "BridgeLinkTestPlugin.DLL"
             VALUE "ProductName", "BridgeLinkTestPlugin Module"
             VALUE "ProductVersion", "9.1.0.1"

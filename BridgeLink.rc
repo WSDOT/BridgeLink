@@ -252,7 +252,7 @@ BEGIN
             VALUE "FileDescription", "BridgeLink"
             VALUE "FileVersion", "9.1.0.1"
             VALUE "InternalName", "BridgeLink"
-            VALUE "LegalCopyright", "Copyright © 1999-2025, Washington State Department of Transportation, All Rights Reserved"
+            VALUE "LegalCopyright", "Copyright © 1999-2026, Washington State Department of Transportation, All Rights Reserved"
             VALUE "OriginalFilename", "BridgeLink.exe"
             VALUE "ProductName", "BridgeLink"
             VALUE "ProductVersion", "9.1.0.1"
