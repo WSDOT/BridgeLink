@@ -23,6 +23,7 @@
             <File Id="WBFLDManipTools.dll"      Name="WBFLDManipTools.dll"/>
             <File Id="WBFLEngTools.dll"         Name="WBFLEngTools.dll"/>
             <File Id="WBFLFem2d.dll"            Name="WBFLFem2d.dll"/>
+            <File Id="WBFLFEA2D.dll"            Name="WBFLFEA2D.dll"/> <!-- imported by WBFLStability, WBFLFem2d, WBFLLBAMAnalysis, and the PGSuper and XBeamRate agents -->
             <File Id="WBFLGenericBridge.dll"    Name="WBFLGenericBridge.dll"/>
             <File Id="WBFLGenericBridgeTools.dll"             Name="WBFLGenericBridgeTools.dll"/>
             <File Id="WBFLGeometry.dll"              Name="WBFLGeometry.dll"/>
