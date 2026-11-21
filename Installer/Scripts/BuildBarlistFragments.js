@@ -1,7 +1,19 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\9.0");
-var BarlistDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\9.0\\search");
+
+// The version comes from WBFL_VERSION_STRING in %ARPDIR%\WBFL\Include\WBFLVersion.h (x.y.z.b)
+var VersionHeader = WScript.CreateObject("WScript.Shell").ExpandEnvironmentStrings("%ARPDIR%") + "\\WBFL\\Include\\WBFLVersion.h";
+var VersionFile = FSO.OpenTextFile(VersionHeader, 1);
+var VersionMatch = /^[ \t]*#[ \t]*define[ \t]+WBFL_VERSION_STRING[ \t]+"(\d+\.\d+\.\d+\.\d+)"/m.exec(VersionFile.ReadAll());
+VersionFile.Close();
+if (VersionMatch == null) {
+   WScript.StdErr.WriteLine("WBFL_VERSION_STRING in " + VersionHeader + " must be the version number x.y.z.b");
+   WScript.Quit(1);
+}
+var ArpVersion = VersionMatch[1];
+var ArpDocumentationVersion = ArpVersion.split(".").slice(0, 2).join(".");
+var BarlistDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\" + ArpDocumentationVersion);
+var BarlistDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\Barlist\\Barlist\\" + ArpDocumentationVersion + "\\search");
 
 WScript.Echo("<?xml version='1.0'?>");
 WScript.Echo("<!-- This file genereted by BuildBarlistFragment.js script-->");

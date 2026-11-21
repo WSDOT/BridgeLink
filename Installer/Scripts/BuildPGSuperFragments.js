@@ -1,18 +1,30 @@
 // JScript source code
 var FSO = new ActiveXObject("Scripting.FileSystemObject");
-var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\9.0.0.1\\bin\\images");
-var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\9.0");
-var PGSuperDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\9.0\\search");
-var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\9.0");
-var PGSpliceDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\9.0\\search");
-var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\9.0");
-var PGSLibraryDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\9.0\\search");
-var TOGADocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\9.0");
-var TOGADocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\9.0\\search");
-var TxCADExportDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\9.0");
-var TxCADExportDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\9.0\\search");
-var KDOTDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\9.0");
-var KDOTDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\9.0\\search");
+
+// The version comes from WBFL_VERSION_STRING in %ARPDIR%\WBFL\Include\WBFLVersion.h (x.y.z.b)
+var VersionHeader = WScript.CreateObject("WScript.Shell").ExpandEnvironmentStrings("%ARPDIR%") + "\\WBFL\\Include\\WBFLVersion.h";
+var VersionFile = FSO.OpenTextFile(VersionHeader, 1);
+var VersionMatch = /^[ \t]*#[ \t]*define[ \t]+WBFL_VERSION_STRING[ \t]+"(\d+\.\d+\.\d+\.\d+)"/m.exec(VersionFile.ReadAll());
+VersionFile.Close();
+if (VersionMatch == null) {
+   WScript.StdErr.WriteLine("WBFL_VERSION_STRING in " + VersionHeader + " must be the version number x.y.z.b");
+   WScript.Quit(1);
+}
+var ArpVersion = VersionMatch[1];
+var ArpDocumentationVersion = ArpVersion.split(".").slice(0, 2).join(".");
+var ImagesFolder = FSO.GetFolder("\\ARP_RELEASE\\PGSuper\\" + ArpVersion + "\\bin\\images");
+var PGSuperDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\" + ArpDocumentationVersion);
+var PGSuperDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSuper\\" + ArpDocumentationVersion + "\\search");
+var PGSpliceDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\" + ArpDocumentationVersion);
+var PGSpliceDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSplice\\" + ArpDocumentationVersion + "\\search");
+var PGSLibraryDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\" + ArpDocumentationVersion);
+var PGSLibraryDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\PGSLibrary\\" + ArpDocumentationVersion + "\\search");
+var TOGADocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\" + ArpDocumentationVersion);
+var TOGADocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TOGA\\" + ArpDocumentationVersion + "\\search");
+var TxCADExportDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\" + ArpDocumentationVersion);
+var TxCADExportDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\TxCADExport\\" + ArpDocumentationVersion + "\\search");
+var KDOTDocsFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\" + ArpDocumentationVersion);
+var KDOTDocsSearchFolder = FSO.GetFolder("\\ARP\\BridgeLink\\Docs\\KDOT\\" + ArpDocumentationVersion + "\\search");
 
 var fc = new Enumerator(ImagesFolder.Files);
 

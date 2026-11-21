@@ -2,24 +2,29 @@
 <Include>
   <?include CustomizationVariables.wxi?>
   
-   <?define BridgeLinkReleaseVersion = 9.0.0?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
-   <?define BridgeLinkVersion   = 9.0.0.1?> <!-- This defines the version number of the executable application (probably won't change much)-->
-   <?define BEToolboxVersion    = 9.0.0.1?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
-   <?define PGSuperVersion      = 9.0.0.1?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
-   <?define WBFLVersion         = 9.0.0.1?>
-   <?define XBeamRateVersion    = 9.0.0.1?> <!-- also change this version number in the BuildXBRateFragments.js file -->
-   <?define BarlistVersion   = 9.0.0.1?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <!-- The version numbers come from WBFL_VERSION_STRING in WBFL\Include\WBFLVersion.h: BridgeLinkInstaller.wixproj reads it and defines
+        ArpVersion (x.y.z.b), ArpReleaseVersion (x.y.z), and ArpDocumentationVersion (x.y) -->
+   <?ifndef ArpVersion?>
+   <?error ArpVersion isn't defined: build with BridgeLinkInstaller.wixproj, which reads it from WBFL\Include\WBFLVersion.h?>
+   <?endif?>
+   <?define BridgeLinkReleaseVersion = $(var.ArpReleaseVersion)?> <!-- This defines the version number of the product release (must only use x.y.z to get removal of previous versions) -->
+   <?define BridgeLinkVersion   = $(var.ArpVersion)?> <!-- This defines the version number of the executable application (probably won't change much)-->
+   <?define BEToolboxVersion    = $(var.ArpVersion)?>  <!-- also change this version number in the BuildBEToolboxFragments.js file -->
+   <?define PGSuperVersion      = $(var.ArpVersion)?> <!-- also change this version number in the BuildPGSuperImagesFragment.js file -->
+   <?define WBFLVersion         = $(var.ArpVersion)?>
+   <?define XBeamRateVersion    = $(var.ArpVersion)?> <!-- also change this version number in the BuildXBRateFragments.js file -->
+   <?define BarlistVersion   = $(var.ArpVersion)?> <!-- This defines the version number of the executable application (probably won't change much)-->
 
-  <?define BridgeLinkDocumentationVersion=9.0?>
-  <?define BEToolboxDocumentationVersion=9.0?>
-  <?define PGSuperDocumentationVersion=9.0?>
-  <?define PGSpliceDocumentationVersion=9.0?>
-  <?define PGSLibraryDocumentationVersion=9.0?>
-  <?define TOGADocumentationVersion=9.0?>
-  <?define TxCADExportDocumentationVersion=9.0?>
-  <?define KDOTDocumentationVersion=9.0?>
-  <?define XBRateDocumentationVersion=9.0?>
-<?define BarlistDocumentationVersion=9.0?>
+  <?define BridgeLinkDocumentationVersion=$(var.ArpDocumentationVersion)?>
+  <?define BEToolboxDocumentationVersion=$(var.ArpDocumentationVersion)?>
+  <?define PGSuperDocumentationVersion=$(var.ArpDocumentationVersion)?>
+  <?define PGSpliceDocumentationVersion=$(var.ArpDocumentationVersion)?>
+  <?define PGSLibraryDocumentationVersion=$(var.ArpDocumentationVersion)?>
+  <?define TOGADocumentationVersion=$(var.ArpDocumentationVersion)?>
+  <?define TxCADExportDocumentationVersion=$(var.ArpDocumentationVersion)?>
+  <?define KDOTDocumentationVersion=$(var.ArpDocumentationVersion)?>
+  <?define XBRateDocumentationVersion=$(var.ArpDocumentationVersion)?>
+<?define BarlistDocumentationVersion=$(var.ArpDocumentationVersion)?>
 	
 	<?define IncludeExperimentalFeatures?> <!-- Comment out to exclude experimental features from installer-->
 

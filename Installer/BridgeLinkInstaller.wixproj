@@ -6,25 +6,33 @@
     <ProductVersion>3.7</ProductVersion>
     <ProjectGuid>{ea7b5405-6d7d-42ee-aa76-fbdc078d050a}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>BridgeLink_9.0.0_Beta_1_$(Platform)_$(Configuration)</OutputName>
+    <!-- The package name uses the version in WBFLVersion.h (Version.props, imported below). Don't change the output name on
+         the project's Installer property page: Visual Studio saves $(...) typed there as %24%28...%29, and the package
+         is then named ..._$(Platform)_$(Configuration).msi. -->
     <OutputType>Package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <IncludeSearchPaths>Include\</IncludeSearchPaths>
     <Name>BridgeLinkInstaller</Name>
   </PropertyGroup>
+  <Import Project="$(ARPDIR)\BridgeLink\Installer\Version.props" />
+  <PropertyGroup>
+    <OutputName>BridgeLink_$(ArpPackageVersion)_$(Platform)_$(Configuration)</OutputName>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
     <SuppressPdbOutput>True</SuppressPdbOutput>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants></DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TxDOT|x64' ">
     <SuppressPdbOutput>True</SuppressPdbOutput>
     <DefineConstants>_TXDOT;</DefineConstants>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);$(ArpVersionDefines)</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AddRemovePrograms.wxs" />
@@ -95,6 +103,10 @@
     <Folder Include="Scripts" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
+  <!-- Checks that our binaries in the package have the version number in WBFLVersion.h (warnings in the build output) -->
+  <Target Name="CheckPackageVersions" AfterTargets="Build">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\..\CheckVersions.ps1&quot; -WarnOnly -Path &quot;$(TargetPath)&quot;" />
+  </Target>
   <PropertyGroup>
     <PreBuildEvent>cscript  $(ProjectDir)\Scripts\BuildBridgeLinkFragments.js //NoLogo &gt; $(ProjectDir)BridgeLinkFragments.wxs
 cscript  $(ProjectDir)\Scripts\BuildBEToolboxFragments.js //NoLogo &gt; $(ProjectDir)BEToolboxFragments.wxs
@@ -110,4 +122,4 @@ cscript  $(ProjectDir)\Scripts\BuildBarlistFragments.js //NoLogo &gt; $(ProjectD
 	<Target Name="AfterBuild">
 	</Target>
 	-->
-</Project>
+</Project>

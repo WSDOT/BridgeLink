@@ -14,13 +14,13 @@ The distribution provided by WSDOT has several standard BridgeLink Applications.
 
 ## Standard BridgeLink Applications
 The standard BridgeLink Applications provided by WSDOT are:
-* [Barlist](../../Barlist/Barlist/9.1/index.html)
-* [BEToolbox](../../BEToolbox/9.1/index.html)
-* [PGSuper](../../PGSuper/9.1/index.html) with WSDOT, TxDOT, and [KDOT](../../KDOT/9.1/index.html) Extensions
-* [PGSplice](../../PGSplice/9.1/index.html) with WSDOT Extensions
-* [PGS Library Editor](../../PGSLibrary/9.1/index.html)
-* [TOGA](../../TOGA/9.1/index.html)
-* [XBRate](../../XBRate/9.1/index.html)
+* [Barlist](../../Barlist/Barlist/$(ARP_DOCUMENTATION_VERSION)/index.html)
+* [BEToolbox](../../BEToolbox/$(ARP_DOCUMENTATION_VERSION)/index.html)
+* [PGSuper](../../PGSuper/$(ARP_DOCUMENTATION_VERSION)/index.html) with WSDOT, TxDOT, and [KDOT](../../KDOT/$(ARP_DOCUMENTATION_VERSION)/index.html) Extensions
+* [PGSplice](../../PGSplice/$(ARP_DOCUMENTATION_VERSION)/index.html) with WSDOT Extensions
+* [PGS Library Editor](../../PGSLibrary/$(ARP_DOCUMENTATION_VERSION)/index.html)
+* [TOGA](../../TOGA/$(ARP_DOCUMENTATION_VERSION)/index.html)
+* [XBRate](../../XBRate/$(ARP_DOCUMENTATION_VERSION)/index.html)
 
 These applications are briefly described in the sections that follow. You can get detailed information about each application from its manual.
 

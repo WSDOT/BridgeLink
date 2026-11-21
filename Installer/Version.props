@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   The version numbers for the installer projects, from the one place they are set:
+      WBFL_VERSION_STRING in $(ARPDIR)\WBFL\Include\WBFLVersion.h (x.y.z.b), and
+      _BETA_VERSION in $(ARPDIR)\BridgeLink\Include\BridgeLinkVersion.h (defined: beta release; commented out: official release).
+
+   Import it near the top of an installer project (before properties that use it, such as OutputName):
+      <Import Project="$(ARPDIR)\BridgeLink\Installer\Version.props" />
+   and pass the versions to WiX with  <DefineConstants>$(DefineConstants);$(ArpVersionDefines)</DefineConstants>.
+
+   ArpVersion               x.y.z.b      10.0.0.1
+   ArpReleaseVersion        x.y.z        10.0.0
+   ArpDocumentationVersion  x.y          10.0
+   ArpBuildNumber           b            1
+   ArpBeta                  True/False
+   ArpPackageVersion        x.y.z_Beta_b for a beta release, x.y.z for an official release (installer file names)
+
+   Used by BridgeLink\Installer\BridgeLinkInstaller.wixproj and the BridgeLink Professional installer projects.
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ArpVersionHeader>$(ARPDIR)\WBFL\Include\WBFLVersion.h</ArpVersionHeader>
+    <ArpBetaHeader>$(ARPDIR)\BridgeLink\Include\BridgeLinkVersion.h</ArpBetaHeader>
+    <ArpVersionText Condition="Exists('$(ArpVersionHeader)')">$([System.IO.File]::ReadAllText('$(ArpVersionHeader)'))</ArpVersionText>
+    <ArpVersion>$([System.Text.RegularExpressions.Regex]::Match($(ArpVersionText), '(?m)(?&lt;=^[ \t]*#[ \t]*define[ \t]+WBFL_VERSION_STRING[ \t]+")\d+\.\d+\.\d+\.\d+(?=")').Value)</ArpVersion>
+    <ArpVersionText />
+    <ArpReleaseVersion Condition="'$(ArpVersion)' != ''">$([System.Version]::Parse($(ArpVersion)).ToString(3))</ArpReleaseVersion>
+    <ArpDocumentationVersion Condition="'$(ArpVersion)' != ''">$([System.Version]::Parse($(ArpVersion)).ToString(2))</ArpDocumentationVersion>
+    <ArpBuildNumber Condition="'$(ArpVersion)' != ''">$([System.Version]::Parse($(ArpVersion)).Revision)</ArpBuildNumber>
+    <ArpBeta Condition="Exists('$(ArpBetaHeader)')">$([System.Text.RegularExpressions.Regex]::IsMatch($([System.IO.File]::ReadAllText('$(ArpBetaHeader)')), '(?m)^[ \t]*#define[ \t]+_BETA_VERSION\b'))</ArpBeta>
+    <ArpPackageVersion Condition="'$(ArpBeta)' == 'True'">$(ArpReleaseVersion)_Beta_$(ArpBuildNumber)</ArpPackageVersion>
+    <ArpPackageVersion Condition="'$(ArpBeta)' != 'True'">$(ArpReleaseVersion)</ArpPackageVersion>
+    <ArpVersionDefines>ArpVersion=$(ArpVersion);ArpReleaseVersion=$(ArpReleaseVersion);ArpDocumentationVersion=$(ArpDocumentationVersion);ArpPackageVersion=$(ArpPackageVersion)</ArpVersionDefines>
+  </PropertyGroup>
+  <Target Name="CheckArpVersion" BeforeTargets="PreBuildEvent;Compile">
+    <Error Condition="'$(ArpVersion)' == ''" Text="WBFL_VERSION_STRING in $(ArpVersionHeader) must be the version number x.y.z.b (is ARPDIR set?)" />
+    <Error Condition="'$(ArpBeta)' == ''" Text="$(ArpBetaHeader) not found (is ARPDIR set?)" />
+    <Message Importance="high" Text="BridgeLink $(ArpVersion) (beta: $(ArpBeta)), package version $(ArpPackageVersion)" />
+  </Target>
+</Project>

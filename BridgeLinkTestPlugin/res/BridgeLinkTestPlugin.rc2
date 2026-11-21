@@ -1,0 +1,52 @@
+//
+// BridgeLinkTestPlugin.rc2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+#pragma code_page(1252)
+#include <WBFLVersion.h>
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+// The version number comes from WBFLVersion.h. The version resource is here, not in the .rc file,
+// because the resource editor would replace the macros with numbers.
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION WBFL_VERSION_MAJOR,WBFL_VERSION_MINOR,WBFL_VERSION_HOTFIX,WBFL_VERSION_BUILD
+ PRODUCTVERSION WBFL_VERSION_MAJOR,WBFL_VERSION_MINOR,WBFL_VERSION_HOTFIX,WBFL_VERSION_BUILD
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "BridgeLinkTestPlugin Module"
+            VALUE "FileVersion", WBFL_VERSION_STRING
+            VALUE "InternalName", "BridgeLinkTestPlugin"
+            VALUE "LegalCopyright", "Copyright © 1999-2026, Washington State Department of Transportation, All Rights Reserved\0"
+            VALUE "OriginalFilename", "BridgeLinkTestPlugin.DLL"
+            VALUE "ProductName", "BridgeLinkTestPlugin Module"
+            VALUE "ProductVersion", WBFL_VERSION_STRING
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////

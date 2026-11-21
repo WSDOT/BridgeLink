@@ -1,3 +1,7 @@
+REM - The documentation version (x.y) comes from WBFL_VERSION_STRING in WBFL\Include\WBFLVersion.h
+call %ARPDIR%\BridgeLink\GetVersion.bat
+if errorlevel 1 exit /B 1
+
 cd %ARPDIR%\BridgeLink\Documentation
 
 rmdir /S /Q doc
@@ -18,7 +22,7 @@ echo ^</script^> >> %SEARCH_HTML%
 %ARPDIR%\BridgeLink\RegFreeCOM\x64\Release\MakeDocMap BridgeLink
 rem ** Make the BridgeLink copy the same as the build, copying only changed files so unchanged files keep
 rem    their timestamps (PublishDocumentation.bat then sends only what changed to the server)
-powershell -NoProfile -ExecutionPolicy Bypass -File %ARPDIR%\BridgeLink\SyncFolder.ps1 -Source %ARPDIR%\BridgeLink\Documentation\doc\html -Target %ARPDIR%\BridgeLink\Docs\BridgeLink\%1 -Keep *.dm
+powershell -NoProfile -ExecutionPolicy Bypass -File %ARPDIR%\BridgeLink\SyncFolder.ps1 -Source %ARPDIR%\BridgeLink\Documentation\doc\html -Target %ARPDIR%\BridgeLink\Docs\BridgeLink\%ARP_DOCUMENTATION_VERSION% -Keep *.dm
 if errorlevel 1 exit /B 1
-powershell -NoProfile -ExecutionPolicy Bypass -File %ARPDIR%\BridgeLink\SyncFolder.ps1 -Source %ARPDIR%\BridgeLink\Documentation\BridgeLink.dm -Target %ARPDIR%\BridgeLink\Docs\BridgeLink\%1\BridgeLink.dm
+powershell -NoProfile -ExecutionPolicy Bypass -File %ARPDIR%\BridgeLink\SyncFolder.ps1 -Source %ARPDIR%\BridgeLink\Documentation\BridgeLink.dm -Target %ARPDIR%\BridgeLink\Docs\BridgeLink\%ARP_DOCUMENTATION_VERSION%\BridgeLink.dm
 if errorlevel 1 exit /B 1

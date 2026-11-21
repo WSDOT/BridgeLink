@@ -7,7 +7,10 @@ REM - this assumes documentation for version 1.1.0 is the same as for version 1.
 REM - which will generally be true. This way we don't have to publish new documentation
 REM - for every bug-fix release. Just use 1.1 for the version number
 
-SET BRIDGELINK_DOCUMENTATION_VERSION=9.1
+REM - The version number comes from WBFL_VERSION_STRING in WBFL\Include\WBFLVersion.h
+call %ARPDIR%\BridgeLink\GetVersion.bat
+if errorlevel 1 exit /B 1
+SET BRIDGELINK_DOCUMENTATION_VERSION=%ARP_DOCUMENTATION_VERSION%
 SET BETOOLBOX_DOCUMENTATION_VERSION=%BRIDGELINK_DOCUMENTATION_VERSION%
 SET PGSUPER_DOCUMENTATION_VERSION=%BRIDGELINK_DOCUMENTATION_VERSION%
 SET PGSPLICE_DOCUMENTATION_VERSION=%BRIDGELINK_DOCUMENTATION_VERSION%
