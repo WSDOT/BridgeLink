@@ -5,7 +5,8 @@
 .DESCRIPTION
    Every .dll and .exe in the given folders, or in the given installer packages (.msi, extracted to a temporary
    folder), is checked when its CompanyName matches -Company or its file name matches -Name. Its file version and
-   product version (the strings and the numbers) must be WBFL_VERSION_STRING from WBFLVersion.h; a binary
+   product version (the strings and the numbers; a "+<commit>" suffix on the product version, which .NET builds add,
+   is ignored) must be WBFL_VERSION_STRING from WBFLVersion.h; a binary
    without a version resource is reported too. -Exclude lists binaries that keep their own version, and the unit
    test DLLs (*UnitTests.dll), which are for the test framework and never deployed.
 
@@ -67,11 +68,13 @@ try
          $numbers = "{0}.{1}.{2}.{3}" -f $v.FileMajorPart, $v.FileMinorPart, $v.FileBuildPart, $v.FilePrivatePart
          $product = "{0}.{1}.{2}.{3}" -f $v.ProductMajorPart, $v.ProductMinorPart, $v.ProductBuildPart, $v.ProductPrivatePart
          $where = if ($p -like '*.msi') { "$($file.Name) in $p" } else { $file.FullName }
+         # .NET builds add the commit to the product version ("10.0.0.1+<hash>", SemVer build metadata): it's ignored
+         $productString = if ($v.ProductVersion) { ($v.ProductVersion.Trim() -split '\+')[0] } else { $null }
          if (-not $v.FileVersion)
          {
             Write-Host "CheckVersions : warning BLV004: $where has no version resource (expected $want)"; $problems++
          }
-         elseif ($v.FileVersion.Trim() -ne $want -or ($v.ProductVersion -and $v.ProductVersion.Trim() -ne $want) -or $numbers -ne $want -or $product -ne $want)
+         elseif ($v.FileVersion.Trim() -ne $want -or ($productString -and $productString -ne $want) -or $numbers -ne $want -or $product -ne $want)
          {
             Write-Host "CheckVersions : warning BLV001: $where is version $($v.FileVersion.Trim()) (product $($v.ProductVersion)), expected $want"; $problems++
          }
