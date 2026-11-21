@@ -14,13 +14,11 @@
 
             <File Id="WBFLEAF.dll"              Name="WBFLEAF.dll"              KeyPath ="yes"/>
             <!-- <File Id="WBFLBridgeAnalysis.dll"   Name="WBFLBridgeAnalysis.dll"/>-->
-            <File Id="WBFLBridgeGeometry.dll"     Name="WBFLBridgeGeometry.dll"/>
             <!-- <File Id="WBFLBridgeGeometryAgent.dll"    Name="WBFLBridgeGeometryAgent.dll"/> -->
             <!-- <File Id="WBFLBridgeModeling.dll"   Name="WBFLBridgeModeling.dll"/> -->
             <File Id="WBFLCogo.dll"             Name="WBFLCogo.dll"/>
             <File Id="WBFLCoordGeom.dll"             Name="WBFLCoordGeom.dll"/>
             <File Id="WBFLDManip.dll"           Name="WBFLDManip.dll"/>
-            <File Id="WBFLDManipTools.dll"      Name="WBFLDManipTools.dll"/>
             <File Id="WBFLEngTools.dll"         Name="WBFLEngTools.dll"/>
             <File Id="WBFLFem2d.dll"            Name="WBFLFem2d.dll"/>
             <File Id="WBFLFEA2D.dll"            Name="WBFLFEA2D.dll"/> <!-- imported by WBFLStability, WBFLFem2d, WBFLLBAMAnalysis, and the PGSuper and XBeamRate agents -->
@@ -45,12 +43,9 @@
             <File Id="WBFLRCSection.dll"              Name="WBFLRCSection.dll"/>
             <File Id="WBFLReporter.dll"              Name="WBFLReporter.dll"/>
             <File Id="WBFLReportManager.dll"              Name="WBFLReportManager.dll"/>
-            <File Id="WBFLReportManagerAgent.dll"              Name="WBFLReportManagerAgent.dll"/>
-            <File Id="WBFLGraphManagerAgent.dll"              Name="WBFLGraphManagerAgent.dll"/>
             <File Id="WBFLRoark.dll"              Name="WBFLRoark.dll"/>
             <File Id="WBFLSystem.dll"              Name="WBFLSystem.dll"/>
             <File Id="WBFLTools.dll"              Name="WBFLTools.dll"/>
-            <File Id="WBFLUnitMgt.dll"              Name="WBFLUnitMgt.dll"/>
             <File Id="WBFLUnits.dll"              Name="WBFLUnits.dll"/>
             <File Id="WBFLUnitServer.dll"              Name="WBFLUnitServer.dll"/>
             <File Id="WBFLStability.dll" Name="WBFLStability.dll"/>
