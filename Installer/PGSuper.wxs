@@ -333,21 +333,14 @@
       </DirectoryRef>
 
 
-            <DirectoryRef Id="APPLICATIONFOLDER"
-                    FileSource ="$(var.PGSuperSourceRoot)\App" >
-         <Component Id="MD5Deep"
-                    Guid="{22D58AA0-9F9E-4907-B3B5-20510C46A173}"
-                    Win64="$(var.IsWin64)">
-            <File Id="md5deep.exe" Name="md5deep.exe" KeyPath="yes"/>
-         </Component>
-      </DirectoryRef>
-
       <DirectoryRef Id="APPLICATIONFOLDER"
                     FileSource ="$(var.PGSuperSourceRoot)\App\$(var.PlatformFolder)" >
-         <Component Id="MakePgz"
-                    Guid="{7E389B52-BC5E-410c-9665-77100FFA4151}"
+         <!-- ConfigPackager (formerly MakePgz) builds configuration packages and ConfigurationPackages.json.
+              New GUID so that upgrades remove MakePgz.exe. -->
+         <Component Id="ConfigPackager"
+                    Guid="{460BAF67-51DA-4235-8D62-A20B6689CDCA}"
                     Win64="$(var.IsWin64)">
-            <File Id="makepgz.exe" Name="MakePgz.exe" KeyPath="yes"/>
+            <File Id="ConfigPackager.exe" Name="ConfigPackager.exe" KeyPath="yes"/>
          </Component>
       </DirectoryRef>
 
@@ -745,8 +738,7 @@
          <ComponentRef Id="PGSuperComponents2" />
          <ComponentRef Id="PGSuperComponents3" />
          <ComponentRef Id="PGSuperShortcuts"/>
-         <ComponentRef Id="MD5Deep" />
-         <ComponentRef Id="MakePgz" />
+         <ComponentRef Id="ConfigPackager" />
          <ComponentRef Id="PGSuperLibraryFile" />
          <ComponentRef Id="PGSuperFileConverter"/>
          <ComponentRef Id="GridControl"/>
