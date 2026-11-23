@@ -21,7 +21,7 @@ param(
    [Parameter(Mandatory = $true)][string[]]$Path,
    [string[]]$Company = @('Washington State Department of Transportation', 'Kansas Department of Transportation'),
    [string[]]$Name = @('WBFL*.dll', 'PGSuper*.dll', 'PGSuper*.exe', 'BridgeLink*.dll', 'BridgeLink*.exe', 'BEToolbox*.dll',
-                       'XBeamRate*.dll', 'Barlist*.dll', 'Barlist*.exe', 'BXF.dll', 'MakePgz.exe'),
+                       'XBeamRate*.dll', 'Barlist*.dll', 'Barlist*.exe', 'BXF.dll', 'ConfigPackager.exe'),
    [string[]]$Exclude = @('Convert.dll', '*UnitTests.dll'),
    [string]$Header = "$env:ARPDIR\WBFL\Include\WBFLVersion.h",
    [switch]$WarnOnly
